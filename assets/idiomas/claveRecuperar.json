@@ -1,0 +1,11 @@
+{
+    "ES" :{
+        "password": "Contraseña",
+        "enviar": "Enviar",
+        "mensaje": "En su casilla de correo recibara un mail para recuperar su contraseña.",
+        "volver": "VOLVER"
+    },
+    "EN" :{
+
+    }
+}

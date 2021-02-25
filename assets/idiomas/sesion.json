@@ -1,0 +1,12 @@
+{
+    "ES" :{
+        "correo": "Correo Electronico",
+        "password": "Contaseña",
+        "inicio": "INICIAR SESION",
+        "crear": "CREAR CUENTA",
+        "recupero": "¿OLVIDASTE TU CONTRASEÑA?"
+    },
+    "EN" :{
+
+    }
+}

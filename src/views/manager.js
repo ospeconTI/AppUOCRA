@@ -1,0 +1,145 @@
+/** @format */
+
+import { html, LitElement, css } from "lit-element";
+import { connect } from "@brunomon/helpers";
+import { store } from "../redux/store";
+import { layoutsCSS } from "../views/ui/layouts";
+import { getLayout } from "../redux/screens/screenLayouts";
+import { pantallaWarning } from "../views/bodies/warning";
+
+import { menuPrincipal } from "../views/headers/menu";
+
+import { alertaErrores } from "./bodies/alert";
+
+import { SpinnerLoading } from "./componentes/spinner";
+
+import { pieComponente } from "./foots/pie";
+import { splashScreen } from "./bodies/splash";
+import { inicialScreen } from "./bodies/inicial";
+import { sesionScreen } from "./bodies/sesion";
+import { claveRecuperarScreen } from "./bodies/claveRecuperar";
+import { claveRecuperarMensajeScreen } from "./bodies/claveRecuperarMensaje";
+import { claveCambioScreen } from "./bodies/claveCambio";
+import { claveCambioMensajeScreen } from "./bodies/claveCambioMensaje";
+import { registroScreen } from "./bodies/registro";
+import { registroMensajeScreen } from "./bodies/registroMensaje";
+import { principalScreen } from "./bodies/principal";
+import { comprasScreen } from "./bodies/compras";
+import { generalScreen } from "./bodies/general";
+import { cemapsMapaScreen } from "./bodies/cemapsMapa";
+import { notificacionesScreen } from "./bodies/notificaciones";
+import { cartillaScreen } from "./bodies/cartilla";
+import { cartillaDetalleScreen } from "./bodies/cartillaDetalle";
+import { turnosScreen } from "./bodies/turnos";
+import { franchinScreen } from "./bodies/franchin";
+import { emergenciasScreen } from "./bodies/emergencias";
+emergenciasScreen
+const MEDIA_CHANGE = "ui.media.timeStamp";
+const SCREEN = "screen.timeStamp";
+const SELECTION = "ui.menu.timeStamp";
+
+export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)(LitElement) {
+    constructor() {
+        super();
+    }
+
+    static get styles() {
+        return css`
+            :host {
+                position: absolute;
+                top: 0;
+                display: grid;
+                height: 100vh;
+                width: 100vw;
+                padding: 0;
+                background-color: var(--color-gris-claro);
+                overflow: hidden;
+            }
+
+            ${layoutsCSS}
+
+            :host::-webkit-scrollbar {
+                width: 0.5vw;
+                cursor: pointer;
+            }
+            :host::-webkit-scrollbar([media-size="small"]) {
+                display: none;
+            }
+            :host::-webkit-scrollbar-thumb {
+                background: var(--primary-color);
+                border-radius: 5px;
+            }
+        `;
+    }
+
+    render() {
+        return html`
+            <splash-screen id="splash" class="body"></splash-screen>
+            <inicial-screen id="inicial" class="body"></inicial-screen>
+            <sesion-screen id="sesion" class="body"></sesion-screen>
+            <claveRecuperar-screen id="claveRecuperar" class="body"></claveRecuperar-screen>
+            <claveRecuperarmensaje-screen id="claveRecuperarMensaje" class="body"></claveRecuperarmensaje-screen>
+            <clavecambio-screen id="clavecambio" class="body"></clavecambio-screen>
+            <clavecambiomensaje-screen id="clavecambiomensaje" class="body"></clavecambiomensaje-screen>
+            <registro-screen id="registro" class="body"></registro-screen>
+            <registromensaje-screen id="registroMensaje" class="body"></registromensaje-screen>
+            <principal-screen id="principal" class="body"></principal-screen>
+            <compras-screen id="compras" class="body"></compras-screen>
+            <general-screen id="general" class="body"></general-screen>
+            <cemapsmapa-screen id="cemapsMapa" class="body"></cemapsmapa-screen>
+            <notificaciones-screen id="notificaciones" class="body"></notificaciones-screen>
+            <cartilla-screen id="cartilla" class="body"></cartilla-screen>
+            <cartilladetalle-screen id="cartillaDetalle" class="body"></cartilladetalle-screen>
+            <turnos-screen id="turnos" class="body"></turnos-screen>
+            <franchin-screen id="franchin" class="body"></franchin-screen>
+            <emergencias-screen id="emergencias" class="body"></emergencias-screen>
+
+            <pie-componente class="foot"></pie-componente>
+
+            <alerta-errores></alerta-errores>
+            <pantalla-warning id="warning"></pantalla-warning>
+            <menu-principal id="menu" class="header"></menu-principal>
+            <spinner-loading type="spinner3"></spinner-loading>
+        `;
+    }
+
+    stateChanged(state, name) {
+        if (name == MEDIA_CHANGE || name == SCREEN) {
+            this.mediaSize = state.ui.media.size;
+            this.orientation = state.ui.media.orientation;
+            this.layout = getLayout(state).name;
+            if (!window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                if ("standalone" in window.navigator && window.navigator.standalone) {
+                    this.style.height = document.documentElement.offsetHeight ? document.documentElement.offsetHeight : window.innerHeight + "px";
+                } else {
+                    if (state.ui.media.orientation == "portrait") {
+                        this.style.height = window.innerHeight < window.innerWidth ? window.innerWidth : window.innerHeight + "px";
+                    } else {
+                        this.style.height = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight + "px";
+                    }
+                }
+            }
+        }
+        this.update();
+    }
+
+    static get properties() {
+        return {
+            mediaSize: {
+                type: String,
+                reflect: true,
+                attribute: "media-size",
+            },
+            layout: {
+                type: String,
+                reflect: true,
+            },
+            orientation: {
+                type: String,
+                reflect: true,
+            },
+        };
+    }
+}
+
+window.customElements.define("view-manager", viewManager);

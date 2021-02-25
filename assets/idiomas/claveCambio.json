@@ -1,0 +1,10 @@
+{
+    "ES" :{
+        "password": "Contraseña",
+        "passwordRepetir": "Ingreselo nuevamente",
+        "enviar": "Enviar"
+    },
+    "EN" :{
+
+    }
+}

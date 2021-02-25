@@ -1,0 +1,25 @@
+/** @format */
+export const largeRoute = [
+"1 -splash", 
+"2 -sesion", 
+"3.1 -main", 
+"3.1.1 -salud",
+"3.1.1.1 -cartilla",
+"3.1.1.1.1 -cartillaDetalle",
+"3.1.1.1.2 -cemapsMapa",
+"3.1.1.2 -turnos",
+"3.1.1.3 -franchin",
+"3.1.1.4 -emergencias",
+"3.1.2 -moecra",
+"3.1.2.1 -compras",
+"3.1.3 -cultura",
+"3.1.4 -tv",
+"3.2 -registro", 
+"3.3 -registroMensaje", 
+"3.4 -claveRecuperar",
+"3.5 -claveRecuperarMensaje",
+"3.6 -claveCambio",
+"3.7 -claveCambioMensaje",
+"4 -notificaciones",
+
+];

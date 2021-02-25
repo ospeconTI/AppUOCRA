@@ -1,0 +1,12 @@
+{
+    "ES" :{
+        "diasCorto": ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+        "mesCorto": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic"],
+        "si": "Si",
+        "no": "No",
+        "buscar": "Buscar"
+    },
+    "EN" :{
+
+    }    
+}

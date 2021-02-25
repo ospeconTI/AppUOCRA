@@ -1,0 +1,10 @@
+{
+    "ES" :{
+        "boton": "EMERGENCIAS 0800-345-7700",
+        "warning": [{"titulo": "Error", "subTitulo": "Selecciones una provincia."}
+            ]
+    },
+    "EN" :{
+
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "ES" :{
+        "titulo": "PARA PODER REGISTRARTE, CARGUE LOS DATOS SOLICITADOS",
+        "correo": "Correo electrónico",
+        "correo_ph": "juan@gmail.com",
+        "nombre": "Nombre completo",
+        "nombre_ph": "Rodriguez Juan",
+        "documento": "Documento",
+        "enviar": "REGISTRARSE", 
+        "volver": "VOLVER"
+    },
+    "EN" :{
+
+    }
+}

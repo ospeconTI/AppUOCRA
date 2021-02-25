@@ -1,0 +1,11 @@
+{
+    "ES" :{
+        "listado": "LISTADO",
+        "verMapa": "VER MAPA",
+        "warning": [{"titulo": "Error", "subTitulo": "Selecciones una provincia."},
+            {"titulo": "Error", "subTitulo": "Provincias, localidades y/o servicios. Verifique sus valores."}]
+    },
+    "EN" :{
+
+    }
+}
