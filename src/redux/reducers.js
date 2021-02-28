@@ -13,6 +13,9 @@ import { reducer as noticiasReducer } from "./noticias/reducer";
 import { reducer as localidadesReducer } from "./localidades/reducer";
 import { reducer as provinciasReducer } from "./provincias/reducer";
 import { reducer as serviciosReducer } from "./servicios/reducer";
+import { reducer as cemapsReducer } from "./cemaps/reducer";
+import { reducer as seccionalesReducer } from "./seccionales/reducer";
+import { reducer as zonasReducer } from "./zonas/reducer";
 
 export const rootReducer = (state = {}, action) => {
     return {
@@ -29,5 +32,8 @@ export const rootReducer = (state = {}, action) => {
         localidades: localidadesReducer(state.localidades, action),
         provincias: provinciasReducer(state.provincias, action),
         servicios: serviciosReducer(state.servicios, action),
+        cemaps: cemapsReducer(state.cemaps, action),
+        seccionales: seccionalesReducer(state.seccionales, action),
+        zonas: zonasReducer(state.zonas, action),
     };
 };

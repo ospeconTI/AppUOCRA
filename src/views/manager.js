@@ -33,6 +33,13 @@ import { cartillaDetalleScreen } from "./bodies/cartillaDetalle";
 import { turnosScreen } from "./bodies/turnos";
 import { franchinScreen } from "./bodies/franchin";
 import { emergenciasScreen } from "./bodies/emergencias";
+import { gremioZonasScreen } from "./bodies/gremioZonas";
+import { gremioMapaScreen } from "./bodies/gremioMapa";
+import { gremioListaScreen } from "./bodies/gremioLista";
+import { gremioJuventudScreen } from "./bodies/gremioJuventud";
+import { gremioTarjetaIericScreen } from "./bodies/gremioTarjetaIeric";
+import { gremioConvenioScreen } from "./bodies/gremioConvenio";
+
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -74,6 +81,7 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
 
     render() {
         return html`
+ 
             <splash-screen id="splash" class="body"></splash-screen>
             <inicial-screen id="inicial" class="body"></inicial-screen>
             <sesion-screen id="sesion" class="body"></sesion-screen>
@@ -93,6 +101,12 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <turnos-screen id="turnos" class="body"></turnos-screen>
             <franchin-screen id="franchin" class="body"></franchin-screen>
             <emergencias-screen id="emergencias" class="body"></emergencias-screen>
+            <gremiozonas-screen id="gremioZonas" class="body"></gremiozonas-screen>
+            <gremiomapa-screen id="gremioMapa" class="body"></gremiomapa-screen>
+            <gremiolista-screen id="gremioLista" class="body"></gremiolista-screen>
+            <gremiojuventud-screen id="gremioJuventud" class="body"></gremiojuventud-screen>
+            <gremiotarjetaieric-screen id="gremioTarjetaIeric" class="body"></gremiotarjetaieric-screen>
+            <gremioconvenio-screen id="gremioConvenio" class="body"></gremioconvenio-screen>
 
             <pie-componente class="foot"></pie-componente>
 

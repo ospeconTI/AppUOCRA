@@ -44,7 +44,7 @@ export const get = ({
             {id:4, provinciasId:2, nombre:"Acassuso",activo: true},
             {id:5, provinciasId:2, nombre:"Moron",activo: true},
             {id:6, provinciasId:3, nombre:"Cordoba",activo: true},
-            {id:7, provinciasId:3, nombre:"Villa Maria",activo: true},
+            {id:7, provinciasId:3, nombre:"Villa Mercedez",activo: true},
             {id:8, provinciasId:4, nombre:"Entre Rios",activo: true},
             {id:9, provinciasId:5, nombre:"Santa Rosa",activo: true},
             {id:9, provinciasId:5, nombre:"General Pico",activo: true},

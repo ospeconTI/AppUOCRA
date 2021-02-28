@@ -38,6 +38,10 @@ export const get = ({
     next(action);
     if (action.type === GET) {
         let menues = [
+            {id:1, tipo:"sindicato", nombre:"SECCIONALES",imagen:"SECCIONALES", clase:"opc1 blanco fondoPrimario",goto:"gremioZonas"},
+            {id:2, tipo:"sindicato", nombre:"CONVENIOS",imagen:"CONVENIOS", clase:"opc2 blanco fondoGris",goto:"gremioConvenio"},
+            {id:3, tipo:"sindicato", nombre:"JUVENTUD",imagen:"JUVENTUD", clase:"opc2 blanco fondoAmarillo",goto:"gremioJuventud"},
+            {id:4, tipo:"sindicato", nombre:"TARJETA IERIC",imagen:"TARJETAIERIC", clase:"opc3 blanco fondoVerde",goto:"gremioTarjetaIeric"},
             {id:1, tipo:"salud", nombre:"CARTILLA MÉDICA",imagen:"CARTILLA", clase:"opc1 blanco fondoVerde",goto:"cartilla"},
             {id:2, tipo:"salud", nombre:"TURNOS",imagen:"TURNOS", clase:"opc2 blanco fondoGris",goto:"turnos"},
             {id:3, tipo:"salud", nombre:"SANATORIO FRANCHIN",imagen:"CENTROMEDICO", clase:"opc2 blanco fondoAmarillo",goto:"franchin"},

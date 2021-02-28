@@ -24,6 +24,9 @@ import {get as getLeftMenu} from "./redux/leftmenu/actions"
 import {get as getLocalidades} from "./redux/localidades/actions"
 import {get as getProvincias} from "./redux/provincias/actions"
 import {get as getServicios} from "./redux/servicios/actions"
+import {get as getCemaps} from "./redux/cemaps/actions"
+import {get as getZonas} from "./redux/zonas/actions"
+import {get as getSeccionales} from "./redux/seccionales/actions"
 
 if (process.env.NODE_ENV === "production") {
     registerSW();
@@ -41,6 +44,11 @@ store.dispatch(getLeftMenu())
 store.dispatch(getLocalidades())
 store.dispatch(getProvincias())
 store.dispatch(getServicios())
+store.dispatch(getCemaps())
+store.dispatch(getZonas())
+store.dispatch(getSeccionales())
+
+
 
 store.dispatch(captureMedia());
 //store.dispatch(goTo("main"));
@@ -48,8 +56,8 @@ store.dispatch(goTo("splash"));
 //store.dispatch(goTo("cartilla"));
 //store.dispatch(goTo("emergencias"));
 
-//store.dispatch(goTo("claveCambio"));
-//store.dispatch(goTo("salud"));
+//store.dispatch(goTo("cartilla"));
+//store.dispatch(goTo("cemapsMapa"));
 
 
 

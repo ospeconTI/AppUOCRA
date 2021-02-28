@@ -40,6 +40,15 @@ export class OLComponent extends LitElement {
                     scale: [0.1, 0.1],
                 }),
             }),
+            casco: new Style({
+                image: new Icon({
+                    anchor: [0.5, 0.5],
+                    anchorXUnits: "fraction",
+                    anchorYUnits: "fraction",
+                    src: 'https://www.uocra.net/App/images/casco.gif',
+                    scale: [0.25, 0.25],
+                }),
+            }),
         }
         ;
     }
@@ -56,10 +65,15 @@ export class OLComponent extends LitElement {
 
         for (var i = 0; i < count; ++i) {
             features[i] = new Feature(new Point(this._puntos[i]));
-            if (i>0){
+            if (this._puntos[i][4]=="N"){
                 features[i].setStyle(this.iconStyles["elIcono"]);
-            }else{
+                features[i].getStyle().setZIndex(99);   
+            }else if(this._puntos[i][4]=="S"){
                 features[i].setStyle(this.iconStyles["posicion"]);               
+                features[i].getStyle().setZIndex(100);   
+            }else{
+                features[i].setStyle(this.iconStyles["casco"]);               
+                features[i].getStyle().setZIndex(100);   
             }
         }
 
@@ -91,7 +105,16 @@ export class OLComponent extends LitElement {
             view: this.view,
         }); 
 
-        
+        if (this.map) {
+            this.map.on('singleclick', function(evt) { 
+                var feature = this.forEachFeatureAtPixel(evt.pixel, function (feature) {
+                    //return feature;
+                    //featureListener(feature);
+                    store.dispatch(mapaClick(feature, evt));
+                  });
+            });
+
+        }
     }
 
     static get styles() {
@@ -112,20 +135,20 @@ export class OLComponent extends LitElement {
 
     set puntos(value) {
         this._puntos = value;
+        if (this._puntos[0][0] == 0) this._puntos.shift(0,1)
         const count = this._puntos.length;
-        const features = new Array( this._puntos.length > 1 ? this._puntos[0][0] !=0 ? this._puntos.length : this._puntos.length -1 : this._puntos.length);
-        let cont = 0
-
+        const features = new Array( this._puntos.length );
         for (var i = 0; i < count; ++i) {
-            if(this._puntos[i][0] != 0){
-                features[cont] = new Feature(new Point(this._puntos[i]));
-                if (i>0){
-                    features[cont].setStyle(this.iconStyles["elIcono"]);    
-                }else{
-                    features[cont].setStyle(this.iconStyles["posicion"]);  
-                    features[cont].getStyle().setZIndex(100);   
-                }
-                cont ++
+            features[i] = new Feature(new Point(this._puntos[i]));
+            if (this._puntos[i][4]=="N"){
+                features[i].setStyle(this.iconStyles["elIcono"]);    
+                features[i].getStyle().setZIndex(99);   
+            }else if(this._puntos[i][4]=="S"){
+                features[i].setStyle(this.iconStyles["posicion"]);               
+                features[i].getStyle().setZIndex(100);   
+            }else{
+                features[i].setStyle(this.iconStyles["casco"]);               
+                features[i].getStyle().setZIndex(100);   
             }
         }
 
@@ -184,8 +207,6 @@ export class OLComponent extends LitElement {
                 }   
             });
         }
-
-
 
 
     }

@@ -168,8 +168,12 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
 	render() {
 		if (this.titulo) { return html`
 			<div id="cuerpo">
-				<div id="titulo" style="background-image: url('${this.url + this.titulo[0].titulo}');">
-                </div>
+                ${this.titulo[0].titulo != "" ? 
+                    html`
+                    <div id="titulo" style="background-image: url('${this.url + this.titulo[0].titulo}');">
+                    </div>`
+                    : '' 
+                }
                 ${this.banner[0].banner != "" ? 
                     html`
                     <div id="banner" style="background-image: url('${this.url + this.banner[0].banner}');">
@@ -250,7 +254,7 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-cultura-tv-moecra-salud-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-sindicato-cultura-tv-moecra-salud-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
                 this.hidden = false;
                 //store.dispatch(getTitulo());

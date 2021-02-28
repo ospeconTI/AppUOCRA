@@ -15,7 +15,7 @@ import {
     REMOVE_SUCCESS,
     REMOVE_ERROR
 
-} from "../banners/actions";
+} from "../zonas/actions";
 
 import {
 
@@ -37,19 +37,20 @@ export const get = ({
 }) => next => action => {
     next(action);
     if (action.type === GET) {
-        let bannes = [
-            {id:1, tipo:"sindicato", banner:"bannerSindicato.gif", orden: 1, activo: true},
-            {id:1, tipo:"salud", banner:"", orden: 1, activo: true},
-            {id:1, tipo:"cultura", banner:"bannerCultura.gif", orden: 1, activo: true},
-            {id:2, tipo:"tv", banner:"bannerTv.gif", orden: 1, activo: true},
-            {id:3, tipo:"moecra", banner:"bannerMoecra.gif", orden: 1, activo: true},
+        let zonas = [
+            {id:1, nombre:"Buenos Aires",activo: true},
+            {id:2, nombre:"Centro",activo: true},
+            {id:3, nombre:"Cuyo",activo: true},
+            {id:4, nombre:"Litoral",activo: true},
+            {id:5, nombre:"Noroeste",activo: true},
+            {id:6, nombre:"Patagonia",activo: true},
         ]
-        
+    
         dispatch({
             type: GET_SUCCESS,
             payload: {
               send: 1,
-              receive: bannes
+              receive: zonas
             }
           })
         //dispatch(apiRequest(ikePuestosQuery, action.options, GET_SUCCESS, GET_ERROR))

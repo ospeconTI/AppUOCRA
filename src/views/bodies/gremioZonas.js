@@ -10,27 +10,24 @@ import { button } from "../css/button";
 import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
 import {SVGS} from "../../../assets/icons/svgs";
-import {getMapaLocalidad, getMapaProvincia, getMapaTodos} from "../../redux/cemaps/actions"
+import {getMapaTodos, getMapaZona} from "../../redux/seccionales/actions"
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
-const PROVINCIA_TIMESTAMP = "provincias.timeStamp";
-const LOCALIDAD_TIMESTAMP = "localidades.timeStamp";
-const SERVICIO_TIMESTAMP = "servicios.timeStamp";
-const CEMAPS_DATOS = "cemaps.MapaTimeStamp";
+const ZONA_TIMESTAMP = "zonas.timeStamp";
+const SECCIONALES_DATOS = "seccionales.MapaTimeStamp";
 
-export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMESTAMP, LOCALIDAD_TIMESTAMP, SERVICIO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class gremioZonasScreen extends connect(store, SECCIONALES_DATOS, ZONA_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
 		this.area = "body";
         this.current = "";
         this.idioma = store.getState().ui.idioma;
-        this.provincia = null
-        this.localidad = null
-        this.servicio = null
+        this.zona = null
         this.idioma = store.getState().ui.idioma;
-        this.cartilla = require('../../../assets/idiomas/cartilla.json');
+        this.zonas = require('../../../assets/idiomas/gremioZonas.json');
+        this.paginaSiguiente = ""
 	}
 
 	static get styles() {
@@ -62,7 +59,7 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
 			#titulo {
                 width:100%;
                 height:52vw;
-                background-image: url("https://www.uocra.net/App/images/cartilla.gif");
+                background-image: url("https://www.uocra.net/App/images/gremioZonas.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;
@@ -73,6 +70,8 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
                 height:3.5rem; 
                 justify-self: center;
                 grid-gap: 0 !important;
+                padding-top: 5vh;
+                padding-bottom: 20vh;
             }
             .elselect{
                 height:2.5rem; 
@@ -106,41 +105,22 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
 		`;
 	}
 	render() {
-        if (this.provincia && store.getState().localidades.entities && this.servicio) {
+        if (this.zona) {
             return html`
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" class="grid column">
                     </div>
-                    <div id="selectProvincias" class="grid row miselect" >
-                        <select id="txtProvincias" class="elselect" @change="${this.cambioProvincia}">
-                            <option value="0">Provincias</option>
-                            ${this.provincia.map((item, index) => {
+                    <div id="selectZonas" class="grid row miselect" >
+                        <select id="txtZonas" class="elselect" @change="${this.cambioZona}">
+                            <option value="0">Zonas</option>
+                            ${this.zona.map((item, index) => {
                                 return html `
                                     <option value="${item.id}">${item.nombre}</option>
                                 `
                             })}
                         </select>
 				    </div>
-                    <div id="selectLocalidades" class="grid row miselect">
-                        <select id="txtLocalidades" class="elselect" @click="${this.clickLocalidad}">
-                            <option value="0">Localidades</option>
-                            ${this.localidad ? this.localidad.map((item, index) => {
-                                return html `
-                                    <option value="${item.id}">${item.nombre}</option>
-                                `
-                            }) : null}
-                        </select>
-				    </div>
-                    <div id="selectServicios" class="grid row miselect" >
-                        <select id="txtServicios" class="elselect">
-                            <option value="0">Servicios</option>
-                            ${this.servicio.map((item, index) => {
-                                return html `
-                                    <option value="${item.id}">${item.nombre}</option>
-                                `
-                            })}
-                        </select>
-				    </div>
+
                     <div id="botones" class="grid">
                         <button btn1 class="btnListado" @click=${this.listados}>
                             <div class="grid column">
@@ -148,17 +128,17 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
                                     ${SVGS["LISTADO"]}                        
                                 </div>
                                 <div>
-                                    ${this.cartilla[this.idioma].listado}
+                                    ${this.zonas[this.idioma].listado}
                                </div>
                             </div>
                         </button>
-				        <button btn1 class="btnVerMapa" @click=${this.cemap}>
+				        <button btn1 class="btnVerMapa" @click=${this.seccionales}>
                             <div class="grid column">
                                 <div>
                                     ${SVGS["VERMAPA"]}                        
                                 </div>
                                 <div>
-                                    ${this.cartilla[this.idioma].verMapa}
+                                    ${this.zonas[this.idioma].verMapa}
                                 </div>
                             </div>
                         </button>
@@ -168,24 +148,21 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
         }
 	}
     listados(){
-        const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
-        const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades").value;
-        const txtServicio = this.shadowRoot.querySelector("#txtServicios").value;
-        if(txtProvincia == 0 || txtLocalidad == 0 || txtServicio == 0){
-			store.dispatch(showWarning(this.cartilla[this.idioma].warning[1].titulo, this.cartilla[this.idioma].warning[1].subTitulo, "fondoError", 2000));
+        this.paginaSiguiente = "gremioLista"
+        const txtZona = this.shadowRoot.querySelector("#txtZonas").value;
+        if(txtZona == 0){
+            store.dispatch(getMapaTodos())
         }else{
-            store.dispatch(goTo("cartillaDetalle"));
+            store.dispatch(getMapaZona(parseInt(txtZona)))
         }
     }
-    cemap(){
-        const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
-        const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades").value;
-        if(txtProvincia == 0 && txtLocalidad == 0){
+    seccionales(){
+        this.paginaSiguiente = "gremioMapa"
+        const txtZona = this.shadowRoot.querySelector("#txtZonas").value;
+        if(txtZona == 0 ){
             store.dispatch(getMapaTodos())
-        }else if(txtLocalidad != 0){
-            store.dispatch(getMapaLocalidad(parseInt(txtLocalidad)))
-        }else if(txtProvincia != 0){
-            store.dispatch(getMapaProvincia(parseInt(txtProvincia)))
+        }else{
+            store.dispatch(getMapaZona(parseInt(txtZona)))
         }
     }
 	stateChanged(state, name) {
@@ -194,51 +171,24 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-cartilla-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-gremioZonas-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
 			}
 			this.update();
 		}
-        if (name == PROVINCIA_TIMESTAMP){
-            this.provincia = state.provincias.entities
+        if (name == ZONA_TIMESTAMP){
+            this.zona = state.zonas.entities
         }
-        if (name == LOCALIDAD_TIMESTAMP){
-            //this.localidad = state.localidades.entities
-        }
-        if (name == PROVINCIA_TIMESTAMP){
-            this.servicio = state.servicios.entities
-        }
-        if (name == CEMAPS_DATOS){
-            store.dispatch(goTo("cemapsMapa"));
+        if (name == SECCIONALES_DATOS){
+            store.dispatch(goTo(this.paginaSiguiente));
         }
 
 	}
-    cambioProvincia(e){
-        let arr = store.getState().localidades.entities;
-        this.localidad = arr.filter(a => a.provinciasId == e.currentTarget.value);  
+    cambioZona(e){
+        let arr = store.getState().zonas.entities;
         this.update()      
     }
-    clickLocalidad(e){
-        const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
-        const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades");
-        if(txtProvincia == 0){
-			store.dispatch(showWarning(this.cartilla[this.idioma].warning[0].titulo, this.cartilla[this.idioma].warning[0].subTitulo, "fondoError", 2000));
-            txtLocalidad.blur()
-        }
-    }
-    salud(){
-        store.dispatch(goTo("salud"));
-    }
-    cultura(){
-        store.dispatch(goTo("cultura"));
-    }
-	volver() {
-		store.dispatch(goTo("inicial"));
-    }
-    claveRecuperar() {
-		store.dispatch(goTo("claveRecuperar"));
-	}
 	static get properties() {
 		return {
 			mediaSize: {
@@ -264,4 +214,4 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
 		};
 	}
 }
-window.customElements.define("cartilla-screen", cartillaScreen);
+window.customElements.define("gremiozonas-screen", gremioZonasScreen);

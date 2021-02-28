@@ -247,7 +247,7 @@ export class pieComponente extends connect(store, FOOTHER_TAPA, MEDIA_CHANGE, SC
             this.mediaSize = state.ui.media.size
             this.hidden = true
             const haveFootArea = isInLayout(state, this.area)
-            const SeMuestraEnUnasDeEstasPantallas = "-main-salud-compras-cultura-tv-moecra-cemapsMapa-notificaciones-cartilla-turnos-franchin-emergencias-".indexOf("-" + state.screen.name + "-") != -1
+            const SeMuestraEnUnasDeEstasPantallas = "-main-sindicato-salud-compras-cultura-tv-moecra-cemapsMapa-notificaciones-cartilla-turnos-franchin-emergencias-gremioZonas-gremioMapa-gremioLista-gremioJuventud-gremioTarjetaIeric-gremioConvenio-".indexOf("-" + state.screen.name + "-") != -1
             if (haveFootArea && SeMuestraEnUnasDeEstasPantallas) {
                 this.hidden = false
             }

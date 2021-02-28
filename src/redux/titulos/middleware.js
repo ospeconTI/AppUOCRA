@@ -38,10 +38,11 @@ export const get = ({
     next(action);
     if (action.type === GET) {
         let titulos = [
-            {id:1, tipo:"salud", titulo: "construirsalud.gif", activo: true},
-            {id:1, tipo:"cultura", titulo: "cultura.gif", activo: true},
-            {id:2, tipo:"tv", titulo: "tv.gif", activo: true},
-            {id:3, tipo:"moecra", titulo: "moecraAzulNegroLogo.png", activo: true},
+            {id:1, tipo:"sindicato", titulo: "", activo: true},
+            {id:2, tipo:"salud", titulo: "construirsalud.gif", activo: true},
+            {id:3, tipo:"cultura", titulo: "cultura.gif", activo: true},
+            {id:4, tipo:"tv", titulo: "tv.gif", activo: true},
+            {id:5, tipo:"moecra", titulo: "moecraAzulNegroLogo.png", activo: true},
         ]
         
         dispatch({
