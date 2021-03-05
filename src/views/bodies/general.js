@@ -263,7 +263,7 @@ export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIM
         }
     }
     ir(e){
-        if (e.currentTarget.item.indexOf("HTTPS:") !== -1){
+        if (e.currentTarget.item.toUpperCase().indexOf("HTTPS:") !== -1){
             window.open(e.currentTarget.item,'_blank');
         }else{
             store.dispatch(goTo(e.currentTarget.item));

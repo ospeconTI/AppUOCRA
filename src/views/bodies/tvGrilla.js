@@ -21,7 +21,7 @@ const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const TVESTRENOS_DATOS = "tvEstrenos.timeStamp";
 
-export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class tvGrillaScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -156,7 +156,7 @@ export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHA
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-tvEstrenos-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-tvGrilla-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) { 
  				this.hidden = false;
                 this.update();
@@ -197,4 +197,4 @@ export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHA
 		};
 	}
 }
-window.customElements.define("tvestrenos-screen", tvEstrenosScreen);
+window.customElements.define("tvgrilla-screen", tvGrillaScreen);

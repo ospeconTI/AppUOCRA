@@ -53,6 +53,7 @@ import { webScreen } from "./bodies/web";
 import { cemapCartillaDetalleScreen } from "./bodies/cemapCartillaDetalle";
 import { tvCanalesScreen } from "./bodies/tvCanales";
 import { tvEstrenosScreen } from "./bodies/tvEstrenos";
+import { tvGrillaScreen } from "./bodies/tvGrilla";
 
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -135,6 +136,7 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <cemapcartilladetalle-screen id="cemapCartillaDetalle" class="body"></cemapcartilladetalle-screen>
             <tvcanales-screen id="tvCanales" class="body"></tvcanales-screen>
             <tvestrenos-screen id="tvEstrenos" class="body"></tvestrenos-screen>
+            <tvgrilla-screen id="tvGrilla" class="body"></tvgrilla-screen>
 
             <pie-componente class="foot"></pie-componente>
 
