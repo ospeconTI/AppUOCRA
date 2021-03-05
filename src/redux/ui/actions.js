@@ -32,6 +32,8 @@ export const IDIOMA = "[ui] IDIOMA";
 
 export const URLS = "[ui] urls";
 
+export const MENU_ACTIVAR = "[ui] menu activar";
+
 export const showSpinner = () => ({
     type: SHOW_SPINNER,
 });
@@ -143,4 +145,8 @@ export const urls = (servidor, imagenes) => ({
     type: URLS,
     servidor: servidor,
     imagenes: imagenes,
+});
+
+export const menuActivar = () => ({
+    type: MENU_ACTIVAR
 });

@@ -1,6 +1,8 @@
 /** @format */
 
 import { html, LitElement, css } from "lit-element";
+import {unsafeHTML} from 'lit-html/directives/unsafe-html';
+
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo } from "../../redux/routing/actions";
@@ -17,8 +19,9 @@ const TITULO_TIMESTAMP = "titulos.timeStamp";
 const BANNERS_TIMESTAMP = "banners.timeStamp";
 const MENUES_TIMESTAMP = "menues.timeStamp";
 const ITEMS_TIMESTAMP = "items.timeStamp";
+const LEYENDAS_TIMESTAMP = "leyendas.timeStamp";
 
-export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIMESTAMP, ITEMS_TIMESTAMP, TITULO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIMESTAMP, BANNERS_TIMESTAMP, ITEMS_TIMESTAMP, TITULO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -30,6 +33,7 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
         this.banner = null
         this.menu = null
         this.item = null 
+        this.leyenda = null 
 	}
 
 	static get styles() {
@@ -56,29 +60,41 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
                 background-color: var(--color-blanco);
                 overflow-x: hidden;
                 overflow-y: auto;
+                align-content: flex-start;
 			}
 			#titulo {
                 width:100%;
-                height:11vh;
-				background-repeat: no-repeat;
-				background-position: center center ;
-                background-size: 55% ;
-            }
-            #banner {
-                width:100%;
-                height:30vh;
+                height:7vh;
+                margin: 1vh 0 1vh 0;
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: contain ;
             }
+            #banner {
+                width:100%;
+                height:27vh;
+				background-repeat: no-repeat;
+				background-position: top center ;
+                background-size: cover ;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+            }
             svg{
-                height:8vh;
-                width:8vh;
+                height:5vh;
+                width:5vh;
             }
             #datos{
                 display: grid;
-                grid-template-rows: 15vh 12vh 15vh;
-                grid-template-columns: 34vw 34vw;
+                grid-template-rows: 10vh 4vh 10vh;
+                grid-template-columns: 38vw 38vw;
+                grid-gap: 2vh;
+                justify-self: center;
+                padding: 2vh 0 2vh 0;
+            }
+            #datos2{
+                display: grid;
+                grid-template-rows: 7vh;
+                grid-template-columns: 38vw 38vw;
                 grid-gap: 2vh;
                 justify-self: center;
                 padding: 2vh 0 2vh 0;
@@ -108,6 +124,14 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
                 width: 100%;
                 height: 100%;
             }
+            .opc21{
+                width: 100%;
+                height: 100%;
+            }
+            .opc22{
+                width: 100%;
+                height: 100%;
+            }
             .opcTexto{
                 padding: 0 2vw 0 2vw;
             }
@@ -132,6 +156,13 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
             }
             .fondoPrimario{
                 background-color:var(--primary-color);
+            }
+            #leyenda{
+                display: grid;
+                font-size: var(--font-eader-h2-size);
+                justify-self: center;
+                width: 80%;
+                padding-top: 1.5rem;
             }
             #items{
                 grid-gap: 1rem !important;
@@ -170,17 +201,19 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
 			<div id="cuerpo">
                 ${this.titulo[0].titulo != "" ? 
                     html`
-                    <div id="titulo" style="background-image: url('${this.url + this.titulo[0].titulo}');">
+                    <div id="titulo" style="background-image: url('${this.titulo[0].titulo}');">
                     </div>`
                     : '' 
                 }
                 ${this.banner[0].banner != "" ? 
                     html`
-                    <div id="banner" style="background-image: url('${this.url + this.banner[0].banner}');">
+                    <div id="banner" style="background-image: url('${this.banner[0].banner}');">
                     </div>`
                     : '' 
                 }
-				<div id="datos">
+                ${this.menu[0].nombre != "" ? 
+                    html`
+				<div id="${this.menu[0].div}">
                     ${this.menu.filter(item => { return item.tipo == this.current }).map((item) => {
                         return html` 
                             <div id="opc${item.id}" class="grid row opc ${item.clase}" .item=${item.goto} @click="${this.ir}">
@@ -190,7 +223,16 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
                         `
                     })}
                 </div>
-
+                `
+                : ''
+                }
+                ${this.leyenda[0].leyenda != "" ? 
+                    html`
+                    <div id="leyenda">
+                        ${unsafeHTML(this.leyenda[0].leyenda)}
+                    </div>`
+                    : '' 
+                }
                 <div id="opciones">
                     <div id="items" class="grid row">
                         ${this.item.filter(item => { return item.tipo == this.current }).map((item) => {
@@ -221,7 +263,11 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
         }
     }
     ir(e){
-        store.dispatch(goTo(e.currentTarget.item));
+        if (e.currentTarget.item.indexOf("HTTPS:") !== -1){
+            window.open(e.currentTarget.item,'_blank');
+        }else{
+            store.dispatch(goTo(e.currentTarget.item));
+        }
         if (e.currentTarget.item == 3 && this.current == "moecra"){
             store.dispatch(goTo(e.currentTarget.item));
         }
@@ -254,7 +300,7 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-sindicato-cultura-tv-moecra-salud-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-sindicato-cultura-tv-moecra-salud-saludSeguridad-ivt-cine-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
                 this.hidden = false;
                 //store.dispatch(getTitulo());
@@ -265,6 +311,14 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
                 if (this.banner){
                     let arr = state.banners.entities;
                     this.banner = arr.filter(a => a.tipo == this.current);        
+                }
+                if (this.menu){
+                    let arr = state.menues.entities;
+                    this.menu = arr.filter(a => a.tipo == this.current);        
+                }
+                if (this.leyenda){
+                    let arr = state.leyendas.entities;
+                    this.leyenda = arr.filter(a => a.tipo == this.current);        
                 }
                 this.update();
                 this.update(); // NO BORRAR,  se necesitan
@@ -283,7 +337,9 @@ export class generalScreen extends connect(store, MENUES_TIMESTAMP, BANNERS_TIME
         if (name == BANNERS_TIMESTAMP) {
             this.banner = state.banners.entities;
         }
-
+        if (name == LEYENDAS_TIMESTAMP) {
+            this.leyenda = state.leyendas.entities;
+        }
 	}
 
 

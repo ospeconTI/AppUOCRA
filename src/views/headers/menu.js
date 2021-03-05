@@ -12,8 +12,9 @@ import { gestures } from "../../libs/gestures";
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const LEFTMENU_TIMESTAMP = "screen.timeStamp";
+const MENU_ACTIVAR = "ui.menuActivar";
 
-export class menuPrincipal extends connect(store, LEFTMENU_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
     constructor() {
         super();
         this.area = "header";
@@ -116,6 +117,7 @@ export class menuPrincipal extends connect(store, LEFTMENU_TIMESTAMP, MEDIA_CHAN
                 justify-self: flex-start; 
             }
             .menuItem {
+                height:2.5rem;
                 background-color: var(--color-blanco);
                 color: var(--primary-color);
                 cursor: pointer;
@@ -225,6 +227,9 @@ export class menuPrincipal extends connect(store, LEFTMENU_TIMESTAMP, MEDIA_CHAN
         }
         if (name == LEFTMENU_TIMESTAMP) {
             this.puntos = state.leftmenu.entities;
+        }
+        if (name == MENU_ACTIVAR) {
+            this.toggleMenu();
         }
     }
 

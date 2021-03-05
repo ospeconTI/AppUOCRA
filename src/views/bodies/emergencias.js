@@ -112,6 +112,7 @@ export class emergenciasScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCAL
             }
             #bullet{
                 fill: var(--color-blanco);
+                stroke: var(--color-verde-claro);
             }
 		`;
 	}

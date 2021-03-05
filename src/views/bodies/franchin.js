@@ -111,6 +111,7 @@ export class franchinScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCALIDA
             }
             #bullet{
                 fill: var(--color-blanco);
+                stroke: var(--color-verde-claro);
             }
 		`;
 	}

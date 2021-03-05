@@ -5,7 +5,7 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
-import { showWarning} from "../../redux/ui/actions";
+import { menuActivar, showWarning} from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
@@ -164,7 +164,7 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, MEDIA_CH
                             <div >${SVGS["TEATRO"]}</div>
                             <div >${this.aplicacion[this.idioma].teatro}</div>
                         </div>
-                        <div id="icMas" class="grid row icBoton">
+                        <div id="icMas" class="grid row icBoton" @click="${this.masUOCRA}">
                             <div >${SVGS["MASUOCRA"]}</div>
                             <div >${this.aplicacion[this.idioma].masuocra}</div>
                         </div>
@@ -234,6 +234,9 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, MEDIA_CH
     claveRecuperar() {
 		store.dispatch(goTo("claveRecuperar"));
 	}
+    masUOCRA(){
+        store.dispatch(menuActivar());
+    }
 	static get properties() {
 		return {
 			mediaSize: {

@@ -1,4 +1,4 @@
-import { SHOW_SPINNER, HIDE_SPINNER, SHOW_ERROR, HIDE_ERROR, SET_MEDIA, SET_MEDIA_ORIENTATION, SELECTION, VELO, VER_PANTALLA_LOGIN, VER_PANTALLA_MIEMBRO, VER_PANTALLA_CAMBIO_CLAVE, VER_PANTALLA_PASES, VER_PANTALLA_CAMBIO_ADMINISTRADOR, VER_PANTALLA_CAMBIO_NOMBRE_CUENTA, VER_PANTALLA_USUARIO_ASIGNAR, SHOW_WARNING, HIDE_WARNING, MAPA_CLICK, IDIOMA, URLS } from "./actions";
+import { SHOW_SPINNER, HIDE_SPINNER, SHOW_ERROR, HIDE_ERROR, SET_MEDIA, SET_MEDIA_ORIENTATION, SELECTION, VELO, VER_PANTALLA_LOGIN, VER_PANTALLA_MIEMBRO, VER_PANTALLA_CAMBIO_CLAVE, VER_PANTALLA_PASES, VER_PANTALLA_CAMBIO_ADMINISTRADOR, VER_PANTALLA_CAMBIO_NOMBRE_CUENTA, VER_PANTALLA_USUARIO_ASIGNAR, SHOW_WARNING, HIDE_WARNING, MAPA_CLICK, IDIOMA, URLS, MENU_ACTIVAR } from "./actions";
 
 const initialState = {
     spinner: {
@@ -64,7 +64,8 @@ const initialState = {
         servidor: null,
         imagenes: null,
     },
-    idioma: "ES"
+    idioma: "ES",
+    menuActivar: null,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -160,10 +161,15 @@ export const reducer = (state = initialState, action) => {
             let myIdioma = (navigator.language || navigator.userLanguage).split("-")[0].toUpperCase();
             if (myIdioma != "ES") myIdioma="ES"
             newState.idioma = myIdioma
+            break;
         case URLS:
             newState.urls.servidor = action.servidor
             newState.urls.imagenes = action.imagenes
-    
+            break;
+        case MENU_ACTIVAR:
+            newState.menuActivar = new Date().getTime();
+            break;
+       
     }
     return newState;
 };

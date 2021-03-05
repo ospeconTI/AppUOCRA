@@ -27,6 +27,11 @@ import {get as getServicios} from "./redux/servicios/actions"
 import {get as getCemaps} from "./redux/cemaps/actions"
 import {get as getZonas} from "./redux/zonas/actions"
 import {get as getSeccionales} from "./redux/seccionales/actions"
+import {get as getConvenios} from "./redux/convenios/actions"
+import {get as getProgramacion} from "./redux/programacion/actions"
+import {get as getLeyendas} from "./redux/leyendas/actions"
+import {get as getEdicionesAnteriores} from "./redux/edicionesAnteriores/actions"
+import {get as getEstrenos} from "./redux/tvEstrenos/actions"
 
 if (process.env.NODE_ENV === "production") {
     registerSW();
@@ -47,13 +52,18 @@ store.dispatch(getServicios())
 store.dispatch(getCemaps())
 store.dispatch(getZonas())
 store.dispatch(getSeccionales())
-
+store.dispatch(getConvenios())
+store.dispatch(getProgramacion())
+store.dispatch(getLeyendas())
+store.dispatch(getEdicionesAnteriores())
+store.dispatch(getEdicionesAnteriores())
+store.dispatch(getEstrenos())
 
 
 store.dispatch(captureMedia());
 //store.dispatch(goTo("main"));
 store.dispatch(goTo("splash"));
-//store.dispatch(goTo("cartilla"));
+//store.dispatch(goTo("tvCanales"));
 //store.dispatch(goTo("emergencias"));
 
 //store.dispatch(goTo("cartilla"));

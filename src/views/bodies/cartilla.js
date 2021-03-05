@@ -11,6 +11,8 @@ import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
 import {SVGS} from "../../../assets/icons/svgs";
 import {getMapaLocalidad, getMapaProvincia, getMapaTodos} from "../../redux/cemaps/actions"
+import { seleccion as selLocalidad} from "../../redux/localidades/actions";
+import { seleccion as selServicio} from "../../redux/servicios/actions";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -122,7 +124,7 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
                         </select>
 				    </div>
                     <div id="selectLocalidades" class="grid row miselect">
-                        <select id="txtLocalidades" class="elselect" @click="${this.clickLocalidad}">
+                        <select id="txtLocalidades" class="elselect" @click="${this.clickLocalidad}" @change="${this.cambioLocalidad}">
                             <option value="0">Localidades</option>
                             ${this.localidad ? this.localidad.map((item, index) => {
                                 return html `
@@ -132,7 +134,7 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
                         </select>
 				    </div>
                     <div id="selectServicios" class="grid row miselect" >
-                        <select id="txtServicios" class="elselect">
+                        <select id="txtServicios" class="elselect" @change="${this.cambioServicio}" >
                             <option value="0">Servicios</option>
                             ${this.servicio.map((item, index) => {
                                 return html `
@@ -174,7 +176,7 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
         if(txtProvincia == 0 || txtLocalidad == 0 || txtServicio == 0){
 			store.dispatch(showWarning(this.cartilla[this.idioma].warning[1].titulo, this.cartilla[this.idioma].warning[1].subTitulo, "fondoError", 2000));
         }else{
-            store.dispatch(goTo("cartillaDetalle"));
+            store.dispatch(goTo("cemapCartillaDetalle"));
         }
     }
     cemap(){
@@ -206,7 +208,7 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
         if (name == LOCALIDAD_TIMESTAMP){
             //this.localidad = state.localidades.entities
         }
-        if (name == PROVINCIA_TIMESTAMP){
+        if (name == SERVICIO_TIMESTAMP){
             this.servicio = state.servicios.entities
         }
         if (name == CEMAPS_DATOS){
@@ -219,6 +221,20 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
         this.localidad = arr.filter(a => a.provinciasId == e.currentTarget.value);  
         this.update()      
     }
+    cambioLocalidad(e){
+        if (e.currentTarget.value> 0){
+            let arr = store.getState().localidades.entities;
+            let salida = arr.filter(a => a.id == e.currentTarget.value);  
+            store.dispatch(selLocalidad(salida))
+        }
+    }
+    cambioServicio(e){
+        if (e.currentTarget.value> 0){
+            let arr = store.getState().servicios.entities;
+            let salida = arr.filter(a => a.id == e.currentTarget.value);  
+            store.dispatch(selServicio(salida))
+        }
+    }
     clickLocalidad(e){
         const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
         const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades");
@@ -227,18 +243,6 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
             txtLocalidad.blur()
         }
     }
-    salud(){
-        store.dispatch(goTo("salud"));
-    }
-    cultura(){
-        store.dispatch(goTo("cultura"));
-    }
-	volver() {
-		store.dispatch(goTo("inicial"));
-    }
-    claveRecuperar() {
-		store.dispatch(goTo("claveRecuperar"));
-	}
 	static get properties() {
 		return {
 			mediaSize: {

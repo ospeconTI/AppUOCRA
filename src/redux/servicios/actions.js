@@ -17,6 +17,7 @@ export const PATCH_ERROR = "[servicios] PATCH error";
 export const UPDATE_ERROR = "[servicios] UPDATE error";
 export const REMOVE_ERROR = "[servicios] REMOVE error";
 
+export const SELECCION = "[servicios] SELECCION";
 
 
 
@@ -59,3 +60,8 @@ export const edit = (modo, item) => ({
     },
     modo: modo,
 })
+
+export const seleccion = (registro) => ({
+    type: SELECCION,
+    registro: registro
+});

@@ -116,15 +116,15 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 				<div id="datos" class="grid row">
 					<div class="grid row" style="align-self: stretch;">
 						<div class="input myImput">
-                            <label class="texto">${this.registro[this.idioma].correo}</label>
+                            <label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].correo}</label>
                             <input class="txt" type="email" id="tallerDescripcion" autocomplete="off" placeholder="${this.registro[this.idioma].correo_ph}" />
                         </div>
 						<div class="input myImput" >
-                            <label class="texto">${this.registro[this.idioma].nombre}</label>
+                            <label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].nombre}</label>
                             <input class="txt" type="text" id="tallerDescripcion" autocomplete="off" placeholder="${this.registro[this.idioma].correo_ph}"  />
                         </div>
                         <div class="input myImput">
-                            <label class="texto">${this.registro[this.idioma].documento}</label>
+                            <label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].documento}</label>
                             <input class="txt" type="number" id="tallerDescripcion" autocomplete="off"  />
                         </div>
                     </div>

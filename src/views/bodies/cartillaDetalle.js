@@ -111,6 +111,7 @@ export class cartillaDetalleScreen extends connect(store, PROVINCIA_TIMESTAMP, L
             }
             #bullet{
                 fill: var(--color-blanco);
+                stroke: var(--color-verde-claro);
             }
 		`;
 	}

@@ -19,11 +19,17 @@ import { middleware as servicios } from "./servicios/middleware";
 import { middleware as cemaps } from "./cemaps/middleware";
 import { middleware as seccionales } from "./seccionales/middleware";
 import { middleware as zonas } from "./zonas/middleware";
+import { middleware as convenios } from "./convenios/middleware";
+import { middleware as programacion } from "./programacion/middleware";
+import { middleware as leyendas } from "./leyendas/middleware";
+import { middleware as edicionesAnteriores } from "./edicionesAnteriores/middleware";
+import { middleware as tvEstrenos } from "./tvEstrenos/middleware";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let mdw = [api, rest, ...ui, ...route, ...menues, ...items, ...titulos, ...banners, ...leftmenu, ...noticias
-    , ...localidades, ...provincias, ...servicios, ...cemaps, ...seccionales, ...zonas];
+    , ...localidades, ...provincias, ...servicios, ...cemaps, ...seccionales, ...zonas, ...convenios, ...programacion,
+...leyendas, ...edicionesAnteriores, ...tvEstrenos];
 
 if (process.env.NODE_ENV !== "production") {
     mdw = [...mdw, logger];

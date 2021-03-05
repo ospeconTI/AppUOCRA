@@ -108,6 +108,7 @@ export class gremioTarjetaIericScreen extends connect(store, MEDIA_CHANGE, SCREE
             }
             #bullet{
                 fill: var(--color-blanco);
+                stroke: var(--color-verde-claro);
             }
 		`;
 	}

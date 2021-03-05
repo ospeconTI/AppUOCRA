@@ -13,11 +13,7 @@ import {
     PATCH_ERROR,
     REMOVE,
     REMOVE_SUCCESS,
-    REMOVE_ERROR,
-    GET_MAPA_ZONA,
-    GET_MAPA_TODOS,
-    GET_MAPA_SUCCESS,
-    GET_MAPA_ERROR
+    REMOVE_ERROR
 
 } from "../programacion/actions";
 
@@ -42,49 +38,14 @@ export const get = ({
     next(action);
     if (action.type === GET) {
         let programacion = [
-        {id:1, nombre:"Córdoba",direccion:"Bartolomé Mitre 3545",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/programacion/cordoba.gif"},
-        {id:1,zonasId:4,longitud:-58.50494533152994,latitud:-34.482248148166086,nombre:"Rio Cuarto",direccion:"Av.Santa Fe 1086",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/programacion/rioCuarto.gif"},
-        {id:1,zonasId:3,longitud:-58.355346773852155,latitud:-34.66656645127035,nombre:"Rio Tercero",direccion:"Estanislao Zeballos 1674",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/programacion/rioTercero.gif"},
-        {id:1,zonasId:100,longitud:-62.26237063137208,latitud:-38.7201042402835,nombre:"Rosario",direccion:"Las Heras 39",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/programacion/rosario.gif"},
-        {id:1,zonasId:1,longitud:-58.392774 ,latitud:-34.614011,nombre:"Santa Fé",direccion:"Av. Belgrano 1864",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/programacion/santaFe.gif"}, 
-        {id:1,zonasId:100,longitud:-58.95768306037708,latitud:-34.157349650331625,nombre:"Villa María",direccion:"Dellepiane 769",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/programacion/villaMaria.gif"},
+            {id:1, nombre:"Tierra Hembra",protagonistas:"Anabella Zoch", genero: "Musica Popular", fecha: "2021-04-10T18:25:43.511Z", valor:0, imagen:"https://www.uocra.net/App/programacionTeatro/tierraHembra.gif", textoFolleto:"Escrita junto a Peteco Carabajal,  es eso, el mensaje de la tierra como mujer al hombre, al ser humano, a su pareja amorosa.  Tierra Hembra es el tiempo que vivimos hoy. Rugen tiempos nuevos, de revolución, de cambio. Cada mañana buscamos renacer la esperanza por sobre todo y creer en nosotros más que nunca. Es el tiempo de la mujer, también el tiempo de la madre tierra, única, maltratada.", imagenFolleto:"https://www.uocra.net/App/programacionTeatro/tierraHembraFolleto.gif",activo: true},
+            {id:2, nombre:"Un canto a Latinoamerica",protagonistas:"La Charo", genero: "Música Popular Latinoamericana", fecha: "2021-04-11T19:25:43.511Z", valor:0, imagen:"https://www.uocra.net/App/programacionTeatro/unCantoALatinoamerica.gif", textoFolleto:"Escrita junto a Peteco Carabajal,  es eso, el mensaje de la tierra como mujer al hombre, al ser humano, a su pareja amorosa.  Tierra Hembra es el tiempo que vivimos hoy. Rugen tiempos nuevos, de revolución, de cambio. Cada mañana buscamos renacer la esperanza por sobre todo y creer en nosotros más que nunca. Es el tiempo de la mujer, también el tiempo de la madre tierra, única, maltratada.", imagenFolleto:"https://www.uocra.net/App/programacionTeatro/tierraHembraFolleto.gif",activo: true},
+            {id:3, nombre:"De Pampa y Puna",protagonistas:"Adelina Villanueva y Lucía Ceresani", genero: "Folklore", fecha: "2021-04-12T20:25:43.511Z", valor:0, imagen:"https://www.uocra.net/App/programacionTeatro/dePampaYPuna.gif", textoFolleto:"Escrita junto a Peteco Carabajal,  es eso, el mensaje de la tierra como mujer al hombre, al ser humano, a su pareja amorosa.  Tierra Hembra es el tiempo que vivimos hoy. Rugen tiempos nuevos, de revolución, de cambio. Cada mañana buscamos renacer la esperanza por sobre todo y creer en nosotros más que nunca. Es el tiempo de la mujer, también el tiempo de la madre tierra, única, maltratada.", imagenFolleto:"https://www.uocra.net/App/programacionTeatro/tierraHembraFolleto.gif",activo: true},
+            {id:4, nombre:"Recopilación",protagonistas:"Liliana Vitale", genero: "Musica Popular", fecha: "2021-04-13T21:25:43.511Z", valor:120.50, imagen:"https://www.uocra.net/App/programacionTeatro/recopilacion.gif", textoFolleto:"Escrita junto a Peteco Carabajal,  es eso, el mensaje de la tierra como mujer al hombre, al ser humano, a su pareja amorosa.  Tierra Hembra es el tiempo que vivimos hoy. Rugen tiempos nuevos, de revolución, de cambio. Cada mañana buscamos renacer la esperanza por sobre todo y creer en nosotros más que nunca. Es el tiempo de la mujer, también el tiempo de la madre tierra, única, maltratada.", imagenFolleto:"https://www.uocra.net/App/programacionTeatro/tierraHembraFolleto.gif",activo: true},
+            {id:5, nombre:"La kermese de los malditos",protagonistas:"", genero: "Teatro", fecha: "2021-04-14T22:25:43.511Z", valor:0, imagen:"https://www.uocra.net/App/programacionTeatro/laKermeseDeLosMalditos.gif", textoFolleto:"Escrita junto a Peteco Carabajal,  es eso, el mensaje de la tierra como mujer al hombre, al ser humano, a su pareja amorosa.  Tierra Hembra es el tiempo que vivimos hoy. Rugen tiempos nuevos, de revolución, de cambio. Cada mañana buscamos renacer la esperanza por sobre todo y creer en nosotros más que nunca. Es el tiempo de la mujer, también el tiempo de la madre tierra, única, maltratada.", imagenFolleto:"https://www.uocra.net/App/programacionTeatro/tierraHembraFolleto.gif",activo: true},
         ]    
         dispatch({
             type: GET_SUCCESS,
-            payload: {
-              send: 1,
-              receive: programacion
-            }
-          })
-        //dispatch(apiRequest(ikePuestosQuery, action.options, GET_SUCCESS, GET_ERROR))
-    }
-};
-
-export const getMapaTodos = ({
-    dispatch, getState
-}) => next => action => {
-    next(action);
-    if (action.type === GET_MAPA_TODOS) {
-        let programacion = getState().programacion.entities;       
-        dispatch({
-            type: GET_MAPA_SUCCESS,
-            payload: {
-                send: 1,
-                receive: programacion
-            }
-          })
-        //dispatch(apiRequest(ikePuestosQuery, action.options, GET_SUCCESS, GET_ERROR))
-    }
-};
-export const getMapaZona = ({
-    dispatch, getState
-}) => next => action => {
-    next(action);
-    if (action.type === GET_MAPA_ZONA) {
-        let arr = getState().programacion.entities;
-        let programacion = arr.filter(a => a.zonasId == action.zonaId);        
-        dispatch({
-            type: GET_MAPA_SUCCESS,
             payload: {
               send: 1,
               receive: programacion
@@ -160,4 +121,4 @@ export const processError = ({
     }
 };
 
-export const middleware = [get, getMapaTodos, getMapaZona ,add, update, patch, remove, processGet, processComand, processError];
+export const middleware = [get, add, update, patch, remove, processGet, processComand, processError];

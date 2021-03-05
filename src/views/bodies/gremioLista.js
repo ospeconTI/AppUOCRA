@@ -72,7 +72,6 @@ export class gremioListaScreen extends connect(store, SECCIONALES_DATOS, MAPA_CL
             .panel {
                 display: grid;
                 height: 89vh;
-                overflow-y: auto;
                 grid-auto-flow: row;
                 grid-gap: .2rem;
                 align-content: start;

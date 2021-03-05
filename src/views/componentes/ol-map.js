@@ -12,12 +12,12 @@ import { html, LitElement, css } from "lit-element";
 import {featureListener} from "../bodies/cemapsMapa"
 import {mapaClick} from "../../../src/redux/ui/actions"
 
-export class OLComponent extends LitElement {
+export class OLComponent extends (LitElement) {
     constructor() {
         super();
 
         this._puntos = [];
-
+        
         //this._puntos.push([-58.4356338, -34.6064996])
         //this._puntos.push([-58.2567308, -34.723714])
 
@@ -27,7 +27,7 @@ export class OLComponent extends LitElement {
                     anchor: [0.5, 0.5],
                     anchorXUnits: "fraction",
                     anchorYUnits: "fraction",
-                    src: 'https://www.uocra.net/App/images/iconConstruirSalud.gif',
+                    src: store.getState().ui.urls.imagenes + 'iconConstruirSalud.gif',
                     scale: [0.1, 0.1],
                 }),
             }),
@@ -36,17 +36,17 @@ export class OLComponent extends LitElement {
                     anchor: [0.5, 0.5],
                     anchorXUnits: "fraction",
                     anchorYUnits: "fraction",
-                    src: 'https://www.uocra.net/App/images/posicion.gif',
+                    src: store.getState().ui.urls.imagenes + 'posicion.gif',
                     scale: [0.1, 0.1],
                 }),
             }),
             casco: new Style({
                 image: new Icon({
-                    anchor: [0.5, 0.5],
+                    anchor: [0.4, 0.4],
                     anchorXUnits: "fraction",
                     anchorYUnits: "fraction",
-                    src: 'https://www.uocra.net/App/images/casco.gif',
-                    scale: [0.25, 0.25],
+                    src: store.getState().ui.urls.imagenes + 'casco.gif',
+                    scale: [0.1, 0.1],
                 }),
             }),
         }
@@ -114,7 +114,24 @@ export class OLComponent extends LitElement {
                   });
             });
 
+            var currZoom = this.map.getView().getZoom();
+            this.map.on('postrender', function(e) {
+                var myZoom = this.getView().getZoom()
+                if (myZoom != currZoom){
+                    var xx = e.map.getLayers();
+                    var iconos = xx.array_[1].values_.source.uidIndex_;
+                    var zoomCoef = myZoom < 6 ? 0.08 : (myZoom+3)/100
+                    for(let key in iconos){
+                        //iconos[key].style_.image_.scale_[0] =  zoomCoef
+                        //iconos[key].style_.image_.scale_[1] =  zoomCoef
+                        iconos[key].style_.image_.setScale([zoomCoef, zoomCoef])
+                    }
+                    currZoom = myZoom;
+                }   
+            });
+
         }
+        
     }
 
     static get styles() {
@@ -197,7 +214,7 @@ export class OLComponent extends LitElement {
                 if (myZoom != currZoom){
                     var xx = e.map.getLayers();
                     var iconos = xx.array_[1].values_.source.uidIndex_;
-                    var zoomCoef = myZoom < 6 ? 0.08 : (myZoom+2)/100
+                    var zoomCoef = myZoom < 6 ? 0.08 : (myZoom+3)/100
                     for(let key in iconos){
                         //iconos[key].style_.image_.scale_[0] =  zoomCoef
                         //iconos[key].style_.image_.scale_[1] =  zoomCoef

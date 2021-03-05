@@ -71,7 +71,7 @@ export class gremioJuventudScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
             #subTituloTexto {
                 width: 80%;
                 align-self: self-start;
-                font-size: var(--font-label-size);
+                font-size: var(--font-header-h2-size);
                 justify-self: center;
                 padding-bottom: 1rem;
             }
@@ -108,6 +108,7 @@ export class gremioJuventudScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
             }
             #bullet{
                 fill: var(--color-blanco);
+                stroke: var(--color-verde-claro);
             }
 		`;
 	}
@@ -135,6 +136,10 @@ export class gremioJuventudScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
                         <p>Además, resulta un lugar de encuentro entre compañeros y compañeras.</p>
                         <p>Si estás inscripto en el curso de LA JU ingresá a la plataforma ahora</p>
                     </div>
+                    <button btn1 @click=${this.laJu} style="width:10rem;justify-self: center;background-color:var(--color-amarillo);">
+                        LA JU
+                    </button>
+                    <div style="padding-top:2rem"></div>
                 </div>
             `;
         }
@@ -152,18 +157,9 @@ export class gremioJuventudScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 			this.update();
 		}
 	}
-    salud(){
-        store.dispatch(goTo("salud"));
+    laJu(){
+        window.open("http://www.88552d2b491975945.temporary.link/moodle/login/index.php",'_blank');
     }
-    cultura(){
-        store.dispatch(goTo("cultura"));
-    }
-	volver() {
-		store.dispatch(goTo("inicial"));
-    }
-    claveRecuperar() {
-		store.dispatch(goTo("claveRecuperar"));
-	}
 	static get properties() {
 		return {
 			mediaSize: {

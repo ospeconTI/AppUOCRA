@@ -10,7 +10,7 @@ html {
 	--font-header-h1-menos-weight: normal;
 
 	--font-header-h2-family: inherit;
-	--font-header-h2-size: 0.7rem;
+	--font-header-h2-size: 0.8rem;
 	--font-header-h2-weight: 600;
 
 	--font-bajada-family: inherit;
@@ -18,10 +18,10 @@ html {
 	--font-bajada-weight: normal;
 
 	--font-label-family: inherit;
-	--font-label-size: 0.6rem;
+	--font-label-size: 0.7rem;
 	--font-label-weight: normal;
 
 	--font-error-family: inherit;
-	--font-error-size: 0.6rem;
+	--font-error-size: 0.7rem;
 	--font-error-weight: normal;
 }

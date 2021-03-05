@@ -39,6 +39,20 @@ import { gremioListaScreen } from "./bodies/gremioLista";
 import { gremioJuventudScreen } from "./bodies/gremioJuventud";
 import { gremioTarjetaIericScreen } from "./bodies/gremioTarjetaIeric";
 import { gremioConvenioScreen } from "./bodies/gremioConvenio";
+import { teatroProgramacionScreen } from "./bodies/teatroProgramacion";
+import { teatroProgramacionDetalleScreen } from "./bodies/teatroProgramacionDetalle";
+import { teatroBoleteriaScreen } from "./bodies/teatroBoleteria";
+import { saludSeguridadConsultasScreen } from "./bodies/saludSeguridadConsultas";
+import { saludSeguridadDenunciaScreen } from "./bodies/saludSeguridadDenuncia";
+import { macroScreen } from "./bodies/macro";
+import { cineNosotrosScreen } from "./bodies/cineNosotros";
+import { cineEdicionScreen } from "./bodies/cineEdicion";
+import { cineTematicasScreen } from "./bodies/cineTematicas";
+import { cineEdicionesAnterioresScreen } from "./bodies/cineEdicionesAnteriores";
+import { webScreen } from "./bodies/web";
+import { cemapCartillaDetalleScreen } from "./bodies/cemapCartillaDetalle";
+import { tvCanalesScreen } from "./bodies/tvCanales";
+import { tvEstrenosScreen } from "./bodies/tvEstrenos";
 
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -83,6 +97,7 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
         return html`
  
             <splash-screen id="splash" class="body"></splash-screen>
+            <web-screen id="web" class="body"></web-screen>
             <inicial-screen id="inicial" class="body"></inicial-screen>
             <sesion-screen id="sesion" class="body"></sesion-screen>
             <claveRecuperar-screen id="claveRecuperar" class="body"></claveRecuperar-screen>
@@ -107,6 +122,19 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <gremiojuventud-screen id="gremioJuventud" class="body"></gremiojuventud-screen>
             <gremiotarjetaieric-screen id="gremioTarjetaIeric" class="body"></gremiotarjetaieric-screen>
             <gremioconvenio-screen id="gremioConvenio" class="body"></gremioconvenio-screen>
+            <teatroprogramacion-screen id="teatroProgramacion" class="body"></teatroprogramacion-screen>
+            <teatroprogramaciondetalle-screen id="teatroProgramacionDetalle" class="body"></teatroprogramaciondetalle-screen>
+            <teatroboleteria-screen id="teatroBoleteria" class="body"></teatroboleteria-screen>
+            <saludseguridadconsultas-screen id="saludSeguridadConsultas" class="body"></saludseguridadconsultas-screen>
+            <saludseguridaddenuncia-screen id="saludSeguridadDenuncia" class="body"></saludseguridaddenuncia-screen>
+            <macro-screen id="macro" class="body"></macro-screen>
+            <cinenosotros-screen id="cineNosotros" class="body"></cinenosotros-screen>
+            <cineedicion-screen id="cineEdicion" class="body"></cineedicion-screen>
+            <cinetematicas-screen id="cineTematicas" class="body"></cinetematicas-screen>
+            <cineedicionesanteriores-screen id="cineEdicionesAnteriores" class="body"></cineedicionesanteriores-screen>
+            <cemapcartilladetalle-screen id="cemapCartillaDetalle" class="body"></cemapcartilladetalle-screen>
+            <tvcanales-screen id="tvCanales" class="body"></tvcanales-screen>
+            <tvestrenos-screen id="tvEstrenos" class="body"></tvestrenos-screen>
 
             <pie-componente class="foot"></pie-componente>
 

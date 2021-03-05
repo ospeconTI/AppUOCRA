@@ -92,11 +92,11 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				</div>
 				<div id="datos" class="grid row">
                         <div class="input">
-                            <label class="texto">${this.sesion[this.idioma].correo}</label>
+                            <label class="texto" style="color:var(--color-blanco)">${this.sesion[this.idioma].correo}</label>
                             <input type="text" id="tallerDescripcion" autocomplete="off" " />
                         </div>
 						<div class="input">
-                            <label class="texto">${this.sesion[this.idioma].password}</label>
+                            <label class="texto" style="color:var(--color-blanco)">${this.sesion[this.idioma].password}</label>
                             <input type="text" id="tallerDescripcion" autocomplete="off" placeholder="" />
                         </div>
 						<button btn1 class="miBoton" @click="${this.iniciar}">${this.sesion[this.idioma].inicio}</button>

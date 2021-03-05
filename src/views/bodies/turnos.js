@@ -80,6 +80,7 @@ export class turnosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
             }
             #bullet{
                 fill: var(--color-blanco);
+                stroke: var(--color-verde-claro);
             }
 		`;
 	}

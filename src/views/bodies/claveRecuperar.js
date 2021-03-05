@@ -94,7 +94,7 @@ export class claveRecuperarScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 				<div id="datos" class="grid fit" style="align-items: stretch;">
 					<div class="grid row" >
                          <div class="input">
-                            <label class="texto">${this.claveRecuperar[this.idioma].password}</label>
+                            <label class="texto" style="color:var(--color-blanco)">${this.claveRecuperar[this.idioma].password}</label>
                             <input type="text" id="tallerDescripcion" autocomplete="off" " />
                         </div>
 						<button btn3 class="miBoton" @click="${this.enviar}">${this.claveRecuperar[this.idioma].enviar}</button>

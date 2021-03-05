@@ -17,7 +17,7 @@ export const PATCH_ERROR = "[localidades] PATCH error";
 export const UPDATE_ERROR = "[localidades] UPDATE error";
 export const REMOVE_ERROR = "[localidades] REMOVE error";
 
-
+export const SELECCION = "[localidades] SELECCION";
 
 
 export const get = (options) => ({
@@ -59,3 +59,8 @@ export const edit = (modo, item) => ({
     },
     modo: modo,
 })
+
+export const seleccion = (registro) => ({
+    type: SELECCION,
+    registro: registro
+});

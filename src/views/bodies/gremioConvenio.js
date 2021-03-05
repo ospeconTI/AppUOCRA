@@ -13,17 +13,16 @@ import {SVGS} from "../../../assets/icons/svgs";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
+const DATOS_CONVENIO = "convenios.timeStamp";
 
-export class gremioConvenioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class gremioConvenioScreen extends connect(store, DATOS_CONVENIO, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
 		this.area = "body";
         this.current = "";
         this.idioma = store.getState().ui.idioma;
-        this.provincia = null
-        this.localidad = null
-        this.servicio = null
+        this.convenios = null
 	}
 
 	static get styles() {
@@ -62,25 +61,40 @@ export class gremioConvenioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
             #subTituloTexto {
                 width: 80%;
                 align-self: self-start;
-                font-size: var(--font-label-size);
+                font-size: var(--font-header-h1-menos-size);
                 justify-self: center;
                 padding-bottom: 1rem;
             }
             #bullet{
                 fill: var(--color-blanco);
+                stroke: var(--color-verde-claro);
             }
             .convenios{
                 grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
                 justify-items: center;
+                grid-gap: 1rem;
             }
             .detalle{
-                background-color: var(--color-error);
-                width:30%;
+                background-color: var(--color-rojo);
+                width:10rem;
+                height: 10rem;
+                border-radius: 1rem;
+                justify-items: center;
+                align-content: center;
+                font-size: var(--font-header-h1-menos-size);
+                text-align: center;
+            }
+            .imagen{
+                cursor: pointer;
+            }
+            .imagen svg{
+                width:3rem;
+                height:3rem;
             }
 		`;
 	}
 	render() {
-        if (true) {
+        if (this.convenios) {
             return html`
                 <div id="cuerpo" class="grid row">
                     <div id="tituloTexto" class="grid">
@@ -88,22 +102,28 @@ export class gremioConvenioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
                         <div id="solicitud">Descarga los convenios</div>
                     </div>
                     <div id="subTituloTexto">
-                        Descargá los <b>Convenios Colectivos de Trabajo</b> vigentes en el ámbito de la industria de la construcción.                    </div>
+                        Descargá los <b>Convenios Colectivos de Trabajo</b> vigentes en el ámbito de la industria de la construcción.                   
                     </div>
                     <div class="grid convenios">
-                        <div class="grid row detalle">
-                        </div>
-                        <div class="grid row detalle">
-                        </div>
-                        <div class="grid row detalle">
-                        </div>
-                        <div class="grid row detalle">
-                        </div>
+                        ${this.convenios.map((item, index) => {
+                                return html `
+                                    <div class="grid row detalle">
+                                        <div .item=${item.archivo} class="imagen" @click="${this.pdf}">${SVGS["CONVENIOS"]}</div>
+                                        <div>${item.nombre}</div>
+                                    </div>
+                                `
+                        })}
+
                     </div>
                 </div>
             `;
         }
 	}
+    pdf(e){
+        let archivo = e.currentTarget.item
+        window.open(archivo,'_blank');
+    }
+
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;
@@ -116,19 +136,11 @@ export class gremioConvenioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 			}
 			this.update();
 		}
+        if (name == DATOS_CONVENIO) {
+            this.convenios = state.convenios.entities
+        }
 	}
-    salud(){
-        store.dispatch(goTo("salud"));
-    }
-    cultura(){
-        store.dispatch(goTo("cultura"));
-    }
-	volver() {
-		store.dispatch(goTo("inicial"));
-    }
-    claveRecuperar() {
-		store.dispatch(goTo("claveRecuperar"));
-	}
+
 	static get properties() {
 		return {
 			mediaSize: {

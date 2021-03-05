@@ -16,6 +16,11 @@ import { reducer as serviciosReducer } from "./servicios/reducer";
 import { reducer as cemapsReducer } from "./cemaps/reducer";
 import { reducer as seccionalesReducer } from "./seccionales/reducer";
 import { reducer as zonasReducer } from "./zonas/reducer";
+import { reducer as conveniosReducer } from "./convenios/reducer";
+import { reducer as programacionReducer } from "./programacion/reducer";
+import { reducer as leyendasReducer } from "./leyendas/reducer";
+import { reducer as edicionesAnterioresReducer } from "./edicionesAnteriores/reducer";
+import { reducer as tvEstrenosReducer } from "./tvEstrenos/reducer";
 
 export const rootReducer = (state = {}, action) => {
     return {
@@ -35,5 +40,10 @@ export const rootReducer = (state = {}, action) => {
         cemaps: cemapsReducer(state.cemaps, action),
         seccionales: seccionalesReducer(state.seccionales, action),
         zonas: zonasReducer(state.zonas, action),
+        convenios: conveniosReducer(state.convenios, action),
+        programacion: programacionReducer(state.programacion, action),
+        leyendas: leyendasReducer(state.leyendas, action),
+        edicionesAnteriores: edicionesAnterioresReducer(state.edicionesAnteriores, action),
+        tvEstrenos: tvEstrenosReducer(state.tvEstrenos, action),
     };
 };

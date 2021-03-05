@@ -9,7 +9,8 @@ import {
     ADD_ERROR,
     REMOVE_SUCCESS,
     REMOVE_ERROR,
-    EDIT
+    EDIT,
+    SELECCION
 } from "../localidades/actions";
 
 
@@ -22,6 +23,7 @@ const initialState = {
     errorTimeStamp: null,
     commandErrorTimeStamp: null,
     editTimeStamp: null,
+    seleccion: null,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -60,7 +62,9 @@ export const reducer = (state = initialState, action) => {
         case ADD_ERROR:
             newState.commandErrorTimeStamp = (new Date()).getTime();
             break;
-
+        case SELECCION:
+            newState.seleccion = action.registro
+            break;
     }
     return newState;
 };

@@ -93,11 +93,11 @@ export class claveCambioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 				<div id="datos" class="grid fit" style="align-items: stretch;">
 					<div class="grid row" >
                          <div class="input">
-                            <label class="texto">${this.claveCambio[this.idioma].password}</label>
+                            <label class="texto" style="color:var(--color-blanco)">${this.claveCambio[this.idioma].password}</label>
                             <input type="text" id="mail1" autocomplete="off" " />
                         </div>
 						<div class="input">
-                            <label class="texto">${this.claveCambio[this.idioma].passwordRepetir}</label>
+                            <label class="texto" style="color:var(--color-blanco)">${this.claveCambio[this.idioma].passwordRepetir}</label>
                             <input type="text" id="mail2" autocomplete="off" " />
                         </div>
 						<button btn3 class="miBoton" @click="${this.enviar}">${this.claveCambio[this.idioma].enviar}</button>
