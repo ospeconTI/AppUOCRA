@@ -65,10 +65,6 @@ export class webScreen extends connect(store, DATOS_CONVENIO, MEDIA_CHANGE, SCRE
                 justify-self: center;
                 padding-bottom: 1rem;
             }
-            #bullet{
-                fill: var(--color-blanco);
-                stroke: var(--color-verde-claro);
-            }
             .convenios{
                 grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
                 justify-items: center;
@@ -116,7 +112,6 @@ export class webScreen extends connect(store, DATOS_CONVENIO, MEDIA_CHANGE, SCRE
 			const SeMuestraEnUnasDeEstasPantallas = "-web-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
-                //this.shadowRoot.querySelector("#myFrame").src = "https://www.youtube.com/UOCRACultura/videos"
 			}
 			this.update();
 		}

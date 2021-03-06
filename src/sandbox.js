@@ -32,6 +32,7 @@ import {get as getProgramacion} from "./redux/programacion/actions"
 import {get as getLeyendas} from "./redux/leyendas/actions"
 import {get as getEdicionesAnteriores} from "./redux/edicionesAnteriores/actions"
 import {get as getEstrenos} from "./redux/tvEstrenos/actions"
+import {get as getGrilla} from "./redux/tvGrilla/actions"
 
 if (process.env.NODE_ENV === "production") {
     registerSW();
@@ -58,6 +59,7 @@ store.dispatch(getLeyendas())
 store.dispatch(getEdicionesAnteriores())
 store.dispatch(getEdicionesAnteriores())
 store.dispatch(getEstrenos())
+store.dispatch(getGrilla())
 
 
 store.dispatch(captureMedia());

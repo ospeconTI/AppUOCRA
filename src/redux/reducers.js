@@ -21,6 +21,7 @@ import { reducer as programacionReducer } from "./programacion/reducer";
 import { reducer as leyendasReducer } from "./leyendas/reducer";
 import { reducer as edicionesAnterioresReducer } from "./edicionesAnteriores/reducer";
 import { reducer as tvEstrenosReducer } from "./tvEstrenos/reducer";
+import { reducer as tvGrillaReducer } from "./tvGrilla/reducer";
 
 export const rootReducer = (state = {}, action) => {
     return {
@@ -45,5 +46,6 @@ export const rootReducer = (state = {}, action) => {
         leyendas: leyendasReducer(state.leyendas, action),
         edicionesAnteriores: edicionesAnterioresReducer(state.edicionesAnteriores, action),
         tvEstrenos: tvEstrenosReducer(state.tvEstrenos, action),
+        tvGrilla: tvGrillaReducer(state.tvGrilla, action),
     };
 };

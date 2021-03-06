@@ -24,12 +24,13 @@ import { middleware as programacion } from "./programacion/middleware";
 import { middleware as leyendas } from "./leyendas/middleware";
 import { middleware as edicionesAnteriores } from "./edicionesAnteriores/middleware";
 import { middleware as tvEstrenos } from "./tvEstrenos/middleware";
+import { middleware as tvGrilla } from "./tvGrilla/middleware";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let mdw = [api, rest, ...ui, ...route, ...menues, ...items, ...titulos, ...banners, ...leftmenu, ...noticias
     , ...localidades, ...provincias, ...servicios, ...cemaps, ...seccionales, ...zonas, ...convenios, ...programacion,
-...leyendas, ...edicionesAnteriores, ...tvEstrenos];
+...leyendas, ...edicionesAnteriores, ...tvEstrenos, ...tvGrilla];
 
 if (process.env.NODE_ENV !== "production") {
     mdw = [...mdw, logger];
