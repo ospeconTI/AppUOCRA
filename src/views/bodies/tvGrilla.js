@@ -11,7 +11,6 @@ import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
 import { OLComponent } from "../componentes/ol-map";
 import {Overlay} from 'ol/Overlay';
-import {getDistance} from "../../libs/funciones";
 
 export const featureListener = function ( event ) {
     console.log("featureListenerCalled");
@@ -19,17 +18,20 @@ export const featureListener = function ( event ) {
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
-const TVESTRENOS_DATOS = "tvEstrenos.timeStamp";
+const TVGRLLIA_DATOS = "tvGrilla.timeStamp";
 
-export class tvGrillaScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class tvGrillaScreen extends connect(store, TVGRLLIA_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
 		this.area = "body";
         this.current = "";
         this.idioma = store.getState().ui.idioma ;
+		this.idiomaGeneric = require('../../../assets/idiomas/generic.json');
 		this.idiomaLista = require('../../../assets/idiomas/tvEstrenos.json');
-        this.estrenos = null
+        this.grilla = null
+        this.dias = []
+        this.seleccion = -1
 
     }
 
@@ -54,16 +56,15 @@ export class tvGrillaScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHANG
                 height:100%;
 				grid-auto-flow: row;
                 background-color: var(--color-blanco);
-                overflow-x: hidden;
-                overflow-y: auto;
 			}
 			#titulo {
                 height:8vh;
-                padding: 3vh 0 0 0;
-                text-align: center;
-                font-size: 3vh;
                 background-color: var(--color-gris);
                 color: var(--color-blanco);
+                grid-gap: 0rem;
+                justify-content: left;
+                align-items: end;
+                padding:0 0 0 0.3rem;
             }
             svg{
                 height:8vh;
@@ -71,21 +72,27 @@ export class tvGrillaScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHANG
             }
             .panel {
                 display: grid;
-                height: auto;
+                height: 76vh;
                 grid-auto-flow: row;
                 grid-gap: .2rem;
                 align-content: start;
+                overflow-x: hidden;
+                overflow-y: auto;
             }
             .notas{
-                width:85vw;
+                width:95vw;
                 justify-self: center;
-                grid-template-rows: auto 1fr;
+                grid-template-columns: auto 1fr;
                 padding: 0 !important;
-                grid-gap: .5rem !important;          
+                grid-gap: .5rem !important;       
+                align-items: stretch;   
+            }
+            .datos{
+                align-content: flex-start;
             }
             .notaDetImg{
-                width: 60vw;
-                height: 40vw;
+                width: 36vw;
+                height: 24vw;
 				background-repeat: no-repeat;
 				background-position: center;
                 background-size: cover ;
@@ -95,7 +102,7 @@ export class tvGrillaScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHANG
             .notaTitTxt{
 				color: var(--primary-color);
                 justify-self: left;
-                font-size: var(--font-header-h1-size) ;
+                font-size: var(--font-header-h1-menos-size) ;
             }
             .notaDetTxt{
 				color: var(--color-gris-oscuro);
@@ -105,51 +112,81 @@ export class tvGrillaScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHANG
             :host([media-size="small"]) .notaDetTxt{
                 font-size: var(--font-label-size);
             }
-            *[hidden] {
-				display: none;
-			}
-            .miBoton{
-                width:6rem !important;
-                background-color:var(--color-verde-claro) !important;
-                font-size: var(--font-bajada-size) !important;
-                border-radius: 1rem !important;
-                color: var(--color-blanco) !important;
+            .eldia{
+                display:grid;
+                font-size: var(--font-header-h1-menos-size);
+                border-radius: .5rem .5rem 0 0;
+                border-top: 1px solid var(--color-gris-oscuro);
+                border-left: 1px solid var(--color-gris-oscuro);
+                border-right: 1px solid var(--color-gris-oscuro);
+                color: var(--color-gris-oscuro);
+                align-content: center;
+                text-align: center;
+            }
+            .diaseleccion{                                                                                                                                                                                                                                                                                               
+                width: 16vw;
+                height: 7vh;
+                border-bottom: 0px solid var(--color-gris-oscuro);
+                background-color: var(--color-blanco);
+                font-weight: 900;
+                cursor: default;
+            }
+            .dianoseleccion{
+                width:13vw;
+                height:6vh;
+                border-bottom: 1px solid var(--color-gris-oscuro);
+                background-color: var(--color-gris-claro);
+                font-weight: normal;
+                cursor: pointer;
             }
 		`;
 	}
 	render() {
-		if (this.estrenos) { return html`
+		if (true) { return html`
 			<div id="cuerpo">
-                <div id="titulo">
-                    ${this.idiomaLista[this.idioma].titulo}
+                <div id="titulo" class="grid column">
+                ${this.dias.map((item, index) => {
+                    return html` 
+                        <div class="eldia ${this.seleccion==item.diaSemana ? 'diaseleccion' : 'dianoseleccion'}" .item=${item}  @click=${this.cambiar} >
+                            <div>
+                                ${this.idiomaGeneric[this.idioma].diasCorto[item.diaSemana]}
+                            </div>
+                            <div >
+                                ${item.diaMes}
+                            </div>
+
+                        </div>
+                    `
+                    })}
                 </div>
-				<div class="panel">
-                    ${this.estrenos.map((item, index) => {
+                <div class="panel">
+                    <div style="padding:.5rem"></div>
+                    ${this.grilla.filter(item => { return item.dia == this.seleccion}).map((item, index) => {
                             return html` 
                                 <div ?hidden="${index==0}">
                                     <hr id="linea" />
                                 </div>
-                                <div class="grid notas" style="align-items: stretch;">
-                                    <div class="grid row" >
-                                        <div class="notaTitTxt">${item.nombre}</div>                       
-                                        <div class="notaDetTxt">${item.descripcion}</div>                       
-                                     </div>                                    
+                                <div class="grid notas">
                                     <div class="notaDetImg" style="background-image: url(${item.imagen})"></div>
-                                    <button btn1 .item="${item.link}" @click=${this.ver} class="miBoton">
-                                        ${this.idiomaLista[this.idioma].boton}
-                                    </button> 
+                                    <div class="grid row datos" >
+                                        <div class="notaDetTxt">${item.hora + ' hs.'}</div>                       
+                                        <div class="notaTitTxt">${item.nombre}</div>                       
+                                        <div class="notaDetTxt">${item.episodio}</div>                       
+                                    </div>                                    
                                 </div>
-  
+
                             `
                     })}
-                    <div style="padding:.5rem"></div>
+                    <div style="padding:1rem"></div>
                 </div>
             </div>
-
 		`;
         }
     }
-    
+    cambiar(e){
+        this.seleccion = e.currentTarget.item.diaSemana
+        this.update()
+    }
     stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;
@@ -158,18 +195,22 @@ export class tvGrillaScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHANG
 			const haveBodyArea = isInLayout(state, this.area);
 			const SeMuestraEnUnasDeEstasPantallas = "-tvGrilla-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) { 
- 				this.hidden = false;
+                this.hidden = false;
+                if (this.seleccion == -1){
+                    for (var i = 0; i < 7; i++) {
+                        var x = new Date()
+                        x.setDate(x.getDate() + i)
+                        this.dias.push({diaSemana: x.getDay() , diaMes: x.getDate()});
+                    }
+                    this.seleccion = (new Date()).getDay()
+                }
                 this.update();
             }
         }
 
-        if (name == TVESTRENOS_DATOS){
-            this.estrenos = state.tvEstrenos.entities
+        if (name == TVGRLLIA_DATOS){
+            this.grilla = state.tvGrilla.entities
         }
-    }
-
-	volver() {
-		store.dispatch(goTo("inicial"));
     }
 
 	static get properties() {
