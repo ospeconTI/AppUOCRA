@@ -123,7 +123,7 @@ export class tvGrillaScreen extends connect(store, TVGRLLIA_DATOS, MEDIA_CHANGE,
                 align-content: center;
                 text-align: center;
             }
-            .diaseleccion{                                                                                                                                                                                                                                                                                               
+            .eldia[activo]{                                                                                                                                                                                                                                                                                               
                 width: 16vw;
                 height: 7vh;
                 border-bottom: 0px solid var(--color-gris-oscuro);
@@ -131,7 +131,7 @@ export class tvGrillaScreen extends connect(store, TVGRLLIA_DATOS, MEDIA_CHANGE,
                 font-weight: 900;
                 cursor: default;
             }
-            .dianoseleccion{
+            .eldia{
                 width:13vw;
                 height:6vh;
                 border-bottom: 1px solid var(--color-gris-oscuro);
@@ -147,7 +147,7 @@ export class tvGrillaScreen extends connect(store, TVGRLLIA_DATOS, MEDIA_CHANGE,
                 <div id="titulo" class="grid column">
                 ${this.dias.map((item, index) => {
                     return html` 
-                        <div class="eldia ${this.seleccion==item.diaSemana ? 'diaseleccion' : 'dianoseleccion'}" .item=${item}  @click=${this.cambiar} >
+                        <div class="eldia" ?activo="${this.seleccion==item.diaSemana}" .item=${item}  @click=${this.cambiar} >
                             <div>
                                 ${this.idiomaGeneric[this.idioma].diasCorto[item.diaSemana]}
                             </div>
