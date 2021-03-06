@@ -39,7 +39,7 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
             #tituloGeneral {
                 height: 6vh;
 				width: 40vw;
-				background-image: url("https://www.uocra.net/App/images/redsocialsinleyenda.gif");
+				background-image: url("https://app.uocra.org/images/redsocialsinleyenda.gif");
 				background-repeat: no-repeat;
 				background-position: center right;
                 background-size: contain;   
@@ -48,7 +48,7 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
             #tituloMoecra {
                 height: 6vh;
 				width: 40vw;
-				background-image: url("https://www.uocra.net/App/images/moecraLogo.gif");
+				background-image: url("https://app.uocra.org/images/moecraLogo.gif");
 				background-repeat: no-repeat;
 				background-position: center right;
                 background-size: contain;   

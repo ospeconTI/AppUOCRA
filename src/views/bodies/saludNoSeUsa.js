@@ -74,7 +74,7 @@ export class saludScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement
 			#titulo {
                 width:100%;
                 height:12vh;
-                background-image: url("https://www.uocra.net/App/images/construirsalud.gif");
+                background-image: url("https://app.uocra.org/images/construirsalud.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: 40% ;

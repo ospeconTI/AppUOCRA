@@ -39,7 +39,7 @@ if (process.env.NODE_ENV === "production") {
     activateSW();
 }
 
-store.dispatch(setUrls("http://localhost:8080/","https://www.uocra.net/App/images/"))
+store.dispatch(setUrls("http://localhost:8080/","https://app.uocra.org/images/"))
 
 store.dispatch(getNoticias())
 store.dispatch(getTitulo())
@@ -56,7 +56,6 @@ store.dispatch(getSeccionales())
 store.dispatch(getConvenios())
 store.dispatch(getProgramacion())
 store.dispatch(getLeyendas())
-store.dispatch(getEdicionesAnteriores())
 store.dispatch(getEdicionesAnteriores())
 store.dispatch(getEstrenos())
 store.dispatch(getGrilla())

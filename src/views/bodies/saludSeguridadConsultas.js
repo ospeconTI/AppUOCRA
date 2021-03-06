@@ -55,7 +55,7 @@ export class saludSeguridadConsultasScreen extends connect(store, MEDIA_CHANGE, 
 			#titulo {
                 width:100%;
                 height:52vw;
-                background-image: url("https://www.uocra.net/App/images/saludSeguridadConsultas.gif");
+                background-image: url("https://app.uocra.org/images/saludSeguridadConsultas.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;

@@ -64,7 +64,7 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
 			#titulo {
                 width:100%;
                 height:52vw;
-                background-image: url("https://www.uocra.net/App/images/cartilla.gif");
+                background-image: url("https://app.uocra.org/images/cartilla.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;

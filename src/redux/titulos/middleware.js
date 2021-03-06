@@ -39,13 +39,13 @@ export const get = ({
     if (action.type === GET) {
         let titulos = [
             {id:1, tipo:"sindicato", titulo: "", activo: true},
-            {id:2, tipo:"salud", titulo: "https://www.uocra.net/App/titulos/construirsalud.gif", activo: true},
-            {id:3, tipo:"cultura", titulo: "https://www.uocra.net/App/titulos/cultura.gif", activo: true},
-            {id:4, tipo:"tv", titulo: "https://www.uocra.net/App/titulos/tv1.gif", activo: true},
-            {id:5, tipo:"moecra", titulo: "https://www.uocra.net/App/titulos/moecraAzulNegroLogo.png", activo: true},
-            {id:6, tipo:"saludSeguridad", titulo: "https://www.uocra.net/App/titulos/saludSeguridad.gif", activo: true},
-            {id:7, tipo:"ivt", titulo: "https://www.uocra.net/App/titulos/ivt.gif", activo: true},
-            {id:8, tipo:"cine", titulo: "https://www.uocra.net/App/titulos/cine.gif", activo: true},
+            {id:2, tipo:"salud", titulo: "https://app.uocra.org/titulos/construirsalud.gif", activo: true},
+            {id:3, tipo:"cultura", titulo: "https://app.uocra.org/titulos/cultura.gif", activo: true},
+            {id:4, tipo:"tv", titulo: "https://app.uocra.org/titulos/tv1.gif", activo: true},
+            {id:5, tipo:"moecra", titulo: "https://app.uocra.org/titulos/moecraAzulNegroLogo.png", activo: true},
+            {id:6, tipo:"saludSeguridad", titulo: "https://app.uocra.org/titulos/saludSeguridad.gif", activo: true},
+            {id:7, tipo:"ivt", titulo: "https://app.uocra.org/titulos/ivt.gif", activo: true},
+            {id:8, tipo:"cine", titulo: "https://app.uocra.org/titulos/cine.gif", activo: true},
         ]
         
         dispatch({

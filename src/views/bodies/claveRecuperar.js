@@ -53,7 +53,7 @@ export class claveRecuperarScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 			#titulo {
 				height: 100%;
 				width: 100%;
-				background-image: url("https://www.uocra.net/App/images/titulo_red_social.png");
+				background-image: url("https://app.uocra.org/images/titulo_red_social.png");
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: auto 10vh;

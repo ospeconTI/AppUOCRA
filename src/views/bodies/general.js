@@ -28,7 +28,7 @@ export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIM
 		this.area = "body";
         this.current = "";
         this.numero = 1
-        this.url = "https://www.uocra.net/App/images/"
+        this.url = "https://app.uocra.org/images/"
         this.titulo = null
         this.banner = null
         this.menu = null

@@ -58,7 +58,7 @@ export class cartillaDetalleScreen extends connect(store, PROVINCIA_TIMESTAMP, L
 			#titulo {
                 width:100%;
                 height:52vw;
-                background-image: url("https://www.uocra.net/App/images/cemapBahiaBlanca.gif");
+                background-image: url("https://app.uocra.org/images/cemapBahiaBlanca.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;

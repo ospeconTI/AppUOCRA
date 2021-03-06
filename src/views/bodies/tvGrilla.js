@@ -18,9 +18,9 @@ export const featureListener = function ( event ) {
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
-const TVGRLLIA_DATOS = "tvGrilla.timeStamp";
+const TVGRILLA_DATOS = "tvGrilla.timeStamp";
 
-export class tvGrillaScreen extends connect(store, TVGRLLIA_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class tvGrillaScreen extends connect(store, TVGRILLA_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -52,7 +52,7 @@ export class tvGrillaScreen extends connect(store, TVGRLLIA_DATOS, MEDIA_CHANGE,
 				display: none;
 			}
 			#cuerpo {
-                display: inline-block;
+                display: grid;
                 height:100%;
 				grid-auto-flow: row;
                 background-color: var(--color-blanco);
@@ -83,9 +83,9 @@ export class tvGrillaScreen extends connect(store, TVGRLLIA_DATOS, MEDIA_CHANGE,
                 width:95vw;
                 justify-self: center;
                 grid-template-columns: auto 1fr;
-                padding: 0 !important;
-                grid-gap: .5rem !important;       
-                align-items: stretch;   
+                padding: 0 ;
+                grid-gap: .5rem;       
+  
             }
             .datos{
                 align-content: flex-start;
@@ -142,12 +142,12 @@ export class tvGrillaScreen extends connect(store, TVGRLLIA_DATOS, MEDIA_CHANGE,
 		`;
 	}
 	render() {
-		if (true) { return html`
+		return html`
 			<div id="cuerpo">
                 <div id="titulo" class="grid column">
                 ${this.dias.map((item, index) => {
-                    return html` 
-                        <div class="eldia" ?activo="${this.seleccion==item.diaSemana}" .item=${item}  @click=${this.cambiar} >
+                    return html`
+                        <div  @click='${this.cambiar}' class="eldia" ?activo="${this.seleccion==item.diaSemana}" .item=${item}>
                             <div>
                                 ${this.idiomaGeneric[this.idioma].diasCorto[item.diaSemana]}
                             </div>
@@ -161,30 +161,29 @@ export class tvGrillaScreen extends connect(store, TVGRLLIA_DATOS, MEDIA_CHANGE,
                 </div>
                 <div class="panel">
                     <div style="padding:.5rem"></div>
-                    ${this.grilla.filter(item => { return item.dia == this.seleccion}).map((item, index) => {
+                        ${this.grilla.filter(item => { return item.dia == this.seleccion}).map((item, index) => {
                             return html` 
                                 <div ?hidden="${index==0}">
                                     <hr id="linea" />
                                 </div>
                                 <div class="grid notas">
-                                    <div class="notaDetImg" style="background-image: url(${item.imagen})"></div>
+                                    <div class="notaDetImg" style="background-image:url('${item.imagen}')"></div>
                                     <div class="grid row datos" >
-                                        <div class="notaDetTxt">${item.hora + ' hs.'}</div>                       
-                                        <div class="notaTitTxt">${item.nombre}</div>                       
-                                        <div class="notaDetTxt">${item.episodio}</div>                       
-                                    </div>                                    
+                                        <div class="notaDetTxt">${item.hora + ' hs.'}</div>
+                                        <div class="notaTitTxt">${item.nombre}</div>
+                                        <div class="notaDetTxt">${item.episodio}</div>
+                                    </div>
                                 </div>
-
-                            `
+                        `
                     })}
                     <div style="padding:1rem"></div>
                 </div>
             </div>
 		`;
-        }
+        
     }
     cambiar(e){
-        this.seleccion = e.currentTarget.item.diaSemana
+        this.seleccion = e.currentTarget.item.diaSemana;
         this.update()
     }
     stateChanged(state, name) {
@@ -208,8 +207,9 @@ export class tvGrillaScreen extends connect(store, TVGRLLIA_DATOS, MEDIA_CHANGE,
             }
         }
 
-        if (name == TVGRLLIA_DATOS){
+        if (name == TVGRILLA_DATOS){
             this.grilla = state.tvGrilla.entities
+            this.update()
         }
     }
 

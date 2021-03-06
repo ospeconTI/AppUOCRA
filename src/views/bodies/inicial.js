@@ -53,7 +53,7 @@ export class inicialScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitEleme
 			#titulo {
 				height: 100%;
 				width: 100%;
-				background-image: url("https://www.uocra.net/App/images/titulo_red_social.png");
+				background-image: url("https://app.uocra.org/images/titulo_red_social.png");
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: auto 14vh;
@@ -73,7 +73,7 @@ export class inicialScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitEleme
                 grid-template-rows: 10% 10% 10% 70%;
 			}
 			#imagen{
-                background-image: url("https://www.uocra.net/App/images/bandera1.gif");
+                background-image: url("https://app.uocra.org/images/bandera1.gif");
 				background-repeat: no-repeat;
 				background-position: bottom;
 				background-size: contain;

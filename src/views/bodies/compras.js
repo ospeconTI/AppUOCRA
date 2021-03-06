@@ -36,15 +36,15 @@ export class comprasScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitEleme
             {Id:"4", titulo:"SANATORIO FRANCHÍN", cuerpo:"<p>Construir Salud, a lo largo de más de 25 años, desarrolló una política de salud basada en la Atención Primaria de la Salud y en la Medicina Familiar como modelo.</p><p>Nuestra Obra Social a través de sus médicos de familia, no sólo trabaja en laatención de las enfermedades sino también, fundamentalmente, en laprevención de las mismas y en la promoción de la salud, mediante las más actualizadas modalidades científicas.</p><p><b>MEDICO DE FAMILIA REFERENTE</b></p><p> El médico de familia es un profesional especialista en personas, que trabaja en equipo, capaz de resolver la mayor parte de los problemas por los que consultan sus pacientes y de realizar interconsultas con los médicos especialistas cuando es necesario</p>"},
         ]
         this.productos=[
-            {Id:"1", producto:"Budin Marmolado", imagen: "https://www.uocra.net/App/images/pBudinMarmolado.gif", presentacion: "200 gr.", precio: "$93,55-"},
-            {Id:"2", producto:"Magdalenas Marmoladas", imagen: "https://www.uocra.net/App/images/pMagdalenasMarmoladas.gif", presentacion: "225 gr.", precio: "$106,05-"},
-            {Id:"3", producto:"Magdalenas Vainilla", imagen: "https://www.uocra.net/App/images/pMagdalenasVainilla.gif", presentacion: "225 gr.", precio: "$98,50-"},
-            {Id:"4", producto:"Magdalena Vainilla Dulce De Leche", imagen: "https://www.uocra.net/App/images/pMagdalenaVainillaDulceDeLeche.gif", presentacion: "1 unidad - 32 gr.", precio: "$121,40-"},
-            {Id:"5", producto:"Pan Artesano Original", imagen: "https://www.uocra.net/App/images/pPanArtesano.gif", presentacion: "500 gr.", precio: "$214,20-"},
-            {Id:"6", producto:"Pan Blanco Familiar", imagen: "https://www.uocra.net/App/images/pPanBlancoFamiliar.gif", presentacion: "550 gr.", precio: "$192,00-"},
-            {Id:"7", producto:"Rapidita Clasicas", imagen: "https://www.uocra.net/App/images/pRapiditaClasicas.gif", presentacion: "10 Unidades - 275 gr.", precio: "$100,00-"},
-            {Id:"8", producto:"Rapidita Integrales", imagen: "https://www.uocra.net/App/images/pRapiditaIntegral.gif", presentacion: "10 Unidades - 275 gr.", precio: "$100,00-"},
-            {Id:"9", producto:"Rapidita Ligth", imagen: "https://www.uocra.net/App/images/pRapiditaLigth.gif", presentacion: "10 Unidades - 275 gr.", precio: "$108,00-"},
+            {Id:"1", producto:"Budin Marmolado", imagen: "https://app.uocra.org/images/pBudinMarmolado.gif", presentacion: "200 gr.", precio: "$93,55-"},
+            {Id:"2", producto:"Magdalenas Marmoladas", imagen: "https://app.uocra.org/images/pMagdalenasMarmoladas.gif", presentacion: "225 gr.", precio: "$106,05-"},
+            {Id:"3", producto:"Magdalenas Vainilla", imagen: "https://app.uocra.org/images/pMagdalenasVainilla.gif", presentacion: "225 gr.", precio: "$98,50-"},
+            {Id:"4", producto:"Magdalena Vainilla Dulce De Leche", imagen: "https://app.uocra.org/images/pMagdalenaVainillaDulceDeLeche.gif", presentacion: "1 unidad - 32 gr.", precio: "$121,40-"},
+            {Id:"5", producto:"Pan Artesano Original", imagen: "https://app.uocra.org/images/pPanArtesano.gif", presentacion: "500 gr.", precio: "$214,20-"},
+            {Id:"6", producto:"Pan Blanco Familiar", imagen: "https://app.uocra.org/images/pPanBlancoFamiliar.gif", presentacion: "550 gr.", precio: "$192,00-"},
+            {Id:"7", producto:"Rapidita Clasicas", imagen: "https://app.uocra.org/images/pRapiditaClasicas.gif", presentacion: "10 Unidades - 275 gr.", precio: "$100,00-"},
+            {Id:"8", producto:"Rapidita Integrales", imagen: "https://app.uocra.org/images/pRapiditaIntegral.gif", presentacion: "10 Unidades - 275 gr.", precio: "$100,00-"},
+            {Id:"9", producto:"Rapidita Ligth", imagen: "https://app.uocra.org/images/pRapiditaLigth.gif", presentacion: "10 Unidades - 275 gr.", precio: "$108,00-"},
         ]
 	}
 
@@ -71,7 +71,7 @@ export class comprasScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitEleme
                 width:100%;
                 height:51vw;
                 margin-top: 1vh;
-                background-image: url("https://www.uocra.net/App/images/bimboBanner.gif");
+                background-image: url("https://app.uocra.org/images/bimboBanner.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;

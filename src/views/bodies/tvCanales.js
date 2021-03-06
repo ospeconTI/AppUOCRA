@@ -49,7 +49,7 @@ export class tvCanalesScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitEle
 			#titulo {
                 width:100%;
                 height:52vw;
-                background-image: url("https://www.uocra.net/App/images/tvCanales.gif");
+                background-image: url("https://app.uocra.org/images/tvCanales.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;

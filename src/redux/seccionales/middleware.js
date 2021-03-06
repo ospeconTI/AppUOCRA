@@ -42,12 +42,12 @@ export const get = ({
     next(action);
     if (action.type === GET) {
         let seccionales = [
-        {id:1,zonasId:1,longitud:-58.416510,latitud:-34.609363, nombre:"Córdoba",direccion:"Bartolomé Mitre 3545",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/seccionales/cordoba.gif"},
-        {id:1,zonasId:4,longitud:-58.50494533152994,latitud:-34.482248148166086,nombre:"Rio Cuarto",direccion:"Av.Santa Fe 1086",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/seccionales/rioCuarto.gif"},
-        {id:1,zonasId:3,longitud:-58.355346773852155,latitud:-34.66656645127035,nombre:"Rio Tercero",direccion:"Estanislao Zeballos 1674",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/seccionales/rioTercero.gif"},
-        {id:1,zonasId:100,longitud:-62.26237063137208,latitud:-38.7201042402835,nombre:"Rosario",direccion:"Las Heras 39",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/seccionales/rosario.gif"},
-        {id:1,zonasId:1,longitud:-58.392774 ,latitud:-34.614011,nombre:"Santa Fé",direccion:"Av. Belgrano 1864",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/seccionales/santaFe.gif"}, 
-        {id:1,zonasId:100,longitud:-58.95768306037708,latitud:-34.157349650331625,nombre:"Villa María",direccion:"Dellepiane 769",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://www.uocra.net/App/seccionales/villaMaria.gif"},
+        {id:1,zonasId:1,longitud:-58.416510,latitud:-34.609363, nombre:"Córdoba",direccion:"Bartolomé Mitre 3545",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://app.uocra.org/seccionales/cordoba.gif"},
+        {id:1,zonasId:4,longitud:-58.50494533152994,latitud:-34.482248148166086,nombre:"Rio Cuarto",direccion:"Av.Santa Fe 1086",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://app.uocra.org/seccionales/rioCuarto.gif"},
+        {id:1,zonasId:3,longitud:-58.355346773852155,latitud:-34.66656645127035,nombre:"Rio Tercero",direccion:"Estanislao Zeballos 1674",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://app.uocra.org/seccionales/rioTercero.gif"},
+        {id:1,zonasId:100,longitud:-62.26237063137208,latitud:-38.7201042402835,nombre:"Rosario",direccion:"Las Heras 39",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://app.uocra.org/seccionales/rosario.gif"},
+        {id:1,zonasId:1,longitud:-58.392774 ,latitud:-34.614011,nombre:"Santa Fé",direccion:"Av. Belgrano 1864",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://app.uocra.org/seccionales/santaFe.gif"}, 
+        {id:1,zonasId:100,longitud:-58.95768306037708,latitud:-34.157349650331625,nombre:"Villa María",direccion:"Dellepiane 769",activo: true, telefono:"011 43827171", telMostrar:"011 43827171/84", mail:"uocra@uocra.org", imagen:"https://app.uocra.org/seccionales/villaMaria.gif"},
         ]    
         dispatch({
             type: GET_SUCCESS,

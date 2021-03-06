@@ -108,7 +108,7 @@ export class cineEdicionesAnterioresScreen extends connect(store, EDICIONESANTER
 		`;
 	}
 	render() {
-        if (true) {
+        if (this.ediciones) {
             return html`
                 <div id="cuerpo" class="grid row">
                     <div style="padding-top:1rem"></div>

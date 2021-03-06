@@ -55,7 +55,7 @@ export class macroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement
 			#titulo {
                 width:100%;
                 height:52vw;
-                background-image: url("https://www.uocra.net/App/images/macro.gif");
+                background-image: url("https://app.uocra.org/images/macro.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;
