@@ -158,7 +158,7 @@ export class gremioJuventudScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 		}
 	}
     laJu(){
-        window.open("http://www.88552d2b491975945.temporary.link/moodle/login/index.php",'_blank');
+        window.open("https://www.88552d2b491975945.temporary.link/moodle/login/index.php",'_blank');
     }
 	static get properties() {
 		return {

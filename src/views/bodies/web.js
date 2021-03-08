@@ -93,7 +93,7 @@ export class webScreen extends connect(store, DATOS_CONVENIO, MEDIA_CHANGE, SCRE
         if (this.convenios) {
             return html`
                 <div id="cuerpo" class="grid row">
-                    <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=UOCRACultura" width="100%" height="100%"></iframe>
+                    <iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=UOCRACultura" width="100%" height="100%"></iframe>
                 </div>
             `;
         }
