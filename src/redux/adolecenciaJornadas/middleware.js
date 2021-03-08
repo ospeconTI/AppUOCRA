@@ -15,7 +15,7 @@ import {
     REMOVE_SUCCESS,
     REMOVE_ERROR
 
-} from "../leftmenu/actions";
+} from "../adolecenciaJornadas/actions";
 
 import {
 
@@ -37,37 +37,17 @@ export const get = ({
 }) => next => action => {
     next(action);
     if (action.type === GET) {
-        let leftmenu = [
-            {id:1,nombre:"MI SINDICATO",imagen: "MISINDICATO" ,accion:"sindicato"},
-            {id:2,nombre:"SALUD",imagen: "SALUD" ,accion:"salud"},
-            {id:3,nombre:"CAPACITACION",imagen: 'CURSOS' ,accion:""},
-            {id:4,nombre:"TEATRO",imagen: 'TEATRO' ,accion:"cultura"},
-            {id:5,nombre:"TELEVISION",imagen: 'TV',accion:"tv"},
-            {id:6,nombre:"CINE",imagen: 'CINE' ,accion:"cine"},
-            {id:7,nombre:"ARTE",imagen: 'ARTE' ,accion:"arte"},
-            {id:8,nombre:"VIVIENDA",imagen: 'VIVIENDA' ,accion:"ivt"},
-            {id:9,nombre:"DEPORTE",imagen: 'DEPORTE' ,accion:""},
-            {id:10,nombre:"TURISMO",imagen: 'TURISMO' ,accion:""},
-            {id:11,nombre:"BENEFICIO",imagen: 'BENEFICIO' ,accion:""},
-            {id:12,nombre:"SECCIONAL",imagen: 'SECCIONAL' ,accion:""},
-            {id:13,nombre:"ADOLECENCIA",imagen: 'ADOLECENCIA' ,accion:"adolecencia"},
-            {id:14,nombre:"ADICCIONES",imagen: 'ADICCIONES' ,accion:"adicciones"},
-            {id:15,nombre:"HOGAR",imagen: 'HOGAR' ,accion:"hogar"},
-            {id:16,nombre:"SEGURIDAD",imagen: 'SEGURIDAD' ,accion:"saludSeguridad"},
-            {id:17,nombre:"MUJERES",imagen: 'MUJERES' ,accion:"mujeres"},
-            {id:18,nombre:"JUVENTUD",imagen: 'JUVENTUDES' ,accion:"moecra"},
-            {id:19,nombre:"COMPRAS",imagen: 'COMPRA' ,accion:"moecra"},
-            {id:20,nombre:"MACRO",imagen: 'MACRO' ,accion:"macro"},
-            {id:21,nombre:"EMPRESA",imagen: 'EMPRESA' ,accion:""},
-            {id:22,nombre:"BOLSA TRABAJO",imagen: 'BOLSATRABAJO' ,accion:""},
-            {id:23,nombre:"DENUNCIA",imagen: 'DENUNCIA' ,accion:""},
-
-        ]      
+        let adolecenciaJornadas = [
+            {id:1, nombre:"VIII Jornada en Adolescencia (2020)",ano: 2020,descripcion:"Deconstruirnos para garantizar Derechos e Identidades.", expositor: "Dr. Juan Carlos Escobar - Médico Pediatra. Dirección de Adolescencias y Juventudes, MSAL.", coordinador: "Dra. María Alejandra Martínez, Ginecóloga Infanto-Juvenil.Dra. Romina Espeche, Médica Pediatra, especialista en Adolescencia.", link:"https://www.youtube.com/embed/xoY26mGB_xA", link:"https://www.youtube.com/embed/xoY26mGB_xA",activo: true},
+            {id:2, nombre:"IX Jornada en Adolescencia (2020)",ano: 2020,descripcion:"Adolescentes ¿enredados? Adolescencia. Reconstrucciones en tiempos de pandemia.", expositor: "Dr. Juan Carlos Escobar - Médico Pediatra. Dirección de Adolescencias y Juventudes, MSAL.", coordinador: "Dra. María Alejandra Martínez, Ginecóloga Infanto-Juvenil.Dra. Romina Espeche, Médica Pediatra, especialista en Adolescencia.", link:"https://www.youtube.com/embed/xoY26mGB_xA",activo: true},
+            {id:1, nombre:"VIII Jornada en Adolescencia (2019)",ano: 2019,descripcion:"Deconstruirnos para garantizar Derechos e Identidades.", expositor: "", coordinador: "", link:"https://www.youtube.com/embed/MlnApkxMxcY",activo: true},
+            {id:2, nombre:"IX Jornada en Adolescencia (2018)",ano: 2018,descripcion:"Adolescentes ¿enredados? Adolescencia. Reconstrucciones en tiempos de pandemia.", expositor: "", link:"https://www.youtube.com/embed/MlnApkxMxcY", coordinador: "",activo: true},
+        ]    
         dispatch({
             type: GET_SUCCESS,
             payload: {
               send: 1,
-              receive: leftmenu
+              receive: adolecenciaJornadas
             }
           })
         //dispatch(apiRequest(ikePuestosQuery, action.options, GET_SUCCESS, GET_ERROR))

@@ -54,6 +54,19 @@ import { cemapCartillaDetalleScreen } from "./bodies/cemapCartillaDetalle";
 import { tvCanalesScreen } from "./bodies/tvCanales";
 import { tvEstrenosScreen } from "./bodies/tvEstrenos";
 import { tvGrillaScreen } from "./bodies/tvGrilla";
+import { adolecencia2020Screen } from "./bodies/adolecencia2020";
+import { adolecenciaOtrasScreen } from "./bodies/adolecenciaOtras";
+import { adiccionesScreen } from "./bodies/adicciones";
+import { hogarInstitucionalScreen } from "./bodies/hogarInstitucional";
+import { hogarDescripcionScreen } from "./bodies/hogarDescripcion";
+import { hogarVideotecaScreen } from "./bodies/hogarVideoteca";
+import { hogarColaboraScreen } from "./bodies/hogarColabora";
+import { mujeresFormacionScreen } from "./bodies/mujeresFormacion";
+import { mujeresConstruccionScreen } from "./bodies/mujeresConstruccion";
+import { arteNosotrosScreen } from "./bodies/arteNosotros";
+import { arteConcursosScreen } from "./bodies/arteConcursos";
+import { arteEdicionScreen } from "./bodies/arteEdicion";
+import { arteEdicionesAnterioresScreen } from "./bodies/arteEdicionesAnteriores";
 
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -137,6 +150,19 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <tvcanales-screen id="tvCanales" class="body"></tvcanales-screen>
             <tvestrenos-screen id="tvEstrenos" class="body"></tvestrenos-screen>
             <tvgrilla-screen id="tvGrilla" class="body"></tvgrilla-screen>
+            <adolecencia2020-screen id="adolecencia2020" class="body"></adolecencia2020-screen>
+            <adolecenciaotras-screen id="adolecenciaOtras" class="body"></adolecenciaotras-screen>
+            <adicciones-screen id="adicciones" class="body"></adicciones-screen>
+            <hogarinstitucional-screen id="hogarInstitucional" class="body"></hogarinstitucional-screen>
+            <hogardescripcion-screen id="hogarDescripcion" class="body"></hogardescripcion-screen>
+            <hogarvideoteca-screen id="hogarVideoteca" class="body"></hogarvideoteca-screen>
+            <hogarcolabora-screen id="hogarColabora" class="body"></hogarcolabora-screen>
+            <mujeresformacion-screen id="mujeresFormacion" class="body"></mujeresformacion-screen>
+            <mujeresconstruccion-screen id="mujeresConstruccion" class="body"></mujeresconstruccion-screen>
+            <artenosotros-screen id="arteNosotros" class="body"></artenosotros-screen>
+            <arteconcursos-screen id="arteConcursos" class="body"></arteconcursos-screen>
+            <arteedicion-screen id="arteEdicion" class="body"></arteedicion-screen>
+            <arteedicionesanteriores-screen id="arteEdicionesAnteriores" class="body"></arteedicionesanteriores-screen>
 
             <pie-componente class="foot"></pie-componente>
 

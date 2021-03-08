@@ -15,7 +15,7 @@ import {
     REMOVE_SUCCESS,
     REMOVE_ERROR
 
-} from "../leftmenu/actions";
+} from "../arteEdicionesAnteriores/actions";
 
 import {
 
@@ -37,37 +37,17 @@ export const get = ({
 }) => next => action => {
     next(action);
     if (action.type === GET) {
-        let leftmenu = [
-            {id:1,nombre:"MI SINDICATO",imagen: "MISINDICATO" ,accion:"sindicato"},
-            {id:2,nombre:"SALUD",imagen: "SALUD" ,accion:"salud"},
-            {id:3,nombre:"CAPACITACION",imagen: 'CURSOS' ,accion:""},
-            {id:4,nombre:"TEATRO",imagen: 'TEATRO' ,accion:"cultura"},
-            {id:5,nombre:"TELEVISION",imagen: 'TV',accion:"tv"},
-            {id:6,nombre:"CINE",imagen: 'CINE' ,accion:"cine"},
-            {id:7,nombre:"ARTE",imagen: 'ARTE' ,accion:"arte"},
-            {id:8,nombre:"VIVIENDA",imagen: 'VIVIENDA' ,accion:"ivt"},
-            {id:9,nombre:"DEPORTE",imagen: 'DEPORTE' ,accion:""},
-            {id:10,nombre:"TURISMO",imagen: 'TURISMO' ,accion:""},
-            {id:11,nombre:"BENEFICIO",imagen: 'BENEFICIO' ,accion:""},
-            {id:12,nombre:"SECCIONAL",imagen: 'SECCIONAL' ,accion:""},
-            {id:13,nombre:"ADOLECENCIA",imagen: 'ADOLECENCIA' ,accion:"adolecencia"},
-            {id:14,nombre:"ADICCIONES",imagen: 'ADICCIONES' ,accion:"adicciones"},
-            {id:15,nombre:"HOGAR",imagen: 'HOGAR' ,accion:"hogar"},
-            {id:16,nombre:"SEGURIDAD",imagen: 'SEGURIDAD' ,accion:"saludSeguridad"},
-            {id:17,nombre:"MUJERES",imagen: 'MUJERES' ,accion:"mujeres"},
-            {id:18,nombre:"JUVENTUD",imagen: 'JUVENTUDES' ,accion:"moecra"},
-            {id:19,nombre:"COMPRAS",imagen: 'COMPRA' ,accion:"moecra"},
-            {id:20,nombre:"MACRO",imagen: 'MACRO' ,accion:"macro"},
-            {id:21,nombre:"EMPRESA",imagen: 'EMPRESA' ,accion:""},
-            {id:22,nombre:"BOLSA TRABAJO",imagen: 'BOLSATRABAJO' ,accion:""},
-            {id:23,nombre:"DENUNCIA",imagen: 'DENUNCIA' ,accion:""},
-
-        ]      
+        let arteEdicionesAnteriores = [
+            {id:1, nombre:"76ta EDICIÓN - 2020",descripcion:"Mujeres y Trabajo. Buenos Aires, Argentina.",imagen:"https://app.uocra.org/arteEdicionesAnteriores/edicion-6.gif",archivo:"https://construircine.com/pdf/catalogo_2020.pdf",activo: true},
+            {id:2, nombre:"5ta EDICIÓN - 2019",descripcion:"El mundo del trabajo. Buenos Aires, Argentina.",imagen:"https://app.uocra.org/arteEdicionesAnteriores/edicion-5.gif",archivo:"https://construyendoarte.com.ar/edicion2019/pdf/libro_testimonial.pdf",activo: true},
+            {id:3, nombre:"3ra y 4ta EDICIÓN - 2018/17",descripcion:"Contra el trabajo infantil y forzoso. Buenos Aires, Argentina.",imagen:"https://app.uocra.org/arteEdicionesAnteriores/edicion-3-4.gif",archivo:"https://construircine.com/pdf/catalogo-construir%20cine-2018-baja.pdf",activo: true},
+        ]
+    
         dispatch({
             type: GET_SUCCESS,
             payload: {
               send: 1,
-              receive: leftmenu
+              receive: arteEdicionesAnteriores
             }
           })
         //dispatch(apiRequest(ikePuestosQuery, action.options, GET_SUCCESS, GET_ERROR))

@@ -65,7 +65,21 @@ export const get = ({
             {id:2, tipo:"cine", nombre:"EDICION 2021",imagen:"CINECARTON", div: "datos", clase:"opc2 blanco fondoGris",goto:"cineEdicion"},
             {id:3, tipo:"cine", nombre:"TEMÁTICAS",imagen:"CAMARA", div: "datos", clase:"opc2 blanco fondoAmarillo",goto:"cineTematicas"},
             {id:4, tipo:"cine", nombre:"EDICIONES ANTERIORES",imagen:"CINEROLLO", div: "datos", clase:"opc3 blanco fondoPrimario",goto:"cineEdicionesAnteriores"},
-            
+            {id:1, tipo:"adolecencia", nombre:"JORNADA 2020",imagen:"", div:"datos2", clase:"opc21 blanco fondoPrimario",goto:"adolecencia2020"},
+            {id:2, tipo:"adolecencia", nombre:"OTRAS JORNADAS",imagen:"", div:"datos2", clase:"opc22 blanco fondoVerde",goto:"adolecenciaOtras"},
+            {id:1, tipo:"adicciones", nombre:"JORNADA 2020",imagen:"", div:"datos2", clase:"opc21 blanco fondoPrimario",goto:"adicciones2020"},
+            {id:2, tipo:"adicciones", nombre:"OTRAS JORNADAS",imagen:"", div:"datos2", clase:"opc22 blanco fondoVerde",goto:"adiccionesOtras"},
+            {id:1, tipo:"hogar", nombre:"INSTITUCIONAL",imagen:"HOGARCORAZON", div: "datos", clase:"opc1 blanco fondoVerde",goto:"hogarInstitucional"},
+            {id:4, tipo:"hogar", nombre:"COLABORÁ",imagen:"COLABORA", div: "datos", clase:"opc2 blanco fondoGris",goto:"hogarColabora"},
+            {id:3, tipo:"hogar", nombre:"VIDEOTECA",imagen:"YOUTUBE", div: "datos", clase:"opc2 blanco fondoAmarillo",goto:"hogarVideoteca"},
+            {id:2, tipo:"hogar", nombre:"HOGAR PELDAÑO",imagen:"HOGARPELDANO", div: "datos", clase:"opc3 blanco fondoPrimario",goto:"hogarDescripcion"},
+            {id:1, tipo:"mujeres", nombre:"NOSOTRAS CONSTRUIMOS",imagen:"", div:"datos2", clase:"opc21 blanco fondoPrimario",goto:"mujeresConstruccion"},
+            {id:2, tipo:"mujeres", nombre:"FORMACIÓN",imagen:"", div:"datos2", clase:"opc22 blanco fondoVerde",goto:"mujeresFormacion"},
+            {id:1, tipo:"arte", nombre:"SOBRE NOSOTROS",imagen:"LAPIZLLAVE", div: "datos", clase:"opc1 blanco fondoVerde",goto:"arteNosotros"},
+            {id:4, tipo:"arte", nombre:"EDICIÓN 2021",imagen:"CUADRO", div: "datos", clase:"opc2 blanco fondoGris",goto:"arteEdicion"},
+            {id:3, tipo:"arte", nombre:"TIPOS DE CONCURSOS",imagen:"PINCELES", div: "datos", clase:"opc2 blanco fondoAmarillo",goto:"arteConcursos"},
+            {id:2, tipo:"arte", nombre:"EDICIONES ANTERIORES",imagen:"ESTATUA", div: "datos", clase:"opc3 blanco fondoPrimario",goto:"arteEdicionesAnteriores"},
+         
         ]
     
         dispatch({

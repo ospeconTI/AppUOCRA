@@ -46,6 +46,11 @@ export const get = ({
             {id:6, tipo:"saludSeguridad", leyenda: "", activo: true},
             {id:7, tipo:"ivt", leyenda: "<div>El <b>Instituto de Vivienda de los Trabajadores</b> (IVT) se creó el 1 de mayo de 1993 con el objetivo de promover y facilitar el acceso a la vivienda por parte de los trabajadores, mediante el adecuado empleo de aportes, ahorros y otros recursos provenientes del sector público y privado, Nacional y extranjero.</div>", activo: true},
             {id:8, tipo:"cine", leyenda: "", activo: true},
+            {id:9, tipo:"adolecencia", leyenda: "", activo: true},
+            {id:10, tipo:"adicciones", leyenda: "", activo: true},
+            {id:11, tipo:"hogar", leyenda: "", activo: true},
+            {id:12, tipo:"mujeres", leyenda: "", activo: true},
+            {id:12, tipo:"arte", leyenda: "", activo: true},
         ]
         
         dispatch({

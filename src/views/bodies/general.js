@@ -187,7 +187,7 @@ export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIM
                 text-align: right; 
             }
             .cuerpoNota{
-                padding: 0  2vw 0 7vw !important;
+                padding: 0  10vw 0 10vw !important;
                 justify-self: flex-start;
                 grid-gap: 0 !important;
             }
@@ -300,7 +300,7 @@ export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIM
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-sindicato-cultura-tv-moecra-salud-saludSeguridad-ivt-cine-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-sindicato-cultura-tv-moecra-salud-saludSeguridad-ivt-cine-adolecencia-adicciones-hogar-mujeres-arte-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
                 this.hidden = false;
                 //store.dispatch(getTitulo());

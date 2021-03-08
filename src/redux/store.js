@@ -25,12 +25,18 @@ import { middleware as leyendas } from "./leyendas/middleware";
 import { middleware as edicionesAnteriores } from "./edicionesAnteriores/middleware";
 import { middleware as tvEstrenos } from "./tvEstrenos/middleware";
 import { middleware as tvGrilla } from "./tvGrilla/middleware";
+import { middleware as adolecenciaJornadas } from "./adolecenciaJornadas/middleware";
+import { middleware as adicciones } from "./adicciones/middleware";
+import { middleware as hogarVideos } from "./hogarVideos/middleware";
+import { middleware as mujeresVideos } from "./mujeresVideos/middleware";
+import { middleware as arteEdicionesAnteriores } from "./arteEdicionesAnteriores/middleware";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let mdw = [api, rest, ...ui, ...route, ...menues, ...items, ...titulos, ...banners, ...leftmenu, ...noticias
     , ...localidades, ...provincias, ...servicios, ...cemaps, ...seccionales, ...zonas, ...convenios, ...programacion,
-...leyendas, ...edicionesAnteriores, ...tvEstrenos, ...tvGrilla];
+...leyendas, ...edicionesAnteriores, ...tvEstrenos, ...tvGrilla, ...adolecenciaJornadas, ...adicciones, ...hogarVideos,
+...mujeresVideos, ...arteEdicionesAnteriores];
 
 if (process.env.NODE_ENV !== "production") {
     mdw = [...mdw, logger];

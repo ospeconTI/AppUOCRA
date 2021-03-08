@@ -33,6 +33,11 @@ import {get as getLeyendas} from "./redux/leyendas/actions"
 import {get as getEdicionesAnteriores} from "./redux/edicionesAnteriores/actions"
 import {get as getEstrenos} from "./redux/tvEstrenos/actions"
 import {get as getGrilla} from "./redux/tvGrilla/actions"
+import {get as getAdolecenciaJornadas} from "./redux/adolecenciaJornadas/actions"
+import {get as getAdicciones} from "./redux/adicciones/actions"
+import {get as getHogarVideos} from "./redux/hogarVideos/actions"
+import {get as getMujeresVideos} from "./redux/mujeresVideos/actions"
+import {get as getArteEdicionesAnteriores} from "./redux/arteEdicionesAnteriores/actions"
 
 if (process.env.NODE_ENV === "production") {
     registerSW();
@@ -59,6 +64,11 @@ store.dispatch(getLeyendas())
 store.dispatch(getEdicionesAnteriores())
 store.dispatch(getEstrenos())
 store.dispatch(getGrilla())
+store.dispatch(getAdolecenciaJornadas())
+store.dispatch(getAdicciones())
+store.dispatch(getHogarVideos())
+store.dispatch(getMujeresVideos())
+store.dispatch(getArteEdicionesAnteriores())
 
 
 store.dispatch(captureMedia());

@@ -22,6 +22,11 @@ import { reducer as leyendasReducer } from "./leyendas/reducer";
 import { reducer as edicionesAnterioresReducer } from "./edicionesAnteriores/reducer";
 import { reducer as tvEstrenosReducer } from "./tvEstrenos/reducer";
 import { reducer as tvGrillaReducer } from "./tvGrilla/reducer";
+import { reducer as adolecenciaJornadasReducer } from "./adolecenciaJornadas/reducer";
+import { reducer as adiccionesReducer } from "./adicciones/reducer";
+import { reducer as hogarVideosReducer } from "./hogarVideos/reducer";
+import { reducer as mujeresVideosReducer } from "./mujeresVideos/reducer";
+import { reducer as arteEdicionesAnterioresReducer } from "./arteEdicionesAnteriores/reducer";
 
 export const rootReducer = (state = {}, action) => {
     return {
@@ -47,5 +52,11 @@ export const rootReducer = (state = {}, action) => {
         edicionesAnteriores: edicionesAnterioresReducer(state.edicionesAnteriores, action),
         tvEstrenos: tvEstrenosReducer(state.tvEstrenos, action),
         tvGrilla: tvGrillaReducer(state.tvGrilla, action),
+        adolecenciaJornadas: adolecenciaJornadasReducer(state.adolecenciaJornadas, action),
+        adicciones: adiccionesReducer(state.adicciones, action),
+        hogarVideos: hogarVideosReducer(state.hogarVideos, action),
+        mujeresVideos: mujeresVideosReducer(state.mujeresVideos, action),
+        arteEdicionesAnteriores: arteEdicionesAnterioresReducer(state.arteEdicionesAnteriores, action),
+        
     };
 };
