@@ -20,8 +20,9 @@ const BANNERS_TIMESTAMP = "banners.timeStamp";
 const MENUES_TIMESTAMP = "menues.timeStamp";
 const ITEMS_TIMESTAMP = "items.timeStamp";
 const LEYENDAS_TIMESTAMP = "leyendas.timeStamp";
+const CURRENT_TIMESTAMP = "screen.timeStamp";
 
-export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIMESTAMP, BANNERS_TIMESTAMP, ITEMS_TIMESTAMP, TITULO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class generalScreen extends connect(store, CURRENT_TIMESTAMP, LEYENDAS_TIMESTAMP, MENUES_TIMESTAMP, BANNERS_TIMESTAMP, ITEMS_TIMESTAMP, TITULO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -34,6 +35,9 @@ export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIM
         this.menu = null
         this.item = null 
         this.leyenda = null 
+        this.intervalo = 0;
+        this.slideIndex = 0;
+
 	}
 
 	static get styles() {
@@ -194,6 +198,30 @@ export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIM
             *[hidden] {
                 display: none;
             }
+
+
+            .mySlides {display: none;}
+            /* Slideshow container */
+            .slideshow-container {
+            position: relative;
+            margin: auto;
+            }
+            /* Fading animation */
+            .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+            }
+            @-webkit-keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+
+            @keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
 		`;
 	}
 	render() {
@@ -206,9 +234,14 @@ export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIM
                     : '' 
                 }
                 ${this.banner[0].banner != "" ? 
-                    html`
-                    <div id="banner" style="background-image: url('${this.banner[0].banner}');">
-                    </div>`
+                    this.banner.map((item) => {
+                        return html` 
+                            <div id="banner" class="mySlides fade" style="background-image: url('');">
+                                <img src="${item.banner}" style="width:100%;max-height:27vh;">
+                            </div>
+                        `
+                    })     
+                                   
                     : '' 
                 }
                 ${this.menu[0].nombre != "" ? 
@@ -295,6 +328,10 @@ export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIM
         }
     }
 	stateChanged(state, name) {
+        if (name == CURRENT_TIMESTAMP && this.intervalo != 0){
+            clearInterval(this.intervalo);
+            this.intervalo=0;
+        }
 		if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;
 			this.hidden = true;
@@ -320,8 +357,32 @@ export class generalScreen extends connect(store, LEYENDAS_TIMESTAMP, MENUES_TIM
                     let arr = state.leyendas.entities;
                     this.leyenda = arr.filter(a => a.tipo == this.current);        
                 }
+                if (this.intervalo == 0){
+                    if (this.shadowRoot.querySelectorAll(".mySlides").length>0){
+                        this.shadowRoot.querySelectorAll(".mySlides")[0].style.display = "grid";
+                    }
+                }
+                if (this.banner.length > 1){ 
+                    this.intervalo = setInterval(() => {
+                        var i;
+                        let slides = this.shadowRoot.querySelectorAll(".mySlides")
+                        var dots = this.shadowRoot.querySelectorAll("dot");
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";  
+                        }
+                        this.slideIndex++;
+                        if (this.slideIndex > slides.length) {this.slideIndex = 1}    
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[this.slideIndex-1].style.display = "grid";  
+                        dots[slideIndex-1].className += " active";
+
+                    }, 3000);
+                }
                 this.update();
                 this.update(); // NO BORRAR,  se necesitan
+
 			}
         }
 
