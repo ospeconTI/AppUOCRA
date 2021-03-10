@@ -63,6 +63,7 @@ export const largeRoute = [
 "3.1.14.2 -beneficiosSeguros",
 "3.1.14.3 -beneficiosSepelios",
 "3.1.14.4 -beneficiosJubilacion",
+"3.1.15 -denunciasFormulario",
 "3.2 -registro", 
 "3.3 -registroMensaje", 
 "3.4 -claveRecuperar",

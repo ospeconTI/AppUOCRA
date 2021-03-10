@@ -60,7 +60,7 @@ export const get = ({
             {id:20,nombre:"MACRO",imagen: 'MACRO' ,accion:"macro"},
             {id:21,nombre:"EMPRESA",imagen: 'EMPRESA' ,accion:""},
             {id:22,nombre:"BOLSA TRABAJO",imagen: 'BOLSATRABAJO' ,accion:""},
-            {id:23,nombre:"DENUNCIA",imagen: 'DENUNCIA' ,accion:""},
+            {id:23,nombre:"DENUNCIA",imagen: 'DENUNCIA' ,accion:"denunciasFormulario"},
 
         ]      
         dispatch({

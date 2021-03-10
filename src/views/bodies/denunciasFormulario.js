@@ -15,7 +15,7 @@ import {SVGS} from "../../../assets/icons/svgs";
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 
-export class saludSeguridadDenunciaScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class denunciasFormularioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -143,8 +143,8 @@ export class saludSeguridadDenunciaScreen extends connect(store, MEDIA_CHANGE, S
                         <div id="bullet2">${SVGS["BULLET"]}</div>                    
                     </div>
                     <div class="input">
-                        <label id="lblClave1">Mensaje</label>
-                        <input id="txtClave1" type="text">
+                        <label id="lblClave1">Mensaje y obra en la que trabaja</label>
+                        <textarea id="txtClave1" type="text" rows="8"></textarea>
                         <label id="lblErrorClave1" error oculto></label>
                     </div>
                     <div id="botones" class="grid">
@@ -173,7 +173,7 @@ export class saludSeguridadDenunciaScreen extends connect(store, MEDIA_CHANGE, S
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-saludSeguridadDenuncia-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-denunciasFormulario-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
 			}
@@ -208,4 +208,4 @@ export class saludSeguridadDenunciaScreen extends connect(store, MEDIA_CHANGE, S
 		};
 	}
 }
-window.customElements.define("saludseguridaddenuncia-screen", saludSeguridadDenunciaScreen);
+window.customElements.define("denunciasformulario-screen", denunciasFormularioScreen);

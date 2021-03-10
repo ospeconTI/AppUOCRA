@@ -70,6 +70,7 @@ import { beneficiosSubsidiosScreen } from "./bodies/benefiosSubsidios";
 import { beneficiosSegurosScreen } from "./bodies/beneficiosSeguros";
 import { beneficiosSepeliosScreen } from "./bodies/beneficiosSepelios";
 import { beneficiosJubilacionScreen } from "./bodies/beneficiosJubilacion";
+import { denunciasFormularioScreen } from "./bodies/denunciasFormulario";
 
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -169,6 +170,7 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <beneficiosseguros-screen id="beneficiosSeguros" class="body"></beneficiosseguros-screen>
             <beneficiossepelios-screen id="beneficiosSepelios" class="body"></beneficiossepelios-screen>
             <beneficiosjubilacion-screen id="beneficiosJubilacion" class="body"></beneficiosjubilacion-screen>
+            <denunciasformulario-screen id="denunciasFormulario" class="body"></denunciasformulario-screen>
 
             <pie-componente class="foot"></pie-componente>
 
