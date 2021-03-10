@@ -79,6 +79,7 @@ export const get = ({
             {id:4, tipo:"arte", nombre:"EDICIÓN 2021",imagen:"CUADRO", div: "datos", clase:"opc2 blanco fondoGris",goto:"arteEdicion"},
             {id:3, tipo:"arte", nombre:"TIPOS DE CONCURSOS",imagen:"PINCELES", div: "datos", clase:"opc2 blanco fondoAmarillo",goto:"arteConcursos"},
             {id:2, tipo:"arte", nombre:"EDICIONES ANTERIORES",imagen:"ESTATUA", div: "datos", clase:"opc3 blanco fondoPrimario",goto:"arteEdicionesAnteriores"},
+            {id:1, tipo:"deportes", nombre:"",imagen:"", div:"", clase:"",goto:""},
          
         ]
     

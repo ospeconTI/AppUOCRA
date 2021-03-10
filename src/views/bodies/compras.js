@@ -139,6 +139,7 @@ export class comprasScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitEleme
 		`;
 	}
 	render() {
+        if (this.productos){
 		return html`
 			<div id="cabecera">
                 <div id="titulo"></div>
@@ -165,6 +166,7 @@ export class comprasScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitEleme
                 `
             })}
 		`;
+        }
     }
     cantidad(e){
         let opcion = e.currentTarget.innerHTML

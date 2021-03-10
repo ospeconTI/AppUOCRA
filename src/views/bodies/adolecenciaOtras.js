@@ -3,7 +3,7 @@
 import { html, LitElement, css } from "lit-element";
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
-import { goTo } from "../../redux/routing/actions";
+import { goTo, goHistoryPrev } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { showWarning} from "../../redux/ui/actions";
 import { button } from "../css/button";
@@ -12,7 +12,9 @@ import { gridLayout } from "../css/gridLayout";
 import { OLComponent } from "../componentes/ol-map";
 import {Overlay} from 'ol/Overlay';
 import {getDistance} from "../../libs/funciones";
-
+import {SVGS} from "../../../assets/icons/svgs";
+import {get as getAdolecenciaJornadas} from "../../redux/adolecenciaJornadas/actions"
+ 
 export const featureListener = function ( event ) {
     console.log("featureListenerCalled");
 }; 
@@ -20,8 +22,9 @@ export const featureListener = function ( event ) {
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const ADOLECENCIAJORNADAS_DATOS = "adolecenciaJornadas.timeStamp";
+const ADOLECENCIAJORNADAS_ERROR = "adolecenciaJornadas.errorTimeStamp";
 
-export class adolecenciaOtrasScreen extends connect(store, ADOLECENCIAJORNADAS_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class adolecenciaOtrasScreen extends connect(store, ADOLECENCIAJORNADAS_DATOS, ADOLECENCIAJORNADAS_ERROR, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -84,6 +87,8 @@ export class adolecenciaOtrasScreen extends connect(store, ADOLECENCIAJORNADAS_D
                 grid-gap: .5rem !important;          
             }
             .notaDetImg{
+                display:grid;
+                position: relative;
                 width: 82vw;
                 height: auto;
                 justify-self: center;
@@ -104,6 +109,23 @@ export class adolecenciaOtrasScreen extends connect(store, ADOLECENCIAJORNADAS_D
             *[hidden] {
 				display: none;
 			}
+            .play{
+                display: inline-block;
+                position: absolute;
+                top: calc(50% - 27px);
+                left: calc(50% - 27px);
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                background-color: var(--color-blanco);
+                opacity:.6;
+                cursor: pointer;
+            }
+            .play svg{
+                width: 56px;
+                height:56px;
+            }
+
 		`;
 	}
 	render() {
@@ -124,7 +146,8 @@ export class adolecenciaOtrasScreen extends connect(store, ADOLECENCIAJORNADAS_D
                                         <div class="notaDetTxt">${item.descripcion}</div>                       
                                      </div>                                    
                                     <div class="notaDetImg">
-                                        <iframe width="100%" height="auto" src=${item.link} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <img width="100%" height="auto" src="https://img.youtube.com/vi/${item.link}/0.jpg">
+                                        <div class="play" .item=${item} @click=${this.ver}>${SVGS["PLAY"]}</div>
                                     </div>
                                 </div>
   
@@ -135,9 +158,25 @@ export class adolecenciaOtrasScreen extends connect(store, ADOLECENCIAJORNADAS_D
             </div>
 
 		`;
+        }else{
+            if (this.current=="adolecenciaOtras"){
+                return html` 
+                    <div class="grid row" style="color:white;align-content: center;text-align: center;border:1px solid white;cursor:point" @click=${this.atras}>
+                        <div style="font-size:6vw;font-weight: 900;">Error de comexíon</div>
+                        <div style="font-size:4vw;">Verifique su conección de datos</div>
+                        <div style="font-size:3vw;">Click para continuar</div>
+                    </div>
+                `
+            }
         }
     }
-    
+    atras(){
+        store.dispatch(goHistoryPrev())
+    }
+    ver(e){
+        //window.open("https://www.youtube.com/watch?v=" + e.currentTarget.item.link, "_blank")
+        location.href = "https://www.youtube.com/watch?v=" + e.currentTarget.item.link
+    }
     stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;
@@ -147,12 +186,17 @@ export class adolecenciaOtrasScreen extends connect(store, ADOLECENCIAJORNADAS_D
 			const SeMuestraEnUnasDeEstasPantallas = "-adolecenciaOtras-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) { 
  				this.hidden = false;
-                this.update();
+                 store.dispatch(getAdolecenciaJornadas())
             }
         }
 
         if (name == ADOLECENCIAJORNADAS_DATOS){
             this.registros = state.adolecenciaJornadas.entities
+            this.update();
+        }
+        if (name == ADOLECENCIAJORNADAS_ERROR){
+            this.registros = null
+            this.update()
         }
     }
 

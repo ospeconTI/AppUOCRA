@@ -154,7 +154,8 @@ export class hogarInstitucionalScreen extends connect(store, MEDIA_CHANGE, SCREE
 		}
 	}
     laJu(){
-        window.open("https://www.88552d2b491975945.temporary.link/moodle/login/index.php",'_blank');
+        //window.open("https://www.88552d2b491975945.temporary.link/moodle/login/index.php",'_blank');
+        location.href = "https://www.88552d2b491975945.temporary.link/moodle/login/index.php"
     }
 	static get properties() {
 		return {

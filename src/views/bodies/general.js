@@ -93,7 +93,7 @@ export class generalScreen extends connect(store, CURRENT_TIMESTAMP, LEYENDAS_TI
                 grid-template-columns: 38vw 38vw;
                 grid-gap: 2vh;
                 justify-self: center;
-                padding: 2vh 0 2vh 0;
+                padding: 0;
             }
             #datos2{
                 display: grid;
@@ -138,6 +138,7 @@ export class generalScreen extends connect(store, CURRENT_TIMESTAMP, LEYENDAS_TI
             }
             .opcTexto{
                 padding: 0 2vw 0 2vw;
+                font-size: 2vh;
             }
             .blanco{
                 color: var(--color-blanco);
@@ -222,6 +223,19 @@ export class generalScreen extends connect(store, CURRENT_TIMESTAMP, LEYENDAS_TI
                 from {opacity: .4} 
                 to {opacity: 1}
             }
+            /* The dots/bullets/indicators */
+            .dot {
+                height: 10px;
+                width: 10px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+            .active {
+                background-color: #717171;
+            }
 		`;
 	}
 	render() {
@@ -240,22 +254,32 @@ export class generalScreen extends connect(store, CURRENT_TIMESTAMP, LEYENDAS_TI
                                 <img src="${item.banner}" style="width:100%;max-height:27vh;">
                             </div>
                         `
-                    })     
-                                   
+                    })                                    
                     : '' 
                 }
+                    <div style="text-align:center;height:20px;width:100%" >
+                    ${this.banner.length > 1 ? 
+                            this.banner.map((item) => {
+                                return html `
+                                    <span class="dot"></span> 
+                                `
+                            })                                  
+                        : '' 
+                    }
+                </div>  
+
                 ${this.menu[0].nombre != "" ? 
                     html`
-				<div id="${this.menu[0].div}">
-                    ${this.menu.filter(item => { return item.tipo == this.current }).map((item) => {
-                        return html` 
-                            <div id="opc${item.id}" class="grid row opc ${item.clase}" .item=${item.goto} @click="${this.ir}">
-                                <div>${SVGS[item.imagen]}</div>
-                                <div class="opcTexto">${item.nombre}</div>
-                            </div>
-                        `
-                    })}
-                </div>
+                    <div id="${this.menu[0].div}">
+                        ${this.menu.filter(item => { return item.tipo == this.current }).map((item) => {
+                            return html` 
+                                <div id="opc${item.id}" class="grid row opc ${item.clase}" .item=${item.goto} @click="${this.ir}">
+                                    <div>${SVGS[item.imagen]}</div>
+                                    <div class="opcTexto">${item.nombre}</div>
+                                </div>
+                            `
+                        })}
+                    </div>
                 `
                 : ''
                 }
@@ -297,7 +321,8 @@ export class generalScreen extends connect(store, CURRENT_TIMESTAMP, LEYENDAS_TI
     }
     ir(e){
         if (e.currentTarget.item.toUpperCase().indexOf("HTTPS:") !== -1){
-            window.open(e.currentTarget.item,'_blank');
+            //window.open(e.currentTarget.item,'_blank');
+            location.href = e.currentTarget.item
         }else{
             store.dispatch(goTo(e.currentTarget.item));
         }
@@ -337,7 +362,7 @@ export class generalScreen extends connect(store, CURRENT_TIMESTAMP, LEYENDAS_TI
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-sindicato-cultura-tv-moecra-salud-saludSeguridad-ivt-cine-adolecencia-adicciones-hogar-mujeres-arte-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-sindicato-cultura-tv-moecra-salud-saludSeguridad-ivt-cine-adolecencia-adicciones-hogar-mujeres-arte-deportes-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
                 this.hidden = false;
                 //store.dispatch(getTitulo());
@@ -361,24 +386,27 @@ export class generalScreen extends connect(store, CURRENT_TIMESTAMP, LEYENDAS_TI
                     if (this.shadowRoot.querySelectorAll(".mySlides").length>0){
                         this.shadowRoot.querySelectorAll(".mySlides")[0].style.display = "grid";
                     }
+                    if (this.shadowRoot.querySelectorAll(".dot").length>0){
+                        this.shadowRoot.querySelectorAll(".dot")[0].className += " active";
+                    }
                 }
-                if (this.banner.length > 1){ 
+                if (this.banner.length > 1 && this.intervalo == 0){ 
                     this.intervalo = setInterval(() => {
                         var i;
                         let slides = this.shadowRoot.querySelectorAll(".mySlides")
-                        var dots = this.shadowRoot.querySelectorAll("dot");
+                        var dots = this.shadowRoot.querySelectorAll(".dot");
                         for (i = 0; i < slides.length; i++) {
                             slides[i].style.display = "none";  
                         }
                         this.slideIndex++;
-                        if (this.slideIndex > slides.length) {this.slideIndex = 1}    
+                        if (this.slideIndex >= slides.length) {this.slideIndex = 0}    
                         for (i = 0; i < dots.length; i++) {
                             dots[i].className = dots[i].className.replace(" active", "");
                         }
-                        slides[this.slideIndex-1].style.display = "grid";  
-                        dots[slideIndex-1].className += " active";
+                        slides[this.slideIndex].style.display = "grid";  
+                        dots[this.slideIndex].className += " active";
 
-                    }, 3000);
+                    }, 5000);
                 }
                 this.update();
                 this.update(); // NO BORRAR,  se necesitan

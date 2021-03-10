@@ -49,7 +49,6 @@ import { cineNosotrosScreen } from "./bodies/cineNosotros";
 import { cineEdicionScreen } from "./bodies/cineEdicion";
 import { cineTematicasScreen } from "./bodies/cineTematicas";
 import { cineEdicionesAnterioresScreen } from "./bodies/cineEdicionesAnteriores";
-import { webScreen } from "./bodies/web";
 import { cemapCartillaDetalleScreen } from "./bodies/cemapCartillaDetalle";
 import { tvCanalesScreen } from "./bodies/tvCanales";
 import { tvEstrenosScreen } from "./bodies/tvEstrenos";
@@ -111,7 +110,6 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
         return html`
  
             <splash-screen id="splash" class="body"></splash-screen>
-            <web-screen id="web" class="body"></web-screen>
             <inicial-screen id="inicial" class="body"></inicial-screen>
             <sesion-screen id="sesion" class="body"></sesion-screen>
             <claveRecuperar-screen id="claveRecuperar" class="body"></claveRecuperar-screen>

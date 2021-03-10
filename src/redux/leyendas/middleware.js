@@ -51,6 +51,7 @@ export const get = ({
             {id:11, tipo:"hogar", leyenda: "", activo: true},
             {id:12, tipo:"mujeres", leyenda: "", activo: true},
             {id:12, tipo:"arte", leyenda: "", activo: true},
+            {id:12, tipo:"deportes", leyenda: "<div>El <b>Campo de Deportes UOCRA</b> es un complejo deportivo ubicado en Ruta de la Tradición (ex Camino de Cintura) 6251, que ofrece un espacio de esparcimiento y divertimento al aire libre en familia o con amigos.</div>", activo: true},
         ]
         
         dispatch({

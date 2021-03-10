@@ -51,6 +51,7 @@ export const get = ({
             {id:11, tipo:"hogar", titulo: "https://app.uocra.org/titulos/hogar.png", activo: true},
             {id:12, tipo:"mujeres", titulo: "https://app.uocra.org/titulos/mujeres.png", activo: true},
             {id:13, tipo:"arte", titulo: "https://app.uocra.org/titulos/arte.png", activo: true},
+            {id:1, tipo:"deportes", titulo: "", activo: true},
         ]
         
         dispatch({

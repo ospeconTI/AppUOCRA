@@ -50,7 +50,7 @@ export const layoutsCSS = css`
     }
     .body {
         grid-area: body;
-        background-color: var(--color-celeste);
+        background-color: var(--primary-color);
         padding: 1rem;
     }
     .foot {

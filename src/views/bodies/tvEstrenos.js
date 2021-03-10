@@ -3,7 +3,7 @@
 import { html, LitElement, css } from "lit-element";
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
-import { goTo } from "../../redux/routing/actions";
+import { goTo, goHistoryPrev } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { showWarning} from "../../redux/ui/actions";
 import { button } from "../css/button";
@@ -12,6 +12,7 @@ import { gridLayout } from "../css/gridLayout";
 import { OLComponent } from "../componentes/ol-map";
 import {Overlay} from 'ol/Overlay';
 import {getDistance} from "../../libs/funciones";
+import {get as getEstrenos} from "../../redux/tvEstrenos/actions"
 
 export const featureListener = function ( event ) {
     console.log("featureListenerCalled");
@@ -20,8 +21,9 @@ export const featureListener = function ( event ) {
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const TVESTRENOS_DATOS = "tvEstrenos.timeStamp";
+const TVESTRENOS_ERROR = "tvEstrenos.errorTimeStamp";
 
-export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, TVESTRENOS_ERROR, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -147,9 +149,21 @@ export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHA
             </div>
 
 		`;
+        }else{
+            if (this.current=="tvEstrenos"){
+                return html` 
+                    <div class="grid row" style="color:white;align-content: center;text-align: center;border:1px solid white;cursor:point" @click=${this.atras}>
+                        <div style="font-size:6vw;font-weight: 900;">Error de comexíon</div>
+                        <div style="font-size:4vw;">Verifique su conección de datos</div>
+                        <div style="font-size:3vw;">Click para continuar</div>
+                    </div>
+                `
+            }
         }
     }
-    
+    atras(){
+        store.dispatch(goHistoryPrev())
+    }
     stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;
@@ -159,12 +173,18 @@ export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, MEDIA_CHA
 			const SeMuestraEnUnasDeEstasPantallas = "-tvEstrenos-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) { 
  				this.hidden = false;
-                this.update();
+                 store.dispatch(getEstrenos())
+
             }
         }
 
         if (name == TVESTRENOS_DATOS){
             this.estrenos = state.tvEstrenos.entities
+            this.update();
+        }
+        if (name == TVESTRENOS_ERROR){
+            this.estrenos = null
+            this.update();
         }
     }
 

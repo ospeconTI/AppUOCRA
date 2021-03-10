@@ -3,7 +3,7 @@
 import { html, LitElement, css } from "lit-element";
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
-import { goTo } from "../../redux/routing/actions";
+import { goTo, goHistoryPrev } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { showWarning} from "../../redux/ui/actions";
 import { button } from "../css/button";
@@ -13,6 +13,8 @@ import { OLComponent } from "../componentes/ol-map";
 import {Overlay} from 'ol/Overlay';
 import {reserva} from '../../redux/programacion/actions'
 import {SVGS} from "../../../assets/icons/svgs";
+import {get as getProgramacion} from "../../redux/programacion/actions"
+import TileSource from "ol/source/Tile";
 
 export const featureListener = function ( event ) {
     console.log("featureListenerCalled");
@@ -21,8 +23,8 @@ export const featureListener = function ( event ) {
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const PROGRAMACION_DATOS = "programacion.timeStamp";
-
-export class teatroProgramacionScreen extends connect(store, PROGRAMACION_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
+const PROGRAMACION_ERROR = "programacion.errorTimeStamp";
+export class teatroProgramacionScreen extends connect(store, PROGRAMACION_ERROR, PROGRAMACION_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -148,10 +150,22 @@ export class teatroProgramacionScreen extends connect(store, PROGRAMACION_DATOS,
             </div>
 
 		`;
+        }else{
+            if (this.current=="teatroProgramacion"){
+                return html` 
+                    <div class="grid row" style="background-color:var(--primary-color);color:white;align-content: center;text-align: center;border:1px solid white;cursor:point" @click=${this.atras}>
+                        <div style="font-size:6vw;font-weight: 900;">Error de comexíon</div>
+                        <div style="font-size:4vw;">Verifique su conección de datos</div>
+                        <div style="font-size:3vw;">Click para continuar</div>
+                    </div>
+                `
+            }
         }
     }
 
- 
+    atras(){
+        store.dispatch(goHistoryPrev())
+    }
     detalle(e){
         store.dispatch(reserva(e.currentTarget.item))
         store.dispatch(goTo("teatroProgramacionDetalle"));
@@ -171,13 +185,18 @@ export class teatroProgramacionScreen extends connect(store, PROGRAMACION_DATOS,
 			const haveBodyArea = isInLayout(state, this.area);
 			const SeMuestraEnUnasDeEstasPantallas = "-teatroProgramacion-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
+                store.dispatch(getProgramacion())
  				this.hidden = false;
-                this.update();
             }
         }
 
         if (name == PROGRAMACION_DATOS){
             this.programacion = state.programacion.entities
+            this.update();
+        }
+        if (name == PROGRAMACION_ERROR){
+            this.programacion = null
+            this.update()
         }
     }
 

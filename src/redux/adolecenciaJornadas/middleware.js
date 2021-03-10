@@ -38,10 +38,11 @@ export const get = ({
     next(action);
     if (action.type === GET) {
         let adolecenciaJornadas = [
-            {id:1, nombre:"VIII Jornada en Adolescencia (2020)",ano: 2020,descripcion:"Deconstruirnos para garantizar Derechos e Identidades.", expositor: "Dr. Juan Carlos Escobar - Médico Pediatra. Dirección de Adolescencias y Juventudes, MSAL.", coordinador: "Dra. María Alejandra Martínez, Ginecóloga Infanto-Juvenil.Dra. Romina Espeche, Médica Pediatra, especialista en Adolescencia.", link:"https://www.youtube.com/embed/xoY26mGB_xA", link:"https://www.youtube.com/embed/xoY26mGB_xA",activo: true},
-            {id:2, nombre:"IX Jornada en Adolescencia (2020)",ano: 2020,descripcion:"Adolescentes ¿enredados? Adolescencia. Reconstrucciones en tiempos de pandemia.", expositor: "Dr. Juan Carlos Escobar - Médico Pediatra. Dirección de Adolescencias y Juventudes, MSAL.", coordinador: "Dra. María Alejandra Martínez, Ginecóloga Infanto-Juvenil.Dra. Romina Espeche, Médica Pediatra, especialista en Adolescencia.", link:"https://www.youtube.com/embed/xoY26mGB_xA",activo: true},
-            {id:1, nombre:"VIII Jornada en Adolescencia (2019)",ano: 2019,descripcion:"Deconstruirnos para garantizar Derechos e Identidades.", expositor: "", coordinador: "", link:"https://www.youtube.com/embed/MlnApkxMxcY",activo: true},
-            {id:2, nombre:"IX Jornada en Adolescencia (2018)",ano: 2018,descripcion:"Adolescentes ¿enredados? Adolescencia. Reconstrucciones en tiempos de pandemia.", expositor: "", link:"https://www.youtube.com/embed/MlnApkxMxcY", coordinador: "",activo: true},
+            {id:1, nombre:"VIII Jornada en Adolescencia (2020)",ano: 2020,descripcion:"Deconstruirnos para garantizar Derechos e Identidades.", expositor: "Dr. Juan Carlos Escobar - Médico Pediatra. Dirección de Adolescencias y Juventudes, MSAL.", coordinador: "Dra. María Alejandra Martínez, Ginecóloga Infanto-Juvenil.Dra. Romina Espeche, Médica Pediatra, especialista en Adolescencia.", link:"xoY26mGB_xA", activo: true},
+            {id:2, nombre:"IX Jornada en Adolescencia (2020)",ano: 2020,descripcion:"Adolescentes ¿enredados? Adolescencia. Reconstrucciones en tiempos de pandemia.", expositor: "Dr. Juan Carlos Escobar - Médico Pediatra. Dirección de Adolescencias y Juventudes, MSAL.", coordinador: "Dra. María Alejandra Martínez, Ginecóloga Infanto-Juvenil.Dra. Romina Espeche, Médica Pediatra, especialista en Adolescencia.", link:"xoY26mGB_xA",activo: true},
+            {id:1, nombre:"VIII Jornada en Adolescencia (2019)",ano: 2019,descripcion:"Deconstruirnos para garantizar Derechos e Identidades.", expositor: "", coordinador: "", link:"MlnApkxMxcY",activo: true},
+            {id:2, nombre:"IX Jornada en Adolescencia (2018)",ano: 2018,descripcion:"Adolescentes ¿enredados? Adolescencia. Reconstrucciones en tiempos de pandemia.", expositor: "", coordinador: "", link:"MlnApkxMxcY", activo: true},
+        
         ]    
         dispatch({
             type: GET_SUCCESS,

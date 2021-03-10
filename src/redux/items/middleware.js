@@ -70,6 +70,9 @@ export const get = ({
             {Id:"31", tipo:"mujeres", titulo:"VOS PODÉS AYUDAR", cuerpo:"<p>Ver PROTOCOLO</p>"},
             {Id:"32", tipo:"mujeres", titulo:"LÍNEAS DE CONTENCIÓN ", cuerpo:"<p>Construir Salud 0800 – 222- 0123</p>"},
             {Id:"33", tipo:"mujeres", titulo:"ESCRIBI TU CONSULTA", cuerpo:"<p>Hace click en el link y envia por mail tu consulta <b><a href='mailto:adolecencia@uocra.org?subject=Consulta por Adicciones'>ENVIAR MAIL</a></b></p>"},
+            {Id:"34", tipo:"deportes", titulo:"INSTALACIONES Y SERVICIOS", cuerpo:"<p><LI>Espacios con Mesas y Sombrillas</LI></p><p><LI>Dos canchas de Fútbol 11</LI></p><p><LI>Vestuarios con Duchas y Guardarropas</LI></p><p><LI>Confitería</LI></p><p><LI>Estacionamiento para 300 vehículos</LI></p>"},
+            {Id:"35", tipo:"deportes", titulo:"REQUISITOS Y DOCUMENTACIÓN", cuerpo:"<p>Pueden acceder de manera gratuita afiliados al sindicato y su grupo familiar, empleados de UOCRA y OSPECON. En todos los casos deberán presentar recibo de sueldo (con aporte sindical para afiliados) y DNI.</p><p>*Disponibilidad sujeta a las disposiciones oficiales de circulación vinculadas a la pandemia de Covid19.</p>"},
+            {Id:"36", tipo:"deportes", titulo:"ESCRIBI TU CONSULTA", cuerpo:"<p>Hace click en el link y envia por mail tu consulta <b><a href='mailto:adolecencia@uocra.org?subject=Consulta por Adicciones'>ENVIAR MAIL</a></b></p>"},
 
         ]
 

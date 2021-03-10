@@ -12,10 +12,10 @@ export const gestures = (gestureTarget, method, context) => {
 
     const addEvents = () => {
         if (!gestureTarget.__hasGestures) {
-            gestureTarget.addEventListener("touchstart", touchstart, false);
-            gestureTarget.addEventListener("touchmove", touchmove, false);
-            gestureTarget.addEventListener("touchcancel", touchcancel, false);
-            gestureTarget.addEventListener("touchend", touchend, false);
+            gestureTarget.addEventListener("touchstart", touchstart, {passive: false});
+            gestureTarget.addEventListener("touchmove", touchmove, {passive: false});
+            gestureTarget.addEventListener("touchcancel", touchcancel, {passive: false});
+            gestureTarget.addEventListener("touchend", touchend, {passive: false});
             gestureTarget.addEventListener("gestures", method.bind(context));
             gestureTarget.__hasGestures = true;
         }

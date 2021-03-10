@@ -3,19 +3,21 @@
 import { html, LitElement, css } from "lit-element";
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
-import { goTo } from "../../redux/routing/actions";
+import { goTo, goHistoryPrev } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { menuActivar, showWarning} from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
 import {SVGS} from "../../../assets/icons/svgs";
+import {get as getNoticias} from "../../redux/noticias/actions"
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const NOTICIAS_TIMESTAMP = "noticias.timeStamp";
+const NOTICIAS_ERRORTIMESTAMP = "noticias.errorTimeStamp";
 
-export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS_ERRORTIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -199,8 +201,21 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, MEDIA_CH
                     </div>
                 </div>
             `;
+        }else{
+            if (this.current=="main"){
+                return html` 
+                    <div class="grid row" style="background-color:var(--primary-color);color:white;align-content: center;text-align: center;border:1px solid white;cursor:point" @click=${this.atras}>
+                        <div style="font-size:6vw;font-weight: 900;">Error de comexíon</div>
+                        <div style="font-size:4vw;">Verifique su conección de datos</div>
+                        <div style="font-size:3vw;">Click para refrescar</div>
+                    </div>
+                `
+            }
         }
 	}
+    atras(){
+        store.dispatch(goTo("main"))
+    }
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;
@@ -210,12 +225,16 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, MEDIA_CH
 			const SeMuestraEnUnasDeEstasPantallas = "-main-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
+                store.dispatch(getNoticias())
 			}
-			this.update();
 		}
         if (name == NOTICIAS_TIMESTAMP){
             this.noticia = state.noticias.entities
-            let rr = 0
+            this.update();
+        }
+        if (name == NOTICIAS_ERRORTIMESTAMP){
+            this.noticia = null
+            this.update();
         }
 
 	}

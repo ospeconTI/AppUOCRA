@@ -57,6 +57,7 @@ export const largeRoute = [
 "3.1.12.2 -arteEdicion",
 "3.1.12.3 -arteConcursos",
 "3.1.12.4 -arteEdicionesAnteriores",
+"3.1.13 -deportes",
 "3.2 -registro", 
 "3.3 -registroMensaje", 
 "3.4 -claveRecuperar",
@@ -64,6 +65,5 @@ export const largeRoute = [
 "3.6 -claveCambio",
 "3.7 -claveCambioMensaje",
 "4 -notificaciones",
-"5 -web",
 
 ];

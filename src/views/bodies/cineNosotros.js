@@ -54,8 +54,10 @@ export class cineNosotrosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(Lit
 			}
             #titulo {
                 position: relative;
-                width:100%;
-                height:52vw;
+                width:100vw;
+                height:auto;
+                display:grid;
+                padding:0;
             }
             #titulo iframe {
                 position: absolute;
@@ -130,6 +132,22 @@ export class cineNosotrosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(Lit
                 fill: var(--color-blanco);
                 stroke: var(--color-verde-claro);
             }
+            .play{
+                display: inline-block;
+                position: absolute;
+                top: calc(50% - 27px);
+                left: calc(50% - 27px);
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                background-color: var(--color-blanco);
+                opacity:.6;
+                cursor: pointer;
+            }
+            .play svg{
+                width: 56px;
+                height:56px;
+            }
 		`;
 	}
 	render() {
@@ -137,7 +155,8 @@ export class cineNosotrosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(Lit
             return html`
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" class="grid column">
-                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/REbRQNQ38dA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
+                        <img width="100%" height="auto" src="https://img.youtube.com/vi/REbRQNQ38dA/0.jpg">
+                        <div class="play" @click=${this.ver}>${SVGS["PLAY"]}</div>
                     </div>
                     <div style="padding-top:1rem"></div>
                     <div id="subTituloTexto" class="grid" style="padding:0; grid-template-columns:auto 1fr">
@@ -154,6 +173,11 @@ export class cineNosotrosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(Lit
             `;
         }
 	}
+    ver(e){
+        //window.open("https://www.youtube.com/watch?v=REbRQNQ38dA")
+        location.href = "https://www.youtube.com/watch?v=REbRQNQ38dA"
+
+    }
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;

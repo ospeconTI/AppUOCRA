@@ -46,7 +46,7 @@ export const get = ({
             {id:6,nombre:"CINE",imagen: 'CINE' ,accion:"cine"},
             {id:7,nombre:"ARTE",imagen: 'ARTE' ,accion:"arte"},
             {id:8,nombre:"VIVIENDA",imagen: 'VIVIENDA' ,accion:"ivt"},
-            {id:9,nombre:"DEPORTE",imagen: 'DEPORTE' ,accion:""},
+            {id:9,nombre:"DEPORTE",imagen: 'DEPORTE' ,accion:"deportes"},
             {id:10,nombre:"TURISMO",imagen: 'TURISMO' ,accion:""},
             {id:11,nombre:"BENEFICIO",imagen: 'BENEFICIO' ,accion:""},
             {id:12,nombre:"SECCIONAL",imagen: 'SECCIONAL' ,accion:""},

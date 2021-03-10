@@ -323,15 +323,15 @@ export const screenLayuts = {
         medium: HEADER_BODY_FOOT,
         large: HEADER_BODY_FOOT,
     },
+    deportes: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
+    },
     bonos: {
         small: HEADER_BODY,
         medium: HEADER_BODY,
         large: HEADER_BODY,
-    },
-    web: {
-        small: HEADER_BODY_FOOT,
-        medium: HEADER_BODY_FOOT,
-        large: HEADER_BODY_FOOT,
     },
 };
 

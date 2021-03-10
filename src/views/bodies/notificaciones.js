@@ -109,6 +109,7 @@ export class notificacionesScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 		`;
 	}
 	render() {
+        if (this.notificacion){
 		return html`
 			<div id="cuerpo">
 				<div id="titulo">${this.notificaciones[this.idioma].titulo}</div>
@@ -132,6 +133,7 @@ export class notificacionesScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
                 </div>
 			</div>
 		`;
+        }
     }
     ir(e){
         let item = e.currentTarget.item;

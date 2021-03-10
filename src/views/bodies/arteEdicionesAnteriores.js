@@ -3,17 +3,19 @@
 import { html, LitElement, css } from "lit-element";
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
-import { goTo } from "../../redux/routing/actions";
+import { goTo, goHistoryPrev } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { showWarning} from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
 import {SVGS} from "../../../assets/icons/svgs";
+import {get as getArteEdicionesAnteriores} from "../../redux/arteEdicionesAnteriores/actions"
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const EDICIONESANTERIORES_DATOS = "arteEdicionesAnteriores.timeStamp";
+const EDICIONESANTERIORES_ERROR = "arteEdicionesAnteriores.errorTimeStamp";
 
 export class arteEdicionesAnterioresScreen extends connect(store, EDICIONESANTERIORES_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
@@ -136,8 +138,21 @@ export class arteEdicionesAnterioresScreen extends connect(store, EDICIONESANTER
                     <div style="padding-top:2rem"></div>
                 </div>
             `;
+        }else{
+            if (this.current=="arteEdicionesAnteriores"){
+                return html` 
+                    <div class="grid row" style="background-color:var(--primary-color);color:white;align-content: center;text-align: center;border:1px solid white;cursor:point" @click=${this.atras}>
+                        <div style="font-size:6vw;font-weight: 900;">Error de comexíon</div>
+                        <div style="font-size:4vw;">Verifique su conección de datos</div>
+                        <div style="font-size:3vw;">Click para continuar</div>
+                    </div>
+                `
+            }
         }
 	}
+    atras(){
+        store.dispatch(goHistoryPrev())
+    }
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;
@@ -147,16 +162,23 @@ export class arteEdicionesAnterioresScreen extends connect(store, EDICIONESANTER
 			const SeMuestraEnUnasDeEstasPantallas = "-arteEdicionesAnteriores-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
+                store.dispatch(getArteEdicionesAnteriores())
 			}
-			this.update();
 		}
         if (name == EDICIONESANTERIORES_DATOS){
             this.ediciones = state.arteEdicionesAnteriores.entities
+            this.update();
+        }
+        if (name == EDICIONESANTERIORES_ERROR){
+            this.ediciones = null
+            this.update()
         }
 	}
     pdf(e){
         let archivo = e.currentTarget.item.archivo
-        window.open(archivo,'_blank');
+        //window.open(archivo,'_blank');
+        location.href = archivo
+
     }
 	static get properties() {
 		return {
