@@ -15,11 +15,6 @@ import { register as registerSW, activate as activateSW } from "./libs/serviceWo
 
 import {urls as setUrls} from "./redux/ui/actions"
 
-import {get as getTitulo} from "./redux/titulos/actions"
-import {get as getBanners} from "./redux/banners/actions"
-import {get as getMenues} from "./redux/menues/actions"
-import {get as getItems} from "./redux/items/actions"
-import {get as getLeyendas} from "./redux/leyendas/actions"
 import {get as getLeftMenu} from "./redux/leftmenu/actions"
 import {get as getLocalidades} from "./redux/localidades/actions"
 import {get as getProvincias} from "./redux/provincias/actions"
@@ -33,13 +28,8 @@ if (process.env.NODE_ENV === "production") {
     activateSW();
 }
 
-store.dispatch(setUrls("http://localhost:8080/","https://app.uocra.org/images/"))
+store.dispatch(setUrls("http://app.uocra.org/","https://app.uocra.org/images/"))
 
-store.dispatch(getTitulo())
-store.dispatch(getBanners())
-store.dispatch(getMenues())
-store.dispatch(getItems())
-store.dispatch(getLeyendas())
 store.dispatch(getLeftMenu())
 store.dispatch(getLocalidades())
 store.dispatch(getProvincias())

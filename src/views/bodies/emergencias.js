@@ -25,9 +25,7 @@ export class emergenciasScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCAL
         this.current = "";
         this.idioma = store.getState().ui.idioma;
         this.emergencia = require('../../../assets/idiomas/emergencias.json');
-        this.provincia = null
-        this.localidad = null
-        this.servicio = null
+
 	}
 
 	static get styles() {

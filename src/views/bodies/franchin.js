@@ -13,20 +13,14 @@ import {SVGS} from "../../../assets/icons/svgs";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
-const PROVINCIA_TIMESTAMP = "provincias.timeStamp";
-const LOCALIDAD_TIMESTAMP = "localidades.timeStamp";
-const SERVICIO_TIMESTAMP = "servicios.timeStamp";
 
-export class franchinScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCALIDAD_TIMESTAMP, SERVICIO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class franchinScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
 		this.area = "body";
         this.current = "";
         this.idioma = store.getState().ui.idioma;
-        this.provincia = null
-        this.localidad = null
-        this.servicio = null
 	}
 
 	static get styles() {
@@ -116,7 +110,7 @@ export class franchinScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCALIDA
 		`;
 	}
 	render() {
-        if (this.provincia) {
+        if (true) {
             return html`
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" class="grid column">
@@ -170,15 +164,6 @@ export class franchinScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCALIDA
 			}
 			this.update();
 		}
-        if (name == PROVINCIA_TIMESTAMP){
-            this.provincia = state.provincias.entities
-        }
-        if (name == LOCALIDAD_TIMESTAMP){
-            this.localidad = state.localidades.entities
-        }
-        if (name == PROVINCIA_TIMESTAMP){
-            this.servicio = state.servicios.entities
-        }
 
 	}
     salud(){

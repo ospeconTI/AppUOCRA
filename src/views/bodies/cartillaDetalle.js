@@ -13,11 +13,9 @@ import {SVGS} from "../../../assets/icons/svgs";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
-const PROVINCIA_TIMESTAMP = "provincias.timeStamp";
-const LOCALIDAD_TIMESTAMP = "localidades.timeStamp";
-const SERVICIO_TIMESTAMP = "servicios.timeStamp";
 
-export class cartillaDetalleScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCALIDAD_TIMESTAMP, SERVICIO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+
+export class cartillaDetalleScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -58,7 +56,7 @@ export class cartillaDetalleScreen extends connect(store, PROVINCIA_TIMESTAMP, L
 			#titulo {
                 width:100%;
                 height:52vw;
-                background-image: url("https://app.uocra.org/images/cemapBahiaBlanca.gif");
+                background-image: url("https://app.uocra.org/images/bahiaBlanca.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;
@@ -116,7 +114,7 @@ export class cartillaDetalleScreen extends connect(store, PROVINCIA_TIMESTAMP, L
 		`;
 	}
 	render() {
-        if (this.provincia) {
+        if (true) {
             return html`
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" class="grid column">
@@ -170,15 +168,6 @@ export class cartillaDetalleScreen extends connect(store, PROVINCIA_TIMESTAMP, L
 			}
 			this.update();
 		}
-        if (name == PROVINCIA_TIMESTAMP){
-            this.provincia = state.provincias.entities
-        }
-        if (name == LOCALIDAD_TIMESTAMP){
-            this.localidad = state.localidades.entities
-        }
-        if (name == PROVINCIA_TIMESTAMP){
-            this.servicio = state.servicios.entities
-        }
 
 	}
     salud(){

@@ -54,6 +54,7 @@ export const get = ({
             {id:12, tipo:"mujeres", banner:"https://app.uocra.org/banners/bannerMujeres.gif", orden: 1, activo: true},
             {id:13, tipo:"arte", banner:"https://app.uocra.org/banners/bannerArte.gif", orden: 1, activo: true},
             {id:14, tipo:"deportes", banner:"https://app.uocra.org/banners/bannerDeportes.gif", orden: 1, activo: true},
+            {id:14, tipo:"beneficios", banner:"https://app.uocra.org/banners/bannerBeneficios.gif", orden: 1, activo: true},
         ]
         
         dispatch({

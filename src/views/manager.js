@@ -66,6 +66,10 @@ import { arteNosotrosScreen } from "./bodies/arteNosotros";
 import { arteConcursosScreen } from "./bodies/arteConcursos";
 import { arteEdicionScreen } from "./bodies/arteEdicion";
 import { arteEdicionesAnterioresScreen } from "./bodies/arteEdicionesAnteriores";
+import { beneficiosSubsidiosScreen } from "./bodies/benefiosSubsidios";
+import { beneficiosSegurosScreen } from "./bodies/beneficiosSeguros";
+import { beneficiosSepeliosScreen } from "./bodies/beneficiosSepelios";
+import { beneficiosJubilacionScreen } from "./bodies/beneficiosJubilacion";
 
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -161,6 +165,10 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <arteconcursos-screen id="arteConcursos" class="body"></arteconcursos-screen>
             <arteedicion-screen id="arteEdicion" class="body"></arteedicion-screen>
             <arteedicionesanteriores-screen id="arteEdicionesAnteriores" class="body"></arteedicionesanteriores-screen>
+            <beneficiossubsidios-screen id="beneficiosSubsidios" class="body"></beneficiossubsidios-screen>
+            <beneficiosseguros-screen id="beneficiosSeguros" class="body"></beneficiosseguros-screen>
+            <beneficiossepelios-screen id="beneficiosSepelios" class="body"></beneficiossepelios-screen>
+            <beneficiosjubilacion-screen id="beneficiosJubilacion" class="body"></beneficiosjubilacion-screen>
 
             <pie-componente class="foot"></pie-componente>
 

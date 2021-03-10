@@ -80,6 +80,10 @@ export const get = ({
             {id:3, tipo:"arte", nombre:"TIPOS DE CONCURSOS",imagen:"PINCELES", div: "datos", clase:"opc2 blanco fondoAmarillo",goto:"arteConcursos"},
             {id:2, tipo:"arte", nombre:"EDICIONES ANTERIORES",imagen:"ESTATUA", div: "datos", clase:"opc3 blanco fondoPrimario",goto:"arteEdicionesAnteriores"},
             {id:1, tipo:"deportes", nombre:"",imagen:"", div:"", clase:"",goto:""},
+            {id:1, tipo:"beneficios", nombre:"SUBSIDIOS",imagen:"SUBSIDIOS", div: "datos", clase:"opc1 blanco fondoVerde",goto:"beneficiosSubsidios"},
+            {id:4, tipo:"beneficios", nombre:"SEGUROS DE VIDA",imagen:"SEGUROVIDA", div: "datos", clase:"opc2 blanco fondoGris",goto:"beneficiosSeguros"},
+            {id:3, tipo:"beneficios", nombre:"SEPELIOS",imagen:"SEPELIOS", div: "datos", clase:"opc2 blanco fondoAmarillo",goto:"beneficiosSepelios"},
+            {id:2, tipo:"beneficios", nombre:"APOYO JUBILATORIO",imagen:"JUBILACION", div: "datos", clase:"opc3 blanco fondoPrimario",goto:"beneficiosJubilacion"},
          
         ]
     
