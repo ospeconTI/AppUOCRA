@@ -60,16 +60,15 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
             h1 {
                 margin: 0;
             }
+            
             #opciones {
+                position: fixed;
                 justify-content: end;
                 grid-gap: 0.6rem;
                 padding: .6rem;
-            }
-            :host(:not([media-size="large"])) #opciones {
-                position: fixed;
                 top: 0;
                 right: -100%;
-                height: 100vh;
+                height: 100%;
                 width: 60%;
                 grid-template-columns: repeat(auto-fit, minmax(3.4rem, 1fr));
                 background-image: linear-gradient(to right, var(--primary-color), var(--color-azul-oscuro));
@@ -78,11 +77,16 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
                 display: grid;
                 justify-items: normal;
                 z-index: 100;
+                overflow-y:auto;
+                box-sizing:border-box;
             }
-
-            :host([media-size="large"]) .menu-button,
-            :host([media-size="large"]) #velo {
-                display: none;
+            :host([media-size="large"]) #opciones{
+                width: 30%;
+                grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+            }
+            :host([media-size="medium"]) #opciones{
+                width: 50%;
+                grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
             }
 
             #velo {
@@ -181,7 +185,7 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
         }
     }
     gestos(e) {
-        if (this.mediaSize != "large") {
+        
             if (e.detail.ACTION == "move") {
                 if (e.detail.dx > 0) {
                     this.arrastrando = true;
@@ -197,7 +201,7 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
                     this.update();
                 }
             }
-        }
+        
     }
     toggleMenu() {
         this.visible = !this.visible;
