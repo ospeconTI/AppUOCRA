@@ -31,18 +31,14 @@ import {
 import {
     apiRequest
 } from "../api/actions"
+import {JSON} from "../../redux/json/hogarVideos";
 
 export const get = ({
     dispatch
 }) => next => action => {
     next(action);
     if (action.type === GET) {
-        let hogarVideos = [
-            {id:1, titulo:"Cena Anual 2017",link:"w5jXj0M1R14",activo: true},
-            {id:1, titulo:"Cena Anual 2016",link:"fA-9UQr64qY",activo: true},
-            {id:1, titulo:"Cena Anual 2015",link:"y0IopiwIUUs",activo: true},
-            {id:1, titulo:"Cena Anual 2014",link:"ligq06NF_bw",activo: true},
-        ]
+        let hogarVideos = JSON
     
         dispatch({
             type: GET_SUCCESS,

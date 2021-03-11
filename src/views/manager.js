@@ -71,6 +71,9 @@ import { beneficiosSegurosScreen } from "./bodies/beneficiosSeguros";
 import { beneficiosSepeliosScreen } from "./bodies/beneficiosSepelios";
 import { beneficiosJubilacionScreen } from "./bodies/beneficiosJubilacion";
 import { denunciasFormularioScreen } from "./bodies/denunciasFormulario";
+import { turismoHotelesListaScreen } from "./bodies/turismoHotelesLista";
+import { turismoHotelesDetalleScreen } from "./bodies/turismoHotelesDetalle";
+import { turismoMapaScreen } from "./bodies/turismoMapa";
 
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -171,6 +174,9 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <beneficiossepelios-screen id="beneficiosSepelios" class="body"></beneficiossepelios-screen>
             <beneficiosjubilacion-screen id="beneficiosJubilacion" class="body"></beneficiosjubilacion-screen>
             <denunciasformulario-screen id="denunciasFormulario" class="body"></denunciasformulario-screen>
+            <turismohoteleslista-screen id="turismoHotelesLista" class="body"></turismohoteleslista-screen>
+            <turismohotelesdetalle-screen id="turismoHotelesDetalle" class="body"></turismohotelesdetalle-screen>
+            <turismomapa-screen id="turismoMapa" class="body"></turismomapa-screen>
 
             <pie-componente class="foot"></pie-componente>
 

@@ -31,18 +31,14 @@ import {
 import {
     apiRequest
 } from "../api/actions"
+import {JSON} from "../../redux/json/servicios";
 
 export const get = ({
     dispatch
 }) => next => action => {
     next(action);
     if (action.type === GET) {
-        let servicios = [
-            {id:1, nombre:"Centros Medicos",activo: true},
-            {id:2, nombre:"Farmacias",activo: true},
-            {id:3, nombre:"Laboratorios",activo: true},
-            {id:4, nombre:"Emergencias",activo: true},
-        ]
+        let servicios = JSON
     
         dispatch({
             type: GET_SUCCESS,

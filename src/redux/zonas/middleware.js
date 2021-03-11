@@ -31,20 +31,14 @@ import {
 import {
     apiRequest
 } from "../api/actions"
+import {JSON} from "../../redux/json/zonas";
 
 export const get = ({
     dispatch
 }) => next => action => {
     next(action);
     if (action.type === GET) {
-        let zonas = [
-            {id:1, nombre:"Buenos Aires",activo: true},
-            {id:2, nombre:"Centro",activo: true},
-            {id:3, nombre:"Cuyo",activo: true},
-            {id:4, nombre:"Litoral",activo: true},
-            {id:5, nombre:"Noroeste",activo: true},
-            {id:6, nombre:"Patagonia",activo: true},
-        ]
+        let zonas = JSON
     
         dispatch({
             type: GET_SUCCESS,

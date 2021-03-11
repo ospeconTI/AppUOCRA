@@ -49,6 +49,15 @@ export class OLComponent extends (LitElement) {
                     scale: [0.1, 0.1],
                 }),
             }),
+            hotel: new Style({
+                image: new Icon({
+                    anchor: [0.4, 0.4],
+                    anchorXUnits: "fraction",
+                    anchorYUnits: "fraction",
+                    src: store.getState().ui.urls.imagenes + 'hotel.gif',
+                    scale: [0.1, 0.1],
+                }),
+            }),
         }
         ;
     }
@@ -70,7 +79,10 @@ export class OLComponent extends (LitElement) {
                 features[i].getStyle().setZIndex(99);   
             }else if(this._puntos[i][4]=="S"){
                 features[i].setStyle(this.iconStyles["posicion"]);               
-                features[i].getStyle().setZIndex(100);   
+                features[i].getStyle().setZIndex(100);  
+            }else if(this._puntos[i][4]=="H"){
+                features[i].setStyle(this.iconStyles["hotel"]);               
+                features[i].getStyle().setZIndex(100);       
             }else{
                 features[i].setStyle(this.iconStyles["casco"]);               
                 features[i].getStyle().setZIndex(100);   
@@ -162,7 +174,10 @@ export class OLComponent extends (LitElement) {
                 features[i].getStyle().setZIndex(99);   
             }else if(this._puntos[i][4]=="S"){
                 features[i].setStyle(this.iconStyles["posicion"]);               
-                features[i].getStyle().setZIndex(100);   
+                features[i].getStyle().setZIndex(100);
+            }else if(this._puntos[i][4]=="H"){
+                features[i].setStyle(this.iconStyles["hotel"]);               
+                features[i].getStyle().setZIndex(100);         
             }else{
                 features[i].setStyle(this.iconStyles["casco"]);               
                 features[i].getStyle().setZIndex(100);   

@@ -358,6 +358,26 @@ export const screenLayuts = {
         medium: HEADER_BODY_FOOT,
         large: HEADER_BODY_FOOT,
     },
+    turismo: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
+    },
+    turismoHotelesLista: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
+    },
+    turismoHotelesDetalle: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
+    },
+    turismoMapa: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
+    },
     bonos: {
         small: HEADER_BODY,
         medium: HEADER_BODY,

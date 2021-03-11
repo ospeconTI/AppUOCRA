@@ -1,0 +1,6 @@
+
+export const JSON = [
+    {id:1, nombre:"7ma EDICIÓN",descripcion:"Edición online, que tuvo lugar del 6 al 13 de Mayo 2020. Buenos Aires, Argentina.",imagen:"https://app.uocra.org/edicionesAnteriores/7edicion.gif",archivo:"https://construircine.com/pdf/catalogo_2020.pdf",activo: true},
+    {id:2, nombre:"6ma EDICIÓN",descripcion:"Del 2 al 15 de Mayo 2019. Buenos Aires, Argentina.",imagen:"https://app.uocra.org/edicionesAnteriores/6edicion.gif",archivo:"https://construircine.com/pdf/CATALOGO-CONSTRUIR-CINE-2019.pdf",activo: true},
+    {id:3, nombre:"5ma EDICIÓN",descripcion:"Del 10 al 16 de Mayo 2018. Buenos Aires, Argentina.",imagen:"https://app.uocra.org/edicionesAnteriores/5edicion.gif",archivo:"https://construircine.com/pdf/catalogo-construir%20cine-2018-baja.pdf",activo: true},
+]

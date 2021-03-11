@@ -27,6 +27,8 @@ import { reducer as adiccionesReducer } from "./adicciones/reducer";
 import { reducer as hogarVideosReducer } from "./hogarVideos/reducer";
 import { reducer as mujeresVideosReducer } from "./mujeresVideos/reducer";
 import { reducer as arteEdicionesAnterioresReducer } from "./arteEdicionesAnteriores/reducer";
+import { reducer as hotelesReducer } from "./hoteles/reducer";
+import { reducer as hotelesBannerReducer } from "./hotelesBanner/reducer";
 
 export const rootReducer = (state = {}, action) => {
     return {
@@ -57,6 +59,8 @@ export const rootReducer = (state = {}, action) => {
         hogarVideos: hogarVideosReducer(state.hogarVideos, action),
         mujeresVideos: mujeresVideosReducer(state.mujeresVideos, action),
         arteEdicionesAnteriores: arteEdicionesAnterioresReducer(state.arteEdicionesAnteriores, action),
+        hoteles: hotelesReducer(state.hoteles, action),
+        hotelesBanner: hotelesBannerReducer(state.hotelesBanner, action),
         
     };
 };

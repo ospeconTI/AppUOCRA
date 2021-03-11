@@ -31,19 +31,14 @@ import {
 import {
     apiRequest
 } from "../api/actions"
+import {JSON} from "../../redux/json/adolecenciaJornadas";
 
 export const get = ({
     dispatch
 }) => next => action => {
     next(action);
     if (action.type === GET) {
-        let adolecenciaJornadas = [
-            {id:1, nombre:"VIII Jornada en Adolescencia (2020)",ano: 2020,descripcion:"Deconstruirnos para garantizar Derechos e Identidades.", expositor: "Dr. Juan Carlos Escobar - Médico Pediatra. Dirección de Adolescencias y Juventudes, MSAL.", coordinador: "Dra. María Alejandra Martínez, Ginecóloga Infanto-Juvenil.Dra. Romina Espeche, Médica Pediatra, especialista en Adolescencia.", link:"xoY26mGB_xA", activo: true},
-            {id:2, nombre:"IX Jornada en Adolescencia (2020)",ano: 2020,descripcion:"Adolescentes ¿enredados? Adolescencia. Reconstrucciones en tiempos de pandemia.", expositor: "Dr. Juan Carlos Escobar - Médico Pediatra. Dirección de Adolescencias y Juventudes, MSAL.", coordinador: "Dra. María Alejandra Martínez, Ginecóloga Infanto-Juvenil.Dra. Romina Espeche, Médica Pediatra, especialista en Adolescencia.", link:"xoY26mGB_xA",activo: true},
-            {id:1, nombre:"VIII Jornada en Adolescencia (2019)",ano: 2019,descripcion:"Deconstruirnos para garantizar Derechos e Identidades.", expositor: "", coordinador: "", link:"MlnApkxMxcY",activo: true},
-            {id:2, nombre:"IX Jornada en Adolescencia (2018)",ano: 2018,descripcion:"Adolescentes ¿enredados? Adolescencia. Reconstrucciones en tiempos de pandemia.", expositor: "", coordinador: "", link:"MlnApkxMxcY", activo: true},
-        
-        ]    
+        let adolecenciaJornadas = JSON
         dispatch({
             type: GET_SUCCESS,
             payload: {

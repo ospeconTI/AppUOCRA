@@ -326,7 +326,7 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
             </div>
         `;
         }else{
-            const es = "-sindicato-cultura-tv-moecra-salud-saludSeguridad-ivt-cine-adolecencia-adicciones-hogar-mujeres-arte-deportes-beneficios-".indexOf("-" + store.getState().screen.name + "-") != -1;
+            const es = "-sindicato-cultura-tv-moecra-salud-saludSeguridad-ivt-cine-adolecencia-adicciones-hogar-mujeres-arte-deportes-beneficios-turismo-".indexOf("-" + store.getState().screen.name + "-") != -1;
             if (es){
                 return html` 
                     <div class="grid row" style="background-color:var(--primary-color);color:white;align-content: center;text-align: center;border:1px solid white;cursor:point" @click=${this.atras}>
@@ -369,7 +369,7 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-sindicato-cultura-tv-moecra-salud-saludSeguridad-ivt-cine-adolecencia-adicciones-hogar-mujeres-arte-deportes-beneficios-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-sindicato-cultura-tv-moecra-salud-saludSeguridad-ivt-cine-adolecencia-adicciones-hogar-mujeres-arte-deportes-beneficios-turismo-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
                 this.hidden = false;
                 if (!this.titulo) store.dispatch(getTitulo())

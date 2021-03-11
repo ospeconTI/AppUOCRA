@@ -203,11 +203,11 @@ export class adiccionesScreen extends connect(store, ADICCIONES_ERROR, ADICCIONE
 
         if (name == ADICCIONES_DATOS){
             this.registros = state.adicciones.entities
-            this.registros = null
+            this.update();
         }
         if (name == ADICCIONES_ERROR){
             this.registros = null
-            this.update();
+            this.registros = null
         }
     }
 

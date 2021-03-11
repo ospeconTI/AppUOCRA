@@ -30,13 +30,15 @@ import { middleware as adicciones } from "./adicciones/middleware";
 import { middleware as hogarVideos } from "./hogarVideos/middleware";
 import { middleware as mujeresVideos } from "./mujeresVideos/middleware";
 import { middleware as arteEdicionesAnteriores } from "./arteEdicionesAnteriores/middleware";
+import { middleware as hoteles } from "./hoteles/middleware";
+import { middleware as hotelesBanner } from "./hotelesBanner/middleware";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let mdw = [api, rest, ...ui, ...route, ...menues, ...items, ...titulos, ...banners, ...leftmenu, ...noticias
     , ...localidades, ...provincias, ...servicios, ...cemaps, ...seccionales, ...zonas, ...convenios, ...programacion,
 ...leyendas, ...edicionesAnteriores, ...tvEstrenos, ...tvGrilla, ...adolecenciaJornadas, ...adicciones, ...hogarVideos,
-...mujeresVideos, ...arteEdicionesAnteriores];
+...mujeresVideos, ...arteEdicionesAnteriores, ...hoteles, ...hotelesBanner];
 
 if (process.env.NODE_ENV !== "production") {
     mdw = [...mdw, logger];
