@@ -378,6 +378,21 @@ export const screenLayuts = {
         medium: HEADER_BODY_FOOT,
         large: HEADER_BODY_FOOT,
     },
+    fundacion: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
+    },
+    fundacionAulas: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
+    },
+    fundacionCursos: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
+    },
     bonos: {
         small: HEADER_BODY,
         medium: HEADER_BODY,

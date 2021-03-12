@@ -74,6 +74,8 @@ import { denunciasFormularioScreen } from "./bodies/denunciasFormulario";
 import { turismoHotelesListaScreen } from "./bodies/turismoHotelesLista";
 import { turismoHotelesDetalleScreen } from "./bodies/turismoHotelesDetalle";
 import { turismoMapaScreen } from "./bodies/turismoMapa";
+import { fundacionAulasScreen } from "./bodies/fundacionAulas";
+import { fundacionCursosScreen } from "./bodies/fundacionCursos";
 
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -177,6 +179,8 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <turismohoteleslista-screen id="turismoHotelesLista" class="body"></turismohoteleslista-screen>
             <turismohotelesdetalle-screen id="turismoHotelesDetalle" class="body"></turismohotelesdetalle-screen>
             <turismomapa-screen id="turismoMapa" class="body"></turismomapa-screen>
+            <fundacionaulas-screen id="fundacionAulas" class="body"></fundacionaulas-screen>
+            <fundacioncursos-screen id="fundacionCursos" class="body"></fundacioncursos-screen>
 
             <pie-componente class="foot"></pie-componente>
 

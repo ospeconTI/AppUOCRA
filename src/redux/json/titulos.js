@@ -16,5 +16,6 @@ export const JSON = [
     {id:1, tipo:"deportes", titulo: "", activo: true},
     {id:13, tipo:"beneficios", titulo: "https://app.uocra.org/titulos/beneficios.png", activo: true},
     {id:1, tipo:"turismo", titulo: "", activo: true},
+    {id:1, tipo:"fundacion", titulo: "https://app.uocra.org/titulos/fundacion.png", activo: true},
 ]
 

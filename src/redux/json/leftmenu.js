@@ -2,7 +2,7 @@
 export const JSON = [
     {id:1,nombre:"MI SINDICATO",imagen: "MISINDICATO" ,accion:"sindicato"},
     {id:2,nombre:"SALUD",imagen: "SALUD" ,accion:"salud"},
-    {id:3,nombre:"CAPACITACION",imagen: 'CURSOS' ,accion:""},
+    {id:3,nombre:"CAPACITACION",imagen: 'CURSOS' ,accion:"fundacion"},
     {id:4,nombre:"TEATRO",imagen: 'TEATRO' ,accion:"cultura"},
     {id:5,nombre:"TELEVISION",imagen: 'TV',accion:"tv"},
     {id:6,nombre:"CINE",imagen: 'CINE' ,accion:"cine"},

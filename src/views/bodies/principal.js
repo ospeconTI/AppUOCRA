@@ -158,7 +158,7 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                             <div >${SVGS["SALUD"]}</div>
                             <div >${this.aplicacion[this.idioma].salud}</div>
                         </div>
-                        <div id="icCursos" class="grid row icBoton">
+                        <div id="icCursos" class="grid row icBoton" @click="${this.fundacion}">
                             <div >${SVGS["CURSOS"]}</div>
                             <div >${this.aplicacion[this.idioma].capacitcion}</div>
                         </div>
@@ -243,6 +243,9 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
     }
     salud(){
         store.dispatch(goTo("salud"));
+    }
+    fundacion(){
+        store.dispatch(goTo("fundacion"));
     }
     cultura(){
         store.dispatch(goTo("cultura"));

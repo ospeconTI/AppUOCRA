@@ -15,5 +15,6 @@ export const JSON = [
     {id:13, tipo:"arte", leyenda: "", activo: true},
     {id:14, tipo:"deportes", leyenda: "<div>El <b>Campo de Deportes UOCRA</b> es un complejo deportivo ubicado en Ruta de la Tradición (ex Camino de Cintura) 6251, que ofrece un espacio de esparcimiento y divertimento al aire libre en familia o con amigos.</div>", activo: true},
     {id:15, tipo:"beneficios", leyenda: "", activo: true},
-    {id:15, tipo:"turismo", leyenda: "<div style='text-align:center'>*Disponibilidad esta sujeta a las disposicione<br>oficiales de circulación vinculadas a <br>la pandemia de Covid19.<div>", activo: true},
+    {id:16, tipo:"turismo", leyenda: "<div style='text-align:center'>*Disponibilidad esta sujeta a las disposicione<br>oficiales de circulación vinculadas a <br>la pandemia de Covid19.<div>", activo: true},
+    {id:17, tipo:"fundacion", leyenda: "", activo: true},
 ]

@@ -18,4 +18,6 @@ export const JSON = [
     {id:14, tipo:"deportes", banner:"https://app.uocra.org/banners/bannerDeportes.gif", orden: 1, activo: true},
     {id:15, tipo:"beneficios", banner:"https://app.uocra.org/banners/bannerBeneficios.gif", orden: 1, activo: true},
     {id:16, tipo:"turismo", banner:"https://app.uocra.org/banners/bannerTurismo.gif", orden: 1, activo: true},
+    {id:11, tipo:"fundacion", banner:"", orden: 1, activo: true},
+
 ]
