@@ -49,8 +49,8 @@ export const JSON = [
     {id:1, tipo:"turismo", nombre:"LISTADO",imagen:"", div:"datos2", clase:"opc21 blanco fondoPrimario",goto:"turismoHotelesLista"},
     {id:2, tipo:"turismo", nombre:"VER MAPA",imagen:"", div:"datos2", clase:"opc22 blanco fondoVerde",goto:"turismoMapa"},
     {id:1, tipo:"fundacion", nombre:"CURSOS DE OFICIO",imagen:"CURSOOFICIO", div: "datos", clase:"opc1 blanco fondoVerde",goto:"fundacionCursos"},
-    {id:2, tipo:"fundacion", nombre:"INSTITUTO UOCRA",imagen:"INSTITUTO", div: "datos", clase:"opc2 blanco fondoGris",goto:"turnos"},
-    {id:3, tipo:"fundacion", nombre:"TERMINA LA ESCUELA",imagen:"ESCUELA", div: "datos", clase:"opc2 blanco fondoAmarillo",goto:"franchin"},
+    {id:2, tipo:"fundacion", nombre:"INSTITUTO UOCRA",imagen:"INSTITUTO", div: "datos", clase:"opc2 blanco fondoGris",goto:"fundacionInstituto"},
+    {id:3, tipo:"fundacion", nombre:"TERMINA LA ESCUELA",imagen:"ESCUELA", div: "datos", clase:"opc2 blanco fondoAmarillo",goto:"fundacionEscuelas"},
     {id:4, tipo:"fundacion", nombre:"AULAS Y ANDAMIOS",imagen:"CARTILLA", div: "datos", clase:"opc3 blanco fondoPrimario",goto:"fundacionAulas"},
  
 ]

@@ -21,7 +21,7 @@ const LOCALIDAD_TIMESTAMP = "localidades.timeStamp";
 const SERVICIO_TIMESTAMP = "servicios.timeStamp";
 const CEMAPS_DATOS = "cemaps.MapaTimeStamp";
 
-export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMESTAMP, LOCALIDAD_TIMESTAMP, SERVICIO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class fundacionInstitutoScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMESTAMP, LOCALIDAD_TIMESTAMP, SERVICIO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -64,11 +64,36 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
 			#titulo {
                 width:100%;
                 height:52vw;
-                background-image: url("https://app.uocra.org/images/cartilla.gif");
+                background-image: url("https://app.uocra.org/images/fundacionInstituto.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;
                 align-self: self-start;
+            }
+            #panel{
+                width:90%;
+                justify-self: center;
+            }
+            #tituloTexto {
+                align-self: self-start;
+                font-size: var(--font-header-h1-size);
+                font-weight: 900;
+                grid-template-columns: auto 1fr;
+                padding-bottom: .6rem;
+            }
+            #subNombreTexto {
+                width: 80%;
+                align-self: self-start;
+                font-size: var(--font-titulo-h1-menos-size);
+                justify-self: center;
+                padding-bottom: .4rem;
+            }
+            #subTituloTexto {
+                width: 80%;
+                align-self: self-start;
+                font-size: var(--font-titulo-h2-size);
+                justify-self: center;
+                padding-bottom: .4rem;
             }
             .miselect{
                 width:60%;
@@ -108,66 +133,45 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
 		`;
 	}
 	render() {
-        if (this.provincia && store.getState().localidades.entities && this.servicio) {
             return html`
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" class="grid column">
                     </div>
-                    <div id="selectProvincias" class="grid row miselect" >
-                        <select id="txtProvincias" class="elselect" @change="${this.cambioProvincia}">
-                            <option value="0">Provincias</option>
-                            ${this.provincia.map((item, index) => {
-                                return html `
-                                    <option value="${item.id}">${item.nombre}</option>
-                                `
-                            })}
-                        </select>
-				    </div>
-                    <div id="selectLocalidades" class="grid row miselect">
-                        <select id="txtLocalidades" class="elselect" @click="${this.clickLocalidad}" @change="${this.cambioLocalidad}">
-                            <option value="0">Localidades</option>
-                            ${this.localidad ? this.localidad.map((item, index) => {
-                                return html `
-                                    <option value="${item.id}">${item.nombre}</option>
-                                `
-                            }) : null}
-                        </select>
-				    </div>
-                    <div id="selectServicios" class="grid row miselect" >
-                        <select id="txtServicios" class="elselect" @change="${this.cambioServicio}" >
-                            <option value="0">Servicios</option>
-                            ${this.servicio.map((item, index) => {
-                                return html `
-                                    <option value="${item.id}">${item.nombre}</option>
-                                `
-                            })}
-                        </select>
-				    </div>
-                    <div id="botones" class="grid">
-                        <button btn1 class="btnListado" @click=${this.listados}>
-                            <div class="grid column">
-                                <div>
-                                    ${SVGS["LISTADO"]}                        
+                    <div id="panel" class="grid row">
+                        <div style="height:.5rem"></div>
+                        <div >
+                            El <b>Instituto UOCRA</b> fue creado en el año 2007 y desde entonces desarrolla un estilo de formación personalizado, que concibe a los estudiantes como protagonistas.
+                        </div>
+                        <div id="botones" class="grid">
+                            <button btn1 class="btnListado" >
+                                <div class="grid column">
+                                    <div>
+                                        ${SVGS["LISTADO"]}                        
+                                    </div>
+                                    <div>
+                                        LISTADO
                                 </div>
-                                <div>
-                                    ${this.cartilla[this.idioma].listado}
-                               </div>
-                            </div>
-                        </button>
-				        <button btn1 class="btnVerMapa" @click=${this.cemap}>
-                            <div class="grid column">
-                                <div>
-                                    ${SVGS["VERMAPA"]}                        
                                 </div>
-                                <div>
-                                    ${this.cartilla[this.idioma].verMapa}
+                            </button>
+                            <button btn1 class="btnVerMapa" >
+                                <div class="grid column">
+                                    <div>
+                                        ${SVGS["VERMAPA"]}                        
+                                    </div>
+                                    <div>
+                                        VER MAPA  
+                                    </div>
                                 </div>
-                            </div>
-                        </button>
+                            </button>
+                        </div>
+                        <div  class="grid column">
+                            <b>Escribí tu consulta</b>
+                        </div>
+                        <textarea rows="8"></textarea>
+                        <button btn1 class="btnVerMapa" style="width:10rem;justify-self: center;">ENVIAR</button>
                     </div>
                 </div>
             `;
-        }
 	}
     listados(){
         const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
@@ -196,14 +200,14 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-cartilla-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-fundacionInstituto-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
 			}
 			this.update();
 		}
         if (name == PROVINCIA_TIMESTAMP){
-            this.provincia = state.provincias.entities.sort(function(a,b){return a["nombre"] > b["nombre"] ? 1 : -1})
+            this.provincia = state.provincias.entities
         }
         if (name == LOCALIDAD_TIMESTAMP){
             //this.localidad = state.localidades.entities
@@ -219,7 +223,6 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
     cambioProvincia(e){
         let arr = store.getState().localidades.entities;
         this.localidad = arr.filter(a => a.provinciasId == e.currentTarget.value);  
-        store.dispatch(selLocalidad(this.localidad))
         this.update()      
     }
     cambioLocalidad(e){
@@ -269,4 +272,4 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
 		};
 	}
 }
-window.customElements.define("cartilla-screen", cartillaScreen);
+window.customElements.define("fundacioninstituto-screen", fundacionInstitutoScreen);

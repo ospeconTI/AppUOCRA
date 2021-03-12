@@ -71,6 +71,8 @@ export const largeRoute = [
 "3.1.17 -fundacion",
 "3.1.17.1 -fundacionAulas",
 "3.1.17.2 -fundacionCursos",
+"3.1.17.3 -fundacionEscuelas",
+"3.1.17.4 -fundacionInstituto",
 "3.2 -registro", 
 "3.3 -registroMensaje", 
 "3.4 -claveRecuperar",

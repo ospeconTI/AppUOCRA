@@ -1,12 +1,5 @@
 
-export const JSON = [
-    {id:1, nombre:"CABA",activo: true},
-    {id:2, nombre:"Buenos Aires",activo: true},
-    {id:3, nombre:"Cordoba",activo: true},
-    {id:4, nombre:"Entre Rios",activo: true},
-    {id:5, nombre:"La Pampa",activo: true},
-    {id:6, nombre:"Mendoza",activo: true},
-    {id:7, nombre:"Santa Fe",activo: true},
-]
+export const JSON = 
+[{"id":1,"nombre":"Buenos Aires","activo":true},{"id":2,"nombre":"Capital Federal","activo":true},{"id":3,"nombre":"Catamarca","activo":true},{"id":4,"nombre":"Chaco","activo":true},{"id":5,"nombre":"Chubut","activo":true},{"id":6,"nombre":"Cordoba","activo":true},{"id":7,"nombre":"Corrientes","activo":true},{"id":8,"nombre":"Entre Rios","activo":true},{"id":9,"nombre":"Formosa","activo":true},{"id":10,"nombre":"Jujuy","activo":true},{"id":11,"nombre":"La Pampa","activo":true},{"id":12,"nombre":"La Rioja","activo":true},{"id":13,"nombre":"Mendoza","activo":true},{"id":14,"nombre":"Misiones","activo":true},{"id":15,"nombre":"Neuquen","activo":true},{"id":16,"nombre":"Rio Negro","activo":true},{"id":17,"nombre":"Salta","activo":true},{"id":18,"nombre":"San Juan","activo":true},{"id":19,"nombre":"San Luis","activo":true},{"id":20,"nombre":"Santa Cruz","activo":true},{"id":21,"nombre":"Santa Fe","activo":true},{"id":22,"nombre":"Santiago del Estero","activo":true},{"id":23,"nombre":"Tierra del Fuego","activo":true},{"id":24,"nombre":"Tucuman","activo":true},{"id":25,"nombre":"Buenos Aires Gran","activo":true}]
 
 
