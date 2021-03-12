@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === "production") {
     activateSW();
 }
 
-store.dispatch(setUrls("http://app.uocra.org/","https://app.uocra.org/images/"))
+store.dispatch(setUrls("https://app.uocra.org/","https://app.uocra.org/images/"))
 
 store.dispatch(getLeftMenu())
 store.dispatch(getLocalidades())
@@ -46,11 +46,7 @@ store.dispatch(getSeccionales())
 store.dispatch(captureMedia());
 //store.dispatch(goTo("main"));
 store.dispatch(goTo("splash"));
-//store.dispatch(goTo("tvCanales"));
-//store.dispatch(goTo("emergencias"));
 
-//store.dispatch(goTo("cartilla"));
-//store.dispatch(goTo("cemapsMapa"));
 
 
 

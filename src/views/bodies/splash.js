@@ -58,7 +58,7 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 	render() {
 		return html`
 			<div id="cuerpo" @click=${this.proximo}>
-				<img id="imagen" src='${store.getState().ui.urls.imagenes + "titulo_red_social.png"}'/>
+				<img id="imagen" src="https://app.uocra.org/images/titulo_red_social.png" />
 				<div id="version">v.:${__VERSION__}</div>
 			</div>
 		`;
@@ -83,8 +83,8 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 
 	proximo() {
 		clearTimeout(this.timeOut);
-		//store.dispatch(goNext());
-		store.dispatch(goTo("salud"));
+		store.dispatch(goNext());
+		//store.dispatch(goTo("salud"));
 	}
 
 	static get properties() {

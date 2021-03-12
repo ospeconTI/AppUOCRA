@@ -113,7 +113,7 @@ export class cemapCartillaDetalleScreen extends connect(store, LOCALIDAD_SELECCI
 		`;
 	}
 	render() {
-        if (true) {
+        if (this.imagenTitulo && this.imagenContenido) {
             return html`
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" class="grid column" style="background-image:url('${this.imagenTitulo}')">
