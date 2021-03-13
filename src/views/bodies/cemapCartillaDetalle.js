@@ -119,7 +119,7 @@ export class cemapCartillaDetalleScreen extends connect(store, LOCALIDAD_SELECCI
                     <div id="titulo" class="grid column" style="background-image:url('${this.imagenTitulo}')">
                     </div>
                     <div id="contenido" class="grid column" >
-                        <img id="imagen" src='${this.imagenContenido}'/>
+                        <img id="imagen" src="${this.imagenContenido}"/>
                     </div>
                     <div id="telefono" class="botonFlotante" ?hidden="${this.tipo!=1}" @click=${this.llamar}>${SVGS["TELEFONO"]}</div>
                     <div id="posicion" class="botonFlotante" ?hidden="${this.tipo!=1}" @click=${this.posicion}>${SVGS["POSICION"]}</div>
