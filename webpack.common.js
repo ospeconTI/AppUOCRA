@@ -38,6 +38,7 @@ module.exports = {
             theme_color: "#ffffff",
             orientation: "portrait",
             fingerprints: false,
+            categories: ["education", "medical"],
             icons: [
                 {
                     src: path.resolve("assets/icons/ic_launcher.png"),
