@@ -75,7 +75,7 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 
 				this.timeOut = setTimeout(() => {
 					//store.dispatch(goNext());
-				}, 3000);
+				}, 4000);
 			}
 			this.update();
 		}

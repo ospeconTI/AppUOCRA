@@ -131,6 +131,9 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
                 grid-gap: 0 !important;
                 justify-items: center;
             }
+            .svgItem{
+                align-self:self-end;;
+            }
             #carrito{
                 justify-self: flex-end; 
             }
@@ -148,6 +151,13 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
                 stroke: transparent;
                 fill: var(--color-blanco);
             }
+            #svgMacro{
+                height: 1.1rem;
+                width: 2rem;
+                stroke: transparent;
+                fill: var(--primary-color);
+                padding-left: .5rem;
+            }
             *[hidden] {
                 display: none;
             }
@@ -162,7 +172,7 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
                     <div class="menu-button" @click=${this.toggleMenu}>${SVGS["MENU"]}</div>
                     <div class="grid row gridGapPunto2vh" ?hidden="${this.current == 'compras'}">
                         <div class="hola">Hola,</div>
-                        <div class="hola">Gerardo!</div>     
+                        <div class="hola">${store.getState().usuarios.usuario ? store.getState().usuarios.usuario.nombre + "!" : ""}</div>     
                     </div>
                 </div>
                 <div id="tituloGeneral" ?hidden="${this.current == 'compras'}"></div>
@@ -175,7 +185,7 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
                 ${this.puntos.map((item) => {
                     return html` 
                         <div class="menuItem grid row" @click=${this.click} .option="${item.accion}">
-                            <div >${SVGS[item.imagen]}</div>
+                            <div class="svgItem">${SVGS[item.imagen]}</div>
                             <div >${item.nombre}</div>         
                         </div>
                     `

@@ -17,7 +17,7 @@ const SCREEN = "screen.timeStamp";
 const DATOS_CONVENIO = "convenios.timeStamp";
 const ERROR_CONVENIO = "convenios.errorTimeStamp";
 
-export class gremioConvenioScreen extends connect(store, DATOS_CONVENIO, ERROR_CONVENIO, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class saludCredencialScreen extends connect(store, DATOS_CONVENIO, ERROR_CONVENIO, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -36,10 +36,13 @@ export class gremioConvenioScreen extends connect(store, DATOS_CONVENIO, ERROR_C
 			:host {
 				display: grid;
 				position: relative;
-                background-color: var(--color-blanco) !important;
                 overflow-x: hidden;
                 overflow-y: auto;
                 padding: 0 !important;
+                background-image: url("https://app.uocra.org/images/credencialFondo.gif");
+                background-repeat: no-repeat;
+				background-position: center center ;
+                background-size: cover;
 			}
 			:host([hidden]) {
 				display: none;
@@ -47,29 +50,41 @@ export class gremioConvenioScreen extends connect(store, DATOS_CONVENIO, ERROR_C
 			#cuerpo {
                 width: 100vw;
 				grid-gap: .5rem;
-				background-color: var(--color-blanco);
+                background-color: rgba(255 255 255 255) !important;
                 padding: 0 !important;
                 place-self: flex-start;
                 overflow-x: hidden;
                 overflow-y: auto;
+
+                justify-self: center;
 			}
             #tituloTexto {
+                background-color: rgba(0,0,0,.4) !important;
                 align-self: self-start;
                 font-size: var(--font-header-h1-size);
                 font-weight: 900;
                 grid-template-columns: auto 1fr;
                 padding-bottom: 1rem;
-            }
+                color: var(--color-blanco);
+           }
             #subTituloTexto {
                 width: 80%;
                 align-self: self-start;
-                font-size: var(--font-header-h1-menos-size);
+                font-size: var(--font-header-h1-size);
                 justify-self: center;
+                grid-template-columns: auto 1fr;
                 padding-bottom: 1rem;
+                color: var(--color-blanco);
             }
             #bullet{
                 fill: var(--color-blanco);
                 stroke: var(--color-verde-claro);
+            }
+            #bullet1 svg{
+                fill: var(--color-blanco);
+                stroke: var(--color-verde-claro);
+                height: 1.2rem;
+                width: 1.2em;
             }
             .convenios{
                 grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
@@ -93,36 +108,62 @@ export class gremioConvenioScreen extends connect(store, DATOS_CONVENIO, ERROR_C
                 width:3rem;
                 height:3rem;
             }
+            #credencial{
+                width:85vw;
+                height:65vw;
+                background-image: url("https://app.uocra.org/credencial/fondoCredencialDigital.svg");
+                background-repeat: no-repeat;
+				background-position: center center ;
+                background-size: contain;
+                justify-self: center;
+                grid-gap:0 !important;
+            }
+            #logo{
+                width:40vw;
+                height:18vw;
+                background-image: url("https://app.uocra.org/credencial/logo.png");
+                background-repeat: no-repeat;
+				background-position: bottom center ;
+                background-size: contain;
+                justify-self: center;
+            }
+            .txtTarjeta{
+                color:white;
+                font-size: 5vw;
+            }
 		`;
 	}
 	render() {
         if (this.convenios) {
             return html`
                 <div id="cuerpo" class="grid row">
-                    <div id="tituloTexto" class="grid">
+                     <div id="tituloTexto" class="grid">
                         <div id="bullet">${SVGS["BULLET"]}</div>
-                        <div id="solicitud">Descarga los convenios</div>
+                        <div id="solicitud">Credencial Digital</div>
                     </div>
-                    <div id="subTituloTexto">
-                        Descargá los <b>Convenios Colectivos de Trabajo</b> vigentes en el ámbito de la industria de la construcción.                   
+                    <div style="padding:2rem"></div>
+                    <div id="credencial" class="grid row">
+                        <div id="logo"></div>
+                        <div><hr></div>
+                        <div class="txtTarjeta" style="padding:0 0 0 4vw;">${store.getState().usuarios.usuario ? store.getState().usuarios.usuario.apellido + " " + store.getState().usuarios.usuario.nombre : ""}</div>
+                        <div class="txtTarjeta" style="padding:0 0 0 4vw;">${store.getState().usuarios.usuario ? store.getState().usuarios.usuario.documento : ""}</div>
+                        <div><hr></div>
+                        <div class="txtTarjeta" style="padding:2vw 0 4vw 4vw;">Generada: ${(new Date()).getDate() + "-" + (new Date()).getMonth() + "-" + (new Date()).getFullYear() }</div>
                     </div>
-                    <div class="grid convenios">
-                        ${this.convenios.map((item, index) => {
-                                return html `
-                                    <div class="grid row detalle">
-                                        <div .item=${item.archivo} class="imagen" @click="${this.pdf}">${SVGS["CONVENIOS"]}</div>
-                                        <div style="font-size:.8rem">${item.nombre}</div>
-                                    </div>
-                                `
-                        })}
-
+                    <div id="subTituloTexto" class="grid">
+                        <div id="bullet1">${SVGS["BULLET"]}</div>
+                        <div id="solicitud">Se debe presentar DNI.</div>
+                    </div>
+                    <div id="subTituloTexto" class="grid">
+                        <div id="bullet1">${SVGS["BULLET"]}</div>
+                        <div id="solicitud">Presentar último tres recibo de sueldo.</div>
                     </div>
                 </div>
             `;
         }else{
-            if (this.current=="gremioConvenio"){
+            if (this.current=="saludCredencial"){
                 return html` 
-                    <div class="grid row" style="background-color:var(--primary-color);color:white;align-content: center;text-align: center;border:1px solid white;cursor:point" @click=${this.atras}>
+                    <div class="grid row" style="background-color:var(--primary-color);color:white;align-content: center;text-align: center;border:1px solid white;cursor:point; " @click=${this.atras}>
                         <div style="font-size:6vw;font-weight: 900;">Error de comexíon</div>
                         <div style="font-size:4vw;">Verifique su conección de datos</div>
                         <div style="font-size:3vw;">Click para continuar</div>
@@ -133,8 +174,8 @@ export class gremioConvenioScreen extends connect(store, DATOS_CONVENIO, ERROR_C
 	}
     pdf(e){
         let archivo = e.currentTarget.item
-        window.open(archivo,'_blank');
-        //location.href = archivo
+        //window.open(archivo,'_blank');
+        location.href = archivo
     }
     atras(){
         store.dispatch(goHistoryPrev())
@@ -145,7 +186,7 @@ export class gremioConvenioScreen extends connect(store, DATOS_CONVENIO, ERROR_C
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-gremioConvenio-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-saludCredencial-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
                 store.dispatch(getConvenios())
@@ -186,4 +227,4 @@ export class gremioConvenioScreen extends connect(store, DATOS_CONVENIO, ERROR_C
 		};
 	}
 }
-window.customElements.define("gremioconvenio-screen", gremioConvenioScreen);
+window.customElements.define("saludcredencial-screen", saludCredencialScreen);

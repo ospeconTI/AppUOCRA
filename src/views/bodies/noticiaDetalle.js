@@ -14,13 +14,14 @@ import {SVGS} from "../../../assets/icons/svgs";
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 
-export class turnosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class noticiaDetalleScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
 		this.area = "body";
         this.current = "";
         this.idioma = store.getState().ui.idioma;
+        this.noticia = null
 	}
 
 	static get styles() {
@@ -36,14 +37,13 @@ export class turnosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
                 overflow-x: hidden;
                 overflow-y: auto;
                 padding: 0 !important;
-                justify-content: center;
 			}
 			:host([hidden]) {
 				display: none;
 			}
 			#cuerpo {
-                width: 90vw;
-				grid-gap: 1rem;
+                width: 100vw;
+				grid-gap: .5rem;
 				background-color: var(--color-blanco);
                 padding: 0 !important;
                 place-self: flex-start;
@@ -51,20 +51,50 @@ export class turnosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
                 overflow-y: auto;
 			}
 			#titulo {
+                width:100%;
+                height:52vw;
+				background-repeat: no-repeat;
+				background-position: center center ;
+                background-size: cover ;
                 align-self: self-start;
-                font-size: var(--font-header-h1-size);
-                font-weight: 900;
-                grid-template-columns: auto 1fr;
             }
-            #subTitulo {
+            #tituloTexto {
+                width: 80vw;
+                align-self: self-start;
+                font-size: var(--font-header-h2-size);
+                font-weight: 900;
+                padding-bottom: 1rem;
+                justify-self: center;
+                
+            }
+            #subTituloTexto {
                 width: 80%;
                 align-self: self-start;
-                font-size: var(--font-label-size);
+                font-size: var(--font-header-h2-size);
                 justify-self: center;
+                padding-bottom: 1rem;
+            }
+            .miselect{
+                width:60%;
+                height:3rem; 
+                justify-self: center;
+                text-align: center;
+            }
+            .elselect{
+                height:2.5rem; 
             }
             #botones{
-                padding: 1rem 0 1rem 0;
+                width:90%;
                 justify-self: center;
+            }
+            .btnListado{
+                background-color: var(--color-amarillo) !important;
+                border-radius: 1rem !important;
+                fill: var(--color-blanco) !important;
+                stroke: var(--color-blanco) !important;
+                color: var(--color-blanco) !important;
+                font-size: var(--font-bajada-size) !important;
+                grid-gap: 0 !important;
             }
             .btnVerMapa{
                 background-color: var(--primary-color) !important;
@@ -75,9 +105,6 @@ export class turnosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
                 font-size: var(--font-bajada-size) !important;
                 grid-gap: 0 !important;
             }
-            .btnVerMapa svg{
-                height:2rem;
-            }
             #bullet{
                 fill: var(--color-blanco);
                 stroke: var(--color-verde-claro);
@@ -85,79 +112,41 @@ export class turnosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 		`;
 	}
 	render() {
-        if (true) {
+        if (this.noticia) {
             return html`
                 <div id="cuerpo" class="grid row">
-                    <div id="titulo" class="grid">
-                        <div id="bullet">${SVGS["BULLET"]}</div>
-                        <div id="solicitud">Solicitar Turno:</div>
+                    <div id="titulo" style="background-image: url('${this.noticia.imagen}');">
                     </div>
-                    <div id="subTitulo">
-                    Solicitá tu turno llamando al Centro Medico - CEMAP más cercano:
+                    <div id="tituloTexto" class="grid">
+                    ${this.noticia.copete}
                     </div>
-                    <div id="botones">
-                        <button btn1 class="btnVerMapa" @click=${this.cemap}>
-                            <div class="grid column">
-                                <div>
-                                    ${SVGS["CENTROMEDICO"]}                        
-                                </div>
-                                <div>
-                                    CENTROS MEDICOS
-                                </div>
-                            </div>
-                        </button>                    
+                    <div id="subTituloTexto">
+                        ${this.noticia.detalle}
                     </div>
-                    <div id="titulo" class="grid">
-                        <div id="bullet">${SVGS["BULLET"]}</div>
-                        <div id="solicitud">Primera Consulta:</div>
                     </div>
-                    <div id="subTitulo">
-                        Una vez obtenido el turno, presentate 15 minutos antes del horario pactado en el sector administrativo. Allí realizarás la derivacón con el Médico de Familia, quien realizará la apertura de tu Historia Clínica.
-                        <p>Finalizada la consulta, podés acercarte al sector administrativo para recibir asesoramiento sobre:
-                        </p>
-                        <li>Retiro de estudios y documentación.</li>
-                        <li>Autorizaciones.</li>
-                        <li>Medicamentos y materiales.</li>
-                        <li>Prestaciones por discapacidad.</li>
-                        <li>Otras.</li>
-                    </div>
+                    <div style="padding-top:2rem"></div>
                 </div>
             `;
         }
 	}
-    listados(){
-
-    }
-    cemap(){
-        store.dispatch(goTo("cartilla"));
-    }
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-turnos-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-noticiaDetalle-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
 			}
+            this.noticia = state.noticias.noticia
 			this.update();
 		}
-
-
 	}
-    salud(){
-        store.dispatch(goTo("salud"));
+    laJu(){
+        //window.open("https://www.88552d2b491975945.temporary.link/moodle/login/index.php",'_blank');
+        location.href = "https://www.88552d2b491975945.temporary.link/moodle/login/index.php"
     }
-    cultura(){
-        store.dispatch(goTo("cultura"));
-    }
-	volver() {
-		store.dispatch(goTo("inicial"));
-    }
-    claveRecuperar() {
-		store.dispatch(goTo("claveRecuperar"));
-	}
 	static get properties() {
 		return {
 			mediaSize: {
@@ -183,4 +172,4 @@ export class turnosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 		};
 	}
 }
-window.customElements.define("turnos-screen", turnosScreen);
+window.customElements.define("noticiadetalle-screen", noticiaDetalleScreen);

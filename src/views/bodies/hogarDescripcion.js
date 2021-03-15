@@ -55,11 +55,14 @@ export class hogarDescripcionScreen extends connect(store, MEDIA_CHANGE, SCREEN)
 			#titulo {
                 width:100%;
                 height:52vw;
-                background-image: url("https://app.uocra.org/images/hogar.gif");
+                background-image: url("https://app.uocra.org/images/hogarDescripcion.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;
                 align-self: self-start;
+                border-bottom-left-radius: .5rem;
+                border-bottom-right-radius: .5rem;
+                padding:0;
             }
             #tituloTexto {
                 align-self: self-start;

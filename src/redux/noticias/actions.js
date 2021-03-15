@@ -17,7 +17,7 @@ export const PATCH_ERROR = "[noticias] PATCH error";
 export const UPDATE_ERROR = "[noticias] UPDATE error";
 export const REMOVE_ERROR = "[noticias] REMOVE error";
 
-
+export const NOTICIA = "[noticias] NOTICIA";
 
 
 export const get = (options) => ({
@@ -58,4 +58,9 @@ export const edit = (modo, item) => ({
         Activo: 1
     },
     modo: modo,
+})
+
+export const noticia = (registro) => ({
+    type: NOTICIA,
+    registro: registro,
 })

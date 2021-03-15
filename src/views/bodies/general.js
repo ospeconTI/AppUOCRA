@@ -250,6 +250,7 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
             .active {
                 background-color: #717171;
             }
+
 		`;
 	}
 	render() {

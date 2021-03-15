@@ -105,6 +105,9 @@ export class gremioListaScreen extends connect(store, SECCIONALES_DATOS, MAPA_CL
             :host([media-size="small"]) .notaDetTxt{
                 font-size: var(--font-label-size);
             }
+            *[hidden] {
+				display: none;
+			}
 		`;
 	}
 	render() {
@@ -114,9 +117,10 @@ export class gremioListaScreen extends connect(store, SECCIONALES_DATOS, MAPA_CL
                     ${this.gremioLista[this.idioma].titulo}
                 </div>
 				<div class="panel">
+				<div style="padding:.5rem"></div>
                 ${this.centros.map((item, index) => {
                             return html` 
-                                <div>
+                                <div ?hidden="${index==0}">
                                     <hr id="linea" />
                                 </div>
                                 <div class="grid notas" style="align-items: stretch;">
@@ -130,6 +134,7 @@ export class gremioListaScreen extends connect(store, SECCIONALES_DATOS, MAPA_CL
                                 </div>
                             `
                         })}
+                    <div style="padding:.5rem"></div>
                 </div>
             </div>
 

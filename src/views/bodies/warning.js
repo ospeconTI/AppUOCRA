@@ -68,6 +68,9 @@ export class pantallaWarning extends connect(store, WARNING, MEDIA_CHANGE, SCREE
 			.fondoOk {
 				background-color: var(--color-ok) !important;
 			}
+			.fondoAmarillo {
+				background-color: var(--color-amarillo) !important;
+			}
 			#x {
 				position: relative;
 				align-self: flex-start;

@@ -84,18 +84,10 @@ export class gremioTarjetaIericScreen extends connect(store, MEDIA_CHANGE, SCREE
             .elselect{
                 height:2.5rem; 
             }
+
             #botones{
-                width:90%;
+                padding: 1rem 0 1rem 0;
                 justify-self: center;
-            }
-            .btnListado{
-                background-color: var(--color-amarillo) !important;
-                border-radius: 1rem !important;
-                fill: var(--color-blanco) !important;
-                stroke: var(--color-blanco) !important;
-                color: var(--color-blanco) !important;
-                font-size: var(--font-bajada-size) !important;
-                grid-gap: 0 !important;
             }
             .btnVerMapa{
                 background-color: var(--primary-color) !important;
@@ -106,9 +98,16 @@ export class gremioTarjetaIericScreen extends connect(store, MEDIA_CHANGE, SCREE
                 font-size: var(--font-bajada-size) !important;
                 grid-gap: 0 !important;
             }
+            .btnVerMapa svg{
+                height:2rem;
+            }
             #bullet{
                 fill: var(--color-blanco);
                 stroke: var(--color-verde-claro);
+            }
+            #btnSvg svg{
+                width:2rem;
+                height:2rem;
             }
 		`;
 	}
@@ -137,8 +136,19 @@ export class gremioTarjetaIericScreen extends connect(store, MEDIA_CHANGE, SCREE
                     </div>
                     <div id="subTituloTexto">
                         <b>La primera Tarjeta debe ser gestionada por la empresa contratante</b>, la cual debe enviar al IERIC todos los datos del trabajador o trabajadora para que proceda a la emisión de la tarjeta. Así lo establece la Ley 22.250 (en su artículo 13, último párrafo).
-                        <p><b>Si tenés Libreta o necesitás reemplazar la tarjeta por pérdida, robo o deterioro,</b> podés gestionarla en la delegación del IERIC o la Seccional de UOCRA más cercana a tu domicilio, presentando DNI y constancia de CUIL.</p>
-                        <p>Buscá la Seccional más cercana</p>                    
+                        <p><b>Si tenés Libreta o necesitás reemplazar la tarjeta por pérdida, robo o deterioro,</b> podés gestionarla en la delegación del IERIC o la Seccional de UOCRA más cercana a tu domicilio, presentando DNI y constancia de CUIL.</p>                    
+                    </div>
+                    <div id="botones">
+                        <button btn1 class="btnVerMapa" @click=${this.seccionales}>
+                            <div class="grid column">
+                                <div id="btnSvg">
+                                    ${SVGS["MISINDICATO"]}                        
+                                </div>
+                                <div>
+                                    SECCIONALES
+                                </div>
+                            </div>
+                        </button>                    
                     </div>
                 </div>
             `;
@@ -157,8 +167,8 @@ export class gremioTarjetaIericScreen extends connect(store, MEDIA_CHANGE, SCREE
 			this.update();
 		}
 	}
-    salud(){
-        store.dispatch(goTo("salud"));
+    seccionales(){
+        store.dispatch(goTo("gremioZonas"));
     }
     cultura(){
         store.dispatch(goTo("cultura"));

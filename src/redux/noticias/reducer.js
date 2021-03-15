@@ -9,7 +9,8 @@ import {
     ADD_ERROR,
     REMOVE_SUCCESS,
     REMOVE_ERROR,
-    EDIT
+    EDIT,
+    NOTICIA
 } from "../noticias/actions";
 
 
@@ -22,6 +23,8 @@ const initialState = {
     errorTimeStamp: null,
     commandErrorTimeStamp: null,
     editTimeStamp: null,
+    noticia: null,
+    noticiaTimeStamp: null,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -60,7 +63,10 @@ export const reducer = (state = initialState, action) => {
         case ADD_ERROR:
             newState.commandErrorTimeStamp = (new Date()).getTime();
             break;
-
+        case NOTICIA:
+            newState.noticia = action.registro;
+            newState.noticiaTimeStamp = (new Date()).getTime();
+            break;
     }
     return newState;
 };

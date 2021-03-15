@@ -39,7 +39,7 @@ export const get = ({
     next(action);
     if (action.type === GET) {
         let hoteles = JSON
-        hoteles.sort(function(a,b){return a["provincia"] > b["provincia"] ? 1 : -1});
+        hoteles.sort(function(a,b){return a["lugar"]+a["nombre"] > b["lugar"]+b["nombre"] ? 1 : -1});
         dispatch({
             type: GET_SUCCESS,
             payload: {

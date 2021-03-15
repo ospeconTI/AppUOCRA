@@ -10,7 +10,7 @@ import { button } from "../css/button";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
 import {SVGS} from "../../../assets/icons/svgs";
-import {get as getNoticias} from "../../redux/noticias/actions"
+import {get as getNoticias, noticia as setNoticia} from "../../redux/noticias/actions"
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -49,11 +49,10 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
 				display: grid;
                 width: 100vw;
 				grid-gap: 0rem;
-				grid-template-rows: 18% 82%;
+				grid-template-rows: 14% 86%;
 				background-color: var(--color-blanco);
 			}
 			#titulo {
-				height: 10vh;
                 width: 100vw;
                 grid-gap: 2vw !important;
                 justify-content: center;
@@ -64,7 +63,6 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                 height:2.8rem;
                 width:15vw;
                 padding:.4vw;
-                background-image: linear-gradient(to right, var(--color-azul-oscuro), var(--primary-color), var(--color-azul-oscuro));
                 border-radius: .5rem;
                 color: var(--color-blanco);
                 font-size:.5rem;
@@ -73,16 +71,16 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                 cursor: pointer;             
             }
             #icGremio{
-                background-image: linear-gradient(to right, var(--color-azul-oscuro), var(--primary-color), var(--color-azul-oscuro));
+                background-color:var(--primary-color);
             }
             #icSalud{
-                background-image: linear-gradient(to right, var(--color-verde-oscuro), var(--color-verde-claro), var(--color-verde-oscuro));
+                background-color: var(--color-verde-claro);
             }
             #icCursos{
-                background-image: linear-gradient(to right, var(--color-amarillo-oscuro), var(--color-amarillo-claro), var(--color-amarillo-oscuro));
+                background-color: var(--color-amarillo-oscuro);
             }
             #icMas{
-                background-image: linear-gradient(to right, var(--color-gris-oscuro), var(--color-gris), var(--color-gris-oscuro));
+                background-color: var(--color-gris-oscuro);
                 }
 
             svg{
@@ -95,7 +93,7 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
 				width: 90%;
 			}
             #datos{
-                height:60vh;
+                height:66vh;
                 overflow-x: hidden;
                 overflow-y: auto;
             }
@@ -179,7 +177,7 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                                     <div class="grid row" >
                                         <div class="notaCabImg" style="background-image: url('${item.imagen}')"></div>
                                         <div class="notaCabTxt">${item.copete}</div>                       
-                                        <div class="verMas">${this.principal[this.idioma].verMas}</div>
+                                        <div class="verMas" .item=${item} @click="${this.verMas}">${this.principal[this.idioma].verMas}</div>
                                     </div>
                                 `
                             }else{
@@ -191,7 +189,7 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                                         <div class="notaDetImg" style="background-image: url('${item.imagen}')"></div>
                                         <div class="grid row" >
                                             <div class="notaDetTxt">${item.copete}</div>                       
-                                            <div id="verMas" class="verMas">${this.principal[this.idioma].verMas}</div>
+                                            <div id="verMas" class="verMas" .item=${item} @click="${this.verMas}">${this.principal[this.idioma].verMas}</div>
                                         </div>
                                     </div>
                                 `
@@ -250,11 +248,9 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
     cultura(){
         store.dispatch(goTo("cultura"));
     }
-	volver() {
-		store.dispatch(goTo("inicial"));
-    }
-    claveRecuperar() {
-		store.dispatch(goTo("claveRecuperar"));
+    verMas(e){
+        store.dispatch(setNoticia(e.currentTarget.item));
+        store.dispatch(goTo("noticiaDetalle"));
 	}
     masUOCRA(){
         store.dispatch(menuActivar());

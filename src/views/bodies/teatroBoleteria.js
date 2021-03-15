@@ -156,7 +156,6 @@ export class teatroBoleteriaScreen extends connect(store, PROGRAMACION_DATOS, ME
         }
     }
 
- 
     detalle(e){
         store.dispatch(reserva(e.currentTarget.item))
         store.dispatch(goTo("teatroProgramacionDetalle"));

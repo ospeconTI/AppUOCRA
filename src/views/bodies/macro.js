@@ -60,6 +60,9 @@ export class macroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement
 				background-position: center center ;
                 background-size: cover ;
                 align-self: self-start;
+                border-bottom-left-radius: .5rem;
+                border-bottom-right-radius: .5rem;
+                padding:0;
             }
             #tituloTexto {
                 align-self: self-start;

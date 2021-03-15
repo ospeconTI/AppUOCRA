@@ -1,6 +1,8 @@
 /** @format */
 
 import { html, LitElement, css } from "lit-element";
+import {unsafeHTML} from 'lit-html/directives/unsafe-html';
+
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo } from "../../redux/routing/actions";
@@ -205,7 +207,7 @@ export class turismoHotelesDetalleScreen extends connect(store, HOTELESBANNER_DA
                     </div>
                     <div id="subTituloTexto" class="grid" style="padding:0; grid-template-columns:auto 1fr; grid-gap:.2rem;">
                         <div id="bullet1" style="align-self: self-start;">${SVGS["BULLET"]}</div>
-                        <div id="textoFolleto">${this.reserva.detalle}</div>
+                        <div id="textoFolleto">${unsafeHTML(this.reserva.detalle)}</div>
                     </div>
                     <div style="padding-top:2rem"></div>
                 </div>

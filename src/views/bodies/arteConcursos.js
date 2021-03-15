@@ -97,6 +97,46 @@ export class arteConcursosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(Li
                     <div id="subTituloTexto">
                         Una obra que debe ser una pieza escultórica, recorrible en las 3 dimensiones, que identifique conceptualmente la "cultura del trabajo". Especialmente, expresar la búsqueda de la promoción y el desarrollo cultural, educativo y social de los trabajadores y trabajadoras.
                     </div>
+
+                    <div id="tituloTexto" class="grid">
+                        <div id="bullet">${SVGS["BULLET"]}</div>
+                        <div id="solicitud">Montaje y Subasta</div>
+                    </div>
+                    <div id="subTituloTexto">
+						<p>Una atractiva propuesta artística integradora con la participación de artistas basada en los siguientes pilares:</p>
+						<p><li>Exposición</li></p>
+						El montaje de una muestra que abordará los valores del trabajador constructor en el mundo del trabajo.
+						<p><li>Subasta</li></p>
+						La realización de una subasta a beneficio del Hogar Peldaños, perteneciente a la Fundación Construir Futuro.
+						<li><p>Solidaridad</li></p>
+						La Red Social UOCRA reivindica los conceptos de solidaridad, productividad y equidad social sobre la base de una metodología de acción dinámica transformadora y moderna.
+                    </div>
+
+                    <div id="tituloTexto" class="grid">
+                        <div id="bullet">${SVGS["BULLET"]}</div>
+                        <div id="solicitud">Creación de Afiche</div>
+                    </div>
+                    <div id="subTituloTexto">
+					Una convocatoria abierta para la comunidad artística nacional e internacional que incluye a creativos de diversas disciplinas, tales como la ilustración, el grafiti, el diseño gráfico, el diseño multimedia, la pintura, la fotografía, entre otros, con el objetivo de diseñar afiches para la campaña contra el trabajo infantil y el trabajo forzoso, de cara a la próxima IV Conferencia Mundial sobre la Erradicación Sostenida del Trabajo infantil que tendrá lugar en Buenos Aires, Argentina, durante el mes de noviembre del 2017.
+                    </div>
+
+					<div id="tituloTexto" class="grid">
+                        <div id="bullet">${SVGS["BULLET"]}</div>
+                        <div id="solicitud">Futuro del Trabajo</div>
+                    </div>
+                    <div id="subTituloTexto">
+					El objetivo del certamen es examinar el futuro del trabajo utilizando el arte y, específicamente el medio audiovisual, para abrir el debate sobre cómo los cambios en la innovación tecnológica, la organización del trabajo y de la producción, la globalización, el cambio climático, y los cambios demográficos y migratorios serán factores decisivos en las formas de trabajo actuales.
+                    </div>
+
+					<div id="tituloTexto" class="grid">
+                        <div id="bullet">${SVGS["BULLET"]}</div>
+                        <div id="solicitud">Fotografía</div>
+                    </div>
+                    <div id="subTituloTexto">
+					Concurso de fotografía sobre las 7 Iniciativas planteadas por OIT para cumplir eficazmente con su mandato de justicia Social y para visibilizar las diferentes situaciones de trabajo que atraviesan las mujeres, buscando mostrar los desafíos y las desigualdades.
+                    </div>
+
+
                     <div style="padding-top:2rem"></div>
                 </div>
             `;

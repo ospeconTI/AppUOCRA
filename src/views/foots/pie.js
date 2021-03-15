@@ -47,7 +47,7 @@ export class pieComponente extends connect(store, FOOTHER_TAPA, MEDIA_CHANGE, SC
             align-items:center; 
             justify-content:center;
             background-color: transparent;
-            grid-template-columns:repeat(5,2fr);
+            grid-template-columns:repeat(4,2fr);
             grid-template-rows: 60% 40%;
             grid-gap:0.1rem;
         }
@@ -117,9 +117,6 @@ export class pieComponente extends connect(store, FOOTHER_TAPA, MEDIA_CHANGE, SC
                 <div id="img-publicaciones" select=${this.opcion == 'tres' ? 'SI' : 'NO'}  @click="${this.notificaciones}" class="img">
                     ${SVGS["CAMPANACON"]}
                 </div>
-                <div id="img-tablas" select=${this.opcion == 'cuatro' ? 'SI' : 'NO'} @click="${this.compras}" class="img">
-                    ${SVGS["CARRITO"]}
-                </div>  
                 <div id="img-tablas" select=${this.opcion == 'cinco' ? 'SI' : 'NO'} @click="${this.clickBoton3}" class="img">
                     ${SVGS["PERFIL"]}
                 </div>
@@ -131,9 +128,6 @@ export class pieComponente extends connect(store, FOOTHER_TAPA, MEDIA_CHANGE, SC
                 </div>
                 <div id="lbl-publicaciones" select=${this.opcion == 'tres' ? 'SI' : 'NO'} @click="${this.notificaciones}"  class="lbl">
                     NOTIFICACIONES
-                </div>
-                <div id="lbl-tablas" select=${this.opcion == 'cuatro' ? 'SI' : 'NO'} @click="${this.compras}"  class="lbl">
-                    COMPRAS
                 </div>
                 <div id="lbl-tablas" select=${this.opcion == 'cinco' ? 'SI' : 'NO'} @click="${this.clickBoton3}"  class="lbl">
                     PERFIL
@@ -162,7 +156,7 @@ export class pieComponente extends connect(store, FOOTHER_TAPA, MEDIA_CHANGE, SC
             this.mediaSize = state.ui.media.size
             this.hidden = true
             const haveFootArea = isInLayout(state, this.area)
-            const SeMuestraEnUnasDeEstasPantallas = "-main-sindicato-salud-compras-cultura-tv-moecra-cemapsMapa-notificaciones-cartilla-cartillaDetalle-cemapCartillaDetalle-turnos-franchin-emergencias-gremioZonas-gremioMapa-gremioLista-gremioJuventud-gremioTarjetaIeric-gremioConvenio-teatroProgramacion-teatroProgramacionDetalle-teatroBoleteria-web-saludSeguridad-saludSeguridadConsultas-saludSeguridadDenuncia-ivt-macro-cine-cineNosotros-cineEdicion-cineTematicas-cineEdicionesAnteriores-tvCanales-tvEstrenos-tvGrilla-adolecencia-adolecencia2020-adolecenciaOtras-adicciones-adicciones2020-adiccionesOtras-hogar-hogarInstitucional-hogarDescripcion-hogarVideoteca-hogarColabora-mujeres-mujeresConstruccion-mujeresFormacion-arte-arteNosotros-arteEdicion-arteConcursos-arteEdicionesAnteriores-deportes-beneficios-beneficiosSubsidios-beneficiosSeguros-beneficiosSepelios-beneficiosJubilacion-denunciasFormulario-turismo-turismoHotelesLista-turismoMapa-turismoHotelesDetalle-fundacion-fundacionAulas-fundacionCursos-fundacionEscuelas-fundacionInstituto-".indexOf("-" + state.screen.name + "-") != -1
+            const SeMuestraEnUnasDeEstasPantallas = "-main-sindicato-salud-compras-cultura-tv-moecra-cemapsMapa-notificaciones-cartilla-cartillaDetalle-cemapCartillaDetalle-turnos-saludCredencial-emergencias-gremioZonas-gremioMapa-gremioLista-gremioJuventud-gremioTarjetaIeric-gremioConvenio-teatroProgramacion-teatroProgramacionDetalle-teatroBoleteria-web-saludSeguridad-saludSeguridadConsultas-saludSeguridadDenuncia-ivt-macro-cine-cineNosotros-cineEdicion-cineTematicas-cineEdicionesAnteriores-tvCanales-tvEstrenos-tvGrilla-adolecencia-adolecencia2020-adolecenciaOtras-adicciones-adicciones2020-adiccionesOtras-hogar-hogarInstitucional-hogarDescripcion-hogarVideoteca-hogarColabora-mujeres-mujeresConstruccion-mujeresFormacion-arte-arteNosotros-arteEdicion-arteConcursos-arteEdicionesAnteriores-deportes-beneficios-beneficiosSubsidios-beneficiosSeguros-beneficiosSepelios-beneficiosJubilacion-denunciasFormulario-turismo-turismoHotelesLista-turismoMapa-turismoHotelesDetalle-fundacion-fundacionAulas-fundacionCursos-fundacionEscuelas-fundacionInstituto-noticiaDetalle-".indexOf("-" + state.screen.name + "-") != -1
             if (haveFootArea && SeMuestraEnUnasDeEstasPantallas) {
                 this.hidden = false
             }

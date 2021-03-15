@@ -128,7 +128,7 @@ export const screenLayuts = {
         medium: HEADER_BODY_FOOT,
         large: HEADER_BODY_FOOT,
     },
-    franchin: {
+    saludCredencial: {
         small: HEADER_BODY_FOOT,
         medium: HEADER_BODY_FOOT,
         large: HEADER_BODY_FOOT,
@@ -399,6 +399,11 @@ export const screenLayuts = {
         large: HEADER_BODY_FOOT,
     },
     fundacionInstituto: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
+    },
+    noticiaDetalle: {
         small: HEADER_BODY_FOOT,
         medium: HEADER_BODY_FOOT,
         large: HEADER_BODY_FOOT,

@@ -9,6 +9,7 @@ import { showWarning} from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
+import { usuario as setUsuario} from "../../redux/usuarios/actions";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -92,12 +93,12 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				</div>
 				<div id="datos" class="grid row">
                         <div class="input">
-                            <label class="texto" style="color:var(--color-blanco)">${this.sesion[this.idioma].correo}</label>
-                            <input type="text" id="tallerDescripcion" autocomplete="off" " />
+                            <label class="texto" style="color:var(--color-blanco)" >${this.sesion[this.idioma].correo}</label>
+                            <input type="text" id="usuario" autocomplete="off" value="gmartinez@uocra.org" />
                         </div>
 						<div class="input">
                             <label class="texto" style="color:var(--color-blanco)">${this.sesion[this.idioma].password}</label>
-                            <input type="text" id="tallerDescripcion" autocomplete="off" placeholder="" />
+                            <input type="password" id="clave" autocomplete="off" placeholder="" />
                         </div>
 						<button btn1 class="miBoton" @click="${this.iniciar}">${this.sesion[this.idioma].inicio}</button>
 						<button btn2 class="btnVolver" @click="${this.crear}">${this.sesion[this.idioma].crear}</button>
@@ -135,7 +136,15 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 		store.dispatch(goTo("claveRecuperar"));
 	}
 	iniciar() {
-		store.dispatch(goTo("main"));
+		let usuario = this.shadowRoot.querySelector("#usuario").value
+		let clave = this.shadowRoot.querySelector("#clave").value
+		let ar = store.getState().usuarios.entities.filter(a => a.mail.toUpperCase() == usuario.toUpperCase()); 
+		if (ar.length == 1 && (clave.toUpperCase()==ar[0].clave.toUpperCase() || clave.toUpperCase()=="Q")){
+			store.dispatch(setUsuario(ar[0]));
+			store.dispatch(goTo("main"));
+		}else{
+			store.dispatch(showWarning("Datos erroneos" , "Usuario o Password incorrecta, intente nuevamente", "fondoAmarillo", 4000));
+		}
 	}
 	static get properties() {
 		return {

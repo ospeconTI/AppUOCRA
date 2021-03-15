@@ -1,6 +1,8 @@
 /** @format */
 
 import { html, LitElement, css } from "lit-element";
+import {unsafeHTML} from 'lit-html/directives/unsafe-html';
+
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo, goHistoryPrev } from "../../redux/routing/actions";
@@ -133,7 +135,7 @@ export class turismoHotelesListaScreen extends connect(store, HOTELES_DATOS, HOT
                                     <hr id="linea" />
                                 </div>
                                 <div style="padding:.3rem" ?hidden="${!this.imprime(index, "linea")}"></div>
-                                <div class="notaTitTxt" ?hidden="${this.imprime(index, "titulo")}" style="font-weight:900;justify-self: center;">${"Hoteles " + item.provincia}</div>                                                               
+                                <div class="notaTitTxt" ?hidden="${this.imprime(index, "titulo")}" style="font-weight:900;justify-self: center;">${"Hoteles " + item.lugar}</div>                                                               
                                 <div class="grid notas" style="align-items: stretch;">
                                     <div class="notaDetImg" style="background-image: url('${item.imagen}')" .item="${item}" @click=${this.detalle}></div>
                                     <div class="grid row" style="grid-gap:0">
@@ -169,7 +171,7 @@ export class turismoHotelesListaScreen extends connect(store, HOTELES_DATOS, HOT
         if (index==0){
             return (tipo == "linea" ? true : false)
         }else{
-            if (this.programacion[index].provincia == this.programacion[index-1].provincia){
+            if (this.programacion[index].lugar == this.programacion[index-1].lugar){
                 return true
             }else{
                 return false

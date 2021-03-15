@@ -112,7 +112,7 @@ export class gremioZonasScreen extends connect(store, SECCIONALES_DATOS, ZONA_TI
                     </div>
                     <div id="selectZonas" class="grid row miselect" >
                         <select id="txtZonas" class="elselect" @change="${this.cambioZona}">
-                            <option value="0">Zonas</option>
+                            <option value="-1">Zonas</option>
                             ${this.zona.map((item, index) => {
                                 return html `
                                     <option value="${item.id}">${item.nombre}</option>
@@ -150,7 +150,7 @@ export class gremioZonasScreen extends connect(store, SECCIONALES_DATOS, ZONA_TI
     listados(){
         this.paginaSiguiente = "gremioLista"
         const txtZona = this.shadowRoot.querySelector("#txtZonas").value;
-        if(txtZona == 0){
+        if(txtZona == -1){
             store.dispatch(getMapaTodos())
         }else{
             store.dispatch(getMapaZona(parseInt(txtZona)))
@@ -159,7 +159,7 @@ export class gremioZonasScreen extends connect(store, SECCIONALES_DATOS, ZONA_TI
     seccionales(){
         this.paginaSiguiente = "gremioMapa"
         const txtZona = this.shadowRoot.querySelector("#txtZonas").value;
-        if(txtZona == 0 ){
+        if(txtZona == -1 ){
             store.dispatch(getMapaTodos())
         }else{
             store.dispatch(getMapaZona(parseInt(txtZona)))

@@ -153,7 +153,7 @@ export class mujeresConstruccionScreen extends connect(store, MEDIA_CHANGE, SCRE
             return html`
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" class="grid column">
-                        <img width="100%" height="auto" src="https://img.youtube.com/vi/REbRQNQ38dA/0.jpg">
+                        <img width="100%" height="auto" src="https://img.youtube.com/vi/CfhxRDj5Wb4/0.jpg">
                         <div class="play" @click=${this.ver}>${SVGS["PLAY"]}</div>
                     </div>
                     <div style="padding-top:1rem"></div>
@@ -172,7 +172,7 @@ export class mujeresConstruccionScreen extends connect(store, MEDIA_CHANGE, SCRE
 	}
     ver(e){
         //window.open("https://www.youtube.com/watch?v=REbRQNQ38dA")
-        location.href = "https://www.youtube.com/watch?v=REbRQNQ38dA"
+        location.href = "https://www.youtube.com/watch?v=CfhxRDj5Wb4"
 
     }
 	stateChanged(state, name) {

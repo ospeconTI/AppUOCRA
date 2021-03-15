@@ -10,6 +10,8 @@ import { button } from "../css/button";
 import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
 import {SVGS} from "../../../assets/icons/svgs";
+import { seleccion as selLocalidad} from "../../redux/localidades/actions";
+import { seleccion as selServicio} from "../../redux/servicios/actions";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -87,7 +89,7 @@ export class emergenciasScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCAL
                 height:2.5rem; 
             }
             #botones{
-                width:90%;
+                width:80%;
                 justify-self: center;
             }
             .btnListado{
@@ -105,12 +107,17 @@ export class emergenciasScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCAL
                 fill: var(--color-blanco) !important;
                 stroke: var(--color-blanco) !important;
                 color: var(--color-blanco) !important;
-                font-size: var(--font-bajada-size) !important;
+                font-size: var(--font-header-h1-size) !important;
                 grid-gap: 0 !important;
+                justify-content: center;
             }
             #bullet{
                 fill: var(--color-blanco);
                 stroke: var(--color-verde-claro);
+            }
+            svg{
+                width:1.6rem;
+                height:1.6rem;
             }
 		`;
 	}
@@ -147,6 +154,16 @@ export class emergenciasScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCAL
                             })}
                         </select>
 				    </div>
+                    <div id="botones" class="grid">
+				        <button btn1 class="btnVerMapa" @click=${this.listar}>
+                            <div class="grid column">
+                                <div>
+                                    ${SVGS["LISTADO"]}                        
+                                </div>
+                                <div>Listar</div>
+                            </div>
+                        </button>
+                    </div>
                     <div id="subTituloTexto">
                     Si vivís en la Ciudad Autónoma de Buenos Aires, dirigite a la Guardia del Sanatorio Franchin.
                     </div>
@@ -156,7 +173,7 @@ export class emergenciasScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCAL
                                 <div>
                                     ${SVGS["TELEFONO"]}                        
                                 </div>
-                                <div>${this.emergencia[this.idioma].boton}</div>
+                                <div style="font-size: var(--font-bajada-size)">${this.emergencia[this.idioma].boton}</div>
                             </div>
                         </button>
                     </div>
@@ -164,6 +181,21 @@ export class emergenciasScreen extends connect(store, PROVINCIA_TIMESTAMP, LOCAL
             `;
         }
 	}
+    listar(){
+        const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
+        const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades").value;
+        if (txtProvincia==0 || txtLocalidad==0){
+			store.dispatch(showWarning("Seleccion Incorrecta", "Seleccion de provincia y/o localidad no es correcta", "fondoError", 2000));
+        }else{
+            let localidad = store.getState().localidades.entities;
+            let salLocalidad = localidad.filter(a => a.id == txtLocalidad);  
+            let servicio = store.getState().servicios.entities;
+            let salServicio = servicio.filter(a => a.nombre.toUpperCase() == "EMERGENCIAS");  
+            store.dispatch(selLocalidad(salLocalidad))
+            store.dispatch(selServicio(salServicio))
+            store.dispatch(goTo("cemapCartillaDetalle"));
+        }
+    }
     telefono(){
         document.location.href = 'tel:0800-345-7700';
     }

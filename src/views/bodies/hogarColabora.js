@@ -66,6 +66,9 @@ export class hogarColaboraScreen extends connect(store, MEDIA_CHANGE, SCREEN)(Li
 				background-position: center center ;
                 background-size: cover ;
                 align-self: self-start;
+                border-bottom-left-radius: .5rem;
+                border-bottom-right-radius: .5rem;
+                padding:0;
             }
             #subTituloTexto {
                 width: 80%;

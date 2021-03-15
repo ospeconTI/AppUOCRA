@@ -22,6 +22,7 @@ import {get as getServicios} from "./redux/servicios/actions"
 import {get as getCemaps} from "./redux/cemaps/actions"
 import {get as getZonas} from "./redux/zonas/actions"
 import {get as getSeccionales} from "./redux/seccionales/actions"
+import {get as getUsuarios} from "./redux/usuarios/actions"
 
 if (process.env.NODE_ENV === "production") {
     registerSW();
@@ -37,6 +38,7 @@ store.dispatch(getServicios())
 store.dispatch(getCemaps())
 store.dispatch(getZonas())
 store.dispatch(getSeccionales())
+store.dispatch(getUsuarios())
 
 
 
