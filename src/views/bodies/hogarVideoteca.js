@@ -176,8 +176,8 @@ export class hogarVideotecaScreen extends connect(store, HOGARVIDEOS_DATOS, HOGA
         store.dispatch(goHistoryPrev())
     }
     ver(e){
-        //window.open("https://www.youtube.com/watch?v=" + e.currentTarget.item.link)
-        location.href = "https://www.youtube.com/watch?v=" + e.currentTarget.item.link
+        window.open("https://www.youtube.com/watch?v=" + e.currentTarget.item.link,'_blank')
+        //location.href = "https://www.youtube.com/watch?v=" + e.currentTarget.item.link
     }
     stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {

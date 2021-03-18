@@ -185,8 +185,8 @@ export class adiccionesScreen extends connect(store, ADICCIONES_ERROR, ADICCIONE
         store.dispatch(goHistoryPrev())
     }
     ver(e){
-        //window.open("https://www.youtube.com/watch?v=" + e.currentTarget.item.link, "_blank")
-        location.href = "https://www.youtube.com/watch?v=" + e.currentTarget.item.link
+        window.open("https://www.youtube.com/watch?v=" + e.currentTarget.item.link, "_blank")
+        //location.href = "https://www.youtube.com/watch?v=" + e.currentTarget.item.link
     }
     stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {

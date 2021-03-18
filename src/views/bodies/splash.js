@@ -74,7 +74,7 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				this.hidden = false;
 
 				this.timeOut = setTimeout(() => {
-					//store.dispatch(goNext());
+					store.dispatch(goNext());
 				}, 4000);
 			}
 			this.update();
@@ -83,8 +83,8 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 
 	proximo() {
 		clearTimeout(this.timeOut);
-		store.dispatch(goNext());
-		//store.dispatch(goTo("salud"));
+		//store.dispatch(goNext());
+		store.dispatch(goTo("main"));
 	}
 
 	static get properties() {

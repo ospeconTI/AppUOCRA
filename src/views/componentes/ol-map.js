@@ -102,8 +102,7 @@ export class OLComponent extends (LitElement) {
                 url: "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
             }),
 
-        });
-
+        }); 
         this.view = new View({
             center: this._puntos[0],
             zoom: 8,

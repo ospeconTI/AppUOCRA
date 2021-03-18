@@ -23,6 +23,7 @@ import {get as getCemaps} from "./redux/cemaps/actions"
 import {get as getZonas} from "./redux/zonas/actions"
 import {get as getSeccionales} from "./redux/seccionales/actions"
 import {get as getUsuarios} from "./redux/usuarios/actions"
+import {get as getOnBoarding} from "./redux/onBoarding/actions"
 
 if (process.env.NODE_ENV === "production") {
     registerSW();
@@ -32,6 +33,7 @@ if (process.env.NODE_ENV === "production") {
 store.dispatch(setUrls("https://app.uocra.org/","https://app.uocra.org/images/"))
 
 store.dispatch(getLeftMenu())
+store.dispatch(getOnBoarding())
 store.dispatch(getLocalidades())
 store.dispatch(getProvincias())
 store.dispatch(getServicios())

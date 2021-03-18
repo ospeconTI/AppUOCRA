@@ -15,7 +15,7 @@ import {
     REMOVE_SUCCESS,
     REMOVE_ERROR
 
-} from "../noticias/actions";
+} from "../onBoarding/actions";
 
 import {
 
@@ -31,21 +31,19 @@ import {
 import {
     apiRequest
 } from "../api/actions"
-import {JSON} from "../../redux/json/noticias";
+import {JSON} from "../../redux/json/onBoarding";
 
 export const get = ({
     dispatch
 }) => next => action => {
     next(action);
     if (action.type === GET) {
-        let noticias = JSON
-        noticias.sort(function(a,b){return a["orden"] > b["orden"] ? 1 : -1});
-        noticias = noticias.filter(a => a.activo == 1);  
+        var onBoarding = JSON
         dispatch({
             type: GET_SUCCESS,
             payload: {
               send: 1,
-              receive: noticias
+              receive: onBoarding
             }
           })
         //dispatch(apiRequest(ikePuestosQuery, action.options, GET_SUCCESS, GET_ERROR))

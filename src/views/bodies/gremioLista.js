@@ -180,21 +180,21 @@ export class gremioListaScreen extends connect(store, SECCIONALES_DATOS, MAPA_CL
                 this.update();
             }
         }
-        if (name == MAPA_CLICK){
-            var closer = this.shadowRoot.querySelector('#popup');
-            var content = this.shadowRoot.querySelector('#popup-content');
-            const dato = state.ui.mapa.feature.values_.geometry.flatCoordinates
-            const event = state.ui.mapa.event
-            var mostrar = '<p>' + dato[2] + '</p><code>' + dato[3] + '</code>';
-            if(this.puntos[0][0] != 0){
-                let distancia = getDistance(this.puntos[0][1], this.puntos[0][0], dato[1], dato[0]).toFixed(1);
-                if (distancia > 0 ){
-                    mostrar = mostrar + "<p><a target='_blank' href='https://www.google.com.ar/maps/dir/" + this.puntos[0][1] + "," + this.puntos[0][0] + "/" + dato[1] + ","  + dato[0] + "'>Distancia: " +  distancia + " km</a></p>" 
-                }
-            }
-            content.innerHTML = mostrar
-            closer.removeAttribute("hidden");                    
-        }
+        // if (name == MAPA_CLICK){
+        //     var closer = this.shadowRoot.querySelector('#popup');
+        //     var content = this.shadowRoot.querySelector('#popup-content');
+        //     const dato = state.ui.mapa.feature.values_.geometry.flatCoordinates
+        //     const event = state.ui.mapa.event
+        //     var mostrar = '<p>' + dato[2] + '</p><code>' + dato[3] + '</code>';
+        //     if(this.puntos[0][0] != 0){
+        //         let distancia = getDistance(this.puntos[0][1], this.puntos[0][0], dato[1], dato[0]).toFixed(1);
+        //         if (distancia > 0 ){
+        //             mostrar = mostrar + "<p><a target='_blank' href='https://www.google.com.ar/maps/dir/" + this.puntos[0][1] + "," + this.puntos[0][0] + "/" + dato[1] + ","  + dato[0] + "'>Distancia: " +  distancia + " km</a></p>" 
+        //         }
+        //     }
+        //     content.innerHTML = mostrar
+        //     closer.removeAttribute("hidden");                    
+        // }
 
         if (name == SECCIONALES_DATOS){
             this.centros = state.seccionales.entityMapa

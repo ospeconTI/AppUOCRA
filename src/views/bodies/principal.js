@@ -1,6 +1,8 @@
 /** @format */
 
 import { html, LitElement, css } from "lit-element";
+import {unsafeHTML} from 'lit-html/directives/unsafe-html';
+
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo, goHistoryPrev } from "../../redux/routing/actions";
@@ -58,6 +60,7 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                 justify-content: center;
                 padding: 0 !important;
                 align-self: center;
+                background-color: var(--color-gris-fondo);
             }
             .icBoton{
                 height:2.8rem;
@@ -88,14 +91,22 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                 width:1.8rem;
                 fill: white;
             }
+            #masuocra svg{
+                height:1.3rem;
+                width:1.3rem;                
+            }
 			#linea {
 				color: var(--color-blanco);
 				width: 90%;
 			}
             #datos{
-                height:66vh;
+                height:69vh;
+                width:90vw;
                 overflow-x: hidden;
                 overflow-y: auto;
+                grid-gap: 0.3rem;
+                background-color: var(--color-blanco);
+                justify-self: center;
             }
             .notaCabImg{
                 width: 100%;
@@ -108,9 +119,16 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
             }
             .notaCabTxt{               
 				color: var(--color-gris-oscuro);
-				font-size: 1.6vh !important;
+                font-size: var(--font-label-size);
                 font-style: italic;
                 justify-self: center;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow:hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                text-align: justify;
+                word-wrap: break-word;
             }
             .verMas{
                 color: var(--color-gris-oscuro);
@@ -118,28 +136,39 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                 font-style: italic; 
                 font-weight: bolder;  
                 cursor: pointer; 
-            }
+                text-align: right;
+                align-self: self-end;
+                padding-right: 1.5rem;
+             }
             .notas{
+                display: grid;
+                grid-template-columns: auto 1fr;
                 justify-self: center;
                 padding: 0 !important;
-                grid-gap: 0 !important;          
-            }
+                grid-gap: 0.5rem !important;   
+             }
             .notaDetImg{
-                width: 36vw;
-                height: 24vw;
+                width: 29vw;
+                height: 18vw;
 				background-repeat: no-repeat;
 				background-position: center;
-                background-size: cover ;
+                background-size: contain ;
                 justify-self: center;
-                border-radius: .4rem;
+                border-radius: .8rem;
             }
             .notaDetTxt{
 				color: var(--color-gris-oscuro);
                 justify-self: center;
-                font-size: var(--font-header-h2-size) ;
+                font-size: calc(var(--font-header-h1-menos-size) + .05rem);
+                font-weight: 900;
+                word-wrap: break-word;
+                padding-right: 1.5rem;
             }
-            :host([media-size="small"]) .notaDetTxt{
-                font-size: var(--font-label-size);
+            .txtNota{
+                display: grid;
+                grid-template-rows: auto 1fr;
+                overflow: hidden;
+                text-overflow: ellipsis;    
             }
 		`;
 	}
@@ -165,7 +194,7 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                             <div >${this.aplicacion[this.idioma].teatro}</div>
                         </div>
                         <div id="icMas" class="grid row icBoton" @click="${this.masUOCRA}">
-                            <div >${SVGS["MASUOCRA"]}</div>
+                            <div id="masuocra">${SVGS["MASUOCRA"]}</div>
                             <div >${this.aplicacion[this.idioma].masuocra}</div>
                         </div>
                     </div>
@@ -176,7 +205,7 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                                 return html` 
                                     <div class="grid row" >
                                         <div class="notaCabImg" style="background-image: url('${item.imagen}')"></div>
-                                        <div class="notaCabTxt">${item.copete}</div>                       
+                                        <div class="notaCabTxt">${unsafeHTML("<b style='font-size:.8rem;'>" + item.copete + "</b> " + item.detalle)}</div>                       
                                         <div class="verMas" .item=${item} @click="${this.verMas}">${this.principal[this.idioma].verMas}</div>
                                     </div>
                                 `
@@ -185,10 +214,10 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                                     <div>
                                         <hr id="linea" />
                                     </div>
-                                    <div class="grid column notas">
+                                    <div class="notas">
                                         <div class="notaDetImg" style="background-image: url('${item.imagen}')"></div>
-                                        <div class="grid row" >
-                                            <div class="notaDetTxt">${item.copete}</div>                       
+                                        <div class="txtNota">
+                                            <div class="notaDetTxt">${unsafeHTML(item.copete)}</div>                       
                                             <div id="verMas" class="verMas" .item=${item} @click="${this.verMas}">${this.principal[this.idioma].verMas}</div>
                                         </div>
                                     </div>
@@ -196,6 +225,7 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                             }
 
                         })}
+                        <div style="padding:2rem;"></div>
                     </div>
                 </div>
             `;
@@ -213,6 +243,11 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
 	}
     atras(){
         store.dispatch(goTo("main"))
+    }
+    removeTags(txt){
+        var rex = /(<([^>]+)>)/ig;
+        txt=txt.replace(rex , "");
+        return txt
     }
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {

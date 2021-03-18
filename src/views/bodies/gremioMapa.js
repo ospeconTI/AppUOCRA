@@ -197,7 +197,7 @@ export class gremioMapaScreen extends connect(store, SECCIONALES_DATOS, MAPA_CLI
                 this.update();
             }
         }
-        if (name == MAPA_CLICK){
+        if (name == MAPA_CLICK  && this.current == "gremioMapa"){
             var closer = this.shadowRoot.querySelector('#popup');
             var content = this.shadowRoot.querySelector('#popup-content');
             const dato = state.ui.mapa.feature.values_.geometry.flatCoordinates

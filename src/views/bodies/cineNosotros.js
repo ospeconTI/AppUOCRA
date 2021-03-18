@@ -174,8 +174,8 @@ export class cineNosotrosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(Lit
         }
 	}
     ver(e){
-        //window.open("https://www.youtube.com/watch?v=REbRQNQ38dA")
-        location.href = "https://www.youtube.com/watch?v=REbRQNQ38dA"
+        window.open("https://www.youtube.com/watch?v=REbRQNQ38dA")
+        //location.href = "https://www.youtube.com/watch?v=REbRQNQ38dA"
 
     }
 	stateChanged(state, name) {

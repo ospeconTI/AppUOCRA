@@ -1,6 +1,8 @@
 /** @format */
 
 import { html, LitElement, css } from "lit-element";
+import {unsafeHTML} from 'lit-html/directives/unsafe-html';
+
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo } from "../../redux/routing/actions";
@@ -118,10 +120,10 @@ export class noticiaDetalleScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
                     <div id="titulo" style="background-image: url('${this.noticia.imagen}');">
                     </div>
                     <div id="tituloTexto" class="grid">
-                    ${this.noticia.copete}
+                    ${unsafeHTML(this.noticia.copete)}
                     </div>
                     <div id="subTituloTexto">
-                        ${this.noticia.detalle}
+                        ${unsafeHTML(this.noticia.detalle)}
                     </div>
                     </div>
                     <div style="padding-top:2rem"></div>
@@ -144,8 +146,8 @@ export class noticiaDetalleScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 		}
 	}
     laJu(){
-        //window.open("https://www.88552d2b491975945.temporary.link/moodle/login/index.php",'_blank');
-        location.href = "https://www.88552d2b491975945.temporary.link/moodle/login/index.php"
+        window.open("https://www.88552d2b491975945.temporary.link/moodle/login/index.php",'_blank');
+        //location.href = "https://www.88552d2b491975945.temporary.link/moodle/login/index.php"
     }
 	static get properties() {
 		return {

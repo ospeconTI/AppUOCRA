@@ -251,7 +251,7 @@ export class cemapsMapaScreen extends connect(store, CEMAPS_DATOS, MAPA_CLICK, M
                 this.update();
             }
         }
-        if (name == MAPA_CLICK){
+        if (name == MAPA_CLICK && this.current == "cemapsMapa"){
             var closer = this.shadowRoot.querySelector('#popup');
             var content = this.shadowRoot.querySelector('#popup-content');
             const dato = state.ui.mapa.feature.values_.geometry.flatCoordinates

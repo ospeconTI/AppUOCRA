@@ -183,6 +183,11 @@ export const screenLayuts = {
         medium: HEADER_BODY_FOOT,
         large: HEADER_BODY_FOOT,
     },
+    teatroObras: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
+    },
     saludSeguridadConsultas: {
         small: HEADER_BODY_FOOT,
         medium: HEADER_BODY_FOOT,
@@ -412,6 +417,11 @@ export const screenLayuts = {
         small: HEADER_BODY,
         medium: HEADER_BODY,
         large: HEADER_BODY,
+    },
+    onBoarding: {
+        small: ALL_BODY,
+        medium: ALL_BODY,
+        large: ALL_BODY,
     },
 };
 

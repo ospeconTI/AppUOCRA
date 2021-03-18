@@ -30,6 +30,8 @@ import { reducer as arteEdicionesAnterioresReducer } from "./arteEdicionesAnteri
 import { reducer as hotelesReducer } from "./hoteles/reducer";
 import { reducer as hotelesBannerReducer } from "./hotelesBanner/reducer";
 import { reducer as usuariosReducer } from "./usuarios/reducer";
+import { reducer as onBoardingReducer } from "./onBoarding/reducer";
+import { reducer as teatroObrasReducer } from "./teatroObras/reducer";
 
 export const rootReducer = (state = {}, action) => {
     return {
@@ -63,6 +65,8 @@ export const rootReducer = (state = {}, action) => {
         hoteles: hotelesReducer(state.hoteles, action),
         hotelesBanner: hotelesBannerReducer(state.hotelesBanner, action),
         usuarios: usuariosReducer(state.usuarios, action),
+        onBoarding: onBoardingReducer(state.onBoarding, action),
+        teatroObras: teatroObrasReducer(state.teatroObras, action),
         
     };
 };

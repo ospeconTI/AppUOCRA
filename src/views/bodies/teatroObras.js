@@ -1,6 +1,8 @@
 /** @format */
 
 import { html, LitElement, css } from "lit-element";
+import {unsafeHTML} from 'lit-html/directives/unsafe-html';
+
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo, goHistoryPrev } from "../../redux/routing/actions";
@@ -13,7 +15,7 @@ import { OLComponent } from "../componentes/ol-map";
 import {Overlay} from 'ol/Overlay';
 import {getDistance} from "../../libs/funciones";
 import {SVGS} from "../../../assets/icons/svgs";
-import {get as getAdolecenciaJornadas} from "../../redux/adolecenciaJornadas/actions"
+import {get as getTeatro} from "../../redux/teatroObras/actions"
 
 export const featureListener = function ( event ) {
     console.log("featureListenerCalled");
@@ -21,17 +23,17 @@ export const featureListener = function ( event ) {
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
-const ADOLECENCIAJORNADAS_DATOS = "adolecenciaJornadas.timeStamp";
-const ADOLECENCIAJORNADAS_ERROR = "adolecenciaJornadas.errorTimeStamp";
+const TEATRO_DATOS = "teatroObras.timeStamp";
+const TEATRO_ERROR = "teatroObras.errorTimeStamp";
 
-export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DATOS, ADOLECENCIAJORNADAS_ERROR, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class teatroObrasScreen extends connect(store, TEATRO_ERROR, TEATRO_DATOS, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
 		this.area = "body";
         this.current = "";
         this.idioma = store.getState().ui.idioma ;
-		this.idiomaLista = require('../../../assets/idiomas/adolecencia2020.json');
+		this.idiomaLista = require('../../../assets/idiomas/adicciones.json');
         this.registros = null
 
     }
@@ -129,18 +131,17 @@ export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DA
             .play svg{
                 width: 56px;
                 height:56px;
-            }
-
-		`;
+            }		
+        `;
 	}
 	render() {
 		if (this.registros) { return html`
 			<div id="cuerpo">
                 <div id="titulo">
-                    ${this.idiomaLista[this.idioma].titulo + " " + (parseInt((new Date()).getFullYear())-1) }
+                    OBRAS DE TEATRO
                 </div>
 				<div class="panel">
-                    ${this.registros.filter(item => { return item.ano == parseInt((new Date()).getFullYear())-1}).map((item, index) => {
+                    ${this.registros.filter(item => { return item.activo==1 }).map((item, index) => {
                             return html` 
                                 <div ?hidden="${index==0}">
                                     <hr id="linea" />
@@ -148,14 +149,11 @@ export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DA
                                 <div class="grid notas" style="align-items: stretch;">
                                     <div class="grid row" >
                                         <div class="notaTitTxt">${item.nombre}</div>                       
-                                        <div class="notaDetTxt">${item.descripcion}</div>                       
                                      </div>                                    
                                     <div class="notaDetImg">
-                                        <img width="100%" height="auto" src="https://img.youtube.com/vi/${item.link}/default.jpg">
+                                        <img width="100%" height="auto" src="https://img.youtube.com/vi/${item.link}/0.jpg">
                                         <div class="play" .item=${item} @click=${this.ver}>${SVGS["PLAY"]}</div>
                                     </div>
-                                    <div class="notaDetTxtMenor"><b>${this.idiomaLista[this.idioma].expositor}</b>${item.expositor}</div>                       
-                                    <div class="notaDetTxtMenor"><b>${this.idiomaLista[this.idioma].coordinador}</b>${item.coordinador}</div>                       
                                 </div>
   
                             `
@@ -166,7 +164,7 @@ export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DA
 
 		`;
         }else{
-            if (this.current=="adolecencia2020"){
+            if (this.current=="teatroObras"){
                 return html` 
                     <div class="grid row" style="color:white;align-content: center;text-align: center;border:1px solid white;cursor:point" @click=${this.atras}>
                         <div style="font-size:6vw;font-weight: 900;">Error de comexíon</div>
@@ -190,20 +188,19 @@ export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DA
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-adolecencia2020-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-teatroObras-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) { 
  				this.hidden = false;
-                store.dispatch(getAdolecenciaJornadas())
-             }
+                store.dispatch(getTeatro())
+            }
         }
 
-        if (name == ADOLECENCIAJORNADAS_DATOS){
-            this.registros = state.adolecenciaJornadas.entities
+        if (name == TEATRO_DATOS){
+            this.registros = state.teatroObras.entities
             this.update();
         }
-        if (name == ADOLECENCIAJORNADAS_ERROR){
+        if (name == TEATRO_ERROR){
             this.registros = null
-            this.update()
         }
     }
 
@@ -236,4 +233,4 @@ export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DA
 		};
 	}
 }
-window.customElements.define("adolecencia2020-screen", adolecencia2020Screen);
+window.customElements.define("teatroobras-screen", teatroObrasScreen);

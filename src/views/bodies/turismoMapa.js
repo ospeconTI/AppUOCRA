@@ -202,7 +202,7 @@ export class turismoMapaScreen extends connect(store, HOTELES_DATOS, MAPA_CLICK,
 
              }
         }
-        if (name == MAPA_CLICK){
+        if (name == MAPA_CLICK  && this.current == "turismoMapa"){
             var closer = this.shadowRoot.querySelector('#popup');
             var content = this.shadowRoot.querySelector('#popup-content');
             const dato = state.ui.mapa.feature.values_.geometry.flatCoordinates

@@ -136,7 +136,7 @@ export class cartillaScreen extends connect(store, CEMAPS_DATOS, PROVINCIA_TIMES
                     <div id="selectServicios" class="grid row miselect" >
                         <select id="txtServicios" class="elselect" @change="${this.cambioServicio}" >
                             <option value="0">Servicios</option>
-                            ${this.servicio.map((item, index) => {
+                            ${this.servicio.filter(item  => {return item.activo == 1}).map((item, index) => {
                                 return html `
                                     <option value="${item.id}">${item.nombre}</option>
                                 `

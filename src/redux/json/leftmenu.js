@@ -17,7 +17,7 @@ export const JSON = [
     {id:15,nombre:"HOGAR",imagen: 'HOGAR' ,accion:"hogar"},
     {id:16,nombre:"SST",imagen: 'SEGURIDAD' ,accion:"saludSeguridad"},
     {id:17,nombre:"MUJERES",imagen: 'MUJERES' ,accion:"mujeres"},
-    {id:18,nombre:"JUVENTUD",imagen: 'JUVENTUDES' ,accion:"moecra"},
+    {id:18,nombre:"JUVENTUD",imagen: 'JUVENTUDES' ,accion:"gremioJuventud"},
     {id:20,nombre:"MACRO",imagen: 'MACRO' ,accion:"macro"},
     {id:21,nombre:"DENUNCIA",imagen: 'DENUNCIA' ,accion:"denunciasFormulario"},
 

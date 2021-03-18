@@ -174,8 +174,8 @@ export class saludCredencialScreen extends connect(store, DATOS_CONVENIO, ERROR_
 	}
     pdf(e){
         let archivo = e.currentTarget.item
-        //window.open(archivo,'_blank');
-        location.href = archivo
+        window.open(archivo,'_blank');
+        //location.href = archivo
     }
     atras(){
         store.dispatch(goHistoryPrev())

@@ -53,31 +53,79 @@ export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
                 overflow-y: auto;
 			}
 			#titulo {
-                width:90%;
+                width:100%;
                 height:52vw;
-                background-image: url("https://app.uocra.org/images/arteNosotros.gif");
+                background-image: url("https://app.uocra.org/images/arte2021.gif");
 				background-repeat: no-repeat;
 				background-position: center center ;
                 background-size: cover ;
                 align-self: self-start;
-				justify-self: center;
+                border-bottom-left-radius: .5rem;
+                border-bottom-right-radius: .5rem;
+                padding:0;
             }
             #tituloTexto {
                 align-self: self-start;
-                font-size: var(--font-header-h1-size);
+                font-size: var(--font-header-h1-menos-size);
                 font-weight: 900;
                 grid-template-columns: auto 1fr;
-                padding-bottom: .3rem;
-				justify-self: center;
+                padding-bottom: .6rem;
             }
             #subTituloTexto {
                 width: 80%;
                 align-self: self-start;
+                font-size: var(--font-header-h1-menos-size);
+                justify-self: center;
+                padding-bottom: .2rem;
+            }
+            #subsubTituloTexto {
+                width: 80%;
+                align-self: self-start;
                 font-size: var(--font-header-h2-size);
                 justify-self: center;
-                padding-bottom: .3rem;
+                padding-bottom: 0rem;
+            }
+            .miselect{
+                width:60%;
+                height:3rem; 
+                justify-self: center;
+                text-align: center;
+            }
+            .elselect{
+                height:2.5rem; 
+            }
+            #botones{
+                width:90%;
+                justify-self: center;
+            }
+            .btnListado{
+                background-color: var(--color-amarillo) !important;
+                border-radius: 1rem !important;
+                fill: var(--color-blanco) !important;
+                stroke: var(--color-blanco) !important;
+                color: var(--color-blanco) !important;
+                font-size: var(--font-bajada-size) !important;
+                grid-gap: 0 !important;
+            }
+            .btnVerMapa{
+                background-color: var(--primary-color) !important;
+                border-radius: 1rem !important;
+                fill: var(--color-blanco) !important;
+                stroke: var(--color-blanco) !important;
+                color: var(--color-blanco) !important;
+                font-size: var(--font-bajada-size) !important;
+                grid-gap: 0 !important;
             }
             #bullet{
+                fill: var(--color-blanco);
+                stroke: var(--color-verde-claro);
+            }
+            #bullet1{
+                align-self: flex-start;
+            }
+            #bullet1 svg{
+                width:1rem;
+                height:1rem;
                 fill: var(--color-blanco);
                 stroke: var(--color-verde-claro);
             }
@@ -87,14 +135,43 @@ export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
         if (true) {
             return html`
                 <div id="cuerpo" class="grid row">
-					<div style="padding-top:2rem"></div>
+                    <div id="titulo" class="grid column">
+                    </div>
+                    <div id="subTituloTexto">
+                    Creemos que la fotografía es una forma de expresión al alcance de todos y todas. Por eso, premiamos a las mejores imágenes que expresen los desafíos en el nuevo mundo del trabajo. ¡Compartinos tu mirada sobre los desafíos en el nuevo mundo del trabajo!                    </div>
                     <div id="tituloTexto" class="grid">
                         <div id="bullet">${SVGS["BULLET"]}</div>
-                        <div id="solicitud">Edición 2021</div>
+                        <div id="solicitud">ABIERTA LA INSCRIPCIÓN</div>
                     </div>
-                    <div style="padding-top:1rem"></div>
-					<div id="titulo" class="grid column">
+                    <div id="tituloTexto" class="grid">
+                        <div id="bullet">${SVGS["BULLET"]}</div>
+                        <div id="solicitud">Podés participar en las siguiente CATEGORÍAS del concurso:</div>
                     </div>
+                    <div id="subsubTituloTexto">
+                        <div class="grid column" style="padding:0; grid-template-columns:auto 1fr" >
+                            <div id="bullet1">${SVGS["BULLET"]}</div>
+                            <div>1 - Fotograía con Cámara o Celular.</div>                       
+                        </div> 
+                    </div>
+                    <div id="subsubTituloTexto">
+                        <div class="grid column" style="padding:0; grid-template-columns:auto 1fr" >
+                            <div id="bullet1">${SVGS["BULLET"]}</div>
+                            <div>2 - Composición Fotográfica Digital.</div>                       
+                        </div> 
+                    </div>
+                    <div id="tituloTexto" class="grid">
+                        <div id="bullet">${SVGS["BULLET"]}</div>
+                        <div id="solicitud">Hay más de $120 mil en premios!</div>
+                    </div>
+                    <div id="tituloTexto" class="grid">
+                        <div id="bullet">${SVGS["BULLET"]}</div>
+                        <div id="solicitud">Tenés tiempo hasta el 12 de Mayo</div>
+                    </div>
+                    <div id="tituloTexto" class="grid">
+                        <div id="bullet">${SVGS["BULLET"]}</div>
+                        <div id="solicitud">Conocé las bases del concurso en www.construyendoarte.com.ar</div>
+                    </div>
+
                     <div style="padding-top:2rem"></div>
                 </div>
             `;
@@ -113,7 +190,18 @@ export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 			this.update();
 		}
 	}
-
+    salud(){
+        store.dispatch(goTo("salud"));
+    }
+    cultura(){
+        store.dispatch(goTo("cultura"));
+    }
+	volver() {
+		store.dispatch(goTo("inicial"));
+    }
+    claveRecuperar() {
+		store.dispatch(goTo("claveRecuperar"));
+	}
 	static get properties() {
 		return {
 			mediaSize: {

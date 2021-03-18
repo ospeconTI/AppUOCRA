@@ -9,7 +9,7 @@ export const JSON = [
     {id:3, tipo:"salud", nombre:"TURNOS",imagen:"TURNOS", div: "datos", clase:"opc2 blanco fondoAmarillo",goto:"turnos"},
     {id:4, tipo:"salud", nombre:"URGENCIAS",imagen:"URGENCIAS", div: "datos", clase:"opc3 blanco fondoPrimario",goto:"emergencias"},
     {id:1, tipo:"cultura", nombre:"PROGRAMACION",imagen:"PROGRAMACION", div: "datos", clase:"opc1 blanco fondoPrimario",goto:"teatroProgramacion"},
-    {id:2, tipo:"cultura", nombre:"EN EL TEATRO",imagen:"OBRASINFANTILES", div: "datos", clase:"opc2 blanco fondoGris",goto:"cemapsMapa"},
+    {id:2, tipo:"cultura", nombre:"EN EL TEATRO",imagen:"OBRASINFANTILES", div: "datos", clase:"opc2 blanco fondoGris",goto:"teatroObras"},
     {id:3, tipo:"cultura", nombre:"SHOW ON LINE",imagen:"YOUTUBE", div: "datos", clase:"opc2 blanco fondoAmarillo",goto:"HTTPS://www.youtube.com/UOCRACultura"},
     {id:4, tipo:"cultura", nombre:"BOLETERIA",imagen:"BOLETRERIA", div: "datos", clase:"opc3 blanco fondoVerde",goto:"teatroBoleteria"},
     {id:1, tipo:"tv", nombre:"GRILLA",imagen:"GRILLA", div: "datos", clase:"opc1 blanco fondoPrimario",goto:"tvGrilla"},

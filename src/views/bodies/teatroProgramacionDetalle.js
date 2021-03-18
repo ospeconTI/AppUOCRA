@@ -149,7 +149,7 @@ export class teatroProgramacionDetalleScreen extends connect(store, RESERVA_TIME
                         ${this.reserva.genero}
                     </div>
                     <div id="subTituloTexto">
-                        ${(this.reserva.valor==0 ? this.gremioLista[this.idioma].entradaLibre : this.gremioLista[this.idioma].entradaPaga + item.valor)}
+                        ${(this.reserva.valor==0 ? this.gremioLista[this.idioma].entradaLibre : this.gremioLista[this.idioma].entradaPaga + this.reserva.valor)}
                     </div>
                     <div id="subTituloTexto" class="grid" style="padding:0; grid-template-columns:auto 1fr; grid-gap:.2rem;">
                         <div id="bullet1">${SVGS["BULLET"]}</div>

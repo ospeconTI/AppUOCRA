@@ -165,6 +165,12 @@ export class cemapCartillaDetalleScreen extends connect(store, LOCALIDAD_SELECCI
             case 1:
                 this.imagenContenido = this.cemap[0].cartilla
                 break;
+            case 2:
+                this.imagenContenido = this.cemap[0].farmacia
+                break;    
+            case 5:
+                this.imagenContenido = this.cemap[0].optica
+                break;    
             default:
                 this.imagenContenido = this.cemap[0].urgencia
         }

@@ -19,8 +19,9 @@ const SCREEN = "screen.timeStamp";
 const HOTEL_TIMESTAMP = "hoteles.hotelTimeStamp";
 const HOTELESBANNER_DATOS = "hotelesBanner.timeStamp";
 const HOTELESBANNER_DATOS_ERROR = "hotelesBanner.errorTimeStamp";
+const CURRENT_TIMESTAMP = "screen.timeStamp";
 
-export class turismoHotelesDetalleScreen extends connect(store, HOTELESBANNER_DATOS, HOTELESBANNER_DATOS_ERROR, HOTEL_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class turismoHotelesDetalleScreen extends connect(store, CURRENT_TIMESTAMP, HOTELESBANNER_DATOS, HOTELESBANNER_DATOS_ERROR, HOTEL_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -215,7 +216,11 @@ export class turismoHotelesDetalleScreen extends connect(store, HOTELESBANNER_DA
         }
 	}
 	stateChanged(state, name) {
-		if (name == SCREEN || name == MEDIA_CHANGE) {
+        if (name == CURRENT_TIMESTAMP && this.intervalo != 0){
+            clearInterval(this.intervalo);
+            this.intervalo=0;
+        }		
+        if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;
 			this.hidden = true;
 			this.current = state.screen.name;
@@ -226,6 +231,15 @@ export class turismoHotelesDetalleScreen extends connect(store, HOTELESBANNER_DA
  				this.hidden = false;
 
                  if (this.intervalo == 0){
+                    let slides = this.shadowRoot.querySelectorAll(".mySlides")
+                    for (var i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                    }
+                    this.slideIndex = 0;
+                    var dots = this.shadowRoot.querySelectorAll(".dot");
+                    for (var i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
                     if (this.shadowRoot.querySelectorAll(".mySlides").length>0){
                         this.shadowRoot.querySelectorAll(".mySlides")[0].style.display = "grid";
                     }
@@ -233,7 +247,7 @@ export class turismoHotelesDetalleScreen extends connect(store, HOTELESBANNER_DA
                         this.shadowRoot.querySelectorAll(".dot")[0].className += " active";
                     }
                 }
-                 if (this.banner.length > 1 && this.intervalo == 0){ 
+                if (this.banner.length > 1 && this.intervalo == 0){ 
                     this.intervalo = setInterval(() => {
                         var i;
                         let slides = this.shadowRoot.querySelectorAll(".mySlides")

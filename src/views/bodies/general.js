@@ -360,6 +360,7 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
             }
         }
     }
+
 	stateChanged(state, name) {
         if (name == CURRENT_TIMESTAMP && this.intervalo != 0){
             clearInterval(this.intervalo);
@@ -380,6 +381,15 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
                 if (!this.leyenda) store.dispatch(getLeyendas())
 
                 if (this.intervalo == 0){
+                    let slides = this.shadowRoot.querySelectorAll(".mySlides")
+                    for (var i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                    }
+                    this.slideIndex = 0;
+                    var dots = this.shadowRoot.querySelectorAll(".dot");
+                    for (var i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
                     if (this.shadowRoot.querySelectorAll(".mySlides").length>0){
                         this.shadowRoot.querySelectorAll(".mySlides")[0].style.display = "grid";
                     }
@@ -389,15 +399,14 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
                 }
                 if (this.banner.length > 1 && this.intervalo == 0){ 
                     this.intervalo = setInterval(() => {
-                        var i;
                         let slides = this.shadowRoot.querySelectorAll(".mySlides")
                         var dots = this.shadowRoot.querySelectorAll(".dot");
-                        for (i = 0; i < slides.length; i++) {
+                        for (var i = 0; i < slides.length; i++) {
                             slides[i].style.display = "none";  
                         }
                         this.slideIndex++;
                         if (this.slideIndex >= slides.length) {this.slideIndex = 0}    
-                        for (i = 0; i < dots.length; i++) {
+                        for (var i = 0; i < dots.length; i++) {
                             dots[i].className = dots[i].className.replace(" active", "");
                         }
                         slides[this.slideIndex].style.display = "grid";  
@@ -482,6 +491,12 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
 			hidden: {
 				type: Boolean,
 				reflect: true,
+                hasChanged(newValue, oldValue) {
+                    if (newValue != oldValue){
+                        let r = 2
+                    }
+                    return true
+                }
 			},
 			area: {
 				type: String,

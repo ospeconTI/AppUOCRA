@@ -15,6 +15,7 @@ import { SpinnerLoading } from "./componentes/spinner";
 
 import { pieComponente } from "./foots/pie";
 import { splashScreen } from "./bodies/splash";
+import { onBoardingScreen } from "./bodies/onBoarding";
 import { inicialScreen } from "./bodies/inicial";
 import { sesionScreen } from "./bodies/sesion";
 import { claveRecuperarScreen } from "./bodies/claveRecuperar";
@@ -80,6 +81,7 @@ import { fundacionEscuelasScreen } from "./bodies/fundacionEscuelas";
 import { fundacionInstitutoScreen } from "./bodies/fundacionInstituto";
 import { saludCredencialScreen } from "./bodies/saludCredencial";
 import { noticiaDetalleScreen } from "./bodies/noticiaDetalle";
+import { teatroObrasScreen } from "./bodies/teatroObras";
 
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -124,6 +126,7 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
         return html`
  
             <splash-screen id="splash" class="body"></splash-screen>
+            <onboarding-screen id="onBoarding" class="body"></onboarding-screen>
             <inicial-screen id="inicial" class="body"></inicial-screen>
             <sesion-screen id="sesion" class="body"></sesion-screen>
             <claveRecuperar-screen id="claveRecuperar" class="body"></claveRecuperar-screen>
@@ -189,6 +192,7 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <fundacioninstituto-screen id="fundacionInstituto" class="body"></fundacioninstituto-screen>
             <saludcredencial-screen id="saludCredencial" class="body"></saludcredencial-screen>
             <noticiadetalle-screen id="noticiaDetalle" class="body"></noticiadetalle-screen>
+            <teatroobras-screen id="teatroObras" class="body"></teatroobras-screen>
 
             <pie-componente class="foot"></pie-componente>
 

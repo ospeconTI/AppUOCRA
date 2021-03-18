@@ -15,7 +15,6 @@ import {SVGS} from "../../../assets/icons/svgs";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
-
 export class beneficiosJubilacionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
@@ -169,6 +168,7 @@ export class beneficiosJubilacionScreen extends connect(store, MEDIA_CHANGE, SCR
 			}
 			this.update();
 		}
+
 	}
 	static get properties() {
 		return {

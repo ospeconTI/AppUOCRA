@@ -171,8 +171,8 @@ export class mujeresConstruccionScreen extends connect(store, MEDIA_CHANGE, SCRE
         }
 	}
     ver(e){
-        //window.open("https://www.youtube.com/watch?v=REbRQNQ38dA")
-        location.href = "https://www.youtube.com/watch?v=CfhxRDj5Wb4"
+        window.open("https://www.youtube.com/watch?v=CfhxRDj5Wb4")
+        //location.href = "https://www.youtube.com/watch?v=CfhxRDj5Wb4"
 
     }
 	stateChanged(state, name) {

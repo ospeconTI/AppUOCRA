@@ -174,8 +174,8 @@ export class adolecenciaOtrasScreen extends connect(store, ADOLECENCIAJORNADAS_D
         store.dispatch(goHistoryPrev())
     }
     ver(e){
-        //window.open("https://www.youtube.com/watch?v=" + e.currentTarget.item.link, "_blank")
-        location.href = "https://www.youtube.com/watch?v=" + e.currentTarget.item.link
+        window.open("https://www.youtube.com/watch?v=" + e.currentTarget.item.link, "_blank")
+        //location.href = "https://www.youtube.com/watch?v=" + e.currentTarget.item.link
     }
     stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {

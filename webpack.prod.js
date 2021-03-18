@@ -19,7 +19,10 @@ module.exports = merge(common, {
             // these options encourage the ServiceWorkers to get in there fast
             // and not allow any straggling "old" SWs to hang around
             clientsClaim: true,
+            //Valor por default
             skipWaiting: false,
+            //Valor para forzar
+//            skipWaiting: true,
             maximumFileSizeToCacheInBytes: 4000000,
         }),
     ],

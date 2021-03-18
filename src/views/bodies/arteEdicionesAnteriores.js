@@ -176,8 +176,8 @@ export class arteEdicionesAnterioresScreen extends connect(store, EDICIONESANTER
 	}
     pdf(e){
         let archivo = e.currentTarget.item.archivo
-        //window.open(archivo,'_blank');
-        location.href = archivo
+        window.open(archivo,'_blank');
+        //location.href = archivo
 
     }
 	static get properties() {
