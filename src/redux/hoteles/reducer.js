@@ -13,7 +13,6 @@ import {
     HOTEL
 } from "../hoteles/actions";
 
-
 const initialState = {
     entities: null,
     timeStamp: null,

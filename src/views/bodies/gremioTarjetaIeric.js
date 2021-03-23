@@ -139,13 +139,13 @@ export class gremioTarjetaIericScreen extends connect(store, MEDIA_CHANGE, SCREE
                         <p><b>Si tenés Libreta o necesitás reemplazar la tarjeta por pérdida, robo o deterioro,</b> podés gestionarla en la delegación del IERIC o la Seccional de UOCRA más cercana a tu domicilio, presentando DNI y constancia de CUIL.</p>                    
                     </div>
                     <div id="botones">
-                        <button btn1 class="btnVerMapa" @click=${this.seccionales}>
+                        <button btn1 class="btnVerMapa" @click=${this.mail}>
                             <div class="grid column">
                                 <div id="btnSvg">
                                     ${SVGS["MISINDICATO"]}                        
                                 </div>
                                 <div>
-                                    SECCIONALES
+                                    ENVIAR MAIL
                                 </div>
                             </div>
                         </button>                    
@@ -167,8 +167,8 @@ export class gremioTarjetaIericScreen extends connect(store, MEDIA_CHANGE, SCREE
 			this.update();
 		}
 	}
-    seccionales(){
-        store.dispatch(goTo("gremioZonas"));
+    mail(){
+        //store.dispatch(goTo("gremioZonas"));
     }
     cultura(){
         store.dispatch(goTo("cultura"));

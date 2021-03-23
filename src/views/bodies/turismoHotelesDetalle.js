@@ -13,6 +13,7 @@ import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
 import {SVGS} from "../../../assets/icons/svgs";
 import {get as getHotelesBanner} from "../../redux/hotelesBanner/actions"
+import { mySliderScreen } from "../componentes/mySlider";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -30,8 +31,6 @@ export class turismoHotelesDetalleScreen extends connect(store, CURRENT_TIMESTAM
         this.idioma = store.getState().ui.idioma;
         this.reserva = null
         this.banner = null
-        this.intervalo = 0;
-        this.slideIndex = 0;
 	}
 
 	static get styles() {
@@ -130,69 +129,17 @@ export class turismoHotelesDetalleScreen extends connect(store, CURRENT_TIMESTAM
                 fill: var(--color-blanco);
                 stroke: var(--color-verde-claro);
             }
-
-
-            .mySlides {display: none;}
-            /* Slideshow container */
-            .slideshow-container {
-            position: relative;
-            margin: auto;
+            #mybanner{
+                width:100%;
+                height:56vw;
             }
-            /* Fading animation */
-            .fade {
-            -webkit-animation-name: fade;
-            -webkit-animation-duration: 1.5s;
-            animation-name: fade;
-            animation-duration: 1.5s;
-            }
-            @-webkit-keyframes fade {
-                from {opacity: .4} 
-                to {opacity: 1}
-            }
-
-            @keyframes fade {
-                from {opacity: .4} 
-                to {opacity: 1}
-            }
-            /* The dots/bullets/indicators */
-            .dot {
-                height: 10px;
-                width: 10px;
-                margin: 0 2px;
-                background-color: #bbb;
-                border-radius: 50%;
-                display: inline-block;
-                transition: background-color 0.6s ease;
-            }
-            .active {
-                background-color: #717171;
-            }
-
 		`;
 	}
 	render() {
         if (this.reserva && this.banner) {
             return html`
                 <div id="cuerpo" class="grid row" style="grid-gap:0rem">
-                    <div id="titulo" class="grid column" style="padding:0">
-                        ${this.banner.filter(item => { return item.hotelesId == this.reserva.id }).map((item) => {
-                            return html` 
-                                <div id="banner" class="mySlides fade" .item="${item}" @click=${this.detalle}>
-                                <img src="${item.banner}" style="width:100%;max-height:27vh;">
-                                </div>
-                            `
-                        })}
-                    </div>
-                    <div style="text-align:center;height:20px;width:100%" >
-                        ${this.banner.length > 1 ? 
-                            this.banner.filter(item => { return item.hotelesId == this.reserva.id }).map((item) => {
-                                    return html `
-                                        <span class="dot"></span> 
-                                    `
-                                })                                  
-                            : '' 
-                        }
-                    </div>  
+                    <myslider-screen id="mybanner" ?hidden="${!this.banner[0] || this.banner[0].banner == ''}" pagina="turismoHotelesDetalle" .banners=${this.banner} current=${this.current}></myslider-screen>
                     <div id="tituloTexto" class="grid">
                         <div id="bullet">${SVGS["BULLET"]}</div>
                         <div id="solicitud" style="color:var(--primary-color)">${this.reserva.nombre}</div>
@@ -215,11 +162,7 @@ export class turismoHotelesDetalleScreen extends connect(store, CURRENT_TIMESTAM
             `;
         }
 	}
-	stateChanged(state, name) {
-        if (name == CURRENT_TIMESTAMP && this.intervalo != 0){
-            clearInterval(this.intervalo);
-            this.intervalo=0;
-        }		
+	stateChanged(state, name) {		
         if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;
 			this.hidden = true;
@@ -229,53 +172,19 @@ export class turismoHotelesDetalleScreen extends connect(store, CURRENT_TIMESTAM
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
                 store.dispatch(getHotelesBanner())
  				this.hidden = false;
-
-                 if (this.intervalo == 0){
-                    let slides = this.shadowRoot.querySelectorAll(".mySlides")
-                    for (var i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";  
-                    }
-                    this.slideIndex = 0;
-                    var dots = this.shadowRoot.querySelectorAll(".dot");
-                    for (var i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                    }
-                    if (this.shadowRoot.querySelectorAll(".mySlides").length>0){
-                        this.shadowRoot.querySelectorAll(".mySlides")[0].style.display = "grid";
-                    }
-                    if (this.shadowRoot.querySelectorAll(".dot").length>0){
-                        this.shadowRoot.querySelectorAll(".dot")[0].className += " active";
-                    }
-                }
-                if (this.banner.length > 1 && this.intervalo == 0){ 
-                    this.intervalo = setInterval(() => {
-                        var i;
-                        let slides = this.shadowRoot.querySelectorAll(".mySlides")
-                        var dots = this.shadowRoot.querySelectorAll(".dot");
-                        for (i = 0; i < slides.length; i++) {
-                            slides[i].style.display = "none";  
-                        }
-                        this.slideIndex++;
-                        if (this.slideIndex >= slides.length) {this.slideIndex = 0}    
-                        for (i = 0; i < dots.length; i++) {
-                            dots[i].className = dots[i].className.replace(" active", "");
-                        }
-                        slides[this.slideIndex].style.display = "grid";  
-                        dots[this.slideIndex].className += " active";
-
-                    }, 5000);
-                }
 			}
 		}
         if (name == HOTEL_TIMESTAMP) {
             this.reserva = state.hoteles.hotel
-            if (this.banner){
+            if (state.hotelesBanner.entities){
+                this.banner = state.hotelesBanner.entities.filter(a => a.hotelesId == this.reserva.id);        
                 this.update();
             }
         }
         if (name == HOTELESBANNER_DATOS){
             this.banner = state.hotelesBanner.entities
             if (this.reserva){
+                this.banner = this.banner.filter(a => a.hotelesId == this.reserva.id);        
                 this.update();
             }
         }

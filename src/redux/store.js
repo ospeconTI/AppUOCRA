@@ -35,13 +35,17 @@ import { middleware as hotelesBanner } from "./hotelesBanner/middleware";
 import { middleware as usuarios } from "./usuarios/middleware";
 import { middleware as onBoarding } from "./onBoarding/middleware";
 import { middleware as teatroObras } from "./teatroObras/middleware";
+import { middleware as fundacionCursos } from "./fundacionCursos/middleware";
+import { middleware as fundacionCentros } from "./fundacionCentros/middleware";
+import { middleware as fundacionEspecialidades } from "./fundacionEspecialidades/middleware";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let mdw = [api, rest, ...ui, ...route, ...menues, ...items, ...titulos, ...banners, ...leftmenu, ...noticias
     , ...localidades, ...provincias, ...servicios, ...cemaps, ...seccionales, ...zonas, ...convenios, ...programacion,
 ...leyendas, ...edicionesAnteriores, ...tvEstrenos, ...tvGrilla, ...adolecenciaJornadas, ...adicciones, ...hogarVideos,
-...mujeresVideos, ...arteEdicionesAnteriores, ...hoteles, ...hotelesBanner, ...usuarios, ...onBoarding, ...teatroObras];
+...mujeresVideos, ...arteEdicionesAnteriores, ...hoteles, ...hotelesBanner, ...usuarios, ...onBoarding, ...teatroObras,
+...fundacionCursos, ...fundacionCentros ,...fundacionEspecialidades];
 
 if (process.env.NODE_ENV !== "production") {
     mdw = [...mdw, logger];

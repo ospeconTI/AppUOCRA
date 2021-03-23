@@ -82,6 +82,8 @@ import { fundacionInstitutoScreen } from "./bodies/fundacionInstituto";
 import { saludCredencialScreen } from "./bodies/saludCredencial";
 import { noticiaDetalleScreen } from "./bodies/noticiaDetalle";
 import { teatroObrasScreen } from "./bodies/teatroObras";
+import { fundacionMapaScreen } from "./bodies/fundacionMapa";
+import { fundacionCursosListaScreen } from "./bodies/fundacionCursosLista";
 
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -193,6 +195,8 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <saludcredencial-screen id="saludCredencial" class="body"></saludcredencial-screen>
             <noticiadetalle-screen id="noticiaDetalle" class="body"></noticiadetalle-screen>
             <teatroobras-screen id="teatroObras" class="body"></teatroobras-screen>
+            <fundacionmapa-screen id="fundacionMapa" class="body"></fundacionmapa-screen>
+            <fundacioncursoslista-screen id="fundacionCursosLista" class="body"></fundacioncursoslista-screen>
 
             <pie-componente class="foot"></pie-componente>
 

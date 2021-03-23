@@ -11,6 +11,7 @@ import { showWarning} from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
+import { mySliderScreen } from "../componentes/mySlider";
 import {SVGS} from "../../../assets/icons/svgs";
 import {get as getTitulo} from "../../redux/titulos/actions"
 import {get as getBanners} from "../../redux/banners/actions"
@@ -186,6 +187,7 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
             #items{
                 grid-gap: 1rem !important;
                 justify-items: center;
+                padding: .9rem 0 0 0;
             }
             .item0{
                 width: 100%;
@@ -214,41 +216,9 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
                 display: none;
             }
 
-
-            .mySlides {display: none;}
-            /* Slideshow container */
-            .slideshow-container {
-            position: relative;
-            margin: auto;
-            }
-            /* Fading animation */
-            .fade {
-            -webkit-animation-name: fade;
-            -webkit-animation-duration: 1.5s;
-            animation-name: fade;
-            animation-duration: 1.5s;
-            }
-            @-webkit-keyframes fade {
-                from {opacity: .4} 
-                to {opacity: 1}
-            }
-
-            @keyframes fade {
-                from {opacity: .4} 
-                to {opacity: 1}
-            }
-            /* The dots/bullets/indicators */
-            .dot {
-                height: 10px;
-                width: 10px;
-                margin: 0 2px;
-                background-color: #bbb;
-                border-radius: 50%;
-                display: inline-block;
-                transition: background-color 0.6s ease;
-            }
-            .active {
-                background-color: #717171;
+            #mybanner{
+                width:100%;
+                height:56vw;
             }
 
 		`;
@@ -256,32 +226,11 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
 	render() {
 		if (this.titulo && this.leyenda && this.banner && this.item && this.menu) { return html`
 			<div id="cuerpo">
-                ${this.titulo[0].titulo != "" ? 
-                    html`
-                    <div id="titulo" style="background-image: url('${this.titulo[0].titulo}');">
-                    </div>`
-                    : '' 
-                }
-                ${this.banner[0].banner != "" ? 
-                    this.banner.map((item) => {
-                        return html` 
-                            <div id="banner" class="mySlides fade" style="background-image: url('');">
-                                <img src="${item.banner}" style="width:100%;max-height:27vh;">
-                            </div>
-                        `
-                    })                                    
-                    : '' 
-                }
-                    <div style="text-align:center;height:20px;width:100%" >
-                    ${this.banner.length > 1 ? 
-                            this.banner.map((item) => {
-                                return html `
-                                    <span class="dot"></span> 
-                                `
-                            })                                  
-                        : '' 
-                    }
-                </div>  
+                <div id="titulo" ?hidden="${!this.titulo[0] || this.titulo[0].titulo == ''}" style="background-image: url('${this.titulo[0] ? this.titulo[0].titulo : ""}');">
+                </div>
+                
+                <myslider-screen id="mybanner" ?hidden="${!this.banner[0] || this.banner[0].banner == ''}" pagina=${this.current} .banners=${this.banner} current=${this.current}></myslider-screen>
+                <div style="padding:1rem" ?hidden="${this.banner[0] && this.banner[0].banner != ''}" ></div>
 
                 ${this.menu[0].nombre != "" ? 
                     html`
@@ -310,12 +259,12 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
                         ${this.item.filter(item => { return item.tipo == this.current }).map((item,index) => {
                         return html` 
                             <div class="grid row item0">
-                                <div class="grid column item blanco" .item="${item.Id}" @click=${this.mostrar}>
+                                <div class="grid column item blanco" .item="${item.id}" @click=${this.mostrar}>
                                     <div>${item.titulo}</div>
-                                    <div id="mas${item.Id}" class="mas">+</div>
+                                    <div id="mas${item.id}" class="mas">+</div>
                                 </div>
-                                <div id="cuerpoNota${item.Id}" class="cuerpoNota" hidden>
-                                    <div id="elCuerpo${item.Id}">
+                                <div id="cuerpoNota${item.id}" class="cuerpoNota" hidden>
+                                    <div id="elCuerpo${item.id}">
                                         ${unsafeHTML(item.cuerpo)}    
                                     </div>
                                 </div>                  
@@ -380,40 +329,6 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
                 if (!this.item) store.dispatch(getItems())
                 if (!this.leyenda) store.dispatch(getLeyendas())
 
-                if (this.intervalo == 0){
-                    let slides = this.shadowRoot.querySelectorAll(".mySlides")
-                    for (var i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";  
-                    }
-                    this.slideIndex = 0;
-                    var dots = this.shadowRoot.querySelectorAll(".dot");
-                    for (var i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                    }
-                    if (this.shadowRoot.querySelectorAll(".mySlides").length>0){
-                        this.shadowRoot.querySelectorAll(".mySlides")[0].style.display = "grid";
-                    }
-                    if (this.shadowRoot.querySelectorAll(".dot").length>0){
-                        this.shadowRoot.querySelectorAll(".dot")[0].className += " active";
-                    }
-                }
-                if (this.banner.length > 1 && this.intervalo == 0){ 
-                    this.intervalo = setInterval(() => {
-                        let slides = this.shadowRoot.querySelectorAll(".mySlides")
-                        var dots = this.shadowRoot.querySelectorAll(".dot");
-                        for (var i = 0; i < slides.length; i++) {
-                            slides[i].style.display = "none";  
-                        }
-                        this.slideIndex++;
-                        if (this.slideIndex >= slides.length) {this.slideIndex = 0}    
-                        for (var i = 0; i < dots.length; i++) {
-                            dots[i].className = dots[i].className.replace(" active", "");
-                        }
-                        slides[this.slideIndex].style.display = "grid";  
-                        dots[this.slideIndex].className += " active";
-
-                    }, 5000);
-                }
                 if (this.menu && this.item && this.titulo && this.banner && this.leyenda) { 
                     this.actualizaArray();
                 }

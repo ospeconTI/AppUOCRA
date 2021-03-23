@@ -80,11 +80,14 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                 background-color: var(--color-verde-claro);
             }
             #icCursos{
-                background-color: var(--color-amarillo-oscuro);
+                background-color: var(--color-amarillo);
+            }
+            #icTeatro{
+                background-color: var(--color-azul-oscuro);
             }
             #icMas{
                 background-color: var(--color-gris-oscuro);
-                }
+            }
 
             svg{
                 height:1.8rem;
@@ -189,7 +192,7 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                             <div >${SVGS["CURSOS"]}</div>
                             <div >${this.aplicacion[this.idioma].capacitcion}</div>
                         </div>
-                        <div id="icGremio" class="grid row icBoton" @click="${this.cultura}">
+                        <div id="icTeatro" class="grid row icBoton" @click="${this.cultura}">
                             <div >${SVGS["TEATRO"]}</div>
                             <div >${this.aplicacion[this.idioma].teatro}</div>
                         </div>

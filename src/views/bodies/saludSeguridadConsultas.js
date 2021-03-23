@@ -120,7 +120,7 @@ export class saludSeguridadConsultasScreen extends connect(store, MEDIA_CHANGE, 
                     </div>
                     <div id="tituloTexto" class="grid">
                         <div id="bullet">${SVGS["BULLET"]}</div>
-                        <div id="solicitud">Para realizar una denuncia comunicate telefónicamente </div>
+                        <div id="solicitud">Para realizar una consulta comunicate telefonicamente a</div>
                     </div>
                     <div id="botones" class="grid">
 				        <button btn1 class="btnVerMapa" @click=${this.telefono}>

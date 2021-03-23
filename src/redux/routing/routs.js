@@ -73,6 +73,8 @@ export const largeRoute = [
 "4.1.17 -fundacion",
 "4.1.17.1 -fundacionAulas",
 "4.1.17.2 -fundacionCursos",
+"4.1.17.2.1 -fundacionCursosLista",
+"4.1.17.2.2 -fundacionMapa",
 "4.1.17.3 -fundacionEscuelas",
 "4.1.17.4 -fundacionInstituto",
 "4.1.18 -noticiaDetalle",

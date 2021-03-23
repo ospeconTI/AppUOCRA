@@ -83,8 +83,8 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 
 	proximo() {
 		clearTimeout(this.timeOut);
-		//store.dispatch(goNext());
-		store.dispatch(goTo("main"));
+		store.dispatch(goNext());
+		//store.dispatch(goTo("fundacion"));
 	}
 
 	static get properties() {

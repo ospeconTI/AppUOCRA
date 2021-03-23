@@ -137,7 +137,7 @@ export class gremioJuventudScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
                         <p>Si estás inscripto en el curso de LA JU ingresá a la plataforma ahora</p>
                     </div>
                     <button btn1 @click=${this.laJu} style="width:10rem;justify-self: center;background-color:var(--color-amarillo);">
-                        LA JU
+                        PLATAFORMA
                     </button>
                     <div style="padding-top:2rem"></div>
                 </div>

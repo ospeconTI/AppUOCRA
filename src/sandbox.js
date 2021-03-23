@@ -45,8 +45,6 @@ store.dispatch(getUsuarios())
 
 
 
-
-
 store.dispatch(captureMedia());
 //store.dispatch(goTo("main"));
 store.dispatch(goTo("splash"));

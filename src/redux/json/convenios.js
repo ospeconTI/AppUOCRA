@@ -1,10 +1,15 @@
 
-export const JSON = [
-    {id:1, nombre:"(CCT 76/75)", orden:1, archivo: "https://www.uocra.org/pdf/9c21ef_76.75.pdf", activo: true},
-    {id:2, nombre:"PARITARIA DE INTERPRETACION CHOFERES CCT 76/75", orden:2, archivo: "https://www.uocra.org/pdf/6d5d9f_Conv_choferes.pdf", activo: true},
-    {id:3, nombre:"ACTIVIDAD DEL HORMIGÓN ELABORADO", orden:3, archivo: "https://www.uocra.org/pdf/ee025d_Conv_HA.pdf", activo: true},
-    {id:3, nombre:"ACTIVIDAD DEL HORMIGÓN ELABORADO Anexo 1", orden:3, archivo: "https://www.uocra.org/pdf/ee025d_Conv_HA.pdf", activo: true},
-    {id:3, nombre:"110/75", orden:3, archivo: "https://www.uocra.org/pdf/24dac4_Premoldeado_110_75.pdf", activo: true},
-    {id:3, nombre:"CONVENIO DE TRABAJADORES CONSTRUCTORES EN ÁREAS PETROLÍFERAS Y GASÍFICAS CCT 545/08", orden:3, archivo: "https://www.uocra.org/pdf/f8ab53_CONV_PETROLEROS.pdf", activo: true},
-    {id:3, nombre:"PARA TRABAJADORES DE LA CONSTRUCCIÓN DE OBRAS DE REDES DE ACCESO, DISTRIBUCIÓN Y TRANSPORTE- Nº 577/10", orden:3, archivo: "https://www.uocra.org/pdf/d7a94e_CONVENIOCOLECTIVOUOCRACAPORRAMA%20DE%20LA%20CONSTRUCCIONDETELEFONIOSYCABLEROSULTIMAVERSION.pdf", activo: true},
+export const JSON = 
+[
+    {"id":0,"nombre":"(CCT 76\/75)","orden":1,"archivo":"https:\/\/www.uocra.org\/pdf\/9c21ef_76.75.pdf","activo":true},{"id":1,"nombre":"PARITARIA DE INTERPRETACION CHOFERES CCT 76\/75","orden":2,"archivo":"https:\/\/www.uocra.org\/pdf\/6d5d9f_Conv_choferes.pdf","activo":true},{"id":2,"nombre":"ACTIVIDAD DEL HORMIGÓN ELABORADO","orden":3,"archivo":"https:\/\/www.uocra.org\/pdf\/ee025d_Conv_HA.pdf","activo":true},{"id":3,"nombre":"ACTIVIDAD DEL HORMIGÓN ELABORADO Anexo 1","orden":3,"archivo":"https:\/\/www.uocra.org\/pdf\/ee025d_Conv_HA.pdf","activo":true},{"id":4,"nombre":"110\/75","orden":3,"archivo":"https:\/\/www.uocra.org\/pdf\/24dac4_Premoldeado_110_75.pdf","activo":true},{"id":5,"nombre":"CONVENIO DE TRABAJADORES CONSTRUCTORES EN ÁREAS PETROLÍFERAS Y GASÍFICAS CCT 545\/08","orden":3,"archivo":"https:\/\/www.uocra.org\/pdf\/f8ab53_CONV_PETROLEROS.pdf","activo":true},{"id":6,"nombre":"PARA TRABAJADORES DE LA CONSTRUCCIÓN DE OBRAS DE REDES DE ACCESO, DISTRIBUCIÓN Y TRANSPORTE- Nº 577\/10","orden":3,"archivo":"https:\/\/www.uocra.org\/pdf\/d7a94e_CONVENIOCOLECTIVOUOCRACAPORRAMA%20DE%20LA%20CONSTRUCCIONDETELEFONIOSYCABLEROSULTIMAVERSION.pdf","activo":true}
 ]
+
+// [
+//     {id:1, nombre:"(CCT 76/75)", orden:1, archivo: "https://www.uocra.org/pdf/9c21ef_76.75.pdf", activo: true},
+//     {id:2, nombre:"PARITARIA DE INTERPRETACION CHOFERES CCT 76/75", orden:2, archivo: "https://www.uocra.org/pdf/6d5d9f_Conv_choferes.pdf", activo: true},
+//     {id:3, nombre:"ACTIVIDAD DEL HORMIGÓN ELABORADO", orden:3, archivo: "https://www.uocra.org/pdf/ee025d_Conv_HA.pdf", activo: true},
+//     {id:3, nombre:"ACTIVIDAD DEL HORMIGÓN ELABORADO Anexo 1", orden:3, archivo: "https://www.uocra.org/pdf/ee025d_Conv_HA.pdf", activo: true},
+//     {id:3, nombre:"110/75", orden:3, archivo: "https://www.uocra.org/pdf/24dac4_Premoldeado_110_75.pdf", activo: true},
+//     {id:3, nombre:"CONVENIO DE TRABAJADORES CONSTRUCTORES EN ÁREAS PETROLÍFERAS Y GASÍFICAS CCT 545/08", orden:3, archivo: "https://www.uocra.org/pdf/f8ab53_CONV_PETROLEROS.pdf", activo: true},
+//     {id:3, nombre:"PARA TRABAJADORES DE LA CONSTRUCCIÓN DE OBRAS DE REDES DE ACCESO, DISTRIBUCIÓN Y TRANSPORTE- Nº 577/10", orden:3, archivo: "https://www.uocra.org/pdf/d7a94e_CONVENIOCOLECTIVOUOCRACAPORRAMA%20DE%20LA%20CONSTRUCCIONDETELEFONIOSYCABLEROSULTIMAVERSION.pdf", activo: true},
+// ]

@@ -32,6 +32,9 @@ import { reducer as hotelesBannerReducer } from "./hotelesBanner/reducer";
 import { reducer as usuariosReducer } from "./usuarios/reducer";
 import { reducer as onBoardingReducer } from "./onBoarding/reducer";
 import { reducer as teatroObrasReducer } from "./teatroObras/reducer";
+import { reducer as fundacionCursosReducer } from "./fundacionCursos/reducer";
+import { reducer as fundacionEspecialidadesReducer } from "./fundacionEspecialidades/reducer";
+import { reducer as fundacionCentrosReducer } from "./fundacionCentros/reducer";
 
 export const rootReducer = (state = {}, action) => {
     return {
@@ -67,6 +70,9 @@ export const rootReducer = (state = {}, action) => {
         usuarios: usuariosReducer(state.usuarios, action),
         onBoarding: onBoardingReducer(state.onBoarding, action),
         teatroObras: teatroObrasReducer(state.teatroObras, action),
+        fundacionCursos: fundacionCursosReducer(state.fundacionCursos, action),
+        fundacionEspecialidades: fundacionEspecialidadesReducer(state.fundacionEspecialidades, action),
+        fundacionCentros: fundacionCentrosReducer(state.fundacionCentros, action),
         
     };
 };
