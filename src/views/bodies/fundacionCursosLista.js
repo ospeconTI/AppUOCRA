@@ -207,9 +207,13 @@ export class fundacionCursosListaScreen extends connect(store, CURSOS_DATOS, CUR
                                     </div>
                                 </button>
                             </div>
-                            <div class="notaDetTxt">Enviia tu consulta</div>                       
-                            <textarea id="txtMensage" type="text" rows="4" style="margin:.5rem"></textarea>
-                            <button id="btnEnviar" btn3 >Enviar</button>
+                            <div class="notaDetTxt">Enviia tu consulta</div> 
+                            <div class="input">
+                                <label id="lblMensaje">Mensaje y obra en la que trabaja</label>
+                                <textarea id="txtMensage" type="text" rows="4" style="margin:.5rem"></textarea>
+                                <div >Debe cargar mensaje</div>
+                            </div>
+                            <button id="btnEnviar" btn3 .item=${item} @click=${this.enviar}>Enviar</button>
 
                         </div>  
 
@@ -234,6 +238,26 @@ export class fundacionCursosListaScreen extends connect(store, CURSOS_DATOS, CUR
     }
     atras(){
         store.dispatch(goHistoryPrev())
+    }
+    enviar(e){
+        [].forEach.call(this.shadowRoot.querySelectorAll("[error]"), element => {
+            element.removeAttribute("error")
+        })
+        let mensaje = this.shadowRoot.querySelector("#txtMensage")
+        var ok = true 
+        if(mensaje.value==""){
+            ok=false
+            mensaje.setAttribute("error", "");
+        } 
+        if(ok){
+            let item = e.currentTarget.item;
+            let msg = "Curso: " + item.nombre + ", Centro: " + item.nombreCentro 
+            location.href = "mailto:appuocra@gmail.com?cc=&subject=Consulta%20de%20curso&body=" + msg;
+        }else{
+            store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
+        }
+
+        //document.location.href = 'tel:0800-222-3871';
     }
     llamar(e){
         window.open('tel:' + e.currentTarget.telefonoCentro, "_blank");
