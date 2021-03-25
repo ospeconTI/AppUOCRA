@@ -6,6 +6,7 @@ import { store } from "../redux/store";
 import { layoutsCSS } from "../views/ui/layouts";
 import { getLayout } from "../redux/screens/screenLayouts";
 import { pantallaWarning } from "../views/bodies/warning";
+import { botonComponent } from "../views/componentes/c-boton";
 
 import { menuPrincipal } from "../views/headers/menu";
 

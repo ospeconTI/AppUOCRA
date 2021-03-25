@@ -186,11 +186,9 @@ export class fundacionMapaScreen extends connect(store, FUNDACION_CENTROS, FUNDA
 			const haveBodyArea = isInLayout(state, this.area);
 			const SeMuestraEnUnasDeEstasPantallas = "-fundacionMapa-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
-
  				this.hidden = false;
                 var mapa=state.fundacionCursos.seleccion
-                store.dispatch(fundacionCentroMapa(mapa.especialidad, mapa.provincia, mapa.localidad, mapa.duracion, 1));
-
+                store.dispatch(fundacionCentroMapa(mapa.especialidad, mapa.provincia, mapa.localidad, mapa.duracion, mapa.tipo));
             }
         }
         if (name == MAPA_CLICK && this.current == "fundacionMapa"){

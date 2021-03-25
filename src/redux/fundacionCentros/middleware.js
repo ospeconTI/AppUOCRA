@@ -63,11 +63,11 @@ export const fundacionCentroMapa = ({
         let jsonCentros = JSON
         let jsonCursos = JSONCURSOS
 
-        var cursos = jsonCursos.filter(a => a.tipo == action.tipoCurso && a.fundacionEspecialidadesId == action.especialidad && a.duracion == action.duracion); 
+        var cursos = jsonCursos.filter(a => (action.tipoCurso!=-1 ? a.tipo == action.tipoCurso : true) && (action.fundacionEspecialidadesId!=-1 ? a.fundacionEspecialidadesId == action.especialidad : true) && (action.duracion!="" ? a.duracion == action.duracion : true)); 
         // Centros para la especialidad elegida
         var centros = jsonCentros.filter((centro) => {
-            return jsonCursos.some((curso) => {
-                return centro.id == curso.fundacionCentrosId  && centro.provincia == action.provincia && centro.localidad == action.localidad;
+            return cursos.some((curso) => {
+                return centro.id == curso.fundacionCentrosId  && (action.provincia!="" ? centro.provincia == action.provincia : true) && (action.localidad!="" ? centro.localidad == action.localidad : true);
             });
         });
         dispatch({

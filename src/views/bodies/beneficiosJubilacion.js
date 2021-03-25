@@ -26,7 +26,7 @@ export class beneficiosJubilacionScreen extends connect(store, MEDIA_CHANGE, SCR
         this.item = [
             {Id:1,titulo:"¿QUE ES EL APOYO JUBILATORIO?", cuerpo: "<p>El Apoyo Jubilatorio o Contribución Extraordinaria, es un monto que se abona por única vez a las personas jubiladas a partir de 1 enero de 2019.</p><p>Para ello, se toma como referencia la fecha de notificación de ANSES.</p>"},
             {Id:2,titulo:"REQUISITOS Y DOCUMENTACIÓN", cuerpo: "<p>Para acceder al beneficio se debe presentar el último recibo de haberes (donde conste el aporte sindical del 2,5%) y la comunicación de ANSES con la fecha de otorgamiento de la jubilación.</p><p>El beneficio se tramita a través del Departamento de Subsidios y Seguros de Vida de UOCRA.</p><p><b>*A las personas que soliciten este beneficio, se le requerirá la siguiente documentación:</b></p><p>-CBU emitido por el Banco<br>-Constancia de CUIL<br>-Fotocopia de DNI<br>-Teléfono de Contacto<br>-Correo Electrónico</p>"},
-            {Id:5,titulo:"ESCRIBI TU CONSULTA", cuerpo:"<p>Hace click en el link y envia por mail tu consulta <b><a href='mailto:adolecencia@uocra.org?subject=Consulta por Adicciones'>ENVIAR MAIL</a></b></p>"},
+            {Id:5,titulo:"ESCRIBI TU CONSULTA", cuerpo:"<p>Hace click en el boton y envia por mail tu consulta</p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='JUBILACION' accion='beneficiosJubilacion' parametro=''></c-boton>"},
         ]
 	}
 

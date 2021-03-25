@@ -58,9 +58,9 @@ export class mySliderScreen extends connect(store, CURRENT_TIMESTAMP, MEDIA_CHAN
             /* Fading animation */
             .fade {
                 -webkit-animation-name: fade;
-                -webkit-animation-duration: 1.5s;
+                -webkit-animation-duration: 2s;
                 animation-name: fade;
-                animation-duration: 1.5s;
+                animation-duration: 2s;
             }
             @-webkit-keyframes fade {
                 from {opacity: .4} 

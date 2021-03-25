@@ -13,6 +13,7 @@ import {SVGS} from "../../../assets/icons/svgs";
 import {getMapaLocalidad, getMapaProvincia, getMapaTodos} from "../../redux/cemaps/actions"
 import { seleccion as selLocalidad} from "../../redux/localidades/actions";
 import { seleccion as selServicio} from "../../redux/servicios/actions";
+import { get as getFundacionCursos, seleccion} from "../../redux/fundacionCursos/actions";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -142,8 +143,15 @@ export class fundacionInstitutoScreen extends connect(store, CEMAPS_DATOS, PROVI
                         <div >
                             El <b>Instituto UOCRA</b> fue creado en el año 2007 y desde entonces desarrolla un estilo de formación personalizado, que concibe a los estudiantes como protagonistas.
                         </div>
+                        <div id="selecDuracionl" class="grid row miselect">
+                            <select id="txtDuracion" class="elselect" >
+                                <option value="">Carreras con Duración</option>
+                                <option value="3 Cuatrimestres">3 Cuatrimestres</option>
+                                <option value="3 Años">3 Años</option>
+                            </select>
+				        </div>
                         <div id="botones" class="grid">
-                            <button btn1 class="btnListado" >
+                            <button btn1 class="btnListado"  @click="${this.listado}">
                                 <div class="grid column">
                                     <div>
                                         ${SVGS["LISTADO"]}                        
@@ -153,7 +161,7 @@ export class fundacionInstitutoScreen extends connect(store, CEMAPS_DATOS, PROVI
                                 </div>
                                 </div>
                             </button>
-                            <button btn1 class="btnVerMapa" >
+                            <button btn1 class="btnVerMapa"  @click="${this.mapa}">
                                 <div class="grid column">
                                     <div>
                                         ${SVGS["VERMAPA"]}                        
@@ -164,36 +172,29 @@ export class fundacionInstitutoScreen extends connect(store, CEMAPS_DATOS, PROVI
                                 </div>
                             </button>
                         </div>
-                        <div  class="grid column">
-                            <b>Escribí tu consulta</b>
-                        </div>
-                        <textarea rows="8"></textarea>
-                        <button btn1 class="btnVerMapa" style="width:10rem;justify-self: center;">ENVIAR</button>
                     </div>
                 </div>
             `;
 	}
-    listados(){
-        const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
-        const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades").value;
-        const txtServicio = this.shadowRoot.querySelector("#txtServicios").value;
-        if(txtProvincia == 0 || txtLocalidad == 0 || txtServicio == 0){
-			store.dispatch(showWarning(this.cartilla[this.idioma].warning[1].titulo, this.cartilla[this.idioma].warning[1].subTitulo, "fondoError", 2000));
+    listado(){
+        const txtDuracion = this.shadowRoot.querySelector("#txtDuracion").value;
+        if(txtDuracion == ""){
+			store.dispatch(showWarning("Atencion!", "Falta seleccionar Carrera con Duracion", "fondoError", 4000));
         }else{
-            store.dispatch(goTo("cemapCartillaDetalle"));
+            store.dispatch(seleccion(32, "", "", txtDuracion, 3));
+            store.dispatch(goTo("fundacionCursosLista"))
         }
     }
-    cemap(){
-        const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
-        const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades").value;
-        if(txtProvincia == 0 && txtLocalidad == 0){
-            store.dispatch(getMapaTodos())
-        }else if(txtLocalidad != 0){
-            store.dispatch(getMapaLocalidad(parseInt(txtLocalidad)))
-        }else if(txtProvincia != 0){
-            store.dispatch(getMapaProvincia(parseInt(txtProvincia)))
+    mapa(){
+        const txtDuracion = this.shadowRoot.querySelector("#txtDuracion").value;
+        if(txtDuracion == ""){
+			store.dispatch(showWarning("Atencion!", "Falta seleccionar Carrera con Duracion", "fondoError", 4000));
+        }else{
+            store.dispatch(seleccion(32, "", "", txtDuracion, 3));
+            store.dispatch(goTo("fundacionMapa"))
         }
     }
+
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
 			this.mediaSize = state.ui.media.size;

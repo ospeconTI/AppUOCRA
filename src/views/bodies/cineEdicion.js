@@ -144,7 +144,11 @@ export class cineEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
                             En esta <b>8va Edición</b>, abrimos la convocatoria a las siguientes categorías de nuestras competencias oficiales:
                                 <p><li><b>Competencia Internacional de Largometrajes de Ficción:</b> largometrajes de ficción de duración igual o mayor a 45 minutos cualquiera sea el país de origen.</li></p>
                                 <p><li><b>Competencia Internacional de Largometrajes Documentales:</b> largometrajes documentales de duración igual o mayor a 45 minutos cualquiera sea el país de origen.</li></p>
-                                <p><li><b>Competencia Nacional de Largometrajes:</b> largometrajes documentales o de ficción cuyo director sea de nacionalidad argentina y los</li></p>                            
+                                <p><li><b>Competencia Nacional de Largometrajes:</b> largometrajes documentales o de ficción cuyo director sea de nacionalidad argentina y los mismos hayan sido rodados íntegramente en la Argentina, de duración igual o mayor a 45 minutos.</li></p>                            
+                                <p><li><b>Competencia Internacional de Cortometrajes de Ficción:</b></li>cortos de ficción de hasta 26 minutos de duración cualquiera sea el país de origen.</p>                            
+                                <p><li><b>Competencia Internacional de Cortometrajes Documentales:</b></li>cortos documentales de hasta 26 minutos de duración cualquiera sea el país de origen. Temas como solidaridad, conciencia ecológica, sustentabilidad y cuidado del planeta en que vivimos, derechos fundamentales en el lugar de trabajo, igualdad de género, inclusión, trabajo infantil, trabajo forzoso, trabajo migrante, discapacidad y trabajo, protección social, avances tecnológicos entre otros temas, son temáticas válidas para postularse.</p>                            
+                                <p><li><b>INSCRIPCIÓN LIBRE Y GRATUITA</b></li>para los largos y cortometrajes realizados por directores argentinos y la misma estará abierta hasta el 28 de febrero de 2021.</p>                            
+                                <button btn1 @click=${this.inscripcion}>INSCRIBITE</button>                           
                             </div>                       
                         </div> 
                     </div>              
@@ -166,8 +170,10 @@ export class cineEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 			this.update();
 		}
 	}
-    salud(){
-        store.dispatch(goTo("salud"));
+
+    inscripcion(){
+        window.open("https://construircine.com/?s=inscribite&lang=esp", "_blank")
+        //location.href = "https://construircine.com/?s=inscribite&lang=esp"
     }
     cultura(){
         store.dispatch(goTo("cultura"));

@@ -13,6 +13,8 @@ import {SVGS} from "../../../assets/icons/svgs";
 import {getMapaLocalidad, getMapaProvincia, getMapaTodos} from "../../redux/cemaps/actions"
 import { seleccion as selLocalidad} from "../../redux/localidades/actions";
 import { seleccion as selServicio} from "../../redux/servicios/actions";
+import { get as getFundacionCursos, seleccion} from "../../redux/fundacionCursos/actions";
+import { get as getFundacionCentros, fundacionCentroMapa} from "../../redux/fundacionCentros/actions";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -112,24 +114,15 @@ export class fundacionEscuelasScreen extends connect(store, CEMAPS_DATOS, PROVIN
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" class="grid column">
                     </div>
-                    <div id="selectLocalidades" class="grid row miselect">
-                        <select id="txtLocalidades" class="elselect" >
-                            <option value="0">Localidades</option>
-                            <option value="0">Avellaneda</option>
-                            <option value="0">CABA</option>
-                            <option value="0">MORON</option>
-
-                        </select>
-				    </div>
-                    <div id="selectServicios" class="grid row miselect" >
-                        <select id="txtServicios" class="elselect" @change="${this.cambioServicio}" >
-                            <option value="0">Turnos</option>
-                            <option value="1">Mañana</option>
-                            <option value="2">Noche</option>
+                    <div id="selectNivel" class="grid row miselect">
+                        <select id="txtNivel" class="elselect" >
+                            <option value=-1>Nivel Educativo</option>
+                            <option value=31>Primaria</option>
+                            <option value=30>Secundaria</option>
                         </select>
 				    </div>
                     <div id="botones" class="grid">
-                        <button btn1 class="btnListado" >
+                        <button btn1 class="btnListado"  @click="${this.listado}">
                             <div class="grid column">
                                 <div>
                                     ${SVGS["LISTADO"]}                        
@@ -139,7 +132,7 @@ export class fundacionEscuelasScreen extends connect(store, CEMAPS_DATOS, PROVIN
                                </div>
                             </div>
                         </button>
-				        <button btn1 class="btnVerMapa" >
+				        <button btn1 class="btnVerMapa"  @click="${this.mapa}">
                             <div class="grid column">
                                 <div>
                                     ${SVGS["VERMAPA"]}                        
@@ -153,25 +146,22 @@ export class fundacionEscuelasScreen extends connect(store, CEMAPS_DATOS, PROVIN
                 </div>
             `;
 	}
-    listados(){
-        const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
-        const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades").value;
-        const txtServicio = this.shadowRoot.querySelector("#txtServicios").value;
-        if(txtProvincia == 0 || txtLocalidad == 0 || txtServicio == 0){
-			store.dispatch(showWarning(this.cartilla[this.idioma].warning[1].titulo, this.cartilla[this.idioma].warning[1].subTitulo, "fondoError", 2000));
+    listado(){
+        const txtNivel = this.shadowRoot.querySelector("#txtNivel").value;
+        if(txtNivel == -1){
+			store.dispatch(showWarning("Atencion!", "Falta seleccionar Nivel Educativo", "fondoError", 4000));
         }else{
-            store.dispatch(goTo("cemapCartillaDetalle"));
+            store.dispatch(seleccion(txtNivel, "", "", "", 2));
+            store.dispatch(goTo("fundacionCursosLista"))
         }
     }
-    cemap(){
-        const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
-        const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades").value;
-        if(txtProvincia == 0 && txtLocalidad == 0){
-            store.dispatch(getMapaTodos())
-        }else if(txtLocalidad != 0){
-            store.dispatch(getMapaLocalidad(parseInt(txtLocalidad)))
-        }else if(txtProvincia != 0){
-            store.dispatch(getMapaProvincia(parseInt(txtProvincia)))
+    mapa(){
+        const txtNivel = this.shadowRoot.querySelector("#txtNivel").value;
+        if(txtNivel == -1){
+			store.dispatch(showWarning("Atencion!", "Falta seleccionar Nivel Educativo", "fondoError", 4000));
+        }else{
+            store.dispatch(seleccion(txtNivel, "", "", "", 2));
+            store.dispatch(goTo("fundacionMapa"))
         }
     }
 	stateChanged(state, name) {
@@ -200,33 +190,7 @@ export class fundacionEscuelasScreen extends connect(store, CEMAPS_DATOS, PROVIN
         }
 
 	}
-    cambioProvincia(e){
-        let arr = store.getState().localidades.entities;
-        this.localidad = arr.filter(a => a.provinciasId == e.currentTarget.value);  
-        this.update()      
-    }
-    cambioLocalidad(e){
-        if (e.currentTarget.value> 0){
-            let arr = store.getState().localidades.entities;
-            let salida = arr.filter(a => a.id == e.currentTarget.value);  
-            store.dispatch(selLocalidad(salida))
-        }
-    }
-    cambioServicio(e){
-        if (e.currentTarget.value> 0){
-            let arr = store.getState().servicios.entities;
-            let salida = arr.filter(a => a.id == e.currentTarget.value);  
-            store.dispatch(selServicio(salida))
-        }
-    }
-    clickLocalidad(e){
-        const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
-        const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades");
-        if(txtProvincia == 0){
-			store.dispatch(showWarning(this.cartilla[this.idioma].warning[0].titulo, this.cartilla[this.idioma].warning[0].subTitulo, "fondoError", 2000));
-            txtLocalidad.blur()
-        }
-    }
+
 	static get properties() {
 		return {
 			mediaSize: {

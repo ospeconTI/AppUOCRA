@@ -31,8 +31,11 @@ export const input = css`
 	.input input:focus {
 		border: 1px solid var(--primary-color);
 	}
-	.input[error] input {
-		border: 1px solid var(--color-error);
+	.input input[error] {
+		border: 1px solid var(--color-rojo);
+	}
+	.input textarea[error] {
+		border: 1px solid var(--color-rojo);
 	}
 	.input label {
 		color: var(--color-negro);
@@ -40,12 +43,15 @@ export const input = css`
 		font-weight: var(--font-label-weight);
 	}
 	.input div {
-		color: var(--color-error);
+		color: var(--color-rojo);
 		font-size: var(--font-error-size);
 		font-weight: var(--font-error-weight);
 		display: none;
 	}
 	.input input[error] + div {
+		display: grid;
+	}
+	.input textarea[error] + div {
 		display: grid;
 	}
 	::placeholder {

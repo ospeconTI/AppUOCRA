@@ -28,7 +28,7 @@ export class beneficiosSubsidiosScreen extends connect(store, MEDIA_CHANGE, SCRE
             {Id:1,titulo:"TIPOS DE SUBSIDIOS", cuerpo: "<p><li>Subsidio para prenatal de 6 meses.</li></p><p><li>Subsidio por nacimiento.</li></p><p><li>Subsidio para transporte escolar.</li></p><p><li>Subsidio para Guardería.</li></p><p><li>Subsidios para Colonia de Vacaciones.</li></p>"},
             {Id:2,titulo:"REQUISITOS Y DOCUMENTACIÓN", cuerpo: "<p><b>Pre-Natal entre 6° y 9° mes</b></p><p>Se entrega:<br>Kit de vestimenta: una remera y una calza.</p><p>Se requiere para tramitación:<br>Fotocopia de 4 últimos recibos quincenales con descuento sindical (2,5%).<br>Fotocopia del carnet perinatal.</p><p><b>Nacimiento:</b></p><p></p>Se entrega:<br>Beneficio (consultar montos actualizados)<br>Bolso de nacimiento.<br>Vestimenta: calza y remera para amamantar</p><p>Se requiere para tramitación:<br>Fotocopia de 4 recibos (3 recibos previos al nacimiento y el último recibo) quincenales con descuento sindical (2,5%).<br>Fotocopia de partida de nacimiento del bebé<br>Fotocopia de DNI (titular y bebé)</p><p><b>Transporte Escolar:</b><br>Se entrega:<br>Beneﬁcio por hijo/a de 5 a 13 años, inclusive (consultar montos actualizados).</p><p>Se requiere para tramitación:<br>Fotocopia de 4 últimos recibos quincenales con descuento sindical (2,5%).<br>Factura o recibo oficial original.<br>Fotocopia de partida de nacimiento del hijo/a.<br>Fotocopia de certificado de vacunas del hijo/a.<br>Fotocopia de DNI (titular y del hijo/a).</p><p><b>Guardería:</b></p><p>Se entrega:Beneficio por hijo desde el nacimiento hasta los cuatro años inclusive (consultar por montos actualizados).</p><p>Se requiere para tramitación:<br>Fotocopia cuatro últimos recibos quincenales con descuento sindical (2,5%).<br>Factura o recibo oficial original.<br>Fotocopia partida de nacimiento del hijo/a.<br>Fotocopia certificado de vacunas del hijo/a.<br>Fotocopia DNI (titular y del hijo/a).</p><p><b>Colonia de Vacaciones:</b></p><p>Se entrega:<br>Beneﬁcio (consultar montos actualizados) por hijo desde los 5 a los 13 años (Diciembre, Enero y Febrero).</p<p>Se requiere para tramitación:<br>Fotocopia de 4 últimos recibos quincenales con descuento sindical (2,5%).<br>Factura o recibo oﬁcial original.<br>Fotocopia partida de nacimiento del hijo/a.<br>Fotocopia certiﬁcado de vacuna del hijo/a.<br>Fotocopia DNI (titular y del hijo/a).</p><p><b>*A las personas que soliciten este beneficio, se le requerirá la siguiente documentación:</b></p><p>-CBU emitido por el Banco<br>-Constancia de CUIL<br>-Fotocopia de DNI<br>-Teléfono de Contacto<br>-Correo Electrónico</p>"},
             {Id:3,titulo:"¿DÓNDE TRAMITAR UN SUBSIDIO?", cuerpo: "<p>Los subsidios se pueden gestionar en los centros de atención médica - CEMAP (con excepción del Sanatorio Franchin).</p><p>Consultá cuál es tu CEMAP más cercano.</p>"},
-            {Id:4,titulo:"ESCRIBI TU CONSULTA", cuerpo:"<p>Hace click en el link y envia por mail tu consulta <b><a href='mailto:adolecencia@uocra.org?subject=Consulta por Adicciones'>ENVIAR MAIL</a></b></p>"},
+            {Id:5,titulo:"ESCRIBI TU CONSULTA", cuerpo:"<p>Hace click en el boton y envia por mail tu consulta</p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='SUBSIDIOS' accion='beneficiosSubsidios' parametro=''></c-boton>"},
         ]
 	}
 
@@ -106,7 +106,9 @@ export class beneficiosSubsidiosScreen extends connect(store, MEDIA_CHANGE, SCRE
                 justify-self: flex-start;
                 grid-gap: 0 !important;
             }
-
+            *[ocultar] {
+				display: none;
+			}
 		`;
 	}
 	render() {
@@ -116,7 +118,7 @@ export class beneficiosSubsidiosScreen extends connect(store, MEDIA_CHANGE, SCRE
                     <div style="padding:1rem"></div>
                     <div id="opciones">
                         <div id="items" class="grid row">
-                            ${this.item.map((item) => {
+                            ${this.item.map((item, index) => {
                             return html` 
                                 <div class="grid row item0">
                                     <div class="grid column item blanco" .item="${item.Id}" @click=${this.mostrar}>
@@ -126,6 +128,7 @@ export class beneficiosSubsidiosScreen extends connect(store, MEDIA_CHANGE, SCRE
                                     <div id="cuerpoNota${item.Id}" class="cuerpoNota" hidden>
                                         <div id="elCuerpo${item.Id}"></div>
                                         ${unsafeHTML(item.cuerpo)}            
+                                        <div ?ocultar="${index!=2}" ><button btn1 @click=${this.cemap}>Ver</button></div>
                                     </div>                  
                                 </div>
                             `
@@ -157,6 +160,9 @@ export class beneficiosSubsidiosScreen extends connect(store, MEDIA_CHANGE, SCRE
                 mas.innerHTML="-"
             }
         }
+    }
+    cemap(){
+        store.dispatch(goTo("cartilla"));
     }
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {

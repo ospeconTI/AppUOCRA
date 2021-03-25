@@ -116,6 +116,9 @@ export class teatroProgramacionScreen extends connect(store, PROGRAMACION_ERROR,
             :host([media-size="small"]) .notaDetTxt{
                 font-size: var(--font-label-size);
             }
+            *[hidden] {
+				display: none;
+			}
 		`;
 	}
 	render() {
@@ -125,9 +128,10 @@ export class teatroProgramacionScreen extends connect(store, PROGRAMACION_ERROR,
                     ${this.gremioLista[this.idioma].titulo}
                 </div>
 				<div class="panel">
-                ${this.programacion.map((item, index) => {
+                    <div style="padding:0.5rem"></div>
+                    ${this.programacion.map((item, index) => {
                             return html` 
-                                <div>
+                                <div ?hidden="${index==0}">
                                     <hr id="linea" />
                                 </div>
                                 <div class="grid notas" style="align-items: stretch;">
@@ -145,6 +149,7 @@ export class teatroProgramacionScreen extends connect(store, PROGRAMACION_ERROR,
                                 </div>
                             `
                         })}
+                    <div style="padding:1rem"></div>
                 </div>
                 
             </div>

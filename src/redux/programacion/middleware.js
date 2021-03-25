@@ -39,6 +39,7 @@ export const get = ({
     next(action);
     if (action.type === GET) {
         let programacion = JSON
+        programacion.sort(function(a,b){return a["orden"] > b["orden"] ? 1 : -1});
         dispatch({
             type: GET_SUCCESS,
             payload: {

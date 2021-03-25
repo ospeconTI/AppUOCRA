@@ -105,12 +105,12 @@ export class fundacionCursosListaScreen extends connect(store, CURSOS_DATOS, CUR
             .notaTitTxt{
 				color: var(--primary-color);
                 justify-self: left;
-                font-size: var(--font-header-h1-menos-size) ;
+                font-size: var(--font-header-h1-size) ;
             }
             .notaDetTxt{
 				color: var(--color-gris-oscuro);
                 justify-self: left;
-                font-size: var(--font-header-h2-size) ;
+                font-size: var(--font-header-h1-menos-size) ;
             }
             .notaDetTxtMenor{
 				color: var(--color-gris-oscuro);
@@ -182,8 +182,9 @@ export class fundacionCursosListaScreen extends connect(store, CURSOS_DATOS, CUR
                         </div>
                         <div id="etiqueta" class="grid row" >
                             <div class="notaTitTxt">${item.nombre}</div>                       
-                            <div class="notaDetTxt">${item.nombreCentro}</div>                       
-                            <div class="notaDetTxt" style="font-style:italic">${item.duracion}</div>                       
+                            <div class="notaDetTxt" style="font-size: var(--font-header-h1-menos-size)">${item.nombreCentro}</div>                       
+                            <div class="notaDetTxt">${item.direccionCentro + ", " + item.localidadCentro + ", " + item.provinciaCentro}</div>                       
+                            <div class="notaDetTxt" style="font-style:italic;font-size: var(--font-header-h1-menos-size)">${item.duracion}</div>                       
                             <div id="botones" class="grid" >
                                 <button btn1 class="btnListado" .item=${item.telefonoCentro} @click="${this.llamar}">
                                     <div class="grid column">
@@ -252,7 +253,7 @@ export class fundacionCursosListaScreen extends connect(store, CURSOS_DATOS, CUR
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) { 
  				this.hidden = false;
                 let dato = state.fundacionCursos.seleccion
-                store.dispatch(getConCentros(dato.especialidad, dato.provincia, dato.localidad, dato.duracion, 1))
+                store.dispatch(getConCentros(dato.especialidad, dato.provincia, dato.localidad, dato.duracion, dato.tipo))
             }
         }
 

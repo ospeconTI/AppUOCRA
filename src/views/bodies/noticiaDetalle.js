@@ -63,7 +63,7 @@ export class noticiaDetalleScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
             #tituloTexto {
                 width: 80vw;
                 align-self: self-start;
-                font-size: var(--font-header-h2-size);
+                font-size: var(--font-header-h1-size);
                 font-weight: 900;
                 padding-bottom: 1rem;
                 justify-self: center;

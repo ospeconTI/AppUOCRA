@@ -169,7 +169,7 @@ export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
                     </div>
                     <div id="tituloTexto" class="grid">
                         <div id="bullet">${SVGS["BULLET"]}</div>
-                        <div id="solicitud">Conocé las bases del concurso en www.construyendoarte.com.ar</div>
+                        <div id="solicitud">Conocé las bases del concurso en <a target="_blank" href="https://www.construyendoarte.com.ar">www.construyendoarte.com.ar</a></div>
                     </div>
 
                     <div style="padding-top:2rem"></div>

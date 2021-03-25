@@ -119,36 +119,36 @@ export class denunciasFormularioScreen extends connect(store, MEDIA_CHANGE, SCRE
                         <div id="bullet2">${SVGS["BULLET"]}</div>                    
                     </div>
                     <div class="input">
-                        <label id="lblClave1">Nombre y Apellido</label>
-                        <input id="txtClave1" type="text">
-                        <label id="lblErrorClave1" error oculto></label>
+                        <label id="lblNombre">Nombre y Apellido</label>
+                        <input id="txtNombre" type="text" placeholder="Jose Perez">
+                        <div>Debe cargar nombre</div>
                     </div>
                     <div class="tituloImg">
                         <div id="bullet2">${SVGS["BULLET"]}</div>                    
                     </div>
                     <div class="input">
-                        <label id="lblClave1" style="color:black">Teléfono</label>
-                        <input id="txtClave1" type="text">
-                        <label id="lblErrorClave1" error oculto></label>
+                        <label id="lblTelefono" >Teléfono</label>
+                        <input id="txtTelefono" type="tel" placeholder="1142345678">
+                        <div>Debe cargar teléfono</div>
                     </div>
                     <div class="tituloImg">
                         <div id="bullet2">${SVGS["BULLET"]}</div>                    
                     </div>
                     <div class="input">
-                        <label id="lblClave1">E-mail</label>
-                        <input id="txtClave1" type="text">
-                        <label id="lblErrorClave1" error oculto></label>
+                        <label id="lblMail">E-mail</label>
+                        <input id="txtMail" type="email" placeholder="joseperez@gmail.com">
+                        <div>Debe cargar mail</div>
                     </div>
                     <div class="tituloImg">
                         <div id="bullet2">${SVGS["BULLET"]}</div>                    
                     </div>
                     <div class="input">
-                        <label id="lblClave1">Mensaje y obra en la que trabaja</label>
-                        <textarea id="txtClave1" type="text" rows="8"></textarea>
-                        <label id="lblErrorClave1" error oculto></label>
+                        <label id="lblMensaje">Mensaje y obra en la que trabaja</label>
+                        <textarea id="txtMensaje" type="text" rows="8"></textarea>
+                        <div >Debe cargar mensaje</div>
                     </div>
                     <div id="botones" class="grid">
-				        <button btn1 class="btnVerMapa" @click=${this.telefono}>
+				        <button btn1 class="btnVerMapa" @click=${this.enviar}>
                             <div class="grid column" style="justify-content:center;grid-gap:1rem">
                                 <div id="botonesImg">
                                     ${SVGS["MAILENVIO"]}                        
@@ -180,8 +180,39 @@ export class denunciasFormularioScreen extends connect(store, MEDIA_CHANGE, SCRE
 			this.update();
 		}
 	}
-    telefono(){
-        document.location.href = 'tel:0800-222-3871';
+    enviar(){
+        [].forEach.call(this.shadowRoot.querySelectorAll("[error]"), element => {
+            element.removeAttribute("error")
+        })
+        let nombre = this.shadowRoot.querySelector("#txtNombre")
+        let telefono = this.shadowRoot.querySelector("#txtTelefono")
+        let mail = this.shadowRoot.querySelector("#txtMail")
+        let mensaje = this.shadowRoot.querySelector("#txtMensaje")
+        var ok = true 
+        if(nombre.value==""){
+            ok=false
+            nombre.setAttribute("error", "");
+        } 
+        if(telefono.value==""){
+            ok=false
+            telefono.setAttribute("error", "");
+        } 
+        if(mail.value==""){
+            ok=false
+            mail.setAttribute("error", "");
+        } 
+        if(mensaje.value==""){
+            ok=false
+            mensaje.setAttribute("error", "");
+        } 
+        if(ok){
+            let msg = "Nombre: " + nombre.value + ", Telefono: " + telefono.value + ", Mail: " + mail.value + ", Mensaje: " + mensaje.value
+            location.href = "mailto:appuocra@gmail.com?cc=&subject=Denuncia%20condiciones%20de%20trabajo%20en%20obra&body=" + msg;
+        }else{
+            store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
+        }
+
+        //document.location.href = 'tel:0800-222-3871';
     }
 	static get properties() {
 		return {

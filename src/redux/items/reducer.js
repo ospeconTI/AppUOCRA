@@ -9,7 +9,8 @@ import {
     ADD_ERROR,
     REMOVE_SUCCESS,
     REMOVE_ERROR,
-    EDIT
+    EDIT,
+    BOTON_ITEM
 } from "../items/actions";
 
 
@@ -22,6 +23,10 @@ const initialState = {
     errorTimeStamp: null,
     commandErrorTimeStamp: null,
     editTimeStamp: null,
+    botonItem:{
+        accion: null,
+        parametro: null,
+    },
 };
 
 export const reducer = (state = initialState, action) => {
@@ -60,7 +65,11 @@ export const reducer = (state = initialState, action) => {
         case ADD_ERROR:
             newState.commandErrorTimeStamp = (new Date()).getTime();
             break;
-
+        case BOTON_ITEM:
+            newState.botonItem.accion = action.accion;
+            newState.botonItem.parametro = action.parametro;
+            newState.botonItem.timeStamp = (new Date()).getTime();
+            break;
     }
     return newState;
 };

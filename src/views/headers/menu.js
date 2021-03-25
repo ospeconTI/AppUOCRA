@@ -138,7 +138,8 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
                 justify-self: flex-end; 
             }
             #svgTeatro,#svgMisindicato,#svgSalud,#svgCursos,#svgTeatro,#svgTv,#svgCine
-            ,#svgArte,#svgVivienda,#svgDeporte,#svgTurismo,#svgBeneficio,#svgSeccional,#svgCompra,#svgEmpresa,#svgDenuncia
+            ,#svgArte,#svgVivienda,#svgDeporte,#svgTurismo,#svgBeneficio,#svgSeccional,#svgCompra,#svgEmpresa,#svgDenuncia,
+            #svgMacro
             {
                 height: 1.5rem;
                 width: 1.5rem;
@@ -150,13 +151,6 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
                 width: 1.5rem;
                 stroke: transparent;
                 fill: var(--color-blanco);
-            }
-            #svgMacro{
-                height: 1.1rem;
-                width: 2rem;
-                stroke: transparent;
-                fill: var(--primary-color);
-                padding-left: .5rem;
             }
             *[hidden] {
                 display: none;

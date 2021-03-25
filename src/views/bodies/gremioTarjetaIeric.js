@@ -168,7 +168,7 @@ export class gremioTarjetaIericScreen extends connect(store, MEDIA_CHANGE, SCREE
 		}
 	}
     mail(){
-        //store.dispatch(goTo("gremioZonas"));
+        location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Solicitud%20,tarjeta%20soy%20constructor&body=";
     }
     cultura(){
         store.dispatch(goTo("cultura"));

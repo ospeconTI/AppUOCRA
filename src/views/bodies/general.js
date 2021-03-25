@@ -34,9 +34,11 @@ const ITEMS_ERRORTIMESTAMP = "items.errorTimeStamp";
 const LEYENDAS_TIMESTAMP = "leyendas.timeStamp";
 const LEYENDAS_ERRORTIMESTAMP = "leyendas.errorTimeStamp";
 
+const ITEMS_BOTONITEM = "items.botonItem.timeStamp";
 
 
-export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_ERRORTIMESTAMP, LEYENDAS_ERRORTIMESTAMP, TITULO_ERRORTIMESTAMP, BANNERS_ERRORTIMESTAMP,CURRENT_TIMESTAMP, LEYENDAS_TIMESTAMP, MENUES_TIMESTAMP, BANNERS_TIMESTAMP, ITEMS_TIMESTAMP, TITULO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+
+export class generalScreen extends connect(store, ITEMS_BOTONITEM, MENUES_ERRORTIMESTAMP, ITEMS_ERRORTIMESTAMP, LEYENDAS_ERRORTIMESTAMP, TITULO_ERRORTIMESTAMP, BANNERS_ERRORTIMESTAMP,CURRENT_TIMESTAMP, LEYENDAS_TIMESTAMP, MENUES_TIMESTAMP, BANNERS_TIMESTAMP, ITEMS_TIMESTAMP, TITULO_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -271,6 +273,7 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
                             </div>
                             `
                         })}
+                        <div style="padding:.4rem"></div>
                     </div>
                 </div>
             </div>
@@ -288,6 +291,42 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
             }
         }
 
+    }
+
+    botonItem(que){
+        switch (que) {
+            case "mujeres":
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Mujeres&body=";
+                break;
+            case "adicciones":
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Adicciones&body=";
+                break;   
+            case "turismo":
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Turismo&body=";
+                break;     
+            case "adolecencia":
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Adolescencia&body=";
+                break;  
+            case "deportes":
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Deportes&body=";
+                break;  
+            case "beneficiosJubilacion":
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Beneficios%20jubilatorios&body=";
+                break;    
+            case "beneficiosSeguros":
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Seguro%20de%20vida&body=";
+                break;  
+            case "beneficiosSepelios":
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Sepelios&body=";
+                break;       
+            case "beneficiosSubsidios":
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Subsidios&body=";
+                break;    
+            case "salud":
+                location.href = "https://api.whatsapp.com/send?phone=+5491128803167";
+                break;   
+            default:
+        }
     }
 
     mostrar(e){
@@ -364,6 +403,9 @@ export class generalScreen extends connect(store, MENUES_ERRORTIMESTAMP, ITEMS_E
             if (this.item && this.titulo && this.banner && this.menu) { 
                 this.actualizaArray(); 
             }
+        }
+        if (name == ITEMS_BOTONITEM){
+            this.botonItem(store.getState().items.botonItem.accion);
         }
 	}
 

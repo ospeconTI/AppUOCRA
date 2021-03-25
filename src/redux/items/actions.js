@@ -16,6 +16,7 @@ export const ADD_ERROR = "[items] ADD error";
 export const PATCH_ERROR = "[items] PATCH error";
 export const UPDATE_ERROR = "[items] UPDATE error";
 export const REMOVE_ERROR = "[items] REMOVE error";
+export const BOTON_ITEM = "[items] BOTON_ITEM";
 
 
 
@@ -58,4 +59,10 @@ export const edit = (modo, item) => ({
         Activo: 1
     },
     modo: modo,
+})
+
+export const botonItem = (accion, parametro) => ({
+    type: BOTON_ITEM,
+    accion: accion,
+    parametro: parametro,
 })

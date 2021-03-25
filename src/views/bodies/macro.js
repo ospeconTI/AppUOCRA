@@ -196,18 +196,13 @@ export class macroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement
 			this.update();
 		}
 	}
-    salud(){
-        store.dispatch(goTo("salud"));
-    }
-    cultura(){
-        store.dispatch(goTo("cultura"));
+    solicitar(){
+        location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Solicitud%20,tarjeta%20de%20credito&body=";
     }
 	volver() {
 		store.dispatch(goTo("inicial"));
     }
-    claveRecuperar() {
-		store.dispatch(goTo("claveRecuperar"));
-	}
+
 	static get properties() {
 		return {
 			mediaSize: {
