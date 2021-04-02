@@ -15,7 +15,7 @@ import {
     REMOVE_SUCCESS,
     REMOVE_ERROR
 
-} from "../edicionesAnteriores/actions";
+} from "../cineEdicionesAnteriores/actions";
 
 import {
 
@@ -31,20 +31,20 @@ import {
 import {
     apiRequest
 } from "../api/actions"
-import {JSON} from "../../redux/json/edicionesAnteriores";
+import {JSON} from "../../redux/json/cineEdicionesAnteriores";
 
 export const get = ({
     dispatch
 }) => next => action => {
     next(action);
     if (action.type === GET) {
-        let edicionesAnteriores = JSON
+        let cineEdicionesAnteriores = JSON
     
         dispatch({
             type: GET_SUCCESS,
             payload: {
               send: 1,
-              receive: edicionesAnteriores
+              receive: cineEdicionesAnteriores
             }
           })
         //dispatch(apiRequest(ikePuestosQuery, action.options, GET_SUCCESS, GET_ERROR))

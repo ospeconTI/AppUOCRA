@@ -139,7 +139,7 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
             }
             #svgTeatro,#svgMisindicato,#svgSalud,#svgCursos,#svgTeatro,#svgTv,#svgCine
             ,#svgArte,#svgVivienda,#svgDeporte,#svgTurismo,#svgBeneficio,#svgSeccional,#svgCompra,#svgEmpresa,#svgDenuncia,
-            #svgMacro
+            #svgMacro,#svgCompartir
             {
                 height: 1.5rem;
                 width: 1.5rem;

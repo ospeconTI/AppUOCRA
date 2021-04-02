@@ -151,7 +151,7 @@ export class cineNosotrosScreen extends connect(store, MEDIA_CHANGE, SCREEN)(Lit
 		`;
 	}
 	render() {
-        if (true) {
+        if (this.current == "cineNosotros") {
             return html`
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" class="grid column">

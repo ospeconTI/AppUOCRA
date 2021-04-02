@@ -210,7 +210,7 @@ export class fundacionCursosListaScreen extends connect(store, CURSOS_DATOS, CUR
                             <div class="notaDetTxt">Enviia tu consulta</div> 
                             <div class="input">
                                 <label id="lblMensaje">Mensaje y obra en la que trabaja</label>
-                                <textarea id="txtMensage" type="text" rows="4" style="margin:.5rem"></textarea>
+                                <textarea id="txtMensage${item.id}" type="text" rows="4" style="margin:.5rem"></textarea>
                                 <div >Debe cargar mensaje</div>
                             </div>
                             <button id="btnEnviar" btn3 .item=${item} @click=${this.enviar}>Enviar</button>
@@ -243,15 +243,17 @@ export class fundacionCursosListaScreen extends connect(store, CURSOS_DATOS, CUR
         [].forEach.call(this.shadowRoot.querySelectorAll("[error]"), element => {
             element.removeAttribute("error")
         })
-        let mensaje = this.shadowRoot.querySelector("#txtMensage")
+        let item = e.currentTarget.item;
+        let mensaje = this.shadowRoot.querySelector("#txtMensage" + item.id)
         var ok = true 
         if(mensaje.value==""){
             ok=false
             mensaje.setAttribute("error", "");
         } 
         if(ok){
-            let item = e.currentTarget.item;
-            let msg = "Curso: " + item.nombre + ", Centro: " + item.nombreCentro 
+            let usu = store.getState().usuarios.usuario
+            mensaje.value = mensaje.value.replace('"',"'")
+            let msg = "Nombre: " + usu.nombre + ".%0D%0A" + "Apellido: " + usu.apellido + ". %0D%0ADocumento: " + usu.documento + ". %0D%0ACurso: " + item.nombre + ". %0D%0ACentro: " + item.nombreCentro + ". %0D%0AMensaje: " + mensaje.value
             location.href = "mailto:appuocra@gmail.com?cc=&subject=Consulta%20de%20curso&body=" + msg;
         }else{
             store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));

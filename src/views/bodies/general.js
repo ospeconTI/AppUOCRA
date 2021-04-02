@@ -294,36 +294,41 @@ export class generalScreen extends connect(store, ITEMS_BOTONITEM, MENUES_ERRORT
     }
 
     botonItem(que){
+        let usu = store.getState().usuarios.usuario
+        let msg = "Nombre: " + usu.nombre + ".%0D%0A" + "Apellido: " + usu.apellido + ". %0D%0ADocumento: " + usu.documento 
         switch (que) {
             case "mujeres":
-                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Mujeres&body=";
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Mujeres&body=" + msg;
                 break;
             case "adicciones":
-                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Adicciones&body=";
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Adicciones&body=" + msg;
                 break;   
             case "turismo":
-                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Turismo&body=";
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Turismo&body=" + msg;
                 break;     
             case "adolecencia":
-                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Adolescencia&body=";
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Adolescencia&body=" + msg;
                 break;  
             case "deportes":
-                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Deportes&body=";
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Deportes&body=" + msg;
                 break;  
             case "beneficiosJubilacion":
-                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Beneficios%20jubilatorios&body=";
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Beneficios%20jubilatorios&body=" + msg;
                 break;    
             case "beneficiosSeguros":
-                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Seguro%20de%20vida&body=";
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Seguro%20de%20vida&body=" + msg;
                 break;  
             case "beneficiosSepelios":
-                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Sepelios&body=";
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Sepelios&body=" + msg;
                 break;       
             case "beneficiosSubsidios":
-                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Subsidios&body=";
+                location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Subsidios&body=" + msg;
                 break;    
             case "salud":
-                location.href = "https://api.whatsapp.com/send?phone=+5491128803167";
+                location.href = "https://api.whatsapp.com/send?phone=+5491128803167&text=" + msg;
+            case "saludCompartirPorWA":
+                location.href = "https://api.whatsapp.com/send/?text=Hace+click+en+app.uocra.org+e+instala+appUOCRA&app_absent=0";
+                //https://api.whatsapp.com/send/?text=Me+interesa+in+el+auto+que+vendeshttps://api.whatsapp.com/send/?text=Me+interesa+in+el+auto+que+vendes&app_absent=0
                 break;   
             default:
         }

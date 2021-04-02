@@ -15,5 +15,7 @@ export const JSON =
     {donde: "gremioTarjetaIeric", pagina: "gremioTarjetaIeric"},
     {donde: "macro", pagina: "macro"},
     {donde: "item", pagina: "salud"},
+    {donde: "fundacionCursosLista", pagina: "fundacionCursosLista"},
+    
 
 ]

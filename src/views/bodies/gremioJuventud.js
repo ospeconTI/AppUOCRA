@@ -13,17 +13,17 @@ import {SVGS} from "../../../assets/icons/svgs";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
+const BANNERS_TIMESTAMP = "banners.timeStamp";
+const BANNERS_ERRORTIMESTAMP = "banners.errorTimeStamp";
 
-export class gremioJuventudScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class gremioJuventudScreen extends connect(store, BANNERS_TIMESTAMP, BANNERS_ERRORTIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
 		this.area = "body";
         this.current = "";
         this.idioma = store.getState().ui.idioma;
-        this.provincia = null
-        this.localidad = null
-        this.servicio = null
+        this.banner = null
 	}
 
 	static get styles() {
@@ -110,14 +110,18 @@ export class gremioJuventudScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
                 fill: var(--color-blanco);
                 stroke: var(--color-verde-claro);
             }
+            #mybanner{
+                width:100%;
+                height:56vw;
+            }
 		`;
 	}
 	render() {
-        if (true) {
+        if (this.banner) {
             return html`
                 <div id="cuerpo" class="grid row">
-                    <div id="titulo" class="grid column">
-                    </div>
+                    <myslider-screen id="mybanner" ?hidden="${!this.banner[0] || this.banner[0].banner == ''}" pagina=${this.current} .banners=${this.banner} current=${this.current}></myslider-screen>
+
                     <div id="tituloTexto" class="grid">
                         <div id="bullet">${SVGS["BULLET"]}</div>
                         <div id="solicitud">Juventud UOCRA</div>
@@ -141,6 +145,7 @@ export class gremioJuventudScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
                     </button>
                     <div style="padding-top:2rem"></div>
                 </div>
+        
             `;
         }
 	}
@@ -156,6 +161,9 @@ export class gremioJuventudScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 			}
 			this.update();
 		}
+        if (name == BANNERS_TIMESTAMP) {
+            this.banner = state.banners.entities.filter(a => a.tipo == "gremioJuventud");  
+        }
 	}
     laJu(){
         window.open("https://www.88552d2b491975945.temporary.link/moodle/login/index.php",'_blank');

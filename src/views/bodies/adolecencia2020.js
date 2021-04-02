@@ -140,7 +140,7 @@ export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DA
                     ${this.idiomaLista[this.idioma].titulo + " " + (parseInt((new Date()).getFullYear())-1) }
                 </div>
 				<div class="panel">
-                    ${this.registros.filter(item => { return item.ano == parseInt((new Date()).getFullYear())-1}).map((item, index) => {
+                    ${this.registros.map((item, index) => {
                             return html` 
                                 <div ?hidden="${index==0}">
                                     <hr id="linea" />
@@ -154,8 +154,8 @@ export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DA
                                         <img width="100%" height="auto" src="https://img.youtube.com/vi/${item.link}/default.jpg">
                                         <div class="play" .item=${item} @click=${this.ver}>${SVGS["PLAY"]}</div>
                                     </div>
-                                    <div class="notaDetTxtMenor"><b>${this.idiomaLista[this.idioma].expositor}</b>${item.expositor}</div>                       
-                                    <div class="notaDetTxtMenor"><b>${this.idiomaLista[this.idioma].coordinador}</b>${item.coordinador}</div>                       
+                                    <div class="notaDetTxtMenor" ?hidden="${item.expositor.length==0}"><b>${this.idiomaLista[this.idioma].expositor}</b>${item.expositor}</div>                       
+                                    <div class="notaDetTxtMenor" ?hidden="${item.coordinador.length==0}"><b>${this.idiomaLista[this.idioma].coordinador}</b>${item.coordinador}</div>                       
                                 </div>
   
                             `
@@ -199,6 +199,7 @@ export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DA
 
         if (name == ADOLECENCIAJORNADAS_DATOS){
             this.registros = state.adolecenciaJornadas.entities
+            this.registros.sort(function(a,b){return a["ano"] < b["ano"] ? 1 : -1});
             this.update();
         }
         if (name == ADOLECENCIAJORNADAS_ERROR){

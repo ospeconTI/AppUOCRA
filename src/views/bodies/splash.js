@@ -5,6 +5,7 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goNext, goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
+import {SVGS} from "../../../assets/icons/svgs";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -34,7 +35,7 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				display: none;
 			}
 			#cuerpo {
-				display: block;
+				display: grid;
 				height: 100%;
 				width: 100vw;
 				display: grid;
@@ -42,7 +43,9 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				justify-items: center;
 			}
 			#imagen{
-				width: 50%;
+				width: 100%;
+				height: 30vh;
+
 			}
 			#version {
 				display: grid;
@@ -58,7 +61,7 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 	render() {
 		return html`
 			<div id="cuerpo" @click=${this.proximo}>
-				<img id="imagen" src="https://app.uocra.org/images/titulo_red_social.png" />
+				<div id="imagen" >${SVGS["LOGO"]}</div>
 				<div id="version">v.:${__VERSION__}</div>
 			</div>
 		`;
@@ -83,8 +86,8 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 
 	proximo() {
 		clearTimeout(this.timeOut);
-		//store.dispatch(goNext());
-		store.dispatch(goTo("fundacion"));
+		store.dispatch(goNext());
+		//store.dispatch(goTo("main"));
 	}
 
 	static get properties() {

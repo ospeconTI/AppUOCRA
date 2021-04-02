@@ -126,7 +126,6 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
                 font-style: italic;
                 justify-self: center;
                 -webkit-line-clamp: 4;
-                -webkit-box-orient: vertical;
                 overflow:hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;

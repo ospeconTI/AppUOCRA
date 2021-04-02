@@ -149,7 +149,7 @@ export class mujeresConstruccionScreen extends connect(store, MEDIA_CHANGE, SCRE
 		`;
 	}
 	render() {
-        if (true) {
+        if (this.current=="mujeresConstruccion") {
             return html`
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" class="grid column">

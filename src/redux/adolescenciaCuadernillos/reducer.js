@@ -10,7 +10,7 @@ import {
     REMOVE_SUCCESS,
     REMOVE_ERROR,
     EDIT
-} from "../edicionesAnteriores/actions";
+} from "../adolescenciaCuadernillos/actions";
 
 
 const initialState = {

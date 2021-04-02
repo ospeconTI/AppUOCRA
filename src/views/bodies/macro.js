@@ -197,7 +197,9 @@ export class macroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement
 		}
 	}
     solicitar(){
-        location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Solicitud%20,tarjeta%20de%20credito&body=";
+        let usu = store.getState().usuarios.usuario
+        let msg = "Nombre: " + usu.nombre + ".%0D%0A" + "Apellido: " + usu.apellido + ". %0D%0ADocumento: " + usu.documento 
+        location.href = "mailto:appuocra@gmail.com?cc=&subject=UOCRA%20Solicitud%20,tarjeta%20de%20credito&body=" + msg;
     }
 	volver() {
 		store.dispatch(goTo("inicial"));

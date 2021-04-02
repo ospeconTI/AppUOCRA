@@ -13,8 +13,10 @@ import {SVGS} from "../../../assets/icons/svgs";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
+const BANNERS_TIMESTAMP = "banners.timeStamp";
+const BANNERS_ERRORTIMESTAMP = "banners.errorTimeStamp";
 
-export class hogarDescripcionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class hogarDescripcionScreen extends connect(store, BANNERS_TIMESTAMP, BANNERS_ERRORTIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -113,14 +115,17 @@ export class hogarDescripcionScreen extends connect(store, MEDIA_CHANGE, SCREEN)
                 fill: var(--color-blanco);
                 stroke: var(--color-verde-claro);
             }
+            #mybanner{
+                width:100%;
+                height:56vw;
+            }
 		`;
 	}
 	render() {
-        if (true) {
+        if (this.banner) {
             return html`
                 <div id="cuerpo" class="grid row">
-                    <div id="titulo" class="grid column">
-                    </div>
+                    <myslider-screen id="mybanner" ?hidden="${!this.banner[0] || this.banner[0].banner == ''}" pagina=${this.current} .banners=${this.banner} current=${this.current}></myslider-screen>
                     <div id="tituloTexto" class="grid">
                         <div id="bullet">${SVGS["BULLET"]}</div>
                         <div id="solicitud">OBJETIVOS</div>
@@ -151,6 +156,9 @@ export class hogarDescripcionScreen extends connect(store, MEDIA_CHANGE, SCREEN)
 			}
 			this.update();
 		}
+        if (name == BANNERS_TIMESTAMP) {
+            this.banner = state.banners.entities.filter(a => a.tipo == "hogarDescripcion");  
+        }
 	}
 	static get properties() {
 		return {

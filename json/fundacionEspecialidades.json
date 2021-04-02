@@ -1,0 +1,206 @@
+[
+	{
+		"id": 0,
+		"nombre": "INSTALACIÓN  DE ASCENSORES",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 1,
+		"nombre": "ADMINISTRACIÓN/CONTABLE",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 2,
+		"nombre": "ALBAÑILERIA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 3,
+		"nombre": "AUTOMATIZACION",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 4,
+		"nombre": "CARPINTERÍA DE MADERA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 5,
+		"nombre": "CARPINTERÍA METÁLICA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 6,
+		"nombre": "CERRAJERÍA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 7,
+		"nombre": "CONSTRUCCIÓN EN SECO",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 8,
+		"nombre": "CONSTRUCCIONES INDUSTRIALIZADAS",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 9,
+		"nombre": "DISEÑO PROYECTUAL",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 10,
+		"nombre": "ELECTRICIDAD",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 11,
+		"nombre": "ENERGÍAS RENOVABLES",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 12,
+		"nombre": "HERRERÍA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 13,
+		"nombre": "HORMIGÓN ARMADO",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 14,
+		"nombre": "IDIOMAS",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 15,
+		"nombre": "INFORMÁTICA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 16,
+		"nombre": "INSTALACIONES DE GAS",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 17,
+		"nombre": "INSTALACIONES SANITARIAS",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 18,
+		"nombre": "JARDINERÍA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 19,
+		"nombre": "MANTENIMIENTO DE EDIFICIOS",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 20,
+		"nombre": "MÁQUINAS VIALES",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 21,
+		"nombre": "OTROS",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 22,
+		"nombre": "PINTURA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 23,
+		"nombre": "PRODUCTOR LADRILLO SUELO CEMENTO",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 24,
+		"nombre": "REFRIGERACIÓN Y AIRE ACONDICIONADO",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 25,
+		"nombre": "SEGURIDAD E HIGIENE EN EL TRABAJO",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 26,
+		"nombre": "SOLDADURA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 27,
+		"nombre": "TERMINACIONES DECORATIVOS",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 28,
+		"nombre": "TOPOGRAFÍA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 29,
+		"nombre": "VIDRIERÍA",
+		"activo": true,
+		"tipo": 1
+	},
+	{
+		"id": 30,
+		"nombre": "TERMINALIDAD SECUNDARIA",
+		"activo": true,
+		"tipo": 2
+	},
+	{
+		"id": 31,
+		"nombre": "TERMINALIDAD PRIMARIA",
+		"activo": true,
+		"tipo": 2
+	},
+	{
+		"id": 32,
+		"nombre": "EDUCACIÓN SUPERIOR",
+		"activo": true,
+		"tipo": 3
+	},
+	{
+		"id": 33,
+		"nombre": "REPARACIÓN ELECTRODOMESTICOS",
+		"activo": true,
+		"tipo": 1
+	}
+]

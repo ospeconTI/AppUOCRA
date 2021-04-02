@@ -245,7 +245,12 @@
             <button btn2 onclick="miembro()">Ser miembro</button>
         </div>
     </body>
-
+	<script>
+		window.scrollTo(0,1);
+		document.addEventListener("focusout", function (e) {
+            window.scrollTo(0,1);
+		});
+	</script>
     <script>
         let logueando = false;
         const login = (e) => {

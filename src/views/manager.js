@@ -56,7 +56,6 @@ import { tvCanalesScreen } from "./bodies/tvCanales";
 import { tvEstrenosScreen } from "./bodies/tvEstrenos";
 import { tvGrillaScreen } from "./bodies/tvGrilla";
 import { adolecencia2020Screen } from "./bodies/adolecencia2020";
-import { adolecenciaOtrasScreen } from "./bodies/adolecenciaOtras";
 import { adiccionesScreen } from "./bodies/adicciones";
 import { hogarInstitucionalScreen } from "./bodies/hogarInstitucional";
 import { hogarDescripcionScreen } from "./bodies/hogarDescripcion";
@@ -85,6 +84,8 @@ import { noticiaDetalleScreen } from "./bodies/noticiaDetalle";
 import { teatroObrasScreen } from "./bodies/teatroObras";
 import { fundacionMapaScreen } from "./bodies/fundacionMapa";
 import { fundacionCursosListaScreen } from "./bodies/fundacionCursosLista";
+import { adolescenciaCuadernillosScreen } from "./bodies/adolescenciaCuadernillos";
+import { compartirScreen } from "./bodies/compartir";
 
 emergenciasScreen
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -169,7 +170,6 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <tvestrenos-screen id="tvEstrenos" class="body"></tvestrenos-screen>
             <tvgrilla-screen id="tvGrilla" class="body"></tvgrilla-screen>
             <adolecencia2020-screen id="adolecencia2020" class="body"></adolecencia2020-screen>
-            <adolecenciaotras-screen id="adolecenciaOtras" class="body"></adolecenciaotras-screen>
             <adicciones-screen id="adicciones" class="body"></adicciones-screen>
             <hogarinstitucional-screen id="hogarInstitucional" class="body"></hogarinstitucional-screen>
             <hogardescripcion-screen id="hogarDescripcion" class="body"></hogardescripcion-screen>
@@ -198,6 +198,8 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <teatroobras-screen id="teatroObras" class="body"></teatroobras-screen>
             <fundacionmapa-screen id="fundacionMapa" class="body"></fundacionmapa-screen>
             <fundacioncursoslista-screen id="fundacionCursosLista" class="body"></fundacioncursoslista-screen>
+            <adolescenciacuadernillos-screen id="adolescenciaCuadernillos" class="body"></adolescenciacuadernillos-screen>
+            <compartir-screen id="compartir" class="body"></compartir-screen>
 
             <pie-componente class="foot"></pie-componente>
 

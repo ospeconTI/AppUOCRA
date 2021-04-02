@@ -10,14 +10,14 @@ import { button } from "../css/button";
 import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
 import {SVGS} from "../../../assets/icons/svgs";
-import {get as getEdicionesAnteriores} from "../../redux/edicionesAnteriores/actions"
+import {get as getCineEdicionesAnteriores} from "../../redux/cineEdicionesAnteriores/actions"
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
-const EDICIONESANTERIORES_DATOS = "edicionesAnteriores.timeStamp";
-const EDICIONESANTERIORES_ERROR = "edicionesAnteriores.errorTimeStamp";
+const CINEEDICIONESANTERIORES_DATOS = "cineEdicionesAnteriores.timeStamp";
+const CINEEDICIONESANTERIORES_ERROR = "cineEdicionesAnteriores.errorTimeStamp";
 
-export class cineEdicionesAnterioresScreen extends connect(store, EDICIONESANTERIORES_DATOS, EDICIONESANTERIORES_ERROR, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class cineEdicionesAnterioresScreen extends connect(store, CINEEDICIONESANTERIORES_DATOS, CINEEDICIONESANTERIORES_ERROR, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -61,7 +61,7 @@ export class cineEdicionesAnterioresScreen extends connect(store, EDICIONESANTER
                 width:95vw;
                 justify-self: center;
                 grid-template-columns: auto 1fr;
-                padding: 0 !important;
+                padding: .2rem 0 .2rem 0;
                 grid-gap: 0 !important; 
                 box-shadow: var(--shadow-elevation-2-box);         
             }
@@ -161,15 +161,15 @@ export class cineEdicionesAnterioresScreen extends connect(store, EDICIONESANTER
 			const haveBodyArea = isInLayout(state, this.area);
 			const SeMuestraEnUnasDeEstasPantallas = "-cineEdicionesAnteriores-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
-                store.dispatch(getEdicionesAnteriores())
+                store.dispatch(getCineEdicionesAnteriores())
 				this.hidden = false;
 			}
 		}
-        if (name == EDICIONESANTERIORES_DATOS){
-            this.ediciones = state.edicionesAnteriores.entities
+        if (name == CINEEDICIONESANTERIORES_DATOS){
+            this.ediciones = state.cineEdicionesAnteriores.entities
 			this.update();
         }
-        if (name == EDICIONESANTERIORES_ERROR){
+        if (name == CINEEDICIONESANTERIORES_ERROR){
             this.ediciones = null
 			this.update();
         }

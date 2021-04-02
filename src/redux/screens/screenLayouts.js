@@ -243,7 +243,7 @@ export const screenLayuts = {
         medium: HEADER_BODY_FOOT,
         large: HEADER_BODY_FOOT,
     },
-    adolecenciaOtras: {
+    adolescenciaCuadernillos: {
         small: HEADER_BODY_FOOT,
         medium: HEADER_BODY_FOOT,
         large: HEADER_BODY_FOOT,
@@ -432,6 +432,11 @@ export const screenLayuts = {
         small: ALL_BODY,
         medium: ALL_BODY,
         large: ALL_BODY,
+    },
+    compartir: {
+        small: HEADER_BODY_FOOT,
+        medium: HEADER_BODY_FOOT,
+        large: HEADER_BODY_FOOT,
     },
 };
 

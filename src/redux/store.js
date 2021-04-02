@@ -22,7 +22,7 @@ import { middleware as zonas } from "./zonas/middleware";
 import { middleware as convenios } from "./convenios/middleware";
 import { middleware as programacion } from "./programacion/middleware";
 import { middleware as leyendas } from "./leyendas/middleware";
-import { middleware as edicionesAnteriores } from "./edicionesAnteriores/middleware";
+import { middleware as cineEdicionesAnteriores } from "./cineEdicionesAnteriores/middleware";
 import { middleware as tvEstrenos } from "./tvEstrenos/middleware";
 import { middleware as tvGrilla } from "./tvGrilla/middleware";
 import { middleware as adolecenciaJornadas } from "./adolecenciaJornadas/middleware";
@@ -38,14 +38,15 @@ import { middleware as teatroObras } from "./teatroObras/middleware";
 import { middleware as fundacionCursos } from "./fundacionCursos/middleware";
 import { middleware as fundacionCentros } from "./fundacionCentros/middleware";
 import { middleware as fundacionEspecialidades } from "./fundacionEspecialidades/middleware";
+import { middleware as adolescenciaCuadernillos } from "./adolescenciaCuadernillos/middleware";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let mdw = [api, rest, ...ui, ...route, ...menues, ...items, ...titulos, ...banners, ...leftmenu, ...noticias
     , ...localidades, ...provincias, ...servicios, ...cemaps, ...seccionales, ...zonas, ...convenios, ...programacion,
-...leyendas, ...edicionesAnteriores, ...tvEstrenos, ...tvGrilla, ...adolecenciaJornadas, ...adicciones, ...hogarVideos,
+...leyendas, ...cineEdicionesAnteriores, ...tvEstrenos, ...tvGrilla, ...adolecenciaJornadas, ...adicciones, ...hogarVideos,
 ...mujeresVideos, ...arteEdicionesAnteriores, ...hoteles, ...hotelesBanner, ...usuarios, ...onBoarding, ...teatroObras,
-...fundacionCursos, ...fundacionCentros ,...fundacionEspecialidades];
+...fundacionCursos, ...fundacionCentros ,...fundacionEspecialidades, ...adolescenciaCuadernillos];
 
 if (process.env.NODE_ENV !== "production") {
     mdw = [...mdw, logger];

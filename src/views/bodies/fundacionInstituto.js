@@ -145,9 +145,9 @@ export class fundacionInstitutoScreen extends connect(store, CEMAPS_DATOS, PROVI
                         </div>
                         <div id="selecDuracionl" class="grid row miselect">
                             <select id="txtDuracion" class="elselect" >
-                                <option value="">Carreras con Duración</option>
-                                <option value="3 Cuatrimestres">3 Cuatrimestres</option>
-                                <option value="3 Años">3 Años</option>
+                                <option value="">Provincia</option>
+                                <option value="CABA">CABA</option>
+                                <option value="Corrientes">Corrientes</option>
                             </select>
 				        </div>
                         <div id="botones" class="grid">
@@ -181,7 +181,7 @@ export class fundacionInstitutoScreen extends connect(store, CEMAPS_DATOS, PROVI
         if(txtDuracion == ""){
 			store.dispatch(showWarning("Atencion!", "Falta seleccionar Carrera con Duracion", "fondoError", 4000));
         }else{
-            store.dispatch(seleccion(32, "", "", txtDuracion, 3));
+            store.dispatch(seleccion(32, txtDuracion , "", "", 3));
             store.dispatch(goTo("fundacionCursosLista"))
         }
     }
@@ -190,10 +190,10 @@ export class fundacionInstitutoScreen extends connect(store, CEMAPS_DATOS, PROVI
         if(txtDuracion == ""){
 			store.dispatch(showWarning("Atencion!", "Falta seleccionar Carrera con Duracion", "fondoError", 4000));
         }else{
-            store.dispatch(seleccion(32, "", "", txtDuracion, 3));
+            store.dispatch(seleccion(32, txtDuracion, "", "", 3));
             store.dispatch(goTo("fundacionMapa"))
         }
-    }
+    } 
 
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
@@ -221,33 +221,7 @@ export class fundacionInstitutoScreen extends connect(store, CEMAPS_DATOS, PROVI
         }
 
 	}
-    cambioProvincia(e){
-        let arr = store.getState().localidades.entities;
-        this.localidad = arr.filter(a => a.provinciasId == e.currentTarget.value);  
-        this.update()      
-    }
-    cambioLocalidad(e){
-        if (e.currentTarget.value> 0){
-            let arr = store.getState().localidades.entities;
-            let salida = arr.filter(a => a.id == e.currentTarget.value);  
-            store.dispatch(selLocalidad(salida))
-        }
-    }
-    cambioServicio(e){
-        if (e.currentTarget.value> 0){
-            let arr = store.getState().servicios.entities;
-            let salida = arr.filter(a => a.id == e.currentTarget.value);  
-            store.dispatch(selServicio(salida))
-        }
-    }
-    clickLocalidad(e){
-        const txtProvincia = this.shadowRoot.querySelector("#txtProvincias").value;
-        const txtLocalidad = this.shadowRoot.querySelector("#txtLocalidades");
-        if(txtProvincia == 0){
-			store.dispatch(showWarning(this.cartilla[this.idioma].warning[0].titulo, this.cartilla[this.idioma].warning[0].subTitulo, "fondoError", 2000));
-            txtLocalidad.blur()
-        }
-    }
+
 	static get properties() {
 		return {
 			mediaSize: {

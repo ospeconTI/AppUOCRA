@@ -42,7 +42,7 @@ export const largeRoute = [
 "4.1.8.4 -cineEdicionesAnteriores",
 "4.1.9 -adolecencia",
 "4.1.9.1 -adolecencia2020",
-"4.1.9.2 -adolecenciaOtras",
+"4.1.9.2 -adolescenciaCuadernillos",
 "4.1.9 -adicciones",
 "4.1.9.1 -adicciones2020",
 "4.1.9.2 -adiccionesOtras",
@@ -85,5 +85,6 @@ export const largeRoute = [
 "4.6 -claveCambio",
 "4.7 -claveCambioMensaje",
 "5 -notificaciones",
+"5 -compartir",
 
 ];

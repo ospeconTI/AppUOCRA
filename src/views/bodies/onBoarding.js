@@ -7,6 +7,7 @@ import { goNext, goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { gridLayout } from "../css/gridLayout";
 import { button } from "../css/button";
+import {SVGS} from "../../../assets/icons/svgs";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -33,8 +34,8 @@ export class onBoardingScreen extends connect(store, ONBOARDING_DATO, MEDIA_CHAN
 				position: relative;
 				top: 0rem;
 				left: 0rem;
-				height: 100%;
-				width: 100%;
+				height: 100vh;
+				width: 100vw;
                 background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
 				padding: 0 !important;
 			}
@@ -44,12 +45,11 @@ export class onBoardingScreen extends connect(store, ONBOARDING_DATO, MEDIA_CHAN
 			#cuerpo {
 				display: grid;
 				position: relative;
-				height: 100%;
 				width: 100vw;
 				grid-template-rows: 25fr 20fr 30fr 25fr;
 				place-content: center;
 				justify-items: center;
-				align-items: flex-end;
+				align-self: normal;
 				grid-gap:.5rem;
 			}
 			#bandera{
@@ -70,6 +70,7 @@ export class onBoardingScreen extends connect(store, ONBOARDING_DATO, MEDIA_CHAN
 				font-size: calc(var(--font-header-h1-size) * 1.8 );
 				width: 90vw;
     			text-align: center;
+				align-self: self-end;
 			}
 			#leyenda{
 				padding-top:1rem;
@@ -81,11 +82,12 @@ export class onBoardingScreen extends connect(store, ONBOARDING_DATO, MEDIA_CHAN
     			text-align: center;
 			}
 			#botonera{
+				align-content: flex-end;
 				justify-self: stretch;
 				z-index:10;
 			}
 			#imagen{
-				width: 50%;
+				align-self: center;
 			}
 			#version {
 				display: grid;
@@ -102,7 +104,7 @@ export class onBoardingScreen extends connect(store, ONBOARDING_DATO, MEDIA_CHAN
 		if (this.item){
 			return html`
 				<div id="cuerpo" >
-					<img id="imagen" src="https://app.uocra.org/images/titulo_red_social.png" />
+					<div id="imagen">${SVGS["LOGO"]}</div>
 					<div id="titulo">${this.item[this.numero].titulo}</div>
 					<div id="leyenda">${this.item[this.numero].leyenda}</div>
 					<div id="botonera" class="grid column">
@@ -123,11 +125,15 @@ export class onBoardingScreen extends connect(store, ONBOARDING_DATO, MEDIA_CHAN
 			const haveBodyArea = isInLayout(state, this.area);
 			const SeMuestraEnUnasDeEstasPantallas = "-onBoarding-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
+				//this.style.height = window.innerHeight;
 				this.hidden = false;
 
-				this.timeOut = setTimeout(() => {
-					//store.dispatch(goNext());
-				}, 4000);
+				// this.timeOut = setTimeout(() => {
+				// 	//store.dispatch(goNext());
+				// }, 4000);
+				//window.scrollTo(0,1);
+				//this.scrollIntoView(false);
+
 			}
 			this.update();
 		}

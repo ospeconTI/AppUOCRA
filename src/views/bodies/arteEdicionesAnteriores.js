@@ -61,7 +61,7 @@ export class arteEdicionesAnterioresScreen extends connect(store, EDICIONESANTER
                 width:95vw;
                 justify-self: center;
                 grid-template-columns: auto 1fr;
-                padding: 0 !important;
+                padding: .2rem 0 .4rem 0;
                 grid-gap: 0 !important; 
                 box-shadow: var(--shadow-elevation-2-box);         
             }

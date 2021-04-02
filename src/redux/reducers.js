@@ -19,7 +19,7 @@ import { reducer as zonasReducer } from "./zonas/reducer";
 import { reducer as conveniosReducer } from "./convenios/reducer";
 import { reducer as programacionReducer } from "./programacion/reducer";
 import { reducer as leyendasReducer } from "./leyendas/reducer";
-import { reducer as edicionesAnterioresReducer } from "./edicionesAnteriores/reducer";
+import { reducer as cineEdicionesAnterioresReducer } from "./cineEdicionesAnteriores/reducer";
 import { reducer as tvEstrenosReducer } from "./tvEstrenos/reducer";
 import { reducer as tvGrillaReducer } from "./tvGrilla/reducer";
 import { reducer as adolecenciaJornadasReducer } from "./adolecenciaJornadas/reducer";
@@ -35,6 +35,7 @@ import { reducer as teatroObrasReducer } from "./teatroObras/reducer";
 import { reducer as fundacionCursosReducer } from "./fundacionCursos/reducer";
 import { reducer as fundacionEspecialidadesReducer } from "./fundacionEspecialidades/reducer";
 import { reducer as fundacionCentrosReducer } from "./fundacionCentros/reducer";
+import { reducer as adolescenciaCuadernillosReducer } from "./adolescenciaCuadernillos/reducer";
 
 export const rootReducer = (state = {}, action) => {
     return {
@@ -57,7 +58,7 @@ export const rootReducer = (state = {}, action) => {
         convenios: conveniosReducer(state.convenios, action),
         programacion: programacionReducer(state.programacion, action),
         leyendas: leyendasReducer(state.leyendas, action),
-        edicionesAnteriores: edicionesAnterioresReducer(state.edicionesAnteriores, action),
+        cineEdicionesAnteriores: cineEdicionesAnterioresReducer(state.cineEdicionesAnteriores, action),
         tvEstrenos: tvEstrenosReducer(state.tvEstrenos, action),
         tvGrilla: tvGrillaReducer(state.tvGrilla, action),
         adolecenciaJornadas: adolecenciaJornadasReducer(state.adolecenciaJornadas, action),
@@ -73,6 +74,7 @@ export const rootReducer = (state = {}, action) => {
         fundacionCursos: fundacionCursosReducer(state.fundacionCursos, action),
         fundacionEspecialidades: fundacionEspecialidadesReducer(state.fundacionEspecialidades, action),
         fundacionCentros: fundacionCentrosReducer(state.fundacionCentros, action),
-        
+        adolescenciaCuadernillos: adolescenciaCuadernillosReducer(state.adolescenciaCuadernillos, action),
+                
     };
 };
