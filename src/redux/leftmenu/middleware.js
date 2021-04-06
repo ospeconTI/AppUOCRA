@@ -5,21 +5,19 @@ import { fetchJSON } from "../../libs/fetchJSON";
 import { RESTAdd, RESTDelete, RESTUpdate, RESTPatch } from "../rest/actions";
 
 import { apiRequest } from "../api/actions";
-import { JSON } from "../../redux/json/leftmenu";
 
 export const get = ({ dispatch }) => (next) => (action) => {
 	next(action);
 	if (action.type === GET) {
-		// let leftmenu = JSON
-		// dispatch({
-		//     type: GET_SUCCESS,
-		//     payload: {
-		//       send: 1,
-		//       receive: leftmenu
-		//     }
-		//   })
-		//dispatch(apiRequest(ikePuestosQuery, action.options, GET_SUCCESS, GET_ERROR))
-		fetchJSON(dispatch, "leftmenu.json", GET_SUCCESS, GET_ERROR);
+		let leftmenu = require("../../../jsonLocal/leftmenu.json");
+		dispatch({
+			type: GET_SUCCESS,
+			payload: {
+				send: 1,
+				receive: leftmenu,
+			},
+		});
+		//fetchJSON(dispatch, "leftmenu.json", GET_SUCCESS, GET_ERROR);
 	}
 };
 

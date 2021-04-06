@@ -19,14 +19,14 @@
 		"id": 172,
 		"tipo": "moecra",
 		"titulo": "QUIENES SOMOS?",
-		"cuerpo": "<p>Construir Salud, a lo largo de más de 25 años, desarrolló una política de salud basada en la Atención Primaria de la Salud y en la Medicina Familiar como modelo.</p><p>Nuestra Obra Social a través de sus médicos de familia, no sólo trabaja en laatención de las enfermedades sino también, fundamentalmente, en laprevención de las mismas y en la promoción de la salud, mediante las más actualizadas modalidades científicas.</p><p><b>MEDICO DE FAMILIA REFERENTE</b></p><p> El médico de familia es un profesional especialista en personas, que trabaja en equipo, capaz de resolver la mayor parte de los problemas por los que consultan sus pacientes y de realizar interconsultas con los médicos especialistas cuando es necesario</p>",
+		"cuerpo": "<p>Las contingencias sociales a las que nos enfrentamos requieren hoy más que nunca del tendido de la acción solidaria como forma de ayuda recíproca entre compañeras y compañeros.</p><p>Los trabajadores y trabajadoras nucleados en la UOCRA sabemos de los beneficios de unirnos para lograr nuestro bienestar y el de nuestras familias a través de nuestra RED SOCIAL. </p><p>Renovamos nuestra MOECRA - Mutual de Obreros y Empleados de la Construcción de la República Argentina - para sumar otro brazo al colectivo de respuestas que nuestra Organización tiene disponible para satisfacer las necesidades de nuestras compañeras y compañeros. </p><p>Basados en la solidaridad y el bien común, buscamos complementar las acciones sindicales y de la acción social con iniciativas solidarias que permitan el acceso a bienes y servicios por parte de sus asociados. </p><p>Estamos trabajando para próximamente poner a disposición la mejor propuesta de beneficios sociales para todas y para todos.</p>",
 		"activo": true
 	},
 	{
 		"id": 173,
 		"tipo": "moecra",
 		"titulo": "COMO COMPRAR?",
-		"cuerpo": "<p>Construir Salud, a lo largo de más de 25 años, desarrolló una política de salud basada en la Atención Primaria de la Salud y en la Medicina Familiar como modelo.</p><p>Nuestra Obra Social a través de sus médicos de familia, no sólo trabaja en laatención de las enfermedades sino también, fundamentalmente, en laprevención de las mismas y en la promoción de la salud, mediante las más actualizadas modalidades científicas.</p><p><b>MEDICO DE FAMILIA REFERENTE</b></p><p> El médico de familia es un profesional especialista en personas, que trabaja en equipo, capaz de resolver la mayor parte de los problemas por los que consultan sus pacientes y de realizar interconsultas con los médicos especialistas cuando es necesario</p>",
+		"cuerpo": "",
 		"activo": true
 	},
 	{ "id": 174, "tipo": "salud", "titulo": "¿QUE ES CONSTRUIR SALUD?", "cuerpo": "<p><b>Construir Salud</b> es la Obra Social del Personal de la Construcción. Es un sistema de salud que considera al ser humano como centro y eje de toda su actividad, ofreciendo a los Obreros Constructores todo lo necesario para el cuidado de la salud familiar.</p>", "activo": true },

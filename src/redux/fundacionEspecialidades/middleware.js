@@ -1,120 +1,61 @@
-import {
-    GET,
-    GET_SUCCESS,
-    GET_ERROR,
-    ADD,
-    ADD_SUCCESS,
-    ADD_ERROR,
-    UPDATE,
-    UPDATE_SUCCESS,
-    UPDATE_ERROR,
-    PATCH,
-    PATCH_SUCCESS,
-    PATCH_ERROR,
-    REMOVE,
-    REMOVE_SUCCESS,
-    REMOVE_ERROR
+import { GET, GET_SUCCESS, GET_ERROR, ADD, ADD_SUCCESS, ADD_ERROR, UPDATE, UPDATE_SUCCESS, UPDATE_ERROR, PATCH, PATCH_SUCCESS, PATCH_ERROR, REMOVE, REMOVE_SUCCESS, REMOVE_ERROR } from "../fundacionEspecialidades/actions";
 
-} from "../fundacionEspecialidades/actions";
+import { RESTAdd, RESTDelete, RESTUpdate, RESTPatch } from "../rest/actions";
 
-import {
+import { apiRequest } from "../api/actions";
+import { fetchJSON } from "../../libs/fetchJSON";
 
-} from "../fetchs"
-
-import {
-    RESTAdd,
-    RESTDelete,
-    RESTUpdate,
-    RESTPatch
-} from "../rest/actions"
-
-import {
-    apiRequest
-} from "../api/actions"
-import {JSON} from "../../redux/json/fundacionEspecialidades";
-
-export const get = ({
-    dispatch
-}) => next => action => {
-    next(action);
-    if (action.type === GET) {
-        let fundacionEspecialidades = JSON
-        fundacionEspecialidades.sort(function(a,b){return a["nombre"] > b["nombre"] ? 1 : -1});
-        dispatch({
-            type: GET_SUCCESS,
-            payload: {
-              send: 1,
-              receive: fundacionEspecialidades
-            }
-          })
-        //dispatch(apiRequest(ikePuestosQuery, action.options, GET_SUCCESS, GET_ERROR))
-    }
+export const get = ({ dispatch }) => (next) => (action) => {
+	next(action);
+	if (action.type === GET) {
+		fetchJSON(dispatch, "fundacionEspecialidades.json", GET_SUCCESS, GET_ERROR);
+	}
 };
 
-export const add = ({
-    dispatch
-}) => next => action => {
-    next(action);
-    if (action.type === ADD) {
-        //dispatch(RESTAdd(ikePuestos, action.body, ADD_SUCCESS, ADD_ERROR, action.token))
-    }
+export const add = ({ dispatch }) => (next) => (action) => {
+	next(action);
+	if (action.type === ADD) {
+		//dispatch(RESTAdd(ikePuestos, action.body, ADD_SUCCESS, ADD_ERROR, action.token))
+	}
 };
 
-export const update = ({
-    dispatch
-}) => next => action => {
-    next(action);
-    if (action.type === UPDATE) {
-        //dispatch(RESTUpdate(ikePuestos, action.id, action.body, UPDATE_SUCCESS, UPDATE_ERROR, action.token))
-    }
+export const update = ({ dispatch }) => (next) => (action) => {
+	next(action);
+	if (action.type === UPDATE) {
+		//dispatch(RESTUpdate(ikePuestos, action.id, action.body, UPDATE_SUCCESS, UPDATE_ERROR, action.token))
+	}
 };
 
-export const patch = ({
-    dispatch
-}) => next => action => {
-    next(action);
-    if (action.type === PATCH) {
-        //dispatch(RESTPatch(ikePuestos, action.id, action.body, PATCH_SUCCESS, PATCH_ERROR, action.token))
-    }
+export const patch = ({ dispatch }) => (next) => (action) => {
+	next(action);
+	if (action.type === PATCH) {
+		//dispatch(RESTPatch(ikePuestos, action.id, action.body, PATCH_SUCCESS, PATCH_ERROR, action.token))
+	}
 };
 
-export const remove = ({
-    dispatch
-}) => next => action => {
-    next(action);
-    if (action.type === REMOVE) {
-        //dispatch(RESTDelete(ikePuestos, action.id, REMOVE_SUCCESS, REMOVE_ERROR, action.token))
-    }
+export const remove = ({ dispatch }) => (next) => (action) => {
+	next(action);
+	if (action.type === REMOVE) {
+		//dispatch(RESTDelete(ikePuestos, action.id, REMOVE_SUCCESS, REMOVE_ERROR, action.token))
+	}
 };
 
-
-export const processGet = ({
-    dispatch
-}) => next => action => {
-    next(action);
-    if (action.type === GET_SUCCESS) {
-
-    }
+export const processGet = ({ dispatch }) => (next) => (action) => {
+	next(action);
+	if (action.type === GET_SUCCESS) {
+	}
 };
 
-export const processComand = ({
-    dispatch
-}) => next => action => {
-    next(action);
-    if (action.type === ADD_SUCCESS || action.type === UPDATE_SUCCESS || action.type === REMOVE_SUCCESS || action.type === PATCH_SUCCESS) {
-
-    }
+export const processComand = ({ dispatch }) => (next) => (action) => {
+	next(action);
+	if (action.type === ADD_SUCCESS || action.type === UPDATE_SUCCESS || action.type === REMOVE_SUCCESS || action.type === PATCH_SUCCESS) {
+	}
 };
 
-
-
-export const processError = ({
-    dispatch
-}) => next => action => {
-    next(action);
-    if (action.type === GET_ERROR || action.type === ADD_ERROR || action.type === UPDATE_ERROR || action.type === REMOVE_ERROR || action.type === PATCH_ERROR) {
-
-    }
+export const processError = ({ dispatch }) => (next) => (action) => {
+	next(action);
+	if (action.type === GET_ERROR || action.type === ADD_ERROR || action.type === UPDATE_ERROR || action.type === REMOVE_ERROR || action.type === PATCH_ERROR) {
+	}
 };
 
 export const middleware = [get, add, update, patch, remove, processGet, processComand, processError];

@@ -7,7 +7,8 @@
 		"coordinador": "Dra. María Alejandra Martínez, Ginecóloga Infanto-Juvenil.Dra. Romina Espeche, Médica Pediatra, especialista en Adolescencia.",
 		"link": "xoY26mGB_xA",
 		"activo": true,
-		"expositor": "Dr. Juan Carlos Escobar - Médico Pediatra. Dirección de Adolescencias y Juventudes, MSAL."
+		"expositor": "Dr. Juan Carlos Escobar - Médico Pediatra. Dirección de Adolescencias y Juventudes, MSAL.",
+		"orden": 0
 	},
 	{
 		"id": 2,
@@ -17,7 +18,8 @@
 		"coordinador": "Lic. Clara Mayaud, Trabajadora Social. Equipo de Adolescencia del Sanatorio Franchin. Dra. Mariana Molinolo Cionci. Médica Psiquiatra. Equipo de Adolescencia del Sanatorio Franchin.",
 		"link": "QOXtqgoOHoQ",
 		"activo": true,
-		"expositor": "Lic. Lucía Fainboim. Lic. en Cs. de la Comunicación (UBA). Docente Universitaria y Directora de Educación en Faro Digital."
+		"expositor": "Lic. Lucía Fainboim. Lic. en Cs. de la Comunicación (UBA). Docente Universitaria y Directora de Educación en Faro Digital.",
+		"orden": 1
 	},
 	{
 		"id": 3,
@@ -27,7 +29,8 @@
 		"coordinador": "",
 		"link": "MlnApkxMxcY",
 		"activo": true,
-		"expositor": ""
+		"expositor": "",
+		"orden": 2
 	},
 	{
 		"id": 4,
@@ -37,6 +40,7 @@
 		"coordinador": "",
 		"link": "pY-GF1VAZvI",
 		"activo": true,
-		"expositor": ""
+		"expositor": "",
+		"orden": 3
 	}
 ]

@@ -5,7 +5,7 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goNext, goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
-import {SVGS} from "../../../assets/icons/svgs";
+import { SVGS } from "../../../assets/icons/svgs";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -28,7 +28,7 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				left: 0rem;
 				height: 100%;
 				width: 100%;
-                background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
+				background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
 				padding: 0 !important;
 			}
 			:host([hidden]) {
@@ -42,10 +42,9 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				place-content: center;
 				justify-items: center;
 			}
-			#imagen{
+			#imagen {
 				width: 100%;
 				height: 30vh;
-
 			}
 			#version {
 				display: grid;
@@ -61,7 +60,7 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 	render() {
 		return html`
 			<div id="cuerpo" @click=${this.proximo}>
-				<div id="imagen" >${SVGS["LOGO"]}</div>
+				<div id="imagen">${SVGS["LOGO"]}</div>
 				<div id="version">v.:${__VERSION__}</div>
 			</div>
 		`;

@@ -7,6 +7,7 @@ import { layoutsCSS } from "../views/ui/layouts";
 import { getLayout } from "../redux/screens/screenLayouts";
 import { pantallaWarning } from "../views/bodies/warning";
 import { botonComponent } from "../views/componentes/c-boton";
+import { msgNoConeccionComponent } from "../views/componentes/msgNoConeccion";
 
 import { menuPrincipal } from "../views/headers/menu";
 
@@ -87,166 +88,165 @@ import { fundacionCursosListaScreen } from "./bodies/fundacionCursosLista";
 import { adolescenciaCuadernillosScreen } from "./bodies/adolescenciaCuadernillos";
 import { compartirScreen } from "./bodies/compartir";
 
-emergenciasScreen
+emergenciasScreen;
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const SELECTION = "ui.menu.timeStamp";
 
 export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)(LitElement) {
-    constructor() {
-        super();
-    }
+	constructor() {
+		super();
+	}
 
-    static get styles() {
-        return css`
-            :host {
-                position: absolute;
-                top: 0;
-                display: grid;
-                height: 100vh;
-                width: 100vw;
-                padding: 0;
-                background-color: var(--color-gris-claro);
-                overflow: hidden;
-            }
+	static get styles() {
+		return css`
+			:host {
+				position: absolute;
+				top: 0;
+				display: grid;
+				height: 100vh;
+				width: 100vw;
+				padding: 0;
+				background-color: var(--color-gris-claro);
+				overflow: hidden;
+			}
 
-            ${layoutsCSS}
+			${layoutsCSS}
 
-            :host::-webkit-scrollbar {
-                width: 0.5vw;
-                cursor: pointer;
-            }
-            :host::-webkit-scrollbar([media-size="small"]) {
-                display: none;
-            }
-            :host::-webkit-scrollbar-thumb {
-                background: var(--primary-color);
-                border-radius: 5px;
-            }
-        `;
-    }
+			:host::-webkit-scrollbar {
+				width: 0.5vw;
+				cursor: pointer;
+			}
+			:host::-webkit-scrollbar([media-size="small"]) {
+				display: none;
+			}
+			:host::-webkit-scrollbar-thumb {
+				background: var(--primary-color);
+				border-radius: 5px;
+			}
+		`;
+	}
 
-    render() {
-        return html`
- 
-            <splash-screen id="splash" class="body"></splash-screen>
-            <onboarding-screen id="onBoarding" class="body"></onboarding-screen>
-            <inicial-screen id="inicial" class="body"></inicial-screen>
-            <sesion-screen id="sesion" class="body"></sesion-screen>
-            <claveRecuperar-screen id="claveRecuperar" class="body"></claveRecuperar-screen>
-            <claveRecuperarmensaje-screen id="claveRecuperarMensaje" class="body"></claveRecuperarmensaje-screen>
-            <clavecambio-screen id="clavecambio" class="body"></clavecambio-screen>
-            <clavecambiomensaje-screen id="clavecambiomensaje" class="body"></clavecambiomensaje-screen>
-            <registro-screen id="registro" class="body"></registro-screen>
-            <registromensaje-screen id="registroMensaje" class="body"></registromensaje-screen>
-            <principal-screen id="principal" class="body"></principal-screen>
-            <compras-screen id="compras" class="body"></compras-screen>
-            <general-screen id="general" class="body"></general-screen>
-            <cemapsmapa-screen id="cemapsMapa" class="body"></cemapsmapa-screen>
-            <notificaciones-screen id="notificaciones" class="body"></notificaciones-screen>
-            <cartilla-screen id="cartilla" class="body"></cartilla-screen>
-            <cartilladetalle-screen id="cartillaDetalle" class="body"></cartilladetalle-screen>
-            <turnos-screen id="turnos" class="body"></turnos-screen>
-            <franchin-screen id="franchin" class="body"></franchin-screen>
-            <emergencias-screen id="emergencias" class="body"></emergencias-screen>
-            <gremiozonas-screen id="gremioZonas" class="body"></gremiozonas-screen>
-            <gremiomapa-screen id="gremioMapa" class="body"></gremiomapa-screen>
-            <gremiolista-screen id="gremioLista" class="body"></gremiolista-screen>
-            <gremiojuventud-screen id="gremioJuventud" class="body"></gremiojuventud-screen>
-            <gremiotarjetaieric-screen id="gremioTarjetaIeric" class="body"></gremiotarjetaieric-screen>
-            <gremioconvenio-screen id="gremioConvenio" class="body"></gremioconvenio-screen>
-            <teatroprogramacion-screen id="teatroProgramacion" class="body"></teatroprogramacion-screen>
-            <teatroprogramaciondetalle-screen id="teatroProgramacionDetalle" class="body"></teatroprogramaciondetalle-screen>
-            <teatroboleteria-screen id="teatroBoleteria" class="body"></teatroboleteria-screen>
-            <saludseguridadconsultas-screen id="saludSeguridadConsultas" class="body"></saludseguridadconsultas-screen>
-            <saludseguridaddenuncia-screen id="saludSeguridadDenuncia" class="body"></saludseguridaddenuncia-screen>
-            <macro-screen id="macro" class="body"></macro-screen>
-            <cinenosotros-screen id="cineNosotros" class="body"></cinenosotros-screen>
-            <cineedicion-screen id="cineEdicion" class="body"></cineedicion-screen>
-            <cinetematicas-screen id="cineTematicas" class="body"></cinetematicas-screen>
-            <cineedicionesanteriores-screen id="cineEdicionesAnteriores" class="body"></cineedicionesanteriores-screen>
-            <cemapcartilladetalle-screen id="cemapCartillaDetalle" class="body"></cemapcartilladetalle-screen>
-            <tvcanales-screen id="tvCanales" class="body"></tvcanales-screen>
-            <tvestrenos-screen id="tvEstrenos" class="body"></tvestrenos-screen>
-            <tvgrilla-screen id="tvGrilla" class="body"></tvgrilla-screen>
-            <adolecencia2020-screen id="adolecencia2020" class="body"></adolecencia2020-screen>
-            <adicciones-screen id="adicciones" class="body"></adicciones-screen>
-            <hogarinstitucional-screen id="hogarInstitucional" class="body"></hogarinstitucional-screen>
-            <hogardescripcion-screen id="hogarDescripcion" class="body"></hogardescripcion-screen>
-            <hogarvideoteca-screen id="hogarVideoteca" class="body"></hogarvideoteca-screen>
-            <hogarcolabora-screen id="hogarColabora" class="body"></hogarcolabora-screen>
-            <mujeresformacion-screen id="mujeresFormacion" class="body"></mujeresformacion-screen>
-            <mujeresconstruccion-screen id="mujeresConstruccion" class="body"></mujeresconstruccion-screen>
-            <artenosotros-screen id="arteNosotros" class="body"></artenosotros-screen>
-            <arteconcursos-screen id="arteConcursos" class="body"></arteconcursos-screen>
-            <arteedicion-screen id="arteEdicion" class="body"></arteedicion-screen>
-            <arteedicionesanteriores-screen id="arteEdicionesAnteriores" class="body"></arteedicionesanteriores-screen>
-            <beneficiossubsidios-screen id="beneficiosSubsidios" class="body"></beneficiossubsidios-screen>
-            <beneficiosseguros-screen id="beneficiosSeguros" class="body"></beneficiosseguros-screen>
-            <beneficiossepelios-screen id="beneficiosSepelios" class="body"></beneficiossepelios-screen>
-            <beneficiosjubilacion-screen id="beneficiosJubilacion" class="body"></beneficiosjubilacion-screen>
-            <denunciasformulario-screen id="denunciasFormulario" class="body"></denunciasformulario-screen>
-            <turismohoteleslista-screen id="turismoHotelesLista" class="body"></turismohoteleslista-screen>
-            <turismohotelesdetalle-screen id="turismoHotelesDetalle" class="body"></turismohotelesdetalle-screen>
-            <turismomapa-screen id="turismoMapa" class="body"></turismomapa-screen>
-            <fundacionaulas-screen id="fundacionAulas" class="body"></fundacionaulas-screen>
-            <fundacioncursos-screen id="fundacionCursos" class="body"></fundacioncursos-screen>
-            <fundacionescuelas-screen id="fundacionEscuelas" class="body"></fundacionescuelas-screen>
-            <fundacioninstituto-screen id="fundacionInstituto" class="body"></fundacioninstituto-screen>
-            <saludcredencial-screen id="saludCredencial" class="body"></saludcredencial-screen>
-            <noticiadetalle-screen id="noticiaDetalle" class="body"></noticiadetalle-screen>
-            <teatroobras-screen id="teatroObras" class="body"></teatroobras-screen>
-            <fundacionmapa-screen id="fundacionMapa" class="body"></fundacionmapa-screen>
-            <fundacioncursoslista-screen id="fundacionCursosLista" class="body"></fundacioncursoslista-screen>
-            <adolescenciacuadernillos-screen id="adolescenciaCuadernillos" class="body"></adolescenciacuadernillos-screen>
-            <compartir-screen id="compartir" class="body"></compartir-screen>
+	render() {
+		return html`
+			<splash-screen id="splash" class="body"></splash-screen>
+			<onboarding-screen id="onBoarding" class="body"></onboarding-screen>
+			<inicial-screen id="inicial" class="body"></inicial-screen>
+			<sesion-screen id="sesion" class="body"></sesion-screen>
+			<claveRecuperar-screen id="claveRecuperar" class="body"></claveRecuperar-screen>
+			<claveRecuperarmensaje-screen id="claveRecuperarMensaje" class="body"></claveRecuperarmensaje-screen>
+			<clavecambio-screen id="clavecambio" class="body"></clavecambio-screen>
+			<clavecambiomensaje-screen id="clavecambiomensaje" class="body"></clavecambiomensaje-screen>
+			<registro-screen id="registro" class="body"></registro-screen>
+			<registromensaje-screen id="registroMensaje" class="body"></registromensaje-screen>
+			<principal-screen id="principal" class="body"></principal-screen>
+			<compras-screen id="compras" class="body"></compras-screen>
+			<general-screen id="general" class="body"></general-screen>
+			<cemapsmapa-screen id="cemapsMapa" class="body"></cemapsmapa-screen>
+			<notificaciones-screen id="notificaciones" class="body"></notificaciones-screen>
+			<cartilla-screen id="cartilla" class="body"></cartilla-screen>
+			<cartilladetalle-screen id="cartillaDetalle" class="body"></cartilladetalle-screen>
+			<turnos-screen id="turnos" class="body"></turnos-screen>
+			<franchin-screen id="franchin" class="body"></franchin-screen>
+			<emergencias-screen id="emergencias" class="body"></emergencias-screen>
+			<gremiozonas-screen id="gremioZonas" class="body"></gremiozonas-screen>
+			<gremiomapa-screen id="gremioMapa" class="body"></gremiomapa-screen>
+			<gremiolista-screen id="gremioLista" class="body"></gremiolista-screen>
+			<gremiojuventud-screen id="gremioJuventud" class="body"></gremiojuventud-screen>
+			<gremiotarjetaieric-screen id="gremioTarjetaIeric" class="body"></gremiotarjetaieric-screen>
+			<gremioconvenio-screen id="gremioConvenio" class="body"></gremioconvenio-screen>
+			<teatroprogramacion-screen id="teatroProgramacion" class="body"></teatroprogramacion-screen>
+			<teatroprogramaciondetalle-screen id="teatroProgramacionDetalle" class="body"></teatroprogramaciondetalle-screen>
+			<teatroboleteria-screen id="teatroBoleteria" class="body"></teatroboleteria-screen>
+			<saludseguridadconsultas-screen id="saludSeguridadConsultas" class="body"></saludseguridadconsultas-screen>
+			<saludseguridaddenuncia-screen id="saludSeguridadDenuncia" class="body"></saludseguridaddenuncia-screen>
+			<macro-screen id="macro" class="body"></macro-screen>
+			<cinenosotros-screen id="cineNosotros" class="body"></cinenosotros-screen>
+			<cineedicion-screen id="cineEdicion" class="body"></cineedicion-screen>
+			<cinetematicas-screen id="cineTematicas" class="body"></cinetematicas-screen>
+			<cineedicionesanteriores-screen id="cineEdicionesAnteriores" class="body"></cineedicionesanteriores-screen>
+			<cemapcartilladetalle-screen id="cemapCartillaDetalle" class="body"></cemapcartilladetalle-screen>
+			<tvcanales-screen id="tvCanales" class="body"></tvcanales-screen>
+			<tvestrenos-screen id="tvEstrenos" class="body"></tvestrenos-screen>
+			<tvgrilla-screen id="tvGrilla" class="body"></tvgrilla-screen>
+			<adolecencia2020-screen id="adolecencia2020" class="body"></adolecencia2020-screen>
+			<adicciones-screen id="adicciones" class="body"></adicciones-screen>
+			<hogarinstitucional-screen id="hogarInstitucional" class="body"></hogarinstitucional-screen>
+			<hogardescripcion-screen id="hogarDescripcion" class="body"></hogardescripcion-screen>
+			<hogarvideoteca-screen id="hogarVideoteca" class="body"></hogarvideoteca-screen>
+			<hogarcolabora-screen id="hogarColabora" class="body"></hogarcolabora-screen>
+			<mujeresformacion-screen id="mujeresFormacion" class="body"></mujeresformacion-screen>
+			<mujeresconstruccion-screen id="mujeresConstruccion" class="body"></mujeresconstruccion-screen>
+			<artenosotros-screen id="arteNosotros" class="body"></artenosotros-screen>
+			<arteconcursos-screen id="arteConcursos" class="body"></arteconcursos-screen>
+			<arteedicion-screen id="arteEdicion" class="body"></arteedicion-screen>
+			<arteedicionesanteriores-screen id="arteEdicionesAnteriores" class="body"></arteedicionesanteriores-screen>
+			<beneficiossubsidios-screen id="beneficiosSubsidios" class="body"></beneficiossubsidios-screen>
+			<beneficiosseguros-screen id="beneficiosSeguros" class="body"></beneficiosseguros-screen>
+			<beneficiossepelios-screen id="beneficiosSepelios" class="body"></beneficiossepelios-screen>
+			<beneficiosjubilacion-screen id="beneficiosJubilacion" class="body"></beneficiosjubilacion-screen>
+			<denunciasformulario-screen id="denunciasFormulario" class="body"></denunciasformulario-screen>
+			<turismohoteleslista-screen id="turismoHotelesLista" class="body"></turismohoteleslista-screen>
+			<turismohotelesdetalle-screen id="turismoHotelesDetalle" class="body"></turismohotelesdetalle-screen>
+			<turismomapa-screen id="turismoMapa" class="body"></turismomapa-screen>
+			<fundacionaulas-screen id="fundacionAulas" class="body"></fundacionaulas-screen>
+			<fundacioncursos-screen id="fundacionCursos" class="body"></fundacioncursos-screen>
+			<fundacionescuelas-screen id="fundacionEscuelas" class="body"></fundacionescuelas-screen>
+			<fundacioninstituto-screen id="fundacionInstituto" class="body"></fundacioninstituto-screen>
+			<saludcredencial-screen id="saludCredencial" class="body"></saludcredencial-screen>
+			<noticiadetalle-screen id="noticiaDetalle" class="body"></noticiadetalle-screen>
+			<teatroobras-screen id="teatroObras" class="body"></teatroobras-screen>
+			<fundacionmapa-screen id="fundacionMapa" class="body"></fundacionmapa-screen>
+			<fundacioncursoslista-screen id="fundacionCursosLista" class="body"></fundacioncursoslista-screen>
+			<adolescenciacuadernillos-screen id="adolescenciaCuadernillos" class="body"></adolescenciacuadernillos-screen>
+			<compartir-screen id="compartir" class="body"></compartir-screen>
 
-            <pie-componente class="foot"></pie-componente>
+			<pie-componente class="foot"></pie-componente>
 
-            <alerta-errores></alerta-errores>
-            <pantalla-warning id="warning"></pantalla-warning>
-            <menu-principal id="menu" class="header"></menu-principal>
-            <spinner-loading type="spinner3"></spinner-loading>
-        `;
-    }
+			<alerta-errores></alerta-errores>
+			<pantalla-warning id="warning"></pantalla-warning>
+			<menu-principal id="menu" class="header"></menu-principal>
+			<spinner-loading type="spinner3"></spinner-loading>
+		`;
+	}
 
-    stateChanged(state, name) {
-        if (name == MEDIA_CHANGE || name == SCREEN) {
-            this.mediaSize = state.ui.media.size;
-            this.orientation = state.ui.media.orientation;
-            this.layout = getLayout(state).name;
-            if (!window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent)) {
-                if ("standalone" in window.navigator && window.navigator.standalone) {
-                    this.style.height = document.documentElement.offsetHeight ? document.documentElement.offsetHeight : window.innerHeight + "px";
-                } else {
-                    if (state.ui.media.orientation == "portrait") {
-                        this.style.height = window.innerHeight < window.innerWidth ? window.innerWidth : window.innerHeight + "px";
-                    } else {
-                        this.style.height = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight + "px";
-                    }
-                }
-            }
-        }
-        this.update();
-    }
+	stateChanged(state, name) {
+		if (name == MEDIA_CHANGE || name == SCREEN) {
+			this.mediaSize = state.ui.media.size;
+			this.orientation = state.ui.media.orientation;
+			this.layout = getLayout(state).name;
+			if (!window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent)) {
+				if ("standalone" in window.navigator && window.navigator.standalone) {
+					this.style.height = document.documentElement.offsetHeight ? document.documentElement.offsetHeight : window.innerHeight + "px";
+				} else {
+					if (state.ui.media.orientation == "portrait") {
+						this.style.height = window.innerHeight < window.innerWidth ? window.innerWidth : window.innerHeight + "px";
+					} else {
+						this.style.height = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight + "px";
+					}
+				}
+			}
+		}
+		this.update();
+	}
 
-    static get properties() {
-        return {
-            mediaSize: {
-                type: String,
-                reflect: true,
-                attribute: "media-size",
-            },
-            layout: {
-                type: String,
-                reflect: true,
-            },
-            orientation: {
-                type: String,
-                reflect: true,
-            },
-        };
-    }
+	static get properties() {
+		return {
+			mediaSize: {
+				type: String,
+				reflect: true,
+				attribute: "media-size",
+			},
+			layout: {
+				type: String,
+				reflect: true,
+			},
+			orientation: {
+				type: String,
+				reflect: true,
+			},
+		};
+	}
 }
 
 window.customElements.define("view-manager", viewManager);

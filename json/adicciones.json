@@ -6,7 +6,8 @@
 		"contenido": "<p><b>Desafíos en Salud, Seguridad y Prevención de Adicciones en el Trabajo en época de Pandemia.</b></p><p><li>Dra. VERÓNICA BRASESCO. Jefa Gabinete Dir. Gral. Políticas Sociales en Adicciones del Gobierno de CABA.</li></p><p><li>Dr. ROBERTO CANAY. Consultor de Organismos Gubernamentales y No Gubernamentales, y de Organismos Internacionales.</li></p><p><li>Dr. FACUNDO MANES. Neurocientífico y Neurólogo. Investigador del CONICET y Presidente Fundación INECO.</li></p>",
 		"link": "u9Dn1T2sXzM",
 		"activo": true,
-		"id": 0
+		"id": 0,
+		"orden": 0
 	},
 	{
 		"nombre": "",
@@ -15,7 +16,8 @@
 		"contenido": "<p><b>Políticas públicas y aspectos legales de los consumos problemáticos en el ámbito laboral.</b></p><p><li>Dra. LUCÍA GARCÍA BLANCO. Ex Directora Dir. Impacto de Drogas en Ámbito Laboral Ministerio Trabajo, Empleo y Seg. Social de la Nación.</li></p><p><li>Lic. MARIELA AGUIRRE. Diputada Provincial, Pcia. de Misiones.</li></p><p><li>Dr. LUIS DI GIACOMO. Presidente de la Comisión de Adicciones de la Cámara de Diputados de la Nación.</li></p>",
 		"link": "3FAVgKx_Ioc",
 		"activo": true,
-		"id": 1
+		"id": 1,
+		"orden": 1
 	},
 	{
 		"nombre": "",
@@ -24,9 +26,37 @@
 		"contenido": "<p><b>Mesa Tripartita. Reflexiones sobre los consumos problemáticos más allá de la pandemia.</b></p><p><li>Lic. GABRIELA TORRES. Secretaria de Políticas Integrales sobre Drogas de la Nación – SEDRONAR.</li></p><p><li>Mmo. IVÁN SZCZECH. Presidente de la Cámara Argentina de la Construcción.</li></p><p><li>GERARDO MARTÍNEZ. Secretario General de UOCRA, Presidente de la OSPECON - Construir Salud, Red Social UOCRA.</li></p>",
 		"link": "JrIbyRNzMPo",
 		"activo": true,
-		"id": 2
+		"id": 2,
+		"orden": 2
 	},
-	{ "nombre": "Jornadas de adiciones 2019", "ano": 2019, "descripcion": "", "contenido": "", "link": "TAkyh5ifk9E", "activo": true, "id": 3 },
-	{ "nombre": "Jornadas de adiciones 2018", "ano": 2018, "descripcion": "", "contenido": "", "link": "VYyJyMjoqJE", "activo": true, "id": 4 },
-	{ "nombre": "Jornadas de adiciones 2017", "ano": 2017, "descripcion": "", "contenido": "", "link": "N34ehKYXIKc", "activo": true, "id": 5 }
+	{
+		"nombre": "Jornadas de adiciones 2019",
+		"ano": 2019,
+		"descripcion": "",
+		"contenido": "",
+		"link": "TAkyh5ifk9E",
+		"activo": true,
+		"id": 3,
+		"orden": 3
+	},
+	{
+		"nombre": "Jornadas de adiciones 2018",
+		"ano": 2018,
+		"descripcion": "",
+		"contenido": "",
+		"link": "VYyJyMjoqJE",
+		"activo": true,
+		"id": 4,
+		"orden": 4
+	},
+	{
+		"nombre": "Jornadas de adiciones 2017",
+		"ano": 2017,
+		"descripcion": "",
+		"contenido": "",
+		"link": "N34ehKYXIKc",
+		"activo": true,
+		"id": 5,
+		"orden": 5
+	}
 ]

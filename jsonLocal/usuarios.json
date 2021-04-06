@@ -43,5 +43,14 @@
 		"mail": "nplacanica@uocra.org",
 		"clave": "nahuel",
 		"activo": true
+	},
+	{
+		"id": 4,
+		"nombre": "Karina",
+		"apellido": "Baigros",
+		"documento": 12324987,
+		"mail": "kbaigros@uocra.org",
+		"clave": "karina",
+		"activo": true
 	}
 ]

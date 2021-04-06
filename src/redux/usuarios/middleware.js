@@ -5,22 +5,20 @@ import { GET, GET_SUCCESS, GET_ERROR, ADD, ADD_SUCCESS, ADD_ERROR, UPDATE, UPDAT
 //import { RESTAdd, RESTDelete, RESTUpdate, RESTPatch } from "../rest/actions";
 ///////////////
 //import { apiRequest } from "../api/actions";
-import {JSON} from "../../redux/json/usuarios";
 
 export const get = ({ dispatch }) => (next) => (action) => {
 	next(action);
 	if (action.type === GET) {
-		
-		let usuarios = JSON
- 
-        dispatch({
-            type: GET_SUCCESS,
-            payload: {
-              send: 1,
-              receive: usuarios
-            }
-          })
-		
+		let usuarios = require("../../../jsonLocal/usuarios.json");
+
+		dispatch({
+			type: GET_SUCCESS,
+			payload: {
+				send: 1,
+				receive: usuarios,
+			},
+		});
+
 		//dispatch(apiRequest(usuarioOdataFetch, action.options, GET_SUCCESS, GET_ERROR));
 	}
 };
