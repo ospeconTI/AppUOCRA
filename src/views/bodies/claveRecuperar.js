@@ -5,11 +5,12 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
-import { showWarning} from "../../redux/ui/actions";
+import { showWarning } from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
-
+import { recupero } from "../../redux/autorizacion/actions";
+import { validaMail } from "../../libs/funciones";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -20,9 +21,8 @@ export class claveRecuperarScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 		this.hidden = true;
 		this.area = "body";
 		this.current = "";
-		this.idioma = store.getState().ui.idioma ;
-		this.claveRecuperar = require('../../../assets/idiomas/claveRecuperar.json');
-
+		this.idioma = store.getState().ui.idioma;
+		this.claveRecuperar = require("../../../assets/idiomas/claveRecuperar.json");
 	}
 
 	static get styles() {
@@ -34,7 +34,7 @@ export class claveRecuperarScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 			:host {
 				display: grid;
 				position: relative;
-                background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
+				background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
 				overflow: hidden;
 			}
 			:host([hidden]) {
@@ -69,7 +69,7 @@ export class claveRecuperarScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 				text-align: center;
 				font-style: italic;
 			}
-			.textoMsj{
+			.textoMsj {
 				color: var(--color-gris-claro);
 				font-size: 2.5vh !important;
 				font-weight: var(--font-label-weight);
@@ -78,7 +78,7 @@ export class claveRecuperarScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 			:host([media-size="large"]) .texto {
 				font-size: 1.5vw;
 			}
-			.miBoton{
+			.miBoton {
 				height: 7vh;
 				align-self: center;
 			}
@@ -92,11 +92,12 @@ export class claveRecuperarScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 					<hr id="linea" />
 				</div>
 				<div id="datos" class="grid fit" style="align-items: stretch;">
-					<div class="grid row" >
-                         <div class="input">
-                            <label class="texto" style="color:var(--color-blanco)">${this.claveRecuperar[this.idioma].password}</label>
-                            <input type="text" id="tallerDescripcion" autocomplete="off" " />
-                        </div>
+					<div class="grid row">
+						<div class="input">
+							<label class="texto" style="color:var(--color-blanco)">${this.claveRecuperar[this.idioma].password}</label>
+							<input type="text" id="mail" autocomplete="off" " />
+							<div>Email incorrecto</div>
+						</div>
 						<button btn3 class="miBoton" @click="${this.enviar}">${this.claveRecuperar[this.idioma].enviar}</button>
 						<label class="textoMsj">${this.claveRecuperar[this.idioma].mensaje}</label>
 					</div>
@@ -122,15 +123,28 @@ export class claveRecuperarScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 			}
 			this.update();
 		}
-
 	}
 
 	enviar() {
-		store.dispatch(goTo("claveRecuperarMensaje"));
-    }
+		[].forEach.call(this.shadowRoot.querySelectorAll("[error]"), (element) => {
+			element.removeAttribute("error");
+		});
+		let mail = this.shadowRoot.querySelector("#mail");
+		var ok = true;
+		if (mail.value == "" || !validaMail(mail.value)) {
+			ok = false;
+			mail.setAttribute("error", "");
+		}
+		if (ok) {
+			store.dispatch(recupero(mail.value));
+		} else {
+			store.dispatch(showWarning("Datos erroneos", "Email mal cargado, intente nuevamente", "fondoAmarillo", 4000));
+		}
+		//store.dispatch(goTo("claveRecuperarMensaje"));
+	}
 	volver() {
 		store.dispatch(goTo("sesion"));
-    }
+	}
 
 	static get properties() {
 		return {

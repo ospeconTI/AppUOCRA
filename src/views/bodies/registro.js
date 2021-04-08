@@ -5,11 +5,12 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
-import { showWarning} from "../../redux/ui/actions";
+import { showWarning } from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
-
+import { logon } from "../../redux/autorizacion/actions";
+import { validaMail } from "../../libs/funciones";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -21,7 +22,7 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 		this.area = "body";
 		this.current = "";
 		this.idioma = store.getState().ui.idioma;
-		this.registro = require('../../../assets/idiomas/registro.json');
+		this.registro = require("../../../assets/idiomas/registro.json");
 	}
 
 	static get styles() {
@@ -33,9 +34,9 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 			:host {
 				display: grid;
 				position: relative;
-                background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
+				background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
 				overflow: hidden;
-                padding: 0 !important;
+				padding: 0 !important;
 			}
 			:host([hidden]) {
 				display: none;
@@ -47,7 +48,7 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 				grid-gap: 0rem;
 				grid-template-rows: 16% 2% 8% 2% 72%;
 				background-color: transparent;
-                align-self: center;
+				align-self: center;
 			}
 			#titulo {
 				height: 100%;
@@ -65,41 +66,41 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 				font-size: 3vh !important;
 				font-weight: var(--font-label-weight);
 				text-align: center;
-                font-style: italic ;
-             }
-             .txt{
-                height: 2vh !important;
-             }
+				font-style: italic;
+			}
+			.txt {
+				height: 2vh !important;
+			}
 			:host([media-size="large"]) .texto {
 				font-size: 1.5vw;
 			}
-			.miBoton{
-                background-color: var(--color-amarillo) !important;
+			.miBoton {
+				background-color: var(--color-amarillo) !important;
 				height: 7vh;
 				align-self: center;
-            }
-            .myImput{
-                grid-template-rows: 1fr auto .4fr !important;
-            }
-            #datos{
-                padding: 0 2vh 0 2vh;
+			}
+			.myImput {
+				grid-template-rows: 1fr auto 0.4fr !important;
+			}
+			#datos {
+				padding: 0 2vh 0 2vh;
 				width: 90%;
-                overflow-y: auto;
-                overflow-x: hidden;
+				overflow-y: auto;
+				overflow-x: hidden;
 				justify-self: center;
-            }
-			:host(:not([media-size="small"])) #datos{
+			}
+			:host(:not([media-size="small"])) #datos {
 				width: 50%;
 			}
-            .leyenda{
-                justify-self: center;
-                align-self: center;
-                width: 80%;
-                font-size: 2.2vh !important;
+			.leyenda {
+				justify-self: center;
+				align-self: center;
+				width: 80%;
+				font-size: 2.2vh !important;
 				font-weight: var(--font-label-weight);
 				text-align: center;
-                color: var(--color-blanco) ; 
-            }
+				color: var(--color-blanco);
+			}
 		`;
 	}
 	render() {
@@ -109,29 +110,37 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 				<div>
 					<hr id="linea" />
 				</div>
-                <label class="leyenda">${this.registro[this.idioma].titulo}</label>
-                <div>
+				<label class="leyenda">${this.registro[this.idioma].titulo}</label>
+				<div>
 					<hr id="linea" />
 				</div>
 				<div id="datos" class="grid row">
 					<div class="grid row" style="align-self: stretch;">
 						<div class="input myImput">
-                            <label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].correo}</label>
-                            <input class="txt" type="email" id="tallerDescripcion" autocomplete="off" placeholder="${this.registro[this.idioma].correo_ph}" />
-                        </div>
-						<div class="input myImput" >
-                            <label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].nombre}</label>
-                            <input class="txt" type="text" id="tallerDescripcion" autocomplete="off" placeholder="${this.registro[this.idioma].correo_ph}"  />
-                        </div>
-                        <div class="input myImput">
-                            <label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].documento}</label>
-                            <input class="txt" type="number" id="tallerDescripcion" autocomplete="off"  />
-                        </div>
-                    </div>
-                    <div class="grid row" style="align-self: stretch;">
+							<label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].correo}</label>
+							<input id="mail" class="txt" type="email" autocomplete="off" placeholder="${this.registro[this.idioma].correo_ph}" />
+							<div>Debe cargar mail</div>
+						</div>
+						<div class="input myImput">
+							<label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].nombre}</label>
+							<input id="nombre" class="txt" type="text" autocomplete="off" placeholder="${this.registro[this.idioma].nombre_ph}" />
+							<div>Debe cargar nombre</div>
+						</div>
+						<div class="input myImput">
+							<label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].apellido}</label>
+							<input class="txt" type="text" id="apellido" autocomplete="off" placeholder="${this.registro[this.idioma].apellido_ph}" />
+							<div>Debe cargar apellido</div>
+						</div>
+						<div class="input myImput">
+							<label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].documento}</label>
+							<input id="documento" class="txt" type="number" autocomplete="off" />
+							<div>Debe cargar documento</div>
+						</div>
+					</div>
+					<div class="grid row" style="align-self: stretch;">
 						<button btn1 class="miBoton" @click="${this.grabar}">${this.registro[this.idioma].enviar}</button>
 						<button btn2 @click="${this.volver}">${this.registro[this.idioma].volver}</button>
-                    </div>
+					</div>
 				</div>
 			</div>
 		`;
@@ -148,15 +157,41 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 			}
 			this.update();
 		}
-
 	}
-
 
 	volver() {
 		store.dispatch(goTo("sesion"));
 	}
 	grabar() {
-		store.dispatch(goTo("registroMensaje"));
+		[].forEach.call(this.shadowRoot.querySelectorAll("[error]"), (element) => {
+			element.removeAttribute("error");
+		});
+		let mail = this.shadowRoot.querySelector("#mail");
+		let nombre = this.shadowRoot.querySelector("#nombre");
+		let apellido = this.shadowRoot.querySelector("#apellido");
+		let documento = this.shadowRoot.querySelector("#documento");
+		var ok = true;
+		if (mail.value == "" || !validaMail(mail.value)) {
+			ok = false;
+			mail.setAttribute("error", "");
+		}
+		if (nombre.value == "") {
+			ok = false;
+			nombre.setAttribute("error", "");
+		}
+		if (apellido.value == "") {
+			ok = false;
+			apellido.setAttribute("error", "");
+		}
+		if (documento.value == "" || !typeof documento.value == "number" || parseInt(documento.value) < 99999 || parseInt(documento.value) > 99999999) {
+			ok = false;
+			documento.setAttribute("error", "");
+		}
+		if (ok) {
+			store.dispatch(logon(nombre.value, apellido.value, mail.value, documento.value));
+		} else {
+			store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
+		}
 	}
 	sesion() {
 		store.dispatch(goTo("sesion"));

@@ -285,7 +285,7 @@ export class generalScreen extends connect(store, ITEMS_BOTONITEM, MENUES_ERRORT
 		store.dispatch(goHistoryPrev());
 	}
 	botonItem(que) {
-		let usu = store.getState().usuarios.usuario;
+		let usu = store.getState().autorizacion.usuario;
 		let msg = "Nombre: " + usu.nombre + ".%0D%0A" + "Apellido: " + usu.apellido + ". %0D%0ADocumento: " + usu.documento;
 		switch (que) {
 			case "mujeres":

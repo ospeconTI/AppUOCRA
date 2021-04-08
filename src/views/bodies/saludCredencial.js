@@ -145,8 +145,8 @@ export class saludCredencialScreen extends connect(store, DATOS_CONVENIO, ERROR_
 					<div id="credencial" class="grid row">
 						<div id="logo"></div>
 						<div><hr /></div>
-						<div class="txtTarjeta" style="padding:0 0 0 4vw;">${store.getState().usuarios.usuario ? store.getState().usuarios.usuario.apellido + " " + store.getState().usuarios.usuario.nombre : ""}</div>
-						<div class="txtTarjeta" style="padding:0 0 0 4vw;">${store.getState().usuarios.usuario ? store.getState().usuarios.usuario.documento : ""}</div>
+						<div class="txtTarjeta" style="padding:0 0 0 4vw;">${store.getState().autorizacion.usuario ? store.getState().autorizacion.usuario.apellido + " " + store.getState().autorizacion.usuario.nombre : ""}</div>
+						<div class="txtTarjeta" style="padding:0 0 0 4vw;">${store.getState().autorizacion.usuario ? store.getState().autorizacion.usuario.documento : ""}</div>
 						<div><hr /></div>
 						<div class="txtTarjeta" style="padding:2vw 0 4vw 4vw;">Generada: ${new Date().getDate() + "-" + new Date().getMonth() + "-" + new Date().getFullYear()}</div>
 					</div>

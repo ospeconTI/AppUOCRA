@@ -152,5 +152,12 @@
 		"imagen": "COMPARTIR",
 		"accion": "compartir",
 		"activo": true
+	},
+	{
+		"id": 20,
+		"nombre": "SALIR",
+		"imagen": "LOGOUT",
+		"accion": "logout",
+		"activo": true
 	}
 ]

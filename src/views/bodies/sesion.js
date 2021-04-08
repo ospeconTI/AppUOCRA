@@ -5,11 +5,12 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
-import { showWarning} from "../../redux/ui/actions";
+import { showWarning } from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
-import { usuario as setUsuario} from "../../redux/usuarios/actions";
+import { usuario as setUsuario } from "../../redux/usuarios/actions";
+import { login } from "../../redux/autorizacion/actions";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
@@ -20,8 +21,8 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 		this.hidden = true;
 		this.area = "body";
 		this.current = "";
-		this.idioma = store.getState().ui.idioma ;
-		this.sesion = require('../../../assets/idiomas/sesion.json')
+		this.idioma = store.getState().ui.idioma;
+		this.sesion = require("../../../assets/idiomas/sesion.json");
 	}
 
 	static get styles() {
@@ -33,7 +34,7 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 			:host {
 				display: grid;
 				position: relative;
-                background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
+				background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
 				overflow: hidden;
 			}
 			:host([hidden]) {
@@ -57,11 +58,11 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				background-position: center;
 				background-size: auto 10vh;
 			}
-			#datos{
+			#datos {
 				width: 100%;
 				justify-self: center;
 			}
-			:host(:not([media-size="small"])) #datos{
+			:host(:not([media-size="small"])) #datos {
 				width: 50%;
 			}
 			#linea {
@@ -72,12 +73,12 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				font-size: 3vh !important;
 				font-weight: var(--font-label-weight);
 				text-align: center;
-				font-style: italic ;
+				font-style: italic;
 			}
 			:host([media-size="large"]) .texto {
 				font-size: 1.5vw;
 			}
-			.miBoton{
+			.miBoton {
 				background-color: var(--color-amarillo) !important;
 				height: 7vh;
 				align-self: center;
@@ -92,16 +93,18 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 					<hr id="linea" />
 				</div>
 				<div id="datos" class="grid row">
-                        <div class="input">
-                            <label class="texto" style="color:var(--color-blanco)" >${this.sesion[this.idioma].correo}</label>
-                            <input type="text" id="usuario" autocomplete="off" value="gmartinez@uocra.org" />
-                        </div>
-						<div class="input">
-                            <label class="texto" style="color:var(--color-blanco)">${this.sesion[this.idioma].password}</label>
-                            <input type="password" id="clave" autocomplete="off" placeholder="" />
-                        </div>
-						<button btn1 class="miBoton" @click="${this.iniciar}">${this.sesion[this.idioma].inicio}</button>
-						<button btn2 class="btnVolver" @click="${this.crear}">${this.sesion[this.idioma].crear}</button>
+					<div class="input">
+						<label class="texto" style="color:var(--color-blanco)">${this.sesion[this.idioma].correo}</label>
+						<input type="text" id="usuario" autocomplete="off" value="gmartinez@uocra.org" />
+						<div>Debe cargar correo electronico</div>
+					</div>
+					<div class="input">
+						<label class="texto" style="color:var(--color-blanco)">${this.sesion[this.idioma].password}</label>
+						<input type="password" id="clave" autocomplete="off" placeholder="" />
+						<div>Debe cargar contraseña</div>
+					</div>
+					<button btn1 class="miBoton" @click="${this.iniciar}">${this.sesion[this.idioma].inicio}</button>
+					<button btn2 class="btnVolver" @click="${this.crear}">${this.sesion[this.idioma].crear}</button>
 				</div>
 				<div>
 					<hr id="linea" />
@@ -124,9 +127,7 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 			}
 			this.update();
 		}
-
 	}
-
 
 	crear() {
 		store.dispatch(goTo("registro"));
@@ -136,14 +137,24 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 		store.dispatch(goTo("claveRecuperar"));
 	}
 	iniciar() {
-		let usuario = this.shadowRoot.querySelector("#usuario").value
-		let clave = this.shadowRoot.querySelector("#clave").value
-		let ar = store.getState().usuarios.entities.filter(a => a.mail.toUpperCase() == usuario.toUpperCase()); 
-		if (ar.length == 1 && (clave.toUpperCase()==ar[0].clave.toUpperCase() || clave.toUpperCase()=="Q")){
-			store.dispatch(setUsuario(ar[0]));
-			store.dispatch(goTo("main"));
-		}else{
-			store.dispatch(showWarning("Datos erroneos" , "Usuario o Password incorrecta, intente nuevamente", "fondoAmarillo", 4000));
+		[].forEach.call(this.shadowRoot.querySelectorAll("[error]"), (element) => {
+			element.removeAttribute("error");
+		});
+		let usuario = this.shadowRoot.querySelector("#usuario");
+		let clave = this.shadowRoot.querySelector("#clave");
+		var ok = true;
+		if (usuario.value == "") {
+			ok = false;
+			usuario.setAttribute("error", "");
+		}
+		if (clave.value == "") {
+			ok = false;
+			clave.setAttribute("error", "");
+		}
+		if (ok) {
+			store.dispatch(login(usuario.value, clave.value));
+		} else {
+			store.dispatch(showWarning("Datos erroneos", "Usuario o Password inexistente, intente nuevamente", "fondoAmarillo", 4000));
 		}
 	}
 	static get properties() {

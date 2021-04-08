@@ -32,6 +32,12 @@ if (process.env.NODE_ENV === "production") {
 	activateSW();
 }
 
+store.dispatch(captureMedia());
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const vista = urlParams.get("vista");
+const ticket = urlParams.get("ticket");
+
 store.dispatch(setUrls("https://app.uocra.org/", "https://app.uocra.org/images/"));
 
 store.dispatch(getCemaps());
@@ -47,6 +53,9 @@ store.dispatch(getZonas());
 
 store.dispatch(getOnBoarding());
 
-store.dispatch(captureMedia());
 //store.dispatch(goTo("main"));
-store.dispatch(goTo("splash"));
+if (vista) {
+	store.dispatch(goTo(vista));
+} else {
+	store.dispatch(goTo("splash"));
+}

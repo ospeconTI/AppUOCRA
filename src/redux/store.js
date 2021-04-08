@@ -3,6 +3,7 @@
 import { applyMiddleware, createStore, compose } from "redux";
 import { logger } from "redux-logger";
 import { rootReducer as reducers } from "./reducers";
+import { middleware as autorizacion } from "./autorizacion/middleware";
 import { middleware as ui } from "./ui/middleware";
 import { middleware as api } from "./api/middleware";
 import { middleware as rest } from "./rest/middleware";
@@ -42,14 +43,48 @@ import { middleware as adolescenciaCuadernillos } from "./adolescenciaCuadernill
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-let mdw = [api, rest, ...ui, ...route, ...menues, ...items, ...titulos, ...banners, ...leftmenu, ...noticias
-    , ...localidades, ...provincias, ...servicios, ...cemaps, ...seccionales, ...zonas, ...convenios, ...programacion,
-...leyendas, ...cineEdicionesAnteriores, ...tvEstrenos, ...tvGrilla, ...adolecenciaJornadas, ...adicciones, ...hogarVideos,
-...mujeresVideos, ...arteEdicionesAnteriores, ...hoteles, ...hotelesBanner, ...usuarios, ...onBoarding, ...teatroObras,
-...fundacionCursos, ...fundacionCentros ,...fundacionEspecialidades, ...adolescenciaCuadernillos];
+let mdw = [
+	api,
+	rest,
+	...autorizacion,
+	...ui,
+	...route,
+	...menues,
+	...items,
+	...titulos,
+	...banners,
+	...leftmenu,
+	...noticias,
+	...localidades,
+	...provincias,
+	...servicios,
+	...cemaps,
+	...seccionales,
+	...zonas,
+	...convenios,
+	...programacion,
+	...leyendas,
+	...cineEdicionesAnteriores,
+	...tvEstrenos,
+	...tvGrilla,
+	...adolecenciaJornadas,
+	...adicciones,
+	...hogarVideos,
+	...mujeresVideos,
+	...arteEdicionesAnteriores,
+	...hoteles,
+	...hotelesBanner,
+	...usuarios,
+	...onBoarding,
+	...teatroObras,
+	...fundacionCursos,
+	...fundacionCentros,
+	...fundacionEspecialidades,
+	...adolescenciaCuadernillos,
+];
 
 if (process.env.NODE_ENV !== "production") {
-    mdw = [...mdw, logger];
+	mdw = [...mdw, logger];
 }
 
 const initialData = {};

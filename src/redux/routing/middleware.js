@@ -6,56 +6,59 @@ import { showScreen } from "../screens/actions";
 import { largeRoute } from "./routs";
 
 export const goNext = ({ dispatch, getState }) => (next) => (action) => {
-    next(action);
-    if (action.type == GO_NEXT) {
-        let pointer = nextNode(getState().routing.current.pointer, largeRoute);
-        dispatch(setCurrent(getNode(pointer, largeRoute)));
-        dispatch(pushHistory(pointer));
-    }
+	next(action);
+	if (action.type == GO_NEXT) {
+		let pointer = nextNode(getState().routing.current.pointer, largeRoute);
+		dispatch(setCurrent(getNode(pointer, largeRoute)));
+		dispatch(pushHistory(pointer));
+	}
 };
 
 export const goPrev = ({ dispatch, getState }) => (next) => (action) => {
-    next(action);
-    if (action.type == GO_PREV) {
-        let pointer = prevNode(getState().routing.current.pointer, largeRoute);
-        dispatch(setCurrent(getNode(pointer, largeRoute)));
-        dispatch(popHistory());
-    }
+	next(action);
+	if (action.type == GO_PREV) {
+		let pointer = prevNode(getState().routing.current.pointer, largeRoute);
+		dispatch(setCurrent(getNode(pointer, largeRoute)));
+		dispatch(popHistory());
+	}
 };
 
 export const goTo = ({ dispatch, getState }) => (next) => (action) => {
-    next(action);
-    if (action.type == GO_TO) {
-        if (action.name == "login") {
-            toogleLogin();
-        } else {
-            let pointer = goToNode(action.name, largeRoute);
-            dispatch(setCurrent(getNode(pointer, largeRoute)));
-            dispatch(pushHistory(action.name));
-        }
-    }
+	next(action);
+	if (action.type == GO_TO) {
+		if (action.name == "login") {
+			//toogleLogin();
+			let pointer = goToNode("sesion", largeRoute);
+			dispatch(setCurrent(getNode(pointer, largeRoute)));
+			dispatch(pushHistory("sesion"));
+		} else {
+			let pointer = goToNode(action.name, largeRoute);
+			dispatch(setCurrent(getNode(pointer, largeRoute)));
+			dispatch(pushHistory(action.name));
+		}
+	}
 };
 
 export const goHistoryPrev = ({ dispatch, getState }) => (next) => (action) => {
-    next(action);
-    if (action.type == GO_HISTORY_PREV) {
-        let history = getState().routing.history;
-        if (history.length > 1) {
-            let pointer = goToNode(history[history.length - 2], largeRoute);
-            dispatch(setCurrent(getNode(pointer, largeRoute)));
-            dispatch(popHistory());
-        } else {
-            let pointer = goToNode(largeRoute[0].split("-")[1], largeRoute);
-            dispatch(setCurrent(getNode(pointer, largeRoute)));
-            dispatch(popHistory());
-        }
-    }
+	next(action);
+	if (action.type == GO_HISTORY_PREV) {
+		let history = getState().routing.history;
+		if (history.length > 1) {
+			let pointer = goToNode(history[history.length - 2], largeRoute);
+			dispatch(setCurrent(getNode(pointer, largeRoute)));
+			dispatch(popHistory());
+		} else {
+			let pointer = goToNode(largeRoute[0].split("-")[1], largeRoute);
+			dispatch(setCurrent(getNode(pointer, largeRoute)));
+			dispatch(popHistory());
+		}
+	}
 };
 export const set = ({ dispatch, getState }) => (next) => (action) => {
-    next(action);
-    if (action.type == SET_CURRENT) {
-        dispatch(showScreen(getState().routing.current.name));
-    }
+	next(action);
+	if (action.type == SET_CURRENT) {
+		dispatch(showScreen(getState().routing.current.name));
+	}
 };
 
 export const middleware = [goNext, goPrev, goTo, set, goHistoryPrev];

@@ -220,30 +220,7 @@
     </head>
 
     <body>
-        <view-manager id="manager" class="oculto"></view-manager>
-
-        <div id="signIn" class="oculto">
-            <div class="botonAtras" onclick="toogleLogin()">
-                <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z" />
-                </svg>
-            </div>
-            <form method="POST" action="" class="tarjeta" onsubmit="return login()">
-                <h3>Iniciar sesión en UOCRA</h3>
-                <div class="ikeInput">
-                    <label for="correo">Email</label>
-                    <input id="correo" type="email" name="email" autofocus autocomplete="username" required placeholder="Ingrese tú correo electrónico" />
-                </div>
-                <div class="ikeInput">
-                    <label for="clave">Password</label>
-                    <input id="clave" type="password" name="password" autocomplete="current-password" required placeholder="Ingrese tú contraseña" />
-                </div>
-                <button btn1 type="submit">Comenzar</button>
-            </form>
-
-            <button btn2 onclick="cambioClave()">Se te olvidó tu contraseña</button>
-            <button btn2 onclick="miembro()">Ser miembro</button>
-        </div>
+        <view-manager id="manager"></view-manager>
     </body>
 	<script>
 		window.scrollTo(0,1);
@@ -251,50 +228,4 @@
             window.scrollTo(0,1);
 		});
 	</script>
-    <script>
-        let logueando = false;
-        const login = (e) => {
-            if (!logueando) {
-                logueando = true;
-                const mail = document.querySelector("#correo").value;
-                const clave = document.querySelector("#clave").value;
-                EntryPoint.default.login(mail, clave);
-            }
-            return false;
-        };
-        const cambioClave = (e) => {
-            EntryPoint.default.cambioClave();
-            toogleLogin();
-            return false;
-        };
-        const miembro = (e) => {
-            EntryPoint.default.miembro();
-            toogleLogin();
-            return false;
-        };
-        const loginErroneo = () => {
-            logueando = false;
-            alert("login erroneo, alguno de los datos no es correcto");
-        };
-
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-
-        let inLogin = !urlParams.get("login");
-        const toogleLogin = () => {
-            inLogin = !inLogin;
-            const manager = document.getElementById("manager");
-            const signIn = document.getElementById("signIn");
-            signIn.classList.add("oculto");
-            manager.classList.add("oculto");
-            if (inLogin) {
-                logueando = false;
-                signIn.classList.remove("oculto");
-                document.getElementById("correo").focus();
-            } else {
-                manager.classList.remove("oculto");
-            }
-        };
-        toogleLogin();
-    </script>
 </html>

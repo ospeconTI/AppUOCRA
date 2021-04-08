@@ -233,7 +233,7 @@ export class fundacionCursosListaScreen extends connect(store, CURSOS_DATOS, CUR
 			mensaje.setAttribute("error", "");
 		}
 		if (ok) {
-			let usu = store.getState().usuarios.usuario;
+			let usu = store.getState().autorizacion.usuario;
 			mensaje.value = mensaje.value.replace('"', "'");
 			let msg = "Nombre: " + usu.nombre + ".%0D%0A" + "Apellido: " + usu.apellido + ". %0D%0ADocumento: " + usu.documento + ". %0D%0ACurso: " + item.nombre + ". %0D%0ACentro: " + item.nombreCentro + ". %0D%0AMensaje: " + mensaje.value;
 			location.href = "mailto:appuocra@gmail.com?cc=&subject=Consulta%20de%20curso&body=" + msg;
