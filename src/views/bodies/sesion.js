@@ -95,12 +95,12 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				<div id="datos" class="grid row">
 					<div class="input">
 						<label class="texto" style="color:var(--color-blanco)">${this.sesion[this.idioma].correo}</label>
-						<input type="text" id="usuario" autocomplete="off" value="gmartinez@uocra.org" />
+						<input type="text" id="usuario" autocomplete="off" value="" />
 						<div>Debe cargar correo electronico</div>
 					</div>
 					<div class="input">
 						<label class="texto" style="color:var(--color-blanco)">${this.sesion[this.idioma].password}</label>
-						<input type="password" id="clave" autocomplete="off" placeholder="" />
+						<input type="password" id="clave" autocomplete="off" placeholder="" value="" />
 						<div>Debe cargar contraseña</div>
 					</div>
 					<button btn1 class="miBoton" @click="${this.iniciar}">${this.sesion[this.idioma].inicio}</button>
@@ -124,6 +124,12 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 			const SeMuestraEnUnasDeEstasPantallas = "-sesion-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
+				if (this.shadowRoot.querySelector("#usuario") && window.localStorage.getItem("user")) {
+					this.shadowRoot.querySelector("#usuario").value = window.localStorage.getItem("user");
+				}
+				if (this.shadowRoot.querySelector("#clave")) {
+					this.shadowRoot.querySelector("#clave").value = "";
+				}
 			}
 			this.update();
 		}
@@ -152,6 +158,7 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 			clave.setAttribute("error", "");
 		}
 		if (ok) {
+			window.localStorage.setItem("user", usuario.value);
 			store.dispatch(login(usuario.value, clave.value));
 		} else {
 			store.dispatch(showWarning("Datos erroneos", "Usuario o Password inexistente, intente nuevamente", "fondoAmarillo", 4000));
