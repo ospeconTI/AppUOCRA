@@ -37,6 +37,7 @@ import { reducer as fundacionCursosReducer } from "./fundacionCursos/reducer";
 import { reducer as fundacionEspecialidadesReducer } from "./fundacionEspecialidades/reducer";
 import { reducer as fundacionCentrosReducer } from "./fundacionCentros/reducer";
 import { reducer as adolescenciaCuadernillosReducer } from "./adolescenciaCuadernillos/reducer";
+import { reducer as coberturasReducer } from "./coberturas/reducer";
 
 export const rootReducer = (state = {}, action) => {
 	return {
@@ -77,5 +78,6 @@ export const rootReducer = (state = {}, action) => {
 		fundacionEspecialidades: fundacionEspecialidadesReducer(state.fundacionEspecialidades, action),
 		fundacionCentros: fundacionCentrosReducer(state.fundacionCentros, action),
 		adolescenciaCuadernillos: adolescenciaCuadernillosReducer(state.adolescenciaCuadernillos, action),
+		coberturas: coberturasReducer(state.coberturas, action),
 	};
 };

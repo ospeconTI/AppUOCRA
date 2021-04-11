@@ -10,21 +10,21 @@ import { button } from "../css/button";
 import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
 import { SVGS } from "../../../assets/icons/svgs";
-import { get as getConvenios } from "../../redux/convenios/actions";
+import { get as getCobertura } from "../../redux/coberturas/actions";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
-const DATOS_CONVENIO = "convenios.timeStamp";
-const ERROR_CONVENIO = "convenios.errorTimeStamp";
+const DATOS_COBERTURA = "coberturas.timeStamp";
+const ERROR_COBERTURA = "coberturas.errorTimeStamp";
 
-export class saludCredencialScreen extends connect(store, DATOS_CONVENIO, ERROR_CONVENIO, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class saludCredencialScreen extends connect(store, DATOS_COBERTURA, ERROR_COBERTURA, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
 		this.area = "body";
 		this.current = "";
 		this.idioma = store.getState().ui.idioma;
-		this.convenios = null;
+		this.cobertura = null;
 	}
 
 	static get styles() {
@@ -86,11 +86,6 @@ export class saludCredencialScreen extends connect(store, DATOS_CONVENIO, ERROR_
 				height: 1.2rem;
 				width: 1.2em;
 			}
-			.convenios {
-				grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-				justify-items: center;
-				grid-gap: 1rem;
-			}
 			.detalle {
 				background-color: var(--color-rojo);
 				width: 10rem;
@@ -134,7 +129,7 @@ export class saludCredencialScreen extends connect(store, DATOS_CONVENIO, ERROR_
 		`;
 	}
 	render() {
-		if (this.convenios) {
+		if (store.getState().coberturas.tieneCobertura == "S") {
 			return html`
 				<div id="cuerpo" class="grid row">
 					<div id="tituloTexto" class="grid">
@@ -156,12 +151,15 @@ export class saludCredencialScreen extends connect(store, DATOS_CONVENIO, ERROR_
 					</div>
 					<div id="subTituloTexto" class="grid">
 						<div id="bullet1">${SVGS["BULLET"]}</div>
-						<div id="solicitud">Presentar último tres recibo de sueldo.</div>
+						<div id="solicitud">Presentar último recibo de sueldo.</div>
 					</div>
 				</div>
 			`;
 		} else {
-			if (this.current == "saludCredencial" && this.convenios == 0) {
+			if (store.getState().coberturas.tieneCobertura == "N") {
+				return html`<msgsincobertura-component texto="Volver"></msgsincobertura-component>; `;
+			}
+			if (store.getState().coberturas.tieneCobertura == "E") {
 				return html`<msgnoconeccion-component @click="${this.atras}" texto="Haga click volver" style="cursor:pointer"></msgnoconeccion-component>; `;
 			}
 		}
@@ -183,15 +181,15 @@ export class saludCredencialScreen extends connect(store, DATOS_CONVENIO, ERROR_
 			const SeMuestraEnUnasDeEstasPantallas = "-saludCredencial-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
-				store.dispatch(getConvenios());
+				store.dispatch(getCobertura({ tipo: state.autorizacion.usuario.tipoDocumento, documento: state.autorizacion.usuario.documento }));
 			}
 		}
-		if (name == DATOS_CONVENIO) {
-			this.convenios = state.convenios.entities;
+		if (name == DATOS_COBERTURA) {
+			this.cobertura = state.coberturas.entities;
 			this.update();
 		}
-		if (name == ERROR_CONVENIO) {
-			this.convenios = 0;
+		if (name == ERROR_COBERTURA) {
+			this.cobertura = 0;
 			this.update();
 		}
 	}

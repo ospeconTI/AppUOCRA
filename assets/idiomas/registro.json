@@ -8,6 +8,7 @@
 		"apellido": "Apellido",
 		"apellido_ph": "Rodriguez",
 		"documento": "Documento",
+		"tipoDocumento": "Tipo de documento",
 		"enviar": "REGISTRARSE",
 		"volver": "VOLVER"
 	},

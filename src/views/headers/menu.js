@@ -181,7 +181,7 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
 					<div class="grid column" style="justify-content: flex-start;">
 						<div class="menu-button" @click=${this.toggleMenu}>${SVGS["MENU"]}</div>
 						<div class="grid row gridGapPunto2vh" ?hidden="${this.current == "compras"}">
-							<div class="hola">Hola,</div>
+							<div class="hola" @click="${this.modificar}">Hola,</div>
 							<div class="hola">${store.getState().autorizacion.usuario ? store.getState().autorizacion.usuario.nombre + "!" : ""}</div>
 						</div>
 					</div>
@@ -226,7 +226,6 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
 		this.opciones.style.right = this.visible ? "0" : "-100%";
 		this.update();
 	}
-
 	click(e) {
 		if (e.currentTarget.option != "") {
 			if (e.currentTarget.option != "logout") {

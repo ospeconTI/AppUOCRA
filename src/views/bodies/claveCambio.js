@@ -124,9 +124,12 @@ export class claveCambioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 		//store.dispatch(goTo("claveCambioMensaje"));
 		const pass = this.shadowRoot.querySelector("#password").value;
 		const pass1 = this.shadowRoot.querySelector("#password1").value;
-		if (pass1 == "" || pass1 == "") {
-			alert("Claves Vacias");
+		if (pass == "" || pass1 == "") {
 			store.dispatch(showWarning("Datos erroneos", "Password inexistente, intente nuevamente", "fondoAmarillo", 4000));
+			return false;
+		}
+		if (pass1.length < 4) {
+			store.dispatch(showWarning("Datos erroneos", "Password menor de 4 digitos, intente nuevamente", "fondoAmarillo", 4000));
 			return false;
 		}
 		if (pass != pass1) {

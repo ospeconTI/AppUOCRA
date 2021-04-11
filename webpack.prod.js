@@ -27,7 +27,7 @@ module.exports = merge(common, {
 			maximumFileSizeToCacheInBytes: 4000000,
 		}),
 		new webpack.DefinePlugin({
-			SERVICE_URL_LOGIN: JSON.stringify("http://localhost:4000"),
+			SERVICE_URL_LOGIN: JSON.stringify("https://apis.usuarios.uocra.org"),
 		}),
 	],
 });

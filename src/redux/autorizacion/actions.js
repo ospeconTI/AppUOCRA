@@ -46,17 +46,18 @@ export const renovacion = (ticket, password) => ({
 	password: password,
 });
 
-export const logon = (nombre, apellido, email, documento) => ({
+export const logon = (nombre, apellido, email, documento, tipoDocumento) => ({
 	type: LOGON,
-	body: { Apellido: apellido, Nombre: nombre, Email: email, Documento: documento },
+	body: { Apellido: apellido, Nombre: nombre, Email: email, Documento: documento, TipoDocumento: tipoDocumento },
 });
 
-export const updateProfile = (nombre, apellido, documento, foto, sexo, fechaNacimiento, lugar, token) => ({
+export const updateProfile = (nombre, apellido, documento, tipoDocumento, foto, sexo, fechaNacimiento, lugar, token) => ({
 	type: UPDATE_PROFILE,
 	foto: foto,
 	nombre: nombre,
 	apellido: apellido,
 	documento: documento,
+	tipoDocumento: tipoDocumento,
 	sexo: sexo,
 	fechaNacimiento: fechaNacimiento,
 	lugar: lugar,

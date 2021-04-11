@@ -10,20 +10,22 @@ import { button } from "../css/button";
 import { input } from "../css/input";
 import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
-import { logon } from "../../redux/autorizacion/actions";
-import { validaMail } from "../../libs/funciones";
+import { updateProfile } from "../../redux/autorizacion/actions";
+import { tieneCobertura } from "../../redux/coberturas/actions";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
+const PROFILE_DATO = "autorizacion.updateProfileTimeStamp";
+const PROFILE_ERROR = "autorizacion.commandErrorTimeStamp";
 
-export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class registroUpdateScreen extends connect(store, PROFILE_DATO, PROFILE_ERROR, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
 		this.area = "body";
 		this.current = "";
 		this.idioma = store.getState().ui.idioma;
-		this.registro = require("../../../assets/idiomas/registro.json");
+		this.registroUpdate = require("../../../assets/idiomas/registroUpdate.json");
 	}
 
 	static get styles() {
@@ -48,7 +50,7 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 				height: 100%;
 				width: 100%;
 				grid-gap: 0rem;
-				grid-template-rows: 16% 2% 8% 2% 72%;
+				grid-template-rows: 12% 2% 86%;
 				background-color: transparent;
 				align-self: center;
 			}
@@ -120,57 +122,47 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 		`;
 	}
 	render() {
-		return html`
-			<div id="cuerpo">
-				<div id="titulo"></div>
-				<div>
-					<hr id="linea" />
-				</div>
-				<label class="leyenda">${this.registro[this.idioma].titulo}</label>
-				<div>
-					<hr id="linea" />
-				</div>
-				<div id="datos" class="grid row">
-					<div class="grid row" style="align-self: stretch;">
-						<div class="input myImput">
-							<label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].correo}</label>
-							<input id="mail" class="txt" type="email" autocomplete="off" placeholder="${this.registro[this.idioma].correo_ph}" />
-							<div>Debe cargar mail</div>
-						</div>
-						<div class="input myImput">
-							<label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].nombre}</label>
-							<input id="nombre" class="txt" type="text" autocomplete="off" placeholder="${this.registro[this.idioma].nombre_ph}" />
-							<div>Debe cargar nombre</div>
-						</div>
-						<div class="input myImput">
-							<label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].apellido}</label>
-							<input class="txt" type="text" id="apellido" autocomplete="off" placeholder="${this.registro[this.idioma].apellido_ph}" />
-							<div>Debe cargar apellido</div>
-						</div>
-
-						<div id="selecTipoDocumento" class="grid row miselect">
-							<label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].tipoDocumento}</label>
-							<select id="txtTipoDocumento" class="elselect">
-								<option value="DN" selected>D. N. I.</option>
-								<option value="CI">Cedula de identidad</option>
-								<option value="LC">Libreta cívica</option>
-								<option value="LE">Libreta de enrolamiento</option>
-							</select>
-						</div>
-						<div class="input myImput">
-							<label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].documento}</label>
-							<input id="documento" class="txt" type="number" autocomplete="off" />
-							<div>Debe cargar documento</div>
-						</div>
-
+		if (true) {
+			return html`
+				<div id="cuerpo">
+					<label class="leyenda">${this.registroUpdate[this.idioma].titulo}</label>
+					<div>
+						<hr id="linea" />
+					</div>
+					<div id="datos" class="grid row">
 						<div class="grid row" style="align-self: stretch;">
-							<button btn1 class="miBoton" @click="${this.grabar}">${this.registro[this.idioma].enviar}</button>
-							<button btn2 @click="${this.volver}">${this.registro[this.idioma].volver}</button>
+							<div class="input myImput">
+								<label class="texto" style="color:var(--color-blanco)">${this.registroUpdate[this.idioma].nombre}</label>
+								<input id="nombre" class="txt" type="text" autocomplete="off" placeholder="${this.registroUpdate[this.idioma].nombre_ph}" />
+								<div>Debe cargar nombre</div>
+							</div>
+							<div class="input myImput">
+								<label class="texto" style="color:var(--color-blanco)">${this.registroUpdate[this.idioma].apellido}</label>
+								<input class="txt" type="text" id="apellido" autocomplete="off" placeholder="${this.registroUpdate[this.idioma].apellido_ph}" />
+								<div>Debe cargar apellido</div>
+							</div>
+							<div id="selecTipoDocumento" class="grid row miselect">
+								<label class="texto" style="color:var(--color-blanco)">${this.registroUpdate[this.idioma].tipoDocumento}</label>
+								<select id="txtTipoDocumento" class="elselect">
+									<option value="DN">D. N. I.</option>
+									<option value="CI">Cedula de identidad</option>
+									<option value="LC">Libreta cívica</option>
+									<option value="LE">Libreta de enrolamiento</option>
+								</select>
+							</div>
+							<div class="input myImput">
+								<label class="texto" style="color:var(--color-blanco)">${this.registroUpdate[this.idioma].documento}</label>
+								<input id="documento" class="txt" type="number" autocomplete="off" />
+								<div>Debe cargar documento</div>
+							</div>
+						</div>
+						<div class="grid row" style="align-self: stretch;">
+							<button btn1 class="miBoton" @click="${this.grabar}">${this.registroUpdate[this.idioma].enviar}</button>
 						</div>
 					</div>
 				</div>
-			</div>
-		`;
+			`;
+		}
 	}
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
@@ -178,11 +170,26 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-registro-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-registroUpdate-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
+				let nombre = this.shadowRoot.querySelector("#nombre");
+				let apellido = this.shadowRoot.querySelector("#apellido");
+				let documento = this.shadowRoot.querySelector("#documento");
+				let tipoDocumento = this.shadowRoot.querySelector("#txtTipoDocumento");
+				nombre.value = state.autorizacion.usuario.nombre;
+				apellido.value = state.autorizacion.usuario.apellido;
+				documento.value = state.autorizacion.usuario.documento;
+				tipoDocumento.value = state.autorizacion.usuario.tipoDocumento;
 			}
 			this.update();
+		}
+		if (name == PROFILE_DATO) {
+			store.dispatch(tieneCobertura(null));
+			store.dispatch(showWarning("Atencion!", "Sus datos se actualizarion", "fondoOk", 3000));
+		}
+		if (name == PROFILE_ERROR) {
+			store.dispatch(showWarning("Error!", "No se realizo la actualización.", "fondoError", 3000));
 		}
 	}
 
@@ -193,16 +200,11 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 		[].forEach.call(this.shadowRoot.querySelectorAll("[error]"), (element) => {
 			element.removeAttribute("error");
 		});
-		let mail = this.shadowRoot.querySelector("#mail");
 		let nombre = this.shadowRoot.querySelector("#nombre");
 		let apellido = this.shadowRoot.querySelector("#apellido");
 		let documento = this.shadowRoot.querySelector("#documento");
 		let tipoDocumento = this.shadowRoot.querySelector("#txtTipoDocumento");
 		var ok = true;
-		if (mail.value == "" || !validaMail(mail.value)) {
-			ok = false;
-			mail.setAttribute("error", "");
-		}
 		if (nombre.value == "") {
 			ok = false;
 			nombre.setAttribute("error", "");
@@ -216,7 +218,7 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 			documento.setAttribute("error", "");
 		}
 		if (ok) {
-			store.dispatch(logon(nombre.value, apellido.value, mail.value, documento.value, tipoDocumento.value));
+			store.dispatch(updateProfile(nombre.value, apellido.value, documento.value, tipoDocumento.value, null, null, null, null, store.getState().autorizacion.usuario.token));
 		} else {
 			store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
 		}
@@ -249,4 +251,4 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 		};
 	}
 }
-window.customElements.define("registro-screen", registroScreen);
+window.customElements.define("registroupdate-screen", registroUpdateScreen);

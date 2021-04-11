@@ -15,4 +15,5 @@ export const JSON = [
 	{ donde: "fundacionCursosLista", pagina: "fundacionCursosLista" },
 
 	{ donde: "teatro", pagina: "fundacionCursosLista" },
+	{ donde: "registroUpdate", pagina: "Telefono Cobertura" },
 ];

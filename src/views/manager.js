@@ -8,6 +8,7 @@ import { getLayout } from "../redux/screens/screenLayouts";
 import { pantallaWarning } from "../views/bodies/warning";
 import { botonComponent } from "../views/componentes/c-boton";
 import { msgNoConeccionComponent } from "../views/componentes/msgNoConeccion";
+import { msgSinCoberturaComponent } from "../views/componentes/msgSinCobertura";
 
 import { menuPrincipal } from "../views/headers/menu";
 
@@ -26,6 +27,7 @@ import { claveCambioScreen } from "./bodies/claveCambio";
 import { claveCambioMensajeScreen } from "./bodies/claveCambioMensaje";
 import { registroScreen } from "./bodies/registro";
 import { registroMensajeScreen } from "./bodies/registroMensaje";
+import { registroUpdateScreen } from "./bodies/registroUpdate";
 import { principalScreen } from "./bodies/principal";
 import { comprasScreen } from "./bodies/compras";
 import { generalScreen } from "./bodies/general";
@@ -139,6 +141,7 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
 			<clavecambiomensaje-screen id="clavecambiomensaje" class="body"></clavecambiomensaje-screen>
 			<registro-screen id="registro" class="body"></registro-screen>
 			<registromensaje-screen id="registroMensaje" class="body"></registromensaje-screen>
+			<registroupdate-screen id="registroUpdate" class="body"></registroupdate-screen>
 			<principal-screen id="principal" class="body"></principal-screen>
 			<compras-screen id="compras" class="body"></compras-screen>
 			<general-screen id="general" class="body"></general-screen>
