@@ -28,17 +28,17 @@ export class beneficiosSegurosScreen extends connect(store, MEDIA_CHANGE, SCREEN
 			{ Id: 1, titulo: "SEGURO DE VIDA COLECTIVO", cuerpo: "<p>El Seguro de Vida Colectivo alcanza a los obreros comprendidos en la Convención Colectiva 76/75 y es un beneficio que pone a disposición la UOCRA para las trabajadoras y los trabajadores constructores.</p>" },
 			{
 				Id: 2,
-				titulo: "REQUISITOS Y DOCUMENTACIÓN",
+				titulo: "DOCUMENTACIÓN PARA COBRO",
 				cuerpo:
-					"<p><b>Adicional por Servicios Públicos:</b></p><p>Copia Boleta de Servicios Públicos (luz, gas, agua, alumbrado barrido y limpieza). Las citadas facturas deben estar a nombre del fallecido, esposa o concubina y corresponder al mes del deceso del causante y con comprobante de pago.</p><p>En caso de no poseer facturas a nombre del fallecido o cónyuge se podrá adjuntar a las mismas Certificado de Domicilio o Contrato de Alquiler.</p><p><b>Adicional por Apoyo Escolar y Beca Secundaria:</b></p><p>Constancias de Alumno Regular original y correspondiente al año en curso de los hijos menores de edad para los siguientes niveles: PRIMARIA – SECUNDARIA.</p><p><b>Adicional por Hijo Póstumo:</b></p><p>Certificado de Embarazo dónde conste las semanas de gestación y la fecha probable de parto</p><p><b>*A las personas que soliciten este beneficio, se le requerirá la siguiente documentación:</b></p><p>-CBU emitido por el Banco<br>-Constancia de CUIL<br>-Fotocopia de DNI<br>-Teléfono de Contacto<br>-Correo Electrónico</p>",
+					"<p><b>Adicional por Servicios Públicos:</b></p><p>Copia Boleta de Servicios Públicos (luz, gas, agua, alumbrado barrido y limpieza). Las citadas facturas deben estar a nombre del fallecido, esposa o concubina y corresponder al mes del deceso del causante y con comprobante de pago.</p><p>En caso de no poseer facturas a nombre del fallecido o cónyuge se podrá adjuntar a las mismas Certificado de Domicilio o Contrato de Alquiler.</p><p><b>Adicional por Apoyo Escolar y Beca Secundaria:</b></p><p>Constancias de Alumno Regular original y correspondiente al año en curso de los hijos menores de edad para los siguientes niveles: PRIMARIA – SECUNDARIA.</p><p><b>Adicional por Hijo Póstumo:</b></p><p>Certificado de Embarazo dónde conste las semanas de gestación y la fecha probable de parto</p><p><b>*A las personas que soliciten este beneficio, se le requerirá la siguiente documentación:</b></p><p>-CBU emitido por el Banco<br>-Constancia de CUIL<br>-Fotocopia de DNI<br>-Teléfono de Contacto<br>-Correo Electrónico.<br>Para tramitar el cobro del seguro de vida se requiere la siguiente documentación:</p><c-boton style='justify-self:center;' texto='DOCUMENTACION' svg='MASUOCRA' accion='beneficiosSegurosDocumentacion' parametro=''></c-boton>",
 			},
 			{
 				Id: 3,
 				titulo: "ADICIONALES DEL SEGURO DE VIDA",
 				cuerpo:
-					"<p><p>Los adicionales son sumas que complementan el monto a cobrar por seguro de vida a partir de conceptos específicos.</p><p>Los adicionales vigentes son:</p><p><li>Apoyo Cónyuge o Conviviente</li><li>Apoyo Cónyuge o Conviviente (Accidente)</li><li>Apoyo Familia Numerosa</li><li>Apoyo Escolar</li><li>Beca Secundaria</li><li>Gastos Sucesorios</li><li>Hijo Póstumo</li><li>Servicios Públicos</li><li>Cuota Sindical (Si figura en el recibo de sueldo el descuento correspondiente del 2.50%)</li><li>Para la tramitación de los adicionales por Servicios Públicos, Apoyo Escolar y Beca Secundaria, se solicita documentación adicional específica.</li></p>",
+					"<p><p>Los adicionales son sumas que complementan el monto a cobrar por seguro de vida a partir de conceptos específicos.</p><p>Los adicionales vigentes son:</p><p><li>Apoyo Cónyuge o Conviviente</li><li>Apoyo Cónyuge o Conviviente (Accidente)</li><li>Apoyo Familia Numerosa</li><li>Apoyo Escolar</li><li>Beca Secundaria</li><li>Gastos Sucesorios</li><li>Hijo Póstumo</li><li>Servicios Públicos</li><li>Cuota Sindical (Si figura en el recibo de sueldo el descuento correspondiente del 2.50%)</li><li>Para la tramitación de los adicionales por Servicios Públicos, Apoyo Escolar y Beca Secundaria, se solicita documentación adicional específica.</li></p><c-boton style='justify-self:center;' texto='DOCUMENTACION' svg='MASUOCRA' accion='beneficiosSegurosAdicionales' parametro=''></c-boton>",
 			},
-			{ Id: 4, titulo: "¿DÓNDE TRAMITAR UN SUBSIDIO?", cuerpo: "<p>Los subsidios se pueden gestionar en los centros de atención médica - CEMAP (con excepción del Sanatorio Franchinnn).</p><p>Consultá cuál es tu CEMAP más cercano.</p>" },
+			{ Id: 4, titulo: "DÓNDE TRAMITAR EL SEGURO?", cuerpo: "<p>El seguro de vida colectivo puede gestionarse en las seccionales de UOCRA de todo el país</p><p>Consultá cuál es tu seccional más cercana.</p><c-boton style='justify-self:center;' texto='SECCIONALES' svg='MISINDICATO' accion='gremioZonas' parametro=''></c-boton>" },
 			{ Id: 5, titulo: "ESCRIBI TU CONSULTA", cuerpo: "<p>Hace click en el boton y envia por mail tu consulta</p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='SEGUROVIDA' accion='beneficiosSeguros' parametro=''></c-boton>" },
 		];
 	}
@@ -139,7 +139,6 @@ export class beneficiosSegurosScreen extends connect(store, MEDIA_CHANGE, SCREEN
 										<div id="cuerpoNota${item.Id}" class="cuerpoNota" hidden>
 											<div id="elCuerpo${item.Id}"></div>
 											${unsafeHTML(item.cuerpo)}
-											<div ?ocultar="${index != 3}"><button btn1 @click=${this.cemap}>Ver</button></div>
 										</div>
 									</div>
 								`;

@@ -321,7 +321,21 @@ export class generalScreen extends connect(store, ITEMS_BOTONITEM, MENUES_ERRORT
 				location.href = "https://api.whatsapp.com/send/?text=Hace+click+en+app.uocra.org+e+instala+appUOCRA&app_absent=0";
 				//https://api.whatsapp.com/send/?text=Me+interesa+in+el+auto+que+vendeshttps://api.whatsapp.com/send/?text=Me+interesa+in+el+auto+que+vendes&app_absent=0
 				break;
+			case "tablasSalariales":
+				window.open("https://www.uocra.org/?s=nuevas-escalas-salariales&lang=1", "_blank");
+				break;
+			case "saludSeguridad":
+				window.open("https://www.uocra.org/?s=protocolos&lang=1", "_blank");
+				break;
+			case "beneficiosSegurosDocumentacion":
+				window.open("https://www.uocra.org/pdf/SeguroVidaColectivo.pdf", "_blank");
+				break;
+			case "beneficiosSegurosAdicionales":
+				window.open("https://www.uocra.org/pdf/SeguroVidaColectivo.pdf ", "_blank");
+				break;
 			default:
+				store.dispatch(goTo(que));
+				break;
 		}
 	}
 

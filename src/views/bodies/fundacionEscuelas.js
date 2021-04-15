@@ -107,12 +107,19 @@ export class fundacionEscuelasScreen extends connect(store, CEMAPS_DATOS, PROVIN
 				font-size: var(--font-bajada-size) !important;
 				grid-gap: 0 !important;
 			}
+			#comentario {
+				font-size: var(--font-label-size);
+				width: 90%;
+				justify-self: center;
+				padding-top: 0.2rem;
+			}
 		`;
 	}
 	render() {
 		return html`
 			<div id="cuerpo" class="grid row">
 				<div id="titulo" class="grid column"></div>
+				<div id="comentario">La terminalidad secundaria y primaria es gratuita y abierta a toda la comunidad.</div>
 				<div id="selectNivel" class="grid row miselect">
 					<select id="txtNivel" class="elselect">
 						<option value="-1">Nivel Educativo</option>

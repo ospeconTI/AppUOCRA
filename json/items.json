@@ -3,174 +3,301 @@
 		"id": 168,
 		"tipo": "cultura",
 		"titulo": "¿QUE ÉS UOCRA CULTURA?",
-		"cuerpo": "<p><b>UOCRA Cultura</b> es un Programa de Fundación UOCRA que tiene por objetivo diseñar y ejecutar una amplia gama de actividades culturales, abiertas a la comunidad de los trabajadores.</p><p>Desde sus comienzos, el propósito de este programa fue contribuir al progreso de la calidad de vida de los trabajadores y sus familias, sintonizando las reivindicaciones laborales con todos aquellos derechos fundamentales del hombre. Se trata de una acción fundacional, ya que es uno de los pocos sindicatos que promueve una intervención cultural de tales características, de forma absolutamente gratuita.</p><p>UOCRA Cultura ofrece: Música, Teatro, Cine, Danza, Plástica, Espectáculos para chicos, Títeres, Festivales Populares, Exposiciones y Eventos Literarios.</p><p>Desde su apertura <b>UOCRA Culura</b> lleva realizadas más de 1.700 funciones, con la puesta en escena de más de 500 elencos, la participación de más de 4.000 artistas y la convocatoria de más de 500 mil espectadores.</p>",
+		"cuerpo": "<p><b>UOCRA Cultura<\/b> es un Programa de Fundación UOCRA que tiene por objetivo diseñar y ejecutar una amplia gama de actividades culturales, abiertas a la comunidad de los trabajadores.<\/p><p>Desde sus comienzos, el propósito de este programa fue contribuir al progreso de la calidad de vida de los trabajadores y sus familias, sintonizando las reivindicaciones laborales con todos aquellos derechos fundamentales del hombre. Se trata de una acción fundacional, ya que es uno de los pocos sindicatos que promueve una intervención cultural de tales características, de forma absolutamente gratuita.<\/p><p>UOCRA Cultura ofrece: Música, Teatro, Cine, Danza, Plástica, Espectáculos para chicos, Títeres, Festivales Populares, Exposiciones y Eventos Literarios.<\/p><p>Desde su apertura <b>UOCRA Culura<\/b> lleva realizadas más de 1.700 funciones, con la puesta en escena de más de 500 elencos, la participación de más de 4.000 artistas y la convocatoria de más de 500 mil espectadores.<\/p>",
 		"activo": true
 	},
-	{ "id": 169, "tipo": "cultura", "titulo": "UBICACIÓN Y CONTACTO", "cuerpo": "<p>TEATRO GASTÓN BARRAL<br>Rawson 42 , CABA</p><p>Tel.: 011-4981-0139</p>", "activo": true },
+	{
+		"id": 169,
+		"tipo": "cultura",
+		"titulo": "UBICACIÓN Y CONTACTO",
+		"cuerpo": "<p><b>TEATRO GASTÓN BARRAL<\/b><br>Rawson 42 , CABA<\/p><p>Tel.: 011-4981-0139<\/p><p>Las entradas para todas las funciones del Teatro son gratuitas para afiliados de UOCRA<\/p>",
+		"activo": true
+	},
 	{
 		"id": 170,
 		"tipo": "tv",
 		"titulo": "¿QUÉ ES CONSTRUIR TV?",
-		"cuerpo": "<p><b>Un Canal Temático</b></p><p>Construir TV es un canal temático que propone una mirada innovadora y positiva acerca del mundo del trabajo y de los trabajadores, a través de contenidos multiplataforma de calidad internacional. Una programación que recorre toda la cadena de valor del mundo laboral y tiene como objetivo la revalorización de la cultura del trabajo. En Construir TV entendemos como trabajador a cada persona que, con su esfuerzo cotidiano, aporta y modifica la sociedad en la que vive, ya sea a través de su profesión, su oficio o su arte.</p><p><b>Nuestros Cuatro Ejes</b></p><p>Con una amplia variedad de trabajos y trabajadores en pantalla y una mirada social, los contenidos están basados en 4 ejes temáticos: <b>Gente –Educación – Industria – Dimensión Social.</b></p><p><li><b>Gente</b></li></p><p>Historias de vida contadas en primera persona donde los protagonistas son los propios trabajadores. Recorremos su realidad y sus sueños a traves de historias intímas y conmovedoras que dejan al descubierto el aporte de cada individuo en la concreción de una obra o proyecto.</p><p><li><b>Educación</b></li></p><p>La formación contribuye a mejorar la competitividad y la calidad de vida. Contenidos pensados para educar desde el entretenimiento, formatos innovadores que apuestan a la educación como pieza fundamental del progreso individual y de la sociedad en su conjunto.</p><p><li><b>Industria</b></li></p><p>La industria es el escenario de encuentro entre recursos técnologicos y humanos. En este eje se evidencia el rol del emprendedorismo, la actividad empresarial, los avances cientificos y tecnologicos, la participación del estado, el rol sindical y el capital humano. Progamas pensados para abordar cada uno de estos roles y, principalmente, el resultado de la interacción de todos ellos en el desarrrollo de una industria.</p><p><li><b>Dimensión Social</b></li></p><p>Pilar fundamental en la construcción del tejido productivo de un país, en Construir TV entendemos el aspecto social como la base sobre la cual deben construirse mejores sociedades. Documentales de alto impacto y mirada internacional que llevan a la pantalla temas como: Solidaridad: las personas se unen, arman redes y hacen que las cosas que parecían imposibles se hagan realidad.</p>",
+		"cuerpo": "<p><b>Un Canal Temático<\/b><\/p><p>Construir TV es un canal temático que propone una mirada innovadora y positiva acerca del mundo del trabajo y de los trabajadores, a través de contenidos multiplataforma de calidad internacional. Una programación que recorre toda la cadena de valor del mundo laboral y tiene como objetivo la revalorización de la cultura del trabajo. En Construir TV entendemos como trabajador a cada persona que, con su esfuerzo cotidiano, aporta y modifica la sociedad en la que vive, ya sea a través de su profesión, su oficio o su arte.<\/p><p><b>Nuestros Cuatro Ejes<\/b><\/p><p>Con una amplia variedad de trabajos y trabajadores en pantalla y una mirada social, los contenidos están basados en 4 ejes temáticos: <b>Gente –Educación – Industria – Dimensión Social.<\/b><\/p><p><li><b>Gente<\/b><\/li><\/p><p>Historias de vida contadas en primera persona donde los protagonistas son los propios trabajadores. Recorremos su realidad y sus sueños a traves de historias intímas y conmovedoras que dejan al descubierto el aporte de cada individuo en la concreción de una obra o proyecto.<\/p><p><li><b>Educación<\/b><\/li><\/p><p>La formación contribuye a mejorar la competitividad y la calidad de vida. Contenidos pensados para educar desde el entretenimiento, formatos innovadores que apuestan a la educación como pieza fundamental del progreso individual y de la sociedad en su conjunto.<\/p><p><li><b>Industria<\/b><\/li><\/p><p>La industria es el escenario de encuentro entre recursos técnologicos y humanos. En este eje se evidencia el rol del emprendedorismo, la actividad empresarial, los avances cientificos y tecnologicos, la participación del estado, el rol sindical y el capital humano. Progamas pensados para abordar cada uno de estos roles y, principalmente, el resultado de la interacción de todos ellos en el desarrrollo de una industria.<\/p><p><li><b>Dimensión Social<\/b><\/li><\/p><p>Pilar fundamental en la construcción del tejido productivo de un país, en Construir TV entendemos el aspecto social como la base sobre la cual deben construirse mejores sociedades. Documentales de alto impacto y mirada internacional que llevan a la pantalla temas como: Solidaridad: las personas se unen, arman redes y hacen que las cosas que parecían imposibles se hagan realidad.<\/p>",
 		"activo": true
 	},
-	{ "id": 171, "tipo": "tv", "titulo": "SUMATE A NUESTRA COMUNIDAD", "cuerpo": "<p>Unite a la Comunidad de Construir TV en <b>Facebook!</b></p><p>COMUNIDAD CONSTRUIR TV</p><p>CONSTRUIR MADERA</p><p>CONSTRUIR ACCESIBILIDAD</p><p>CONSTRUIR NATURAL</p><p>CONSTRUIR HUERTAS Y JARDINES</p>", "activo": true },
+	{
+		"id": 171,
+		"tipo": "tv",
+		"titulo": "SUMATE A NUESTRA COMUNIDAD",
+		"cuerpo": "<p>Unite a la Comunidad de Construir TV en <b>Facebook!<\/b><\/p><p>COMUNIDAD CONSTRUIR TV<\/p><p>CONSTRUIR MADERA<\/p><p>CONSTRUIR ACCESIBILIDAD<\/p><p>CONSTRUIR NATURAL<\/p><p>CONSTRUIR HUERTAS Y JARDINES<\/p>",
+		"activo": true
+	},
 	{
 		"id": 172,
 		"tipo": "moecra",
 		"titulo": "QUIENES SOMOS?",
-		"cuerpo": "<p>Las contingencias sociales a las que nos enfrentamos requieren hoy más que nunca del tendido de la acción solidaria como forma de ayuda recíproca entre compañeras y compañeros.</p><p>Los trabajadores y trabajadoras nucleados en la UOCRA sabemos de los beneficios de unirnos para lograr nuestro bienestar y el de nuestras familias a través de nuestra RED SOCIAL. </p><p>Renovamos nuestra MOECRA - Mutual de Obreros y Empleados de la Construcción de la República Argentina - para sumar otro brazo al colectivo de respuestas que nuestra Organización tiene disponible para satisfacer las necesidades de nuestras compañeras y compañeros. </p><p>Basados en la solidaridad y el bien común, buscamos complementar las acciones sindicales y de la acción social con iniciativas solidarias que permitan el acceso a bienes y servicios por parte de sus asociados. </p><p>Estamos trabajando para próximamente poner a disposición la mejor propuesta de beneficios sociales para todas y para todos.</p>",
+		"cuerpo": "<p>Las contingencias sociales a las que nos enfrentamos requieren hoy más que nunca del tendido de la acción solidaria como forma de ayuda recíproca entre compañeras y compañeros.<\/p>\r\n<p>Los trabajadores y trabajadoras nucleados en la UOCRA sabemos de los beneficios de unirnos para lograr nuestro bienestar y el de nuestras familias a través de nuestra RED SOCIAL. <\/p>\r\n<p>Renovamos nuestra MOECRA - Mutual de Obreros y Empleados de la Construcción de la República Argentina - para sumar otro brazo al colectivo de respuestas que nuestra Organización tiene disponible para satisfacer las necesidades de nuestras compañeras y compañeros. <\/p>\r\n<p>Basados en la solidaridad y el bien común, buscamos complementar las acciones sindicales y de la acción social con iniciativas solidarias que permitan el acceso a bienes y servicios por parte de sus asociados. <\/p>\r\n<p>Estamos trabajando para próximamente poner a disposición la mejor propuesta de beneficios sociales para todas y para todos.<\/p>\r\n",
 		"activo": true
 	},
 	{
 		"id": 173,
 		"tipo": "moecra",
 		"titulo": "COMO COMPRAR?",
-		"cuerpo": "",
+		"cuerpo": "<p>Construir Salud, a lo largo de más de 25 años, desarrolló una política de salud basada en la Atención Primaria de la Salud y en la Medicina Familiar como modelo.<\/p><p>Nuestra Obra Social a través de sus médicos de familia, no sólo trabaja en laatención de las enfermedades sino también, fundamentalmente, en laprevención de las mismas y en la promoción de la salud, mediante las más actualizadas modalidades científicas.<\/p><p><b>MEDICO DE FAMILIA REFERENTE<\/b><\/p><p> El médico de familia es un profesional especialista en personas, que trabaja en equipo, capaz de resolver la mayor parte de los problemas por los que consultan sus pacientes y de realizar interconsultas con los médicos especialistas cuando es necesario<\/p>",
 		"activo": true
 	},
-	{ "id": 174, "tipo": "salud", "titulo": "¿QUE ES CONSTRUIR SALUD?", "cuerpo": "<p><b>Construir Salud</b> es la Obra Social del Personal de la Construcción. Es un sistema de salud que considera al ser humano como centro y eje de toda su actividad, ofreciendo a los Obreros Constructores todo lo necesario para el cuidado de la salud familiar.</p>", "activo": true },
+	{
+		"id": 174,
+		"tipo": "salud",
+		"titulo": "¿QUE ES CONSTRUIR SALUD?",
+		"cuerpo": "<p><b>Construir Salud<\/b> es la Obra Social del Personal de la Construcción. Es un sistema de salud que considera al ser humano como centro y eje de toda su actividad, ofreciendo a los Obreros Constructores todo lo necesario para el cuidado de la salud familiar.<\/p>",
+		"activo": true
+	},
 	{
 		"id": 175,
 		"tipo": "salud",
 		"titulo": "CENTROS DE ATENCION PRIMARIA",
-		"cuerpo": "<p>Construir Salud cuenta con una red nacional de <b>Centros Médicos de Atención Primaria</b> (CeMAP) en todo el país.</p><p>Cada Centro Medico cuenta con un equipo de salud compuesto por personal administrativo, enfermeros, especialistas en medicina familiar, pediatras, toco ginecólogos, obstétricas, psicólogos, trabajadores sociales, traumatólogos, cardiólogos médicos, entre otras especialidades.</p>",
+		"cuerpo": "<p>Construir Salud cuenta con una red nacional de <b>Centros Médicos de Atención Primaria<\/b> (CeMAP) en todo el país.<\/p><p>Cada Centro Medico cuenta con un equipo de salud compuesto por personal administrativo, enfermeros, especialistas en medicina familiar, pediatras, toco ginecólogos, obstétricas, psicólogos, trabajadores sociales, traumatólogos, cardiólogos médicos, entre otras especialidades.<\/p><p>Para saber cuál es el Centro Médico de Atención Primaria más cercano consultá la Cartilla Médica en la Aplicación<\/p><c-boton style='justify-self:center;' texto='CARTILLA' svg='SALUD' accion='cartilla' parametro=''><\/c-boton>",
 		"activo": true
 	},
 	{
 		"id": 176,
 		"tipo": "salud",
 		"titulo": "MODELO DE ATENCIÓN",
-		"cuerpo": "<p><b>Atención Primaria</b><br>Construir Salud ha desarrollado modelo basado en la <b>Atención Primaria de la Salud</b> y en la <b>Medicina Familiar.</b></p><p>Fundamentalmente, nuestros equipos médicos trabajan en la prevención de las enfermedades y en la promoción de la salud, haciendo uso de las más actualizadas modalidades científicas.</p><p><b>Médico de Familiar Referente</b><br>En la Primera Consulta se asigna al paciente un <b>Médico de Familia Referente</b>, un profesional especialista en personas que trabaja en equipo para resolver los problemas desde un enfoque integral, realizando interconsultas con los médicos especialistas cada vez que es necesario.</p><p>El vínculo de confianza y respeto que se da entre el paciente y su médico de familia, constituye una de las herramientas diagnósticas y terapéuticas más importante que utiliza la Medicina Familiar.</p>",
+		"cuerpo": "<p><b>Atención Primaria<\/b><br>Construir Salud ha desarrollado modelo basado en la <b>Atención Primaria de la Salud<\/b> y en la <b>Medicina Familiar.<\/b><\/p><p>Fundamentalmente, nuestros equipos médicos trabajan en la prevención de las enfermedades y en la promoción de la salud, haciendo uso de las más actualizadas modalidades científicas.<\/p><p><b>Médico de Familiar Referente<\/b><br>En la Primera Consulta se asigna al paciente un <b>Médico de Familia Referente<\/b>, un profesional especialista en personas que trabaja en equipo para resolver los problemas desde un enfoque integral, realizando interconsultas con los médicos especialistas cada vez que es necesario.<\/p><p>El vínculo de confianza y respeto que se da entre el paciente y su médico de familia, constituye una de las herramientas diagnósticas y terapéuticas más importante que utiliza la Medicina Familiar.<\/p>",
 		"activo": true
 	},
 	{
 		"id": 177,
 		"tipo": "salud",
 		"titulo": "PLAN MATERNO INFANTIL",
-		"cuerpo": "<p><b>Cobertura</b><br>Construir Salud brinda un el <b>Plan de Beneficios</b> para la madre desde el momento del diagnóstico de embarazo, hasta 30 días posteriores al parto y al bebé, desde su nacimiento hasta el año de edad.</p><p><b>Cobertura para la Mamá del 100% en:</b></p><p><li>Consultas Médicas inherentes al estado de embarazo, parto y puerperio.</li><li>Estudios inherentes al estado de embarazo, parto y puerperio.</li><li>Prácticas inherentes al estado de embarazo, parto y puerperio.</li><li>Atención Domiciliaria y traslados si lo necesitara.</li><li>Internación.</li><li>Medicamentos inherentes al estado de embarazo, parto y puerperio para la madre (según PMO).</li></p><p><i>*Para acreditar tu condición, deberás acercarte al Centro Médico (CeMAP) más cercano a tu domicilio, y presentar el Certificado Médico en la Administración, junto con las semanas de gestación y fecha probable de parto.</i></p><p><b>Cobertura para el recién Nacido y hasta el año de vida:</b></p><p><li>Consultas Médicas.</li><li>Estudios.</li><li>Prácticas.</li><li>Atención Domiciliaria y traslados si lo necesitara.</li><li>Internación.</li><li>Medicamentos (según PMO).</li></p>",
+		"cuerpo": "<p><b>Cobertura<\/b><br>Construir Salud brinda un el <b>Plan de Beneficios<\/b> para la madre desde el momento del diagnóstico de embarazo, hasta 30 días posteriores al parto y al bebé, desde su nacimiento hasta el año de edad.<\/p><p><b>Cobertura para la Mamá del 100% en:<\/b><\/p><p><li>Consultas Médicas inherentes al estado de embarazo, parto y puerperio.<\/li><li>Estudios inherentes al estado de embarazo, parto y puerperio.<\/li><li>Prácticas inherentes al estado de embarazo, parto y puerperio.<\/li><li>Atención Domiciliaria y traslados si lo necesitara.<\/li><li>Internación.<\/li><li>Medicamentos inherentes al estado de embarazo, parto y puerperio para la madre (según PMO).<\/li><\/p><p><i>*Para acreditar tu condición, deberás acercarte al Centro Médico (CeMAP) más cercano a tu domicilio, y presentar el Certificado Médico en la Administración, junto con las semanas de gestación y fecha probable de parto.<\/i><\/p><p><b>Cobertura para el recién Nacido y hasta el año de vida:<\/b><\/p><p><li>Consultas Médicas.<\/li><li>Estudios.<\/li><li>Prácticas.<\/li><li>Atención Domiciliaria y traslados si lo necesitara.<\/li><li>Internación.<\/li><li>Medicamentos (según PMO).<\/li><\/p>",
 		"activo": true
 	},
 	{
 		"id": 178,
 		"tipo": "salud",
 		"titulo": "AFILIACIONES",
-		"cuerpo": "<p><b>Trámite de Afiliación</b><br>El trámite de afiliación lo debe realizar el titular. De acuerdo al tipo de beneficiario los requisitos de afiliación son:</p><p><li><b>Titular en Relación de Dependencia</b>DNI + CUIL + Último recibo de Sueldo.</li></p><p><li><b>Titular Monotributista</b><br>DNI + CUIL + Último Pago de Monotributo + Formulario AFIP 184 + Formulario AFIP 152.</li></p><p><li><b>Titular Servicio Doméstico</b>DNI + CUIL + Pago Mes Vencido + Formulario AFIP 102/RT.</li></p><p><li><b>Titular Monotributo Social</b>DNI + Certificado de Elección de Obra Social + Ticket de Pago del Mes en Curso + Formulario AFIP 152.</li></p><p><b>Atención Telefónica</b><br>Lunes a Viernes de 9 a 18 hs<br>Teléfono 0800-222-0123</p><p><b>iniciá tu afiliación por Whatsapp</b></p><c-boton style='justify-self:center;' texto='AFILIATE' svg='WHATSAPP' accion='salud' parametro=''></c-boton>",
+		"cuerpo": "<p><b>Trámite de Afiliación<\/b><br>El trámite de afiliación lo debe realizar el titular. De acuerdo al tipo de beneficiario los requisitos de afiliación son:<\/p><p><li><b>Titular en Relación de Dependencia<\/b>DNI + CUIL + Último recibo de Sueldo.<\/li><\/p><p><li><b>Titular Monotributista<\/b><br>DNI + CUIL + Último Pago de Monotributo + Formulario AFIP 184 + Formulario AFIP 152.<\/li><\/p><p><li><b>Titular Servicio Doméstico<\/b>DNI + CUIL + Pago Mes Vencido + Formulario AFIP 102\/RT.<\/li><\/p><p><li><b>Titular Monotributo Social<\/b>DNI + Certificado de Elección de Obra Social + Ticket de Pago del Mes en Curso + Formulario AFIP 152.<\/li><\/p><p><b>Atención Telefónica<\/b><br>Lunes a Viernes de 9 a 18 hs<br>Teléfono 0800-222-0123<\/p><p><b>INICIÁ tu afiliación por Whatsapp<\/b><\/p><c-boton style='justify-self:center;' texto='AFILIATE' svg='WHATSAPP' accion='salud' parametro=''><\/c-boton>",
 		"activo": true
 	},
 	{
 		"id": 179,
 		"tipo": "sindicato",
 		"titulo": "JUBILACIONES",
-		"cuerpo": "<p><b>Requisitos<br>Jubilación de 55 Años</br></b></p><p><li>Alcanzar la edad de CINCUENTA Y CINCO (55) años (sea hombre o mujer), con 25 años de servicios con aportes, y el 80% de los últimos 15 años en la Industria de la Construcción, es decir, que de los últimos 15 años de aportes, debe tener 12 años aportados en el marco de la industria de la construcción.</li><p></p><li>En caso de acreditarse una suma inferior al 80 % (12 años) de los últimos 15 años en la Industria de la Construcción se procede a un prorrateo.</li></p><p><li>El cálculo del prorrateo incluye los períodos aportados durante toda la vida laboral del trabajador, tanto en la Industria de la Construcción como bajo cualquier otro régimen, común o especial. El resultado de dicho prorrateo determina la edad y cantidad de años de aportes requeridos al trabajador. Esto es siempre entre lo exigido por el régimen común (65 años de edad y 30 de aportes) y lo regulado por la ley 26.494 (55 años de edad y 25 de aportes).</li></p><p><b>Jubilación Ordinaria</b></p><p>Las y los trabajadores pueden optar por el régimen de Jubilación Ordinaria previsto por la Ley 24.241 siempre y cuando cumplan con los siguientes requisitos:</p><p><li>Tener 30 (treinta) años de aportes al Sistema Integrado de Jubilaciones. Estos aportes pueden corresponder a uno o más regímenes jubilatorios.</li></p><p><li>En caso de haber realizado aportes a otras cajas jubilatorias no adheridas al Sistema Integrado de Jubilaciones.</li></p><p><li>Si al momento de acceder a la jubilación, es decir, de iniciado el trámite, la persona excede la edad de 60 años para la mujer y 65 para el hombre, puede compensar 1 (un) año de servicios por cada 2 (dos) años de edad excedentes.</li></p><p>Por ejemplo: si un trabajador varón tiene 67 años de edad, requerirá sólo veintinueve (29) años de aportes, y no 30, porque los dos (2) años de edad excedente le permite compensar un (1) años de servicio.</p><p><b>Iniciar Trámite Jubilatorio</b></p><p>Para comenzar el trámite de la jubilación, tenés que presentarte en la <b>UNIDAD LOCAL DE ATENCION TRANSITORIA (ULAT - UOCRA)</b>, ubicada en Avenida Belgrano 1876, PB, Capital Federal de Lunes a Viernes de 09:00 a 17:00hs.</p><p>También podés iniciarlo en la oficina de la Seccional más cercana.</p><p><b>Atención Telefónica</b></p><p>(011) 4384-7140/60<br>Internos 1523 - 1524 - 2252 - 2253 - 2254<br>Lunes a Viernes de 09:00 a 17:00hs</p>",
+		"cuerpo": "<p><b>Requisitos<br>Jubilación a los 55 Años<\/br><\/b><\/p><p><li>La Jubilación Anticipada es una reivindicación histórica lograda por la UOCRA, de estricta justicia para las trabajadoras y los trabajadores constructores, que permite que los hombres y mujeres vinculados a la industria de la construcción puedan jubilarse a los 55 años, luego de una vida de trabajo.<\/p><\/li><p><li>Alcanzar la edad de CINCUENTA Y CINCO (55) años (sea hombre o mujer), con 25 años de servicios con aportes, y el 80% de los últimos 15 años en la Industria de la Construcción, es decir, que de los últimos 15 años de aportes, debe tener 12 años aportados en el marco de la industria de la construcción.<\/li><p><\/p><li>En caso de acreditarse una suma inferior al 80 % (12 años) de los últimos 15 años en la Industria de la Construcción se procede a un prorrateo.<\/li><\/p><p><li>El cálculo del prorrateo incluye los períodos aportados durante toda la vida laboral del trabajador, tanto en la Industria de la Construcción como bajo cualquier otro régimen, común o especial. El resultado de dicho prorrateo determina la edad y cantidad de años de aportes requeridos al trabajador. Esto es siempre entre lo exigido por el régimen común (65 años de edad y 30 de aportes) y lo regulado por la ley 26.494 (55 años de edad y 25 de aportes).<\/li><\/p><p><b>Jubilación Ordinaria<\/b><\/p><p>Las y los trabajadores pueden optar por el régimen de Jubilación Ordinaria previsto por la Ley 24.241 siempre y cuando cumplan con los siguientes requisitos:<\/p><p><li>Tener 30 (treinta) años de aportes al Sistema Integrado de Jubilaciones. Estos aportes pueden corresponder a uno o más regímenes jubilatorios.<\/li><\/p><p><li>En caso de haber realizado aportes a otras cajas jubilatorias no adheridas al Sistema Integrado de Jubilaciones.<\/li><\/p><p><li>Si al momento de acceder a la jubilación, es decir, de iniciado el trámite, la persona excede la edad de 60 años para la mujer y 65 para el hombre, puede compensar 1 (un) año de servicios por cada 2 (dos) años de edad excedentes.<\/li><\/p><p>Por ejemplo: si un trabajador varón tiene 67 años de edad, requerirá sólo veintinueve (29) años de aportes, y no 30, porque los dos (2) años de edad excedente le permite compensar un (1) años de servicio.<\/p><p><b>Iniciar Trámite Jubilatorio<\/b><\/p><p>Para comenzar el trámite de la jubilación, tenés que presentarte en la <b>UNIDAD LOCAL DE ATENCION TRANSITORIA (ULAT - UOCRA)<\/b>, ubicada en Avenida Belgrano 1876, PB, Capital Federal de Lunes a Viernes de 09:00 a 17:00hs.<\/p><p>También podés iniciarlo en la oficina de la Seccional más cercana.<\/p><p><b>Atención Telefónica<\/b><\/p><p>(011) 4384-7140\/60<br>Internos 1523 - 1524 - 2252 - 2253 - 2254<br>Lunes a Viernes de 09:00 a 17:00hs<\/p><c-boton style='justify-self:center;' texto='SECCIONALES' svg='MISINDICATO' accion='gremioZonas' parametro=''><\/c-boton>",
 		"activo": true
 	},
 	{
 		"id": 180,
 		"tipo": "sindicato",
 		"titulo": "SEGURO DE DESEMPLEO",
-		"cuerpo": "<p><b>En qué consiste</b></p><p>El Seguro de Desempleo es una prestación que brinda la ANSES para dotar al trabajador constructor y su grupo familiar, frente a la pérdida del empleo, de las siguientes prestaciones:</p><p><li>Prestación económica por desempleo.</li></p><p><li>Prestaciones médico–asistenciales para el beneficiario y grupo familiar correspondiente al Plan Médico Obligatorio. Éstas serán brindadas por la Obra Social en la que el trabajador se encuentre afiliado</li></p><p><li>Asignaciones familiares (Ley 24.714)</li></p><p><b>Cobertura y Duración</b></p><br>La duración de la prestación está en relación con el tiempo efectivamente trabajado y cotizado a la Seguridad Social.<p>Se toman como referencia los últimos dos (2) años anteriores a la finalización de la relación laboral.</p><p>Es decir que la duración del seguro de desempleo se calcula en función de los meses cotizados a la seguridad social, en el marco del empleo que se tenía antes de estar desempleado.</p><p><b>Requisitos</b></p><br>Los requisitos para acceder a las prestaciones del seguro de desempleo son:<p><li>Haber trabajado en su último empleo en relación de dependencia bajo el Régimen Nacional de la Industria de la Construcción que establece la Ley Nº 22.250.</li></p><p><li>Encontrarse en situación legal de desempleo por causas no imputables al trabajador.</li></p><p><li>Haber trabajado con recibo de sueldo durante un período mínimo continuo o discontinuo, de ocho (8) meses en los últimos 2 años anteriores al despido.</li></p><p><li>Estar inscripto en el IERIC.</li></p><p><b>Iniciar el Trámite de Seguro</b></p><br><b>Dónde y Cómo se tramita</b><p><li>El Seguro de Desempleo se tramita a través de las oficinas de ANSES.</li></p> <p><li>El trámite de la solicitud de la Prestación por Desempleo es personal. No se admite gestión por correo o a través de intermediario alguno.</li></p><p><li>Para todo trámite debe solicitar turno a través de la página de Internet de ANSES o telefónicamente al número gratuito 130.</li></p><p><b>Cuándo se puede tramitar</b></p><p>Para gestionar las prestaciones del seguro de desempleo, existen algunos plazos que son importantes conocer:</p><p><li>Si el trabajador COBRÓ el Fondo de Cese Laboral (Ley Nº 22.250): el derecho al Seguro de Desempleo se origina una vez transcurridos sesenta (60) días corridos desde la fecha de finalización de la relación laboral</li></p><p>Si realiza el trámite antes de los sesenta (60) días corridos, deberá presentar telegrama o carta documento intimando al empleador el pago del Fondo de Cese Laboral.</p><p>En este caso, una vez transcurridos los 60 días desde la finalización de la relación laboral, el trámite debe realizarse dentro de los 90 días hábiles administrativos (vencidos los 60 días desde el cese).</p><p>Luego de los 90 días, se le descontará por cada día de mora en la presentación, 1 día proporcional de prestación. </p><p><li>Si el trabajador NO COBRÓ el Fondo de Cese Laboral (Ley Nº 22.250): el derecho lo obtiene inmediatamente a partir de la fecha del cese laboral presentando el telegrama o carta documento intimando al empleador el pago del Fondo del Cese Laboral.</li></p><p>En este caso, los 90 días hábiles administrativos comienzan a contarse a partir de la fecha del cese laboral. A partir de esos 90 días se empezarán a contabilizar el descuento por días de mora. </p><p><li>Si NO COBRÓ el Fondo de Cese Laboral y el trámite lo inicia pasados los 60 días de la fecha de cese:  no se requerirá la presentación del telegrama o carta documento intimando al empleador el pago del Fondo del Cese Laboral.</li></p><p><b>NO pueden acceder al Seguro</b></p><br>Aquellas personas que:<p><li>Perciban prestaciones previsionales (excepto pensiones directas o derivadas de carácter contributivo</li></p><p><li>Perciban las siguientes prestaciones no contributivas:</li></p><ul><li>Programa Jefes de Hogar</li><li>Programas de Empleo</li><li>Cualquier otra prestación no contributiva (excepto titulares de Pensiones Honoríficas de Veteranos de la Guerra del Atlántico Sur, Ley Nº 23.848 y Ley Nº 24.892, Pensión graciable ex – Presos Políticos Ley Nº 26.913 y titulares del Plan PROGRESAR)</li></ul><p><li>Perciban otra retribución o ingreso por cualquier actividad desempeñada.</li></p><p><li>Se desempeñen en carácter de trabajadores autónomos o pertenezcan al Régimen de Monotributo.</li></p><p><li>Perciban a través de una Aseguradora de Riesgos de Trabajo (ART), una prestación dineraria por accidente de trabajo o enfermedad profesional. </li></p><p><li>Hayan renunciado, cesado en la relación laboral de mutuo acuerdo con el empleador o que hayan optado por el retiro voluntario.</li></p>",
+		"cuerpo": "<p><b>En qué consiste<\/b><\/p><p>El Seguro de Desempleo es una prestación que brinda la ANSES para dotar al trabajador constructor y su grupo familiar, frente a la pérdida del empleo, de las siguientes prestaciones:<\/p><p><li>Prestación económica por desempleo.<\/li><\/p><p><li>Prestaciones médico–asistenciales para el beneficiario y grupo familiar correspondiente al Plan Médico Obligatorio. Éstas serán brindadas por la Obra Social en la que el trabajador se encuentre afiliado<\/li><\/p><p><li>Asignaciones familiares (Ley 24.714)<\/li><\/p><p><b>Cobertura y Duración<\/b><\/p>La duración de la prestación está en relación con el tiempo efectivamente trabajado y cotizado a la Seguridad Social.<p>Se toman como referencia los últimos dos (2) años anteriores a la finalización de la relación laboral.<\/p><p>Es decir que la duración del seguro de desempleo se calcula en función de los meses cotizados a la seguridad social, en el marco del empleo que se tenía antes de estar desempleado.<\/p><p><b>Requisitos<\/b><\/p>Los requisitos para acceder a las prestaciones del seguro de desempleo son:<p><li>Haber trabajado en su último empleo en relación de dependencia bajo el Régimen Nacional de la Industria de la Construcción que establece la Ley Nº 22.250.<\/li><\/p><p><li>Encontrarse en situación legal de desempleo por causas no imputables al trabajador.<\/li><\/p><p><li>Haber trabajado con recibo de sueldo durante un período mínimo continuo o discontinuo, de ocho (8) meses en los últimos 2 años anteriores al despido.<\/li><\/p><p><li>Estar inscripto en el IERIC.<\/li><\/p><br><p><b>INICIAR EL TRÁMITE DEL SEGURO<\/b><\/p><b>Dónde y Cómo se tramita<\/b><p><li>El Seguro de Desempleo se tramita a través de las oficinas de ANSES.<\/li><\/p> <p><li>El trámite de la solicitud de la Prestación por Desempleo es personal. No se admite gestión por correo o a través de intermediario alguno.<\/li><\/p><p><li>Para todo trámite debe solicitar turno a través de la página de Internet de ANSES o telefónicamente al número gratuito 130.<\/li><\/p><p><b>Cuándo se puede tramitar<\/b><\/p><p>Para gestionar las prestaciones del seguro de desempleo, existen algunos plazos que son importantes conocer:<\/p><p><li>Si el trabajador COBRÓ el Fondo de Cese Laboral (Ley Nº 22.250): el derecho al Seguro de Desempleo se origina una vez transcurridos sesenta (60) días corridos desde la fecha de finalización de la relación laboral<\/li><\/p><p>Si realiza el trámite antes de los sesenta (60) días corridos, deberá presentar telegrama o carta documento intimando al empleador el pago del Fondo de Cese Laboral.<\/p><p>En este caso, una vez transcurridos los 60 días desde la finalización de la relación laboral, el trámite debe realizarse dentro de los 90 días hábiles administrativos (vencidos los 60 días desde el cese).<\/p><p>Luego de los 90 días, se le descontará por cada día de mora en la presentación, 1 día proporcional de prestación. <\/p><p><li>Si el trabajador NO COBRÓ el Fondo de Cese Laboral (Ley Nº 22.250): el derecho lo obtiene inmediatamente a partir de la fecha del cese laboral presentando el telegrama o carta documento intimando al empleador el pago del Fondo del Cese Laboral.<\/li><\/p><p>En este caso, los 90 días hábiles administrativos comienzan a contarse a partir de la fecha del cese laboral. A partir de esos 90 días se empezarán a contabilizar el descuento por días de mora. <\/p><p><li>Si NO COBRÓ el Fondo de Cese Laboral y el trámite lo inicia pasados los 60 días de la fecha de cese:  no se requerirá la presentación del telegrama o carta documento intimando al empleador el pago del Fondo del Cese Laboral.<\/li><\/p><p><b>NO pueden acceder al Seguro<\/b><\/p>Aquellas personas que:<p><li>Perciban prestaciones previsionales (excepto pensiones directas o derivadas de carácter contributivo<\/li><\/p><p><li>Perciban las siguientes prestaciones no contributivas:<\/li><\/p><ul><li>Programa Jefes de Hogar<\/li><li>Programas de Empleo<\/li><li>Cualquier otra prestación no contributiva (excepto titulares de Pensiones Honoríficas de Veteranos de la Guerra del Atlántico Sur, Ley Nº 23.848 y Ley Nº 24.892, Pensión graciable ex – Presos Políticos Ley Nº 26.913 y titulares del Plan PROGRESAR)<\/li><\/ul><p><li>Perciban otra retribución o ingreso por cualquier actividad desempeñada.<\/li><\/p><p><li>Se desempeñen en carácter de trabajadores autónomos o pertenezcan al Régimen de Monotributo.<\/li><\/p><p><li>Perciban a través de una Aseguradora de Riesgos de Trabajo (ART), una prestación dineraria por accidente de trabajo o enfermedad profesional. <\/li><\/p><p><li>Hayan renunciado, cesado en la relación laboral de mutuo acuerdo con el empleador o que hayan optado por el retiro voluntario.<\/li><\/p>",
 		"activo": true
 	},
 	{
 		"id": 181,
 		"tipo": "saludSeguridad",
 		"titulo": "OBJETIVOS Y ÁREAS DE TRABAJO",
-		"cuerpo": "<p>El Departamento de Salud y Seguridad tiene como objetivo desarrollar acciones técnico-profesionales y sindicales para mejorar las condiciones y medioambiente de trabajo de las y los trabajadores constructores.<p>Contamos con 4 áreas de trabajo:</p><li><b>Gestión y Relevamiento de Obras</b> que se encarga de procesar la información obtenida de las acciones de relevamiento en las obras en construcción.<li><b>Coordinación, Comunicación e Información</b> que coordina y articula actividades institucionales con diferentes organismos.</li><li><b>Ambiente y Desarrollo Sustentable </b>que tiene por objetivo difundir y promover el uso de las Buenas Prácticas Ambientales en la construcción.</li><li><b>Capacitación y Asistencia Técnica</b> que colabora con la generación, puesta en marcha y seguimiento de Comités de Salud y Seguridad, a fin de ayudar a establecer medidas preventivas en grandes obras.</li></p>",
+		"cuerpo": "<p>El Departamento de Salud y Seguridad tiene como objetivo desarrollar acciones técnico-profesionales y sindicales para mejorar las condiciones y medioambiente de trabajo de las y los trabajadores constructores.<p>Contamos con 4 áreas de trabajo:<\/p><li><b>Gestión y Relevamiento de Obras<\/b> que se encarga de procesar la información obtenida de las acciones de relevamiento en las obras en construcción.<li><b>Coordinación, Comunicación e Información<\/b> que coordina y articula actividades institucionales con diferentes organismos.<\/li><li><b>Ambiente y Desarrollo Sustentable <\/b>que tiene por objetivo difundir y promover el uso de las Buenas Prácticas Ambientales en la construcción.<\/li><li><b>Capacitación y Asistencia Técnica<\/b> que colabora con la generación, puesta en marcha y seguimiento de Comités de Salud y Seguridad, a fin de ayudar a establecer medidas preventivas en grandes obras.<\/li><\/p>",
 		"activo": true
 	},
 	{
 		"id": 182,
 		"tipo": "saludSeguridad",
 		"titulo": "PROTOCOLOS COVID-19",
-		"cuerpo": "<p>En el marco de un trabajo en conjunto con las cámaras empresarias representativas de la industria de la construcción, la UOCRA elaboró una serie de protocolos con recomendaciones prácticas de protección y prevención para favorecer la protección de la Salud y Seguridad de las trabajadoras y los trabajadores para hacer frente al COVID-19. <p><li><b>Nuevo Protocolo Covid-19 | Industria del Hormigón Elaborado versión 2.0</b></li></p><p><li><b>Protocolo de Recomendaciones Prácticas Covid-19 | Obras de redes de acceso, distribución y transporte bajo CCT 577/10 Versión 2.0</b></li></p><p><li><b>Protocolo de Recomendaciones Prácticas para la Industria de la Construcción Versión 3.0</b></li></p><p><li><b>Nuevo protocolo Covid-19 | Industria del Hormigón Elaborado</b></li></p><p><li><b>Protocolo de recomendaciones prácticas Covid-19 / Industria de la construcción - Traslado de los trabajadores</li></p><p><li><b>Protocolo de Recomendaciones prácticas Covid-19 | Obras de redes de acceso, distribución y trasporte bajo CCT 557/10</b></li></p><p><li><b>Protocolo de RecomendacionesPrácticas para la Industria de la Construcción Versión 2.0</b></li></p><p><li><b>Protocolo de Recomendaciones Prácticas para la Industria de la Construcción Versión 1.0</b></li></p></p>",
+		"cuerpo": "<p>En el marco de un trabajo en conjunto con las cámaras empresarias representativas de la industria de la construcción, la UOCRA elaboró una serie de protocolos con recomendaciones prácticas de protección y prevención para favorecer la protección de la Salud y Seguridad de las trabajadoras y los trabajadores para hacer frente al COVID-19. <p><li><b>Nuevo Protocolo Covid-19 | Industria del Hormigón Elaborado versión 2.0<\\\/b><\\\/li><\\\/p><p><li><b>Protocolo de Recomendaciones Prácticas Covid-19 | Obras de redes de acceso, distribución y transporte bajo CCT 577\\\/10 Versión 2.0<\\\/b><\\\/li><\\\/p><p><li><b>Protocolo de Recomendaciones Prácticas para la Industria de la Construcción Versión 3.0<\\\/b><\\\/li><\\\/p><p><li><b>Nuevo protocolo Covid-19 | Industria del Hormigón Elaborado<\\\/b><\\\/li><\\\/p><p><li><b>Protocolo de recomendaciones prácticas Covid-19 \\\/ Industria de la construcción - Traslado de los trabajadores<\\\/li><\\\/p><p><li><b>Protocolo de Recomendaciones prácticas Covid-19 | Obras de redes de acceso, distribución y trasporte bajo CCT 557\\\/10<\\\/b><\\\/li><\\\/p><p><li><b>Protocolo de RecomendacionesPrácticas para la Industria de la Construcción Versión 2.0<\\\/b><\\\/li><\\\/p><p><li><b>Protocolo de Recomendaciones Prácticas para la Industria de la Construcción Versión 1.0<\\\/b><\\\/li><\\\/p><\\\/p><c-boton style='justify-self:center;' texto='PROTOCOLOS COVID' svg='MASUOCRA' accion='saludSeguridad' parametro=''><\\\/c-boton>",
 		"activo": true
 	},
 	{
 		"id": 183,
 		"tipo": "ivt",
 		"titulo": "ACCEDER A UNA VIVIENDA",
-		"cuerpo": "<p>Las inscripciones para acceder a una vivienda se realizan a través de las seccionales de UOCRA correspondientes, donde la persona será atendida por un representante del IVT.</p><p>La inscripción podrá realizarse una vez que la obra se encuentre en marcha.</p><p>Requisitos:</p><p><li>Estar inscriptos en el Instituto Provincial de Vivienda correspondiente a la Obra.</li></p><p><li>No tener vivienda propia.</li></p><p><li>Constituir un grupo familiar.</li></p>",
+		"cuerpo": "<p>Las inscripciones para acceder a una vivienda se realizan a través de las seccionales de UOCRA correspondientes, donde la persona será atendida por un representante del IVT.<\/p><p>La inscripción podrá realizarse una vez que la obra se encuentre en marcha.<\/p><p>Requisitos:<\/p><p><li>Estar inscriptos en el Instituto Provincial de Vivienda correspondiente a la Obra.<\/li><\/p><p><li>No tener vivienda propia.<\/li><\/p><p><li>Constituir un grupo familiar.<\/li><\/p>",
 		"activo": true
 	},
-	{ "id": 184, "tipo": "ivt", "titulo": "OBRAS EN EJECUCIÓN", "cuerpo": "<p><b>27 Viviendas (Pre-Adjudicadas)</b> en Olavarría, Provincia de Buenos Aires.</p>", "activo": true },
-	{ "id": 185, "tipo": "ivt", "titulo": "OBRAS A COMENZAR", "cuerpo": "<p><b>300 Viviendas</b> en Cerrillo, Provincia de Salta.</p>", "activo": true },
-	{ "id": 186, "tipo": "ivt", "titulo": "OBRAS EN PROYECTO", "cuerpo": "<p><b>50 Viviendas en Tapalqué</b>, Provincia de Buenos Aires.</p><p><b>50 Viviendas en Tres Arroyos</b>, Provincia de Buenos Aires.</p><p><b>98 Viviendas en San Nicolás</b>, Provincia de Buenos Aires.</p><p><b>1200 Viviendas en Posadas</b>, Provincia de Misiones.</p><p><b>50 Viviendas en Azul</b>, Provincia de Buenos Aires.</p>", "activo": true },
+	{
+		"id": 184,
+		"tipo": "ivt",
+		"titulo": "OBRAS EN EJECUCIÓN",
+		"cuerpo": "<p><b>27 Viviendas (Pre-Adjudicadas)<\/b> en Olavarría, Provincia de Buenos Aires.<\/p>",
+		"activo": true
+	},
+	{
+		"id": 185,
+		"tipo": "ivt",
+		"titulo": "OBRAS A COMENZAR",
+		"cuerpo": "<p><b>300 Viviendas<\/b> en Cerrillo, Provincia de Salta.<\/p>",
+		"activo": true
+	},
+	{
+		"id": 186,
+		"tipo": "ivt",
+		"titulo": "OBRAS EN PROYECTO",
+		"cuerpo": "<p><b>50 Viviendas en Tapalqué<\/b>, Provincia de Buenos Aires.<\/p><p><b>50 Viviendas en Tres Arroyos<\/b>, Provincia de Buenos Aires.<\/p><p><b>98 Viviendas en San Nicolás<\/b>, Provincia de Buenos Aires.<\/p><p><b>1200 Viviendas en Posadas<\/b>, Provincia de Misiones.<\/p><p><b>50 Viviendas en Azul<\/b>, Provincia de Buenos Aires.<\/p>",
+		"activo": true
+	},
 	{
 		"id": 187,
 		"tipo": "adolecencia",
 		"titulo": "¿QUIENES SOMOS?",
-		"cuerpo": "<p>El reconocimiento de los adolescentes como sujetos de derecho es el punto de partida para brindar atención y acompañar a las y los jóvenes en el proceso de toma de decisiones autónomas y libres, y en el manejo de sus posibles consecuencias.</p><p>Para ello, se busca generar un espacio de atención que garantice la confidencialidad basada en el secreto médico profesional, como pilar en la relación sanitaria.</p><p>Dentro de las disciplinas que integran el equipo de adolescencia se encuentran: <b>psicología, trabajo social, hebiatría, ginecología, obstetricia, endocrinología, psiquiatría, nutrición, entre otras</b></P>",
+		"cuerpo": "<p>El reconocimiento de los adolescentes como sujetos de derecho es el punto de partida para brindar atención y acompañar a las y los jóvenes en el proceso de toma de decisiones autónomas y libres, y en el manejo de sus posibles consecuencias.<\/p><p>Para ello, se busca generar un espacio de atención que garantice la confidencialidad basada en el secreto médico profesional, como pilar en la relación sanitaria.<\/p><p>Dentro de las disciplinas que integran el equipo de adolescencia se encuentran: <b>psicología, trabajo social, hebiatría, ginecología, obstetricia, endocrinología, psiquiatría, nutrición, entre otras<\/b><\/P>",
 		"activo": true
 	},
-	{ "id": 188, "tipo": "adolecencia", "titulo": "¿DISCIPLINAS DE TRABAJO?", "cuerpo": "<p>Las <b>Jornadas en Adolescencia</b> tienen como objetivo abordar los nuevos desafíos en la vida de los adolescentes desde la mirada de  profesionales especializados en las diversas temáticas vinculadas.</p>", "activo": true },
-	{ "id": 189, "tipo": "adolecencia", "titulo": "ESCRIBI TU CONSULTA", "cuerpo": "<p>Hace click en el boton y envia por mail tu consulta</p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='ADOLECENCIA' accion='adolecencia' parametro=''></c-boton>", "activo": true },
-	{ "id": 190, "tipo": "adicciones", "titulo": "¿QUIENES SOMOS?", "cuerpo": "<p>El <b>Equipo de Prevención de Adicciones</b> se propone luchar contra las adicciones que enferman y estigmatizan al sujeto tanto en el ámbito del trabajo, así como en el resto de los ámbitos que conforman su vida cotidiana.</P>", "activo": true },
+	{
+		"id": 188,
+		"tipo": "adolecencia",
+		"titulo": "¿DISCIPLINAS DE TRABAJO?",
+		"cuerpo": "<p>Las <b>Jornadas en Adolescencia<\/b> tienen como objetivo abordar los nuevos desafíos en la vida de los adolescentes desde la mirada de  profesionales especializados en las diversas temáticas vinculadas.<\/p>",
+		"activo": true
+	},
+	{
+		"id": 189,
+		"tipo": "adolecencia",
+		"titulo": "ESCRIBI TU CONSULTA",
+		"cuerpo": "<p>Hace click en el boton y envia por mail tu consulta<\/p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='ADOLECENCIA' accion='adolecencia' parametro=''><\/c-boton>",
+		"activo": true
+	},
+	{
+		"id": 190,
+		"tipo": "adicciones",
+		"titulo": "¿QUIENES SOMOS?",
+		"cuerpo": "<p>El <b>Equipo de Prevención de Adicciones<\/b> se propone luchar contra las adicciones que enferman y estigmatizan al sujeto tanto en el ámbito del trabajo, así como en el resto de los ámbitos que conforman su vida cotidiana.<\/P>",
+		"activo": true
+	},
 	{
 		"id": 191,
 		"tipo": "adicciones",
 		"titulo": "VOS PODES AYUDAR",
-		"cuerpo": "<p>Si conoces a un compañero o compañera en tu lugar de trabajo que necesite ayuda, el Equipo de Prevención de Adicciones recomienda:</p><p><li>Contené al compañero/a con una actitud solidaria, sin juzgar, ni discriminar.</li></p><p><li>Acércate a tu seccional de UOCRA.</li></p><p><li>Apoyate en tu sindicato para acompañar y defender la fuente de trabajo.</li></p><p><li>Comentalo con tu delegado o delegada de obra para ayudarlo.</li></p><p><li>Consultá a un médico del centro de atención primaria de Construir Salud más cercano.</li></p><p><li>Promové una actitud solidaria.</li></p>",
+		"cuerpo": "<p>Si conoces a un compañero o compañera en tu lugar de trabajo que necesite ayuda, el Equipo de Prevención de Adicciones recomienda:<\/p><p><li>Contené al compañero\/a con una actitud solidaria, sin juzgar, ni discriminar.<\/li><\/p><p><li>Acércate a tu seccional de UOCRA.<\/li><\/p><p><li>Apoyate en tu sindicato para acompañar y defender la fuente de trabajo.<\/li><\/p><p><li>Comentalo con tu delegado o delegada de obra para ayudarlo.<\/li><\/p><p><li>Consultá a un médico del centro de atención primaria de Construir Salud más cercano.<\/li><\/p><p><li>Promové una actitud solidaria.<\/li><\/p>",
 		"activo": true
 	},
-	{ "id": 192, "tipo": "adicciones", "titulo": "LINEAS DE CONTENCIÓN", "cuerpo": "<p>Para Casos de Consutmo Problemático:</p><p><li><b>Construir Salud</b> 0800 – 222- 0123.</li></p><p><li><b>Secretaría de Políticas Integrales sobre Drogas (SEDRONAR)</b> 141 para hablar con profesionales de forma gratuita, anónima y en todo el país.</li><p>", "activo": true },
-	{ "id": 193, "tipo": "adicciones", "titulo": "JORNADAS DE ADICCIONES", "cuerpo": "<p>Las <b>Jornadas en Adicciones</b> buscan generar espacios de Sensibilización y Capacitación sobre la Problemática de Adicciones en el Mundo Laboral.<p>", "activo": true },
-	{ "id": 194, "tipo": "adicciones", "titulo": "ESCRIBI TU CONSULTA", "cuerpo": "<p>Hace click en el boton y envia por mail tu consulta</p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='ADICCIONES' accion='adicciones' parametro=''></c-boton>", "activo": true },
+	{
+		"id": 192,
+		"tipo": "adicciones",
+		"titulo": "LINEAS DE CONTENCIÓN",
+		"cuerpo": "<p>Para Casos de Consutmo Problemático:<\/p><p><li><b>Construir Salud<\/b> 0800 – 222- 0123.<\/li><\/p><p><li><b>Secretaría de Políticas Integrales sobre Drogas (SEDRONAR)<\/b> 141 para hablar con profesionales de forma gratuita, anónima y en todo el país.<\/li><p>",
+		"activo": true
+	},
+	{
+		"id": 193,
+		"tipo": "adicciones",
+		"titulo": "JORNADAS DE ADICCIONES",
+		"cuerpo": "<p>Las <b>Jornadas en Adicciones<\/b> buscan generar espacios de Sensibilización y Capacitación sobre la Problemática de Adicciones en el Mundo Laboral.<p>",
+		"activo": true
+	},
+	{
+		"id": 194,
+		"tipo": "adicciones",
+		"titulo": "ESCRIBI TU CONSULTA",
+		"cuerpo": "<p>Hace click en el boton y envia por mail tu consulta<\/p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='ADICCIONES' accion='adicciones' parametro=''><\/c-boton>",
+		"activo": true
+	},
 	{
 		"id": 195,
 		"tipo": "hogar",
 		"titulo": "¿QUIENES SOMOS?",
-		"cuerpo": "<p>A fines de 1998 preocupados por la situación de exclusión y fragmentación social que atraviesa un número considerable de niñas/os y adolescentes menores de dieciocho años que viven en situación de calle, la Red Social UOCRA crea un proyecto institucional destinado a la creación de una fundación dirigida a la prevención, información, promoción y atención integral de las necesidades de la niñez y adolescencia que vive en las condiciones señaladas.</p><p>En este contexto se concibe la creación de un hogar convivencial para la atención integral de las necesidades básicas insatisfechas de esos niños.</p><p>El 2 de diciembre de 1999 se constituye formalmente la <b>Fundación Construir Futuro</b> y a los pocos meses, el 4 de abril de 2000, se cristaliza el proyecto de creación de hogar convivencial con la inauguración del <b>Hogar Peldaños</b>.</p>",
+		"cuerpo": "<p>A fines de 1998 preocupados por la situación de exclusión y fragmentación social que atraviesa un número considerable de niñas\/os y adolescentes menores de dieciocho años que viven en situación de calle, la Red Social UOCRA crea un proyecto institucional destinado a la creación de una fundación dirigida a la prevención, información, promoción y atención integral de las necesidades de la niñez y adolescencia que vive en las condiciones señaladas.<\/p><p>En este contexto se concibe la creación de un hogar convivencial para la atención integral de las necesidades básicas insatisfechas de esos niños.<\/p><p>El 2 de diciembre de 1999 se constituye formalmente la <b>Fundación Construir Futuro<\/b> y a los pocos meses, el 4 de abril de 2000, se cristaliza el proyecto de creación de hogar convivencial con la inauguración del <b>Hogar Peldaños<\/b>.<\/p>",
 		"activo": true
 	},
 	{
 		"id": 196,
 		"tipo": "hogar",
 		"titulo": "NUESTRA MISIÓN",
-		"cuerpo": "<p>Consiste en un Hogar para Niños/as y Adolescentes donde se garantiza albergue, alimentación, vestimenta, atención de la salud; asegurando la educación primaria, secundaria u otras modalidades de capacitación, recreación y esparcimiento, de acuerdo con las características del niño, niña y/o adolescente, implementando estrategias de fortalecimiento de los vínculos familiares y comunitarios, con el objetivo de propender a un egreso en las mejores condiciones posibles o de auto valimiento.</p><p>La población objetivo del Hogar Peldaños es de niños, niñas y adolescentes de ambos sexos que hayan sido víctimas de maltrato, como cualquier daño físico o psicológico no accidental, ocasionado por sus padres y/ o responsables de su cuidado, que ha ocurrido como resultado de acciones físicas, sexuales o emocionales de omisión o comisión.</p>",
+		"cuerpo": "<p>Consiste en un Hogar para Niños\/as y Adolescentes donde se garantiza albergue, alimentación, vestimenta, atención de la salud; asegurando la educación primaria, secundaria u otras modalidades de capacitación, recreación y esparcimiento, de acuerdo con las características del niño, niña y\/o adolescente, implementando estrategias de fortalecimiento de los vínculos familiares y comunitarios, con el objetivo de propender a un egreso en las mejores condiciones posibles o de auto valimiento.<\/p><p>La población objetivo del Hogar Peldaños es de niños, niñas y adolescentes de ambos sexos que hayan sido víctimas de maltrato, como cualquier daño físico o psicológico no accidental, ocasionado por sus padres y\/ o responsables de su cuidado, que ha ocurrido como resultado de acciones físicas, sexuales o emocionales de omisión o comisión.<\/p>",
 		"activo": true
 	},
-	{ "id": 197, "tipo": "hogar", "titulo": "UBICACIÓN Y CONTACTO", "cuerpo": "<p>Hogar Peldaños - Pringles 30/34, CABA</p><p>Teléfono al 4981-9483</p>", "activo": true },
+	{
+		"id": 197,
+		"tipo": "hogar",
+		"titulo": "UBICACIÓN Y CONTACTO",
+		"cuerpo": "<p>Hogar Peldaños - Pringles 30\/34, CABA<\/p><p>Teléfono al 4981-9483<\/p>",
+		"activo": true
+	},
 	{
 		"id": 198,
 		"tipo": "mujeres",
 		"titulo": "¿QUIENES SOMOS?",
-		"cuerpo": "<p><b>UOCRA Mujeres</b> es un espacio que asiste a trabajadoras constructoras, delegadas y trabajadoras de la Red Social UOCRA en la defensa de sus derechos laborales y su formación profesional.</p><p>Integrado por profesionales de diferentes áreas, el equipo de UOCRA Mujeres trabaja en la incorporación de la mujer trabajadora a la industria de la construcción a través de diversas acciones:</p></p><p><li>Desarrollo de programas de formación y capacitación sindical.</li><li>Creciente incorporación de cláusulas de negociación colectivas con perspectiva de género.</li><li>Elaboración de protocolos contra la violencia y el acoso.</li><li>Inclusión especifica de contenidos de salud y seguridad en el trabajo.</li></p><p>UOCRA Mujeres reivindica su compromiso en la lucha contra la violencia y el acoso en el mundo del trabajo, y  promueve la creación de espacios de trabajo seguros, inclusivos y libres de violencia.</p>",
+		"cuerpo": "<p><b>UOCRA Mujeres<\/b> es un espacio que asiste a trabajadoras constructoras, delegadas y trabajadoras de la Red Social UOCRA en la defensa de sus derechos laborales y su formación profesional.<\/p><p>Integrado por profesionales de diferentes áreas, el equipo de UOCRA Mujeres trabaja en la incorporación de la mujer trabajadora a la industria de la construcción a través de diversas acciones:<\/p><\/p><p><li>Desarrollo de programas de formación y capacitación sindical.<\/li><li>Creciente incorporación de cláusulas de negociación colectivas con perspectiva de género.<\/li><li>Elaboración de protocolos contra la violencia y el acoso.<\/li><li>Inclusión especifica de contenidos de salud y seguridad en el trabajo.<\/li><\/p><p>UOCRA Mujeres reivindica su compromiso en la lucha contra la violencia y el acoso en el mundo del trabajo, y  promueve la creación de espacios de trabajo seguros, inclusivos y libres de violencia.<\/p>",
 		"activo": true
 	},
 	{
 		"id": 199,
 		"tipo": "mujeres",
 		"titulo": "VOS PODÉS AYUDAR",
-		"cuerpo": "<p>Línea 144: Podés comunicarte de manera gratuita las 24 hs., los 365 días, a través de un llamado al 144, por WhatsApp al 1127716463, por mail a linea144@mingeneros.gob.ar y descargando la app.\r</p><p>Línea 102: Es un servicio gratuito y confidencial, de atención especializada sobre los derechos de niñas, niños y adolescentes. Podés llamar ante una situación de amenaza o vulneración de derechos o si necesitás asesoramiento.</p><p>Línea 137: Violencia familiar y sexual\r\nAnte una emergencia, llamá a la línea gratuita 137 o enviá un Whatsapp al 11-3133-1000 desde cualquier lugar del país.</p><p>Línea 911 Emergencias</p>",
+		"cuerpo": "<p>Línea 144: Podés comunicarte de manera gratuita las 24 hs., los 365 días, a través de un llamado al 144, por WhatsApp al 1127716463, por mail a linea144@mingeneros.gob.ar y descargando la app.\r<\/p><p>Línea 102: Es un servicio gratuito y confidencial, de atención especializada sobre los derechos de niñas, niños y adolescentes. Podés llamar ante una situación de amenaza o vulneración de derechos o si necesitás asesoramiento.<\/p><p>Línea 137: Violencia familiar y sexual\r\nAnte una emergencia, llamá a la línea gratuita 137 o enviá un Whatsapp al 11-3133-1000 desde cualquier lugar del país.<\/p><p>Línea 911 Emergencias<\/p>",
 		"activo": true
 	},
-	{ "id": 200, "tipo": "mujeres", "titulo": "LÍNEAS DE CONTENCIÓN ", "cuerpo": "<p>Construir Salud 0800 – 222- 0123</p>", "activo": true },
-	{ "id": 201, "tipo": "mujeres", "titulo": "ESCRIBI TU CONSULTA", "cuerpo": "<p>Hace click en el boton y envia por mail tu consulta</p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='MUJERES' accion='mujeres' parametro=''></c-boton>", "activo": true },
+	{
+		"id": 200,
+		"tipo": "mujeres",
+		"titulo": "LÍNEAS DE CONTENCIÓN ",
+		"cuerpo": "<p>Construir Salud 0800 – 222- 0123<\/p>",
+		"activo": true
+	},
+	{
+		"id": 201,
+		"tipo": "mujeres",
+		"titulo": "ESCRIBI TU CONSULTA",
+		"cuerpo": "<p>Hace click en el boton y envia por mail tu consulta<\/p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='MUJERES' accion='mujeres' parametro=''><\/c-boton>",
+		"activo": true
+	},
 	{
 		"id": 202,
 		"tipo": "deportes",
 		"titulo": "INSTALACIONES Y SERVICIOS",
-		"cuerpo": "<p>El <b>Campo de Deportes UOCRA</b> es un complejo deportivo ubicado en Ruta de la Tradición (ex Camino de Cintura) 6251, que ofrece un espacio de esparcimiento y divertimento al aire libre en familia o con amigos.<LI>Espacios con Mesas y Sombrillas</LI></p><p><LI>Dos canchas de Fútbol 11</LI></p><p><LI>Vestuarios con Duchas y Guardarropas</LI></p><p><LI>Confitería</LI></p><p><LI>Estacionamiento para 300 vehículos</LI></p>",
+		"cuerpo": "<p>El <b>Campo de Deportes UOCRA<\/b> es un complejo deportivo ubicado en Ruta de la Tradición (ex Camino de Cintura) 6251, que ofrece un espacio de esparcimiento y divertimento al aire libre en familia o con amigos.<LI>Espacios con Mesas y Sombrillas<\/LI><\/p><p><LI>Dos canchas de Fútbol 11<\/LI><\/p><p><LI>Vestuarios con Duchas y Guardarropas<\/LI><\/p><p><LI>Confitería<\/LI><\/p><p><LI>Estacionamiento para 300 vehículos<\/LI><\/p>",
 		"activo": true
 	},
-	{ "id": 203, "tipo": "deportes", "titulo": "REQUISITOS Y DOCUMENTACIÓN", "cuerpo": "<p>Pueden acceder de manera gratuita afiliados al sindicato y su grupo familiar, empleados de UOCRA y OSPECON. En todos los casos deberán presentar recibo de sueldo (con aporte sindical para afiliados) y DNI.</p><p>*Disponibilidad sujeta a las disposiciones oficiales de circulación vinculadas a la pandemia de Covid19.</p>", "activo": true },
-	{ "id": 204, "tipo": "deportes", "titulo": "ESCRIBI TU CONSULTA", "cuerpo": "<p>Hace click en el boton y envia por mail tu consulta</p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='DEPORTE' accion='deportes' parametro=''></c-boton>", "activo": true },
-	{ "id": 205, "tipo": "turismo", "titulo": "REQUISITOS Y DOCUMENTACIÓN", "cuerpo": "<p><li>Ser Afiliado a UOCRA.</li><li>Ultimo recibo de Sueldo con aporte sindical.</li><li>D.N.I. de todas personas que viajen.</li><li>Acta de matrimonio o declaración jurada de Convivencia.</li><li>Certificado de nacimiento de los hijos.</li></p>", "activo": true },
-	{ "id": 206, "tipo": "turismo", "titulo": "ESCRIBI TU CONSULTA", "cuerpo": "<p>Hace click en el boton y envia por mail tu consulta</p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='TURISMO' accion='turismo' parametro=''></c-boton>", "activo": true },
-	{ "id": 207, "tipo": "fundacion", "titulo": "¿QUÉ ES FUNDACIÓN UOCRA?", "cuerpo": "<p>Creada hace más de 20 años, <b>la Fundación UOCRA</b> desarrolla y gestiona diversas acciones que dan respuesta a demandas de las trabajadoras, los trabajadores y la sociedad en general, brindando una educación de excelencia, actualizada e integral, que permite la inclusión social, laboral y educativa.</p>", "activo": true },
+	{
+		"id": 203,
+		"tipo": "deportes",
+		"titulo": "REQUISITOS Y DOCUMENTACIÓN",
+		"cuerpo": "<p>Pueden acceder de manera gratuita afiliados al sindicato y su grupo familiar, empleados de UOCRA y OSPECON. En todos los casos deberán presentar recibo de sueldo (con aporte sindical para afiliados) y DNI.<\\\/p><p>Afiliado\/a UOCRA e integrantes del grupo familiar menores de 18 años: gratis en temporada y el resto del año El\/la afiliado\/a debe presentar recibo de los últimos dos meses, con descuento de cuota sindical<\/p><p>Integrante del grupo familiar del afiliado\/a mayor de 18 años paga un arancel mínimo en temporada y el resto del año. *El\/la afiliado\/a debe presentar recibo de los últimos dos meses, con descuento de cuota sindical<\/p><p>Invitados - Pagan arancel en temporada y el resto del año<\/p><p>El estacionamiento es exclusivo y gratuito para afiliados\/as de UOCRA<\/p><p>*Disponibilidad sujeta a las disposiciones oficiales de circulación vinculadas a la pandemia de Covid19.<\\\/p>",
+		"activo": true
+	},
+	{
+		"id": 204,
+		"tipo": "deportes",
+		"titulo": "ESCRIBI TU CONSULTA",
+		"cuerpo": "<p>Hace click en el boton y envia por mail tu consulta<\/p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='DEPORTE' accion='deportes' parametro=''><\/c-boton>",
+		"activo": true
+	},
+	{
+		"id": 205,
+		"tipo": "turismo",
+		"titulo": "REQUISITOS Y DOCUMENTACIÓN",
+		"cuerpo": "<p><li>Ser Afiliado a UOCRA.<\/li><li>Ultimo recibo de Sueldo con aporte sindical.<\/li><li>D.N.I. de todas personas que viajen.<\/li><li>Acta de matrimonio o declaración jurada de Convivencia.<\/li><li>Certificado de nacimiento de los hijos.<\/li><\/p>",
+		"activo": true
+	},
+	{
+		"id": 206,
+		"tipo": "turismo",
+		"titulo": "ESCRIBI TU CONSULTA",
+		"cuerpo": "<p>Hace click en el boton y envia por mail tu consulta<\/p><c-boton style='justify-self:center;' texto='ENVIAR MAIL' svg='TURISMO' accion='turismo' parametro=''><\/c-boton>",
+		"activo": true
+	},
+	{
+		"id": 207,
+		"tipo": "fundacion",
+		"titulo": "¿QUÉ ES FUNDACIÓN UOCRA?",
+		"cuerpo": "<p>Creada hace más de 20 años, <b>la Fundación UOCRA<\/b> desarrolla y gestiona diversas acciones que dan respuesta a demandas de las trabajadoras, los trabajadores y la sociedad en general, brindando una educación de excelencia, actualizada e integral, que permite la inclusión social, laboral y educativa.<\/p>",
+		"activo": true
+	},
 	{
 		"id": 208,
 		"tipo": "fundacion",
 		"titulo": "LA FUNDACIÓN EN NÚMEROS",
-		"cuerpo": "<p>En los últimos años se consolidó como una institución que, además de gestionar proyectos y programas educativos, impulsa iniciativas para que sean discutidas en las agendas públicas que atienden problemáticas inherentes a la tríada educación, trabajo y desarrollo productivo.</p><p>El trabajo de la Fundadión se ve reflejado en las siguientes cifras:</p><p><li>542.570 trabajadores formados a través de la Red de Instituciones y cursos desarrollados en 415 municipios.</li></p><p><li>30 Centros de Formación Profesional</li></p><p><li>43 Servicios Educativos</li></p><p><li>2 Institutos Superiores de Enseñanza</li></p><p><li>1 Centro de Formación, Investigación y Promoción de Energías Renovables (CEFIPER).</li></p><p><li>2 Unidades móviles para la formación en Salud y Seguridad</li></p><p><li>1 Unidad móvil equipada con simuladores para la formación en manejo de máquinas viales.</li></p><p><li>3 Unidades móviles para la formación en Salud, Seguridad y Ambiente 1 Unidad móvil de asistencia técnica de Formación para el Trabajo 380 mil asistentes a espectáculos de UOCRA Cultura</li></p><p><li>80 Libros editados.</li></p><p><li>20 investigaciones sociolaborales realizadas y 7 en curso.</li></p></p>",
+		"cuerpo": "<p>En los últimos años se consolidó como una institución que, además de gestionar proyectos y programas educativos, impulsa iniciativas para que sean discutidas en las agendas públicas que atienden problemáticas inherentes a la tríada educación, trabajo y desarrollo productivo.<\/p><p>El trabajo de la Fundadión se ve reflejado en las siguientes cifras:<\/p><p><li>542.570 trabajadores formados a través de la Red de Instituciones y cursos desarrollados en 415 municipios.<\/li><\/p><p><li>30 Centros de Formación Profesional<\/li><\/p><p><li>43 Servicios Educativos<\/li><\/p><p><li>2 Institutos Superiores de Enseñanza<\/li><\/p><p><li>1 Centro de Formación, Investigación y Promoción de Energías Renovables (CEFIPER).<\/li><\/p><p><li>2 Unidades móviles para la formación en Salud y Seguridad<\/li><\/p><p><li>1 Unidad móvil equipada con simuladores para la formación en manejo de máquinas viales.<\/li><\/p><p><li>3 Unidades móviles para la formación en Salud, Seguridad y Ambiente 1 Unidad móvil de asistencia técnica de Formación para el Trabajo 380 mil asistentes a espectáculos de UOCRA Cultura<\/li><\/p><p><li>80 Libros editados.<\/li><\/p><p><li>20 investigaciones sociolaborales realizadas y 7 en curso.<\/li><\/p><\/p>",
 		"activo": true
 	},
 	{
 		"id": 209,
 		"tipo": "fundacion",
 		"titulo": "RED EDUCACIÓN Y TRABAJO",
-		"cuerpo": "<p>La Red de Instituciones de Educación-Trabajo coordina las acciones que llevan adelante 43 servicios educativos a través de 30 instituciones. La oferta educativa abarca tres niveles de formación.</p><p><li><b>Formación Profesional</b></li></p><p>Articula los mundos de la educación y del trabajo. Los Centros de Formación Profesional - CFP ofrecen formación en ocupaciones vinculadas a las demandas del sector productivo de la Industria de la Construcción.</p><p><li><b>Educación para Adultos</b></li></p><p>Tres proyectos pedagógicos que desarrollan la articulación cruzada entre Formación Profesional y formación general: UOCRA Alfabetiza, Formación Profesional con Terminalidad Secundaria y Terminalidad Primaria con Formación Profesional.</p><p><li><b>Educación Superior</b></li></p><p>Esta oferta educativa comprende el nivel terciario. El Instituto UOCRA, ubicado en la Ciudad de Buenos Aires, ofrece la Tecnicatura Superior en Higiene y Seguridad en el Trabajo y la Tecnicatura Superior en Enfermería. El Instituto Superior de Formación Técnica UOCRA “Islas Malvinas”, sito en Corrientes, dicta la Tecnicatura Superior en Higiene y Seguridad en el Trabajo.</p>",
+		"cuerpo": "<p>La Red de Instituciones de Educación-Trabajo coordina las acciones que llevan adelante 43 servicios educativos a través de 30 instituciones. La oferta educativa abarca tres niveles de formación.<\/p><p><li><b>Formación Profesional<\/b><\/li><\/p><p>Articula los mundos de la educación y del trabajo. Los Centros de Formación Profesional - CFP ofrecen formación en ocupaciones vinculadas a las demandas del sector productivo de la Industria de la Construcción.<\/p><p><li><b>Educación para Adultos<\/b><\/li><\/p><p>Tres proyectos pedagógicos que desarrollan la articulación cruzada entre Formación Profesional y formación general: UOCRA Alfabetiza, Formación Profesional con Terminalidad Secundaria y Terminalidad Primaria con Formación Profesional.<\/p><p><li><b>Educación Superior<\/b><\/li><\/p><p>Esta oferta educativa comprende el nivel terciario. El Instituto UOCRA, ubicado en la Ciudad de Buenos Aires, ofrece la Tecnicatura Superior en Higiene y Seguridad en el Trabajo y la Tecnicatura Superior en Enfermería. El Instituto Superior de Formación Técnica UOCRA “Islas Malvinas”, sito en Corrientes, dicta la Tecnicatura Superior en Higiene y Seguridad en el Trabajo.<\/p>",
+		"activo": true
+	},
+	{
+		"id": 210,
+		"tipo": "sindicato",
+		"titulo": "TABLAS SALARIALES",
+		"cuerpo": "<p>Consulta las Tablas Salariales, presionando el boton<\/p><c-boton style='justify-self:center;' texto='TABLAS' svg='MASUOCRA' accion='tablasSalariales' parametro=''><\/c-boton>",
 		"activo": true
 	}
 ]

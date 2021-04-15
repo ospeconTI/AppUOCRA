@@ -1,272 +1,2522 @@
 [
 	{
-		"id": 0,
-		"dia": 0,
-		"hora": "01:00",
-		"nombre": "Desafios 4.0 domingo",
-		"episodio": "01 - Novedades",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-1.gif",
-		"activo": true
-	},
-	{
-		"id": 1,
-		"dia": 0,
-		"hora": "02:00",
-		"nombre": "Desafios 4.0 domingo",
-		"episodio": "02 - Actualidad",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-2.gif",
-		"activo": true
-	},
-	{
 		"id": 2,
-		"dia": 0,
-		"hora": "03:00",
-		"nombre": "Desafios 4.0 domingo",
-		"episodio": "03 - Energia Renovable",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-3.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "00:00",
+		"nombre": "Vecinas en Clase",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/VecinasEnClase_slide.jpg",
+		"link": "https://www.construirtv.com/programa/vecinas-en-clase/",
+		"activo": 1
 	},
 	{
 		"id": 3,
-		"dia": 0,
-		"hora": "04:00",
-		"nombre": "Desafios 4.0 domingo",
-		"episodio": "04 - Novedades",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-1.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "00:30",
+		"nombre": "Productora de Tutoriales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/ProductoraTutoriales-1.jpg",
+		"link": "https://www.construirtv.com/programa/productora-de-tutoriales/",
+		"activo": 1
 	},
 	{
 		"id": 4,
-		"dia": 0,
-		"hora": "05:00",
-		"nombre": "Desafios 4.0 domingo",
-		"episodio": "05 - Actualidad",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-2.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "01:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "04. Fundación Equidad",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
 	},
 	{
 		"id": 5,
-		"dia": 0,
-		"hora": "06:00",
-		"nombre": "Desafios 4.0 domingo",
-		"episodio": "06 - Energia Renovable",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-3.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "01:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "05. Fundación Pupi",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
 	},
 	{
 		"id": 6,
 		"dia": 1,
-		"hora": "01:00",
-		"nombre": "Desafios 4.0 Lunes",
-		"episodio": "01 - Novedades",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-1.gif",
-		"activo": true
+		"hora": "02:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "06. Payamédicos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
 	},
 	{
 		"id": 7,
 		"dia": 1,
-		"hora": "02:00",
-		"nombre": "Desafios 4.0 Lunes",
-		"episodio": "02 - Actualidad",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-2.gif",
-		"activo": true
+		"hora": "02:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
 	},
 	{
 		"id": 8,
 		"dia": 1,
-		"hora": "03:00",
-		"nombre": "Desafios 4.0 Lunes",
-		"episodio": "03 - Energia Renovable",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-3.gif",
-		"activo": true
+		"hora": "03:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
 	},
 	{
 		"id": 9,
-		"dia": 2,
-		"hora": "01:00",
-		"nombre": "Desafios 4.0 Martes",
-		"episodio": "01 - Novedades",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-1.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "04:00",
+		"nombre": "#YoEmprendedor",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/YoEmprendedor.jpg",
+		"link": "https://www.construirtv.com/programa/yo-emprendedor/",
+		"activo": 1
 	},
 	{
 		"id": 10,
-		"dia": 2,
-		"hora": "02:00",
-		"nombre": "Desafios 4.0 Martes",
-		"episodio": "02 - Actualidad",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-2.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "04:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
 	},
 	{
 		"id": 11,
-		"dia": 2,
-		"hora": "03:00",
-		"nombre": "Desafios 4.0 Martes",
-		"episodio": "03 - Energia Renovable",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-3.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "06:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
 	},
 	{
 		"id": 12,
-		"dia": 3,
-		"hora": "01:00",
-		"nombre": "Desafios 4.0 Miercoles",
-		"episodio": "01 - Novedades",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-1.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "06:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
 	},
 	{
 		"id": 13,
-		"dia": 3,
-		"hora": "02:00",
-		"nombre": "Desafios 4.0 Miercoles",
-		"episodio": "02 - Actualidad",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-2.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "07:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
 	},
 	{
 		"id": 14,
-		"dia": 3,
-		"hora": "03:00",
-		"nombre": "Desafios 4.0 Miercoles",
-		"episodio": "03 - Energia Renovable",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-3.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "09:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "07. Haciendo Caminos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
 	},
 	{
 		"id": 15,
-		"dia": 3,
-		"hora": "04:00",
-		"nombre": "Desafios 4.0 Miercoles",
-		"episodio": "04 - Novedades",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-1.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "09:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "08. Creer Vale La Pena",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
 	},
 	{
 		"id": 16,
-		"dia": 3,
-		"hora": "05:00",
-		"nombre": "Desafios 4.0 Miercoles",
-		"episodio": "05 - Actualidad",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-2.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "10:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "09. Campito El Refugio",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
 	},
 	{
 		"id": 17,
-		"dia": 3,
-		"hora": "06:00",
-		"nombre": "Desafios 4.0 Miercoles",
-		"episodio": "06 - Energia Renovable",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-3.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "10:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
 	},
 	{
 		"id": 18,
-		"dia": 4,
-		"hora": "01:00",
-		"nombre": "Desafios 4.0 Jueves",
-		"episodio": "01 - Novedades",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-1.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "11:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
 	},
 	{
 		"id": 19,
-		"dia": 4,
-		"hora": "02:00",
-		"nombre": "Desafios 4.0 Jueves",
-		"episodio": "02 - Actualidad",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-2.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "12:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
 	},
 	{
 		"id": 20,
-		"dia": 4,
-		"hora": "03:00",
-		"nombre": "Desafios 4.0 Jueves",
-		"episodio": "03 - Energia Renovable",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-3.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "13:30",
+		"nombre": "Mujeres en la Ciencia",
+		"episodio": "07. María Laura Matos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Mujeres-en-la-Ciencia.jpg",
+		"link": "https://www.construirtv.com/programa/mujeres-en-la-ciencia/",
+		"activo": 1
 	},
 	{
 		"id": 21,
-		"dia": 5,
-		"hora": "01:00",
-		"nombre": "Desafios 4.0 Viernes",
-		"episodio": "01 - Novedades",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-1.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "14:00",
+		"nombre": "Catadores",
+		"episodio": "02. Té",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/catadores.jpg",
+		"link": "https://www.construirtv.com/programa/catadores/",
+		"activo": 1
 	},
 	{
 		"id": 22,
-		"dia": 5,
-		"hora": "02:00",
-		"nombre": "Desafios 4.0 Viernes",
-		"episodio": "02 - Actualidad",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-2.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "14:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
 	},
 	{
 		"id": 23,
-		"dia": 5,
-		"hora": "03:00",
-		"nombre": "Desafios 4.0 Viernes",
-		"episodio": "03 - Energia Renovable",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-3.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "15:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
 	},
 	{
 		"id": 24,
-		"dia": 6,
-		"hora": "01:00",
-		"nombre": "Desafios 4.0 Sabado",
-		"episodio": "01 - Novedades",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-1.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "17:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "07. Haciendo Caminos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
 	},
 	{
 		"id": 25,
-		"dia": 6,
-		"hora": "02:00",
-		"nombre": "Desafios 4.0 Sabado",
-		"episodio": "02 - Actualidad",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-2.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "17:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "08. Creer Vale La Pena",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
 	},
 	{
 		"id": 26,
-		"dia": 6,
-		"hora": "03:00",
-		"nombre": "Desafios 4.0 Sabado",
-		"episodio": "03 - Energia Renovable",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-3.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "18:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "09. Campito El Refugio",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
 	},
 	{
 		"id": 27,
-		"dia": 6,
-		"hora": "04:00",
-		"nombre": "Desafios 4.0 Sabado",
-		"episodio": "04 - Novedades",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-1.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "18:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
 	},
 	{
 		"id": 28,
-		"dia": 6,
-		"hora": "05:00",
-		"nombre": "Desafios 4.0 Sabado",
-		"episodio": "05 - Actualidad",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-2.gif",
-		"activo": true
+		"dia": 1,
+		"hora": "19:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
 	},
 	{
 		"id": 29,
+		"dia": 1,
+		"hora": "20:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 30,
+		"dia": 1,
+		"hora": "21:00",
+		"nombre": "Mujeres en la Ciencia",
+		"episodio": "07. María Laura Matos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Mujeres-en-la-Ciencia.jpg",
+		"link": "https://www.construirtv.com/programa/mujeres-en-la-ciencia/",
+		"activo": 1
+	},
+	{
+		"id": 31,
+		"dia": 1,
+		"hora": "21:30",
+		"nombre": "Chacareras",
+		"episodio": "02. Té",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Chacareras-1.jpg",
+		"link": "https://www.construirtv.com/programa/chacareras/",
+		"activo": 1
+	},
+	{
+		"id": 32,
+		"dia": 1,
+		"hora": "22:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 33,
+		"dia": 1,
+		"hora": "22:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 34,
+		"dia": 1,
+		"hora": "23:30",
+		"nombre": "Construir TV Magazine",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConstruirTV-Magazine.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-magazine/",
+		"activo": 1
+	},
+	{
+		"id": 35,
+		"dia": 2,
+		"hora": "01:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "07. Haciendo Caminos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 36,
+		"dia": 2,
+		"hora": "01:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "08. Creer Vale La Pena",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 37,
+		"dia": 2,
+		"hora": "02:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "09. Campito El Refugio",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 38,
+		"dia": 2,
+		"hora": "02:30",
+		"nombre": "",
+		"episodio": "",
+		"imagen": "<",
+		"link": "",
+		"activo": 1
+	},
+	{
+		"id": 39,
+		"dia": 2,
+		"hora": "03:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 40,
+		"dia": 2,
+		"hora": "04:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 41,
+		"dia": 2,
+		"hora": "05:00",
+		"nombre": "Mujeres en la Ciencia",
+		"episodio": "07. María Laura Matos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Mujeres-en-la-Ciencia.jpg",
+		"link": "https://www.construirtv.com/programa/mujeres-en-la-ciencia/",
+		"activo": 1
+	},
+	{
+		"id": 42,
+		"dia": 2,
+		"hora": "05:30",
+		"nombre": "Catadores",
+		"episodio": "02. Té",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/catadores.jpg",
+		"link": "https://www.construirtv.com/programa/catadores/",
+		"activo": 1
+	},
+	{
+		"id": 43,
+		"dia": 2,
+		"hora": "06:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 44,
+		"dia": 2,
+		"hora": "06:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 45,
+		"dia": 2,
+		"hora": "07:30",
+		"nombre": "Con + Info",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 46,
+		"dia": 2,
+		"hora": "08:00",
+		"nombre": "Mujeres en la Ciencia",
+		"episodio": "07. María Laura Matos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Mujeres-en-la-Ciencia.jpg",
+		"link": "https://www.construirtv.com/programa/mujeres-en-la-ciencia/",
+		"activo": 1
+	},
+	{
+		"id": 47,
+		"dia": 2,
+		"hora": "08:30",
+		"nombre": "Catadores",
+		"episodio": "02. Té",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/catadores.jpg",
+		"link": "https://www.construirtv.com/programa/catadores/",
+		"activo": 1
+	},
+	{
+		"id": 48,
+		"dia": 2,
+		"hora": "09:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "10. Huerta Niño",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 49,
+		"dia": 2,
+		"hora": "09:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "11. Fundación Al Reparo",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 50,
+		"dia": 2,
+		"hora": "10:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "12. FARN",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 51,
+		"dia": 2,
+		"hora": "10:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 52,
+		"dia": 2,
+		"hora": "11:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 53,
+		"dia": 2,
+		"hora": "12:00",
+		"nombre": "Futuro Posible",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Futuro-Posible.jpg",
+		"link": "https://www.construirtv.com/programa/futuro-posible/",
+		"activo": 1
+	},
+	{
+		"id": 54,
+		"dia": 2,
+		"hora": "12:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 55,
+		"dia": 2,
+		"hora": "13:00",
+		"nombre": "Sobre Hombros de Gigantes",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/04/SobreHombros.jpg",
+		"link": "https://www.construirtv.com/programa/sobre-hombros-de-gigantes/",
+		"activo": 1
+	},
+	{
+		"id": 56,
+		"dia": 2,
+		"hora": "13:30",
+		"nombre": "Autosustentables",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/01/web-ctv-autosustentable4.jpg",
+		"link": "https://www.construirtv.com/programa/autosustentables/",
+		"activo": 1
+	},
+	{
+		"id": 57,
+		"dia": 2,
+		"hora": "14:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 58,
+		"dia": 2,
+		"hora": "15:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 59,
+		"dia": 2,
+		"hora": "16:00",
+		"nombre": "Mujeres en la Ciencia",
+		"episodio": "07. María Laura Matos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Mujeres-en-la-Ciencia.jpg",
+		"link": "https://www.construirtv.com/programa/mujeres-en-la-ciencia/",
+		"activo": 1
+	},
+	{
+		"id": 60,
+		"dia": 2,
+		"hora": "16:30",
+		"nombre": "Catadores",
+		"episodio": "02. Té",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/catadores.jpg",
+		"link": "https://www.construirtv.com/programa/catadores/",
+		"activo": 1
+	},
+	{
+		"id": 61,
+		"dia": 2,
+		"hora": "17:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "10. Huerta Niño",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 62,
+		"dia": 2,
+		"hora": "17:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "11. Fundación Al Reparo",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 63,
+		"dia": 2,
+		"hora": "18:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "12. FARN",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 64,
+		"dia": 2,
+		"hora": "18:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 65,
+		"dia": 2,
+		"hora": "19:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 66,
+		"dia": 2,
+		"hora": "20:00",
+		"nombre": "Futuro Posible",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Futuro-Posible.jpg",
+		"link": "https://www.construirtv.com/programa/futuro-posible/",
+		"activo": 1
+	},
+	{
+		"id": 67,
+		"dia": 2,
+		"hora": "20:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 68,
+		"dia": 2,
+		"hora": "21:30",
+		"nombre": "Autosustentables",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/01/web-ctv-autosustentable4.jpg",
+		"link": "https://www.construirtv.com/programa/autosustentables/",
+		"activo": 1
+	},
+	{
+		"id": 69,
+		"dia": 2,
+		"hora": "22:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 70,
+		"dia": 2,
+		"hora": "22:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 71,
+		"dia": 2,
+		"hora": "23:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 72,
+		"dia": 3,
+		"hora": "00:00",
+		"nombre": "Mujeres en la Ciencia",
+		"episodio": "07. María Laura Matos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Mujeres-en-la-Ciencia.jpg",
+		"link": "https://www.construirtv.com/programa/mujeres-en-la-ciencia/",
+		"activo": 1
+	},
+	{
+		"id": 73,
+		"dia": 3,
+		"hora": "00:30",
+		"nombre": "Catadores",
+		"episodio": "02. Té",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/catadores.jpg",
+		"link": "https://www.construirtv.com/programa/catadores/",
+		"activo": 1
+	},
+	{
+		"id": 74,
+		"dia": 3,
+		"hora": "01:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "10. Huerta Niño",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 75,
+		"dia": 3,
+		"hora": "01:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "11. Fundación Al Reparo",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 76,
+		"dia": 3,
+		"hora": "02:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "12. FARN",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 77,
+		"dia": 3,
+		"hora": "02:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 78,
+		"dia": 3,
+		"hora": "03:30",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 79,
+		"dia": 3,
+		"hora": "04:00",
+		"nombre": "Futuro Posible",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Futuro-Posible.jpg",
+		"link": "https://www.construirtv.com/programa/futuro-posible/",
+		"activo": 1
+	},
+	{
+		"id": 80,
+		"dia": 3,
+		"hora": "04:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 81,
+		"dia": 3,
+		"hora": "05:00",
+		"nombre": "Sobre Hombros de Gigantes",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/04/SobreHombros.jpg",
+		"link": "https://www.construirtv.com/programa/sobre-hombros-de-gigantes/",
+		"activo": 1
+	},
+	{
+		"id": 82,
+		"dia": 3,
+		"hora": "06:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 83,
+		"dia": 3,
+		"hora": "06:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 84,
+		"dia": 3,
+		"hora": "07:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 85,
+		"dia": 3,
+		"hora": "08:00",
+		"nombre": "Sobre Hombros de Gigantes",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/04/SobreHombros.jpg",
+		"link": "https://www.construirtv.com/programa/sobre-hombros-de-gigantes/",
+		"activo": 1
+	},
+	{
+		"id": 86,
+		"dia": 3,
+		"hora": "08:30",
+		"nombre": "Autosustentables",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/01/web-ctv-autosustentable4.jpg",
+		"link": "https://www.construirtv.com/programa/autosustentables/",
+		"activo": 1
+	},
+	{
+		"id": 87,
+		"dia": 3,
+		"hora": "09:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "13. Plan de Calificación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 88,
+		"dia": 3,
+		"hora": "10:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "02. Grupo Puentes",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 89,
+		"dia": 3,
+		"hora": "10:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 90,
+		"dia": 3,
+		"hora": "11:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 91,
+		"dia": 3,
+		"hora": "12:00",
+		"nombre": "Demoliciones",
+		"episodio": "02. La Plata",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Demoliciones.jpg",
+		"link": "https://www.construirtv.com/programa/demoliciones/",
+		"activo": 1
+	},
+	{
+		"id": 92,
+		"dia": 3,
+		"hora": "12:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 93,
+		"dia": 3,
+		"hora": "13:00",
+		"nombre": "Oficios del fin del mundo",
+		"episodio": "11. Escuela de Aviación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2017/04/Oficios-de-Fin-Del-Mundo-II-1.jpg",
+		"link": "https://www.construirtv.com/programa/oficios-del-fin-del-mundo/",
+		"activo": 1
+	},
+	{
+		"id": 94,
+		"dia": 3,
+		"hora": "13:30",
+		"nombre": "El Futuro Ya Llegó",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/01/El-Futuro-Ya-Llego.jpg",
+		"link": "https://www.construirtv.com/programa/el-futuro-ya-llego/",
+		"activo": 1
+	},
+	{
+		"id": 95,
+		"dia": 3,
+		"hora": "14:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 96,
+		"dia": 3,
+		"hora": "14:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 97,
+		"dia": 3,
+		"hora": "15:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 98,
+		"dia": 3,
+		"hora": "16:00",
+		"nombre": "Sobre Hombros de Gigantes",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/04/SobreHombros.jpg",
+		"link": "https://www.construirtv.com/programa/sobre-hombros-de-gigantes/",
+		"activo": 1
+	},
+	{
+		"id": 99,
+		"dia": 3,
+		"hora": "17:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "13. Plan de Calificación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 100,
+		"dia": 3,
+		"hora": "17:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "01. Cruz Roja",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 101,
+		"dia": 3,
+		"hora": "18:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "02. Grupo Puentes",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 102,
+		"dia": 3,
+		"hora": "18:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 103,
+		"dia": 3,
+		"hora": "19:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 104,
+		"dia": 3,
+		"hora": "20:00",
+		"nombre": "Demoliciones",
+		"episodio": "02. La Plata",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Demoliciones.jpg",
+		"link": "https://www.construirtv.com/programa/demoliciones/",
+		"activo": 1
+	},
+	{
+		"id": 105,
+		"dia": 3,
+		"hora": "20:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 106,
+		"dia": 3,
+		"hora": "21:00",
+		"nombre": "Oficios del fin del mundo",
+		"episodio": "11. Escuela de Aviación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2017/04/Oficios-de-Fin-Del-Mundo-II-1.jpg",
+		"link": "https://www.construirtv.com/programa/oficios-del-fin-del-mundo/",
+		"activo": 1
+	},
+	{
+		"id": 107,
+		"dia": 3,
+		"hora": "21:30",
+		"nombre": "El Futuro Ya Llegó",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/01/El-Futuro-Ya-Llego.jpg",
+		"link": "https://www.construirtv.com/programa/el-futuro-ya-llego/",
+		"activo": 1
+	},
+	{
+		"id": 108,
+		"dia": 3,
+		"hora": "22:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 109,
+		"dia": 3,
+		"hora": "22:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 110,
+		"dia": 3,
+		"hora": "23:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 111,
+		"dia": 4,
+		"hora": "00:00",
+		"nombre": "Sobre Hombros de Gigantes",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/04/SobreHombros.jpg",
+		"link": "https://www.construirtv.com/programa/sobre-hombros-de-gigantes/",
+		"activo": 1
+	},
+	{
+		"id": 112,
+		"dia": 4,
+		"hora": "01:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "13. Plan de Calificación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 113,
+		"dia": 4,
+		"hora": "01:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "01. Cruz Roja",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 114,
+		"dia": 4,
+		"hora": "02:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "02. Grupo Puentes",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 115,
+		"dia": 4,
+		"hora": "02:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 116,
+		"dia": 4,
+		"hora": "04:00",
+		"nombre": "Demoliciones",
+		"episodio": "02. La Plata",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Demoliciones.jpg",
+		"link": "https://www.construirtv.com/programa/demoliciones/",
+		"activo": 1
+	},
+	{
+		"id": 117,
+		"dia": 4,
+		"hora": "04:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 118,
+		"dia": 4,
+		"hora": "05:00",
+		"nombre": "Oficios del fin del mundo",
+		"episodio": "11. Escuela de Aviación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2017/04/Oficios-de-Fin-Del-Mundo-II-1.jpg",
+		"link": "https://www.construirtv.com/programa/oficios-del-fin-del-mundo/",
+		"activo": 1
+	},
+	{
+		"id": 119,
+		"dia": 4,
+		"hora": "05:30",
+		"nombre": "El Futuro Ya Llegó",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/01/El-Futuro-Ya-Llego.jpg",
+		"link": "https://www.construirtv.com/programa/el-futuro-ya-llego/",
+		"activo": 1
+	},
+	{
+		"id": 120,
+		"dia": 4,
+		"hora": "06:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 121,
+		"dia": 4,
+		"hora": "06:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 122,
+		"dia": 4,
+		"hora": "08:00",
+		"nombre": "Oficios del fin del mundo",
+		"episodio": "11. Escuela de Aviación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2017/04/Oficios-de-Fin-Del-Mundo-II-1.jpg",
+		"link": "https://www.construirtv.com/programa/oficios-del-fin-del-mundo/",
+		"activo": 1
+	},
+	{
+		"id": 123,
+		"dia": 4,
+		"hora": "08:30",
+		"nombre": "El Futuro Ya Llegó",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/01/El-Futuro-Ya-Llego.jpg",
+		"link": "https://www.construirtv.com/programa/el-futuro-ya-llego/",
+		"activo": 1
+	},
+	{
+		"id": 124,
+		"dia": 4,
+		"hora": "09:00",
+		"nombre": "Trabajarte",
+		"episodio": "01. Payaso",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 125,
+		"dia": 4,
+		"hora": "09:30",
+		"nombre": "Trabajarte",
+		"episodio": "02. Fotógrafo",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 126,
+		"dia": 4,
+		"hora": "10:00",
+		"nombre": "Trabajarte",
+		"episodio": "03. Escultor",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 127,
+		"dia": 4,
+		"hora": "10:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 128,
+		"dia": 4,
+		"hora": "12:00",
+		"nombre": "#YoEmprendedor",
+		"episodio": "04. Increase Card",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/YoEmprendedor.jpg",
+		"link": "https://www.construirtv.com/programa/yo-emprendedor/",
+		"activo": 1
+	},
+	{
+		"id": 129,
+		"dia": 4,
+		"hora": "12:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 130,
+		"dia": 4,
+		"hora": "13:00",
+		"nombre": "Vecinas en Clase",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/VecinasEnClase_slide.jpg",
+		"link": "https://www.construirtv.com/programa/vecinas-en-clase/",
+		"activo": 1
+	},
+	{
+		"id": 131,
+		"dia": 4,
+		"hora": "13:30",
+		"nombre": "Productora de Tutoriales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/ProductoraTutoriales-1.jpg",
+		"link": "https://www.construirtv.com/programa/productora-de-tutoriales/",
+		"activo": 1
+	},
+	{
+		"id": 132,
+		"dia": 4,
+		"hora": "14:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 133,
+		"dia": 4,
+		"hora": "14:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 134,
+		"dia": 4,
+		"hora": "16:00",
+		"nombre": "Oficios del fin del mundo",
+		"episodio": "11. Escuela de Aviación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2017/04/Oficios-de-Fin-Del-Mundo-II-1.jpg",
+		"link": "https://www.construirtv.com/programa/oficios-del-fin-del-mundo/",
+		"activo": 1
+	},
+	{
+		"id": 135,
+		"dia": 4,
+		"hora": "16:30",
+		"nombre": "El Futuro Ya Llegó",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/01/El-Futuro-Ya-Llego.jpg",
+		"link": "https://www.construirtv.com/programa/el-futuro-ya-llego/",
+		"activo": 1
+	},
+	{
+		"id": 136,
+		"dia": 4,
+		"hora": "17:00",
+		"nombre": "Trabajarte",
+		"episodio": "01. Payaso",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 137,
+		"dia": 4,
+		"hora": "17:30",
+		"nombre": "Trabajarte",
+		"episodio": "02. Fotógrafo",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 138,
+		"dia": 4,
+		"hora": "18:00",
+		"nombre": "Trabajarte",
+		"episodio": "03. Escultor",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 139,
+		"dia": 4,
+		"hora": "18:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 140,
+		"dia": 4,
+		"hora": "20:00",
+		"nombre": "#YoEmprendedor",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/YoEmprendedor.jpg",
+		"link": "https://www.construirtv.com/programa/yo-emprendedor/",
+		"activo": 1
+	},
+	{
+		"id": 141,
+		"dia": 4,
+		"hora": "20:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 142,
+		"dia": 4,
+		"hora": "21:00",
+		"nombre": "Vecinas en Clase",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/VecinasEnClase_slide.jpg",
+		"link": "https://www.construirtv.com/programa/vecinas-en-clase/",
+		"activo": 1
+	},
+	{
+		"id": 143,
+		"dia": 4,
+		"hora": "21:30",
+		"nombre": "Productora de Tutoriales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/ProductoraTutoriales-1.jpg",
+		"link": "https://www.construirtv.com/programa/productora-de-tutoriales/",
+		"activo": 1
+	},
+	{
+		"id": 144,
+		"dia": 4,
+		"hora": "22:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 145,
+		"dia": 4,
+		"hora": "22:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 146,
+		"dia": 5,
+		"hora": "00:00",
+		"nombre": "Oficios del fin del mundo",
+		"episodio": "11. Escuela de Aviación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2017/04/Oficios-de-Fin-Del-Mundo-II-1.jpg",
+		"link": "https://www.construirtv.com/programa/oficios-del-fin-del-mundo/",
+		"activo": 1
+	},
+	{
+		"id": 147,
+		"dia": 5,
+		"hora": "01:00",
+		"nombre": "Trabajarte",
+		"episodio": "01. Payaso",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 148,
+		"dia": 5,
+		"hora": "01:30",
+		"nombre": "Trabajarte",
+		"episodio": "02. Fotógrafo",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 149,
+		"dia": 5,
+		"hora": "02:00",
+		"nombre": "Trabajarte",
+		"episodio": "03. Escultor",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 150,
+		"dia": 5,
+		"hora": "02:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 151,
+		"dia": 5,
+		"hora": "03:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 152,
+		"dia": 5,
+		"hora": "04:00",
+		"nombre": "#YoEmprendedor",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/YoEmprendedor.jpg",
+		"link": "https://www.construirtv.com/programa/yo-emprendedor/",
+		"activo": 1
+	},
+	{
+		"id": 153,
+		"dia": 5,
+		"hora": "04:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 154,
+		"dia": 5,
+		"hora": "05:00",
+		"nombre": "Vecinas en Clase",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/VecinasEnClase_slide.jpg",
+		"link": "https://www.construirtv.com/programa/vecinas-en-clase/",
+		"activo": 1
+	},
+	{
+		"id": 155,
+		"dia": 5,
+		"hora": "05:30",
+		"nombre": "Productora de Tutoriales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/ProductoraTutoriales-1.jpg",
+		"link": "https://www.construirtv.com/programa/productora-de-tutoriales/",
+		"activo": 1
+	},
+	{
+		"id": 156,
+		"dia": 5,
+		"hora": "06:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 157,
+		"dia": 5,
+		"hora": "06:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 158,
+		"dia": 5,
+		"hora": "07:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 159,
+		"dia": 5,
+		"hora": "08:00",
+		"nombre": "Vecinas en Clase",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/VecinasEnClase_slide.jpg",
+		"link": "https://www.construirtv.com/programa/vecinas-en-clase/",
+		"activo": 1
+	},
+	{
+		"id": 160,
+		"dia": 5,
+		"hora": "08:30",
+		"nombre": "Productora de Tutoriales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/ProductoraTutoriales-1.jpg",
+		"link": "https://www.construirtv.com/programa/productora-de-tutoriales/",
+		"activo": 1
+	},
+	{
+		"id": 161,
+		"dia": 5,
+		"hora": "09:00",
+		"nombre": "Trabajarte",
+		"episodio": "04. Curador",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 162,
+		"dia": 5,
+		"hora": "09:30",
+		"nombre": "Trabajarte",
+		"episodio": "05. Disc-jockey",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 163,
+		"dia": 5,
+		"hora": "10:00",
+		"nombre": "Trabajarte",
+		"episodio": "06. Bailarina",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 164,
+		"dia": 5,
+		"hora": "10:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 165,
+		"dia": 5,
+		"hora": "11:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 166,
+		"dia": 5,
+		"hora": "12:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 167,
+		"dia": 5,
+		"hora": "14:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 168,
+		"dia": 5,
+		"hora": "14:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 169,
+		"dia": 5,
+		"hora": "15:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 170,
+		"dia": 5,
+		"hora": "16:00",
+		"nombre": "Vecinas en Clase",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/VecinasEnClase_slide.jpg",
+		"link": "https://www.construirtv.com/programa/vecinas-en-clase/",
+		"activo": 1
+	},
+	{
+		"id": 171,
+		"dia": 5,
+		"hora": "16:30",
+		"nombre": "Productora de Tutoriales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/ProductoraTutoriales-1.jpg",
+		"link": "https://www.construirtv.com/programa/productora-de-tutoriales/",
+		"activo": 1
+	},
+	{
+		"id": 172,
+		"dia": 5,
+		"hora": "17:00",
+		"nombre": "Trabajarte",
+		"episodio": "04. Curador",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 173,
+		"dia": 5,
+		"hora": "17:30",
+		"nombre": "Trabajarte",
+		"episodio": "05. Disc-jockey",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 174,
+		"dia": 5,
+		"hora": "18:00",
+		"nombre": "Trabajarte",
+		"episodio": "06. Bailarina",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Trabajarte.jpg",
+		"link": "https://www.construirtv.com/programa/trabajarte/",
+		"activo": 1
+	},
+	{
+		"id": 175,
+		"dia": 5,
+		"hora": "18:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 176,
+		"dia": 5,
+		"hora": "19:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 177,
+		"dia": 5,
+		"hora": "20:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 178,
+		"dia": 5,
+		"hora": "22:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 179,
+		"dia": 5,
+		"hora": "22:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 180,
+		"dia": 5,
+		"hora": "23:00",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 181,
+		"dia": 6,
+		"hora": "01:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "07. Haciendo Caminos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 182,
+		"dia": 6,
+		"hora": "01:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "08. Creer Vale La Pena",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 183,
+		"dia": 6,
+		"hora": "02:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "09. Campito El Refugio",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 184,
+		"dia": 6,
+		"hora": "02:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 185,
+		"dia": 6,
+		"hora": "03:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 186,
+		"dia": 6,
+		"hora": "04:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 187,
+		"dia": 6,
+		"hora": "05:00",
+		"nombre": "Mujeres en la Ciencia",
+		"episodio": "07. María Laura Matos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Mujeres-en-la-Ciencia.jpg",
+		"link": "https://www.construirtv.com/programa/mujeres-en-la-ciencia/",
+		"activo": 1
+	},
+	{
+		"id": 188,
+		"dia": 6,
+		"hora": "05:30",
+		"nombre": "Catadores",
+		"episodio": "02. Té",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/catadores.jpg",
+		"link": "https://www.construirtv.com/programa/catadores/",
+		"activo": 1
+	},
+	{
+		"id": 189,
 		"dia": 6,
 		"hora": "06:00",
-		"nombre": "Desafios 4.0 Sabado",
-		"episodio": "06 - Energia Renovable",
-		"imagen": "https://app.uocra.org/tvGrilla/desafio4-3.gif",
-		"activo": true
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 190,
+		"dia": 6,
+		"hora": "06:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 191,
+		"dia": 6,
+		"hora": "07:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 192,
+		"dia": 6,
+		"hora": "08:00",
+		"nombre": "Mujeres en la Ciencia",
+		"episodio": "07. María Laura Matos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Mujeres-en-la-Ciencia.jpg",
+		"link": "https://www.construirtv.com/programa/mujeres-en-la-ciencia/",
+		"activo": 1
+	},
+	{
+		"id": 193,
+		"dia": 6,
+		"hora": "08:30",
+		"nombre": "Catadores",
+		"episodio": "02. Té",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/catadores.jpg",
+		"link": "https://www.construirtv.com/programa/catadores/",
+		"activo": 1
+	},
+	{
+		"id": 194,
+		"dia": 6,
+		"hora": "09:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "10. Huerta Niño",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 195,
+		"dia": 6,
+		"hora": "09:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "11. Fundación Al Reparo",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 196,
+		"dia": 6,
+		"hora": "10:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "12. FARN",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 197,
+		"dia": 6,
+		"hora": "10:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 198,
+		"dia": 6,
+		"hora": "11:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 199,
+		"dia": 6,
+		"hora": "12:00",
+		"nombre": "Futuro Posible",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Futuro-Posible.jpg",
+		"link": "https://www.construirtv.com/programa/futuro-posible/",
+		"activo": 1
+	},
+	{
+		"id": 200,
+		"dia": 6,
+		"hora": "12:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 201,
+		"dia": 6,
+		"hora": "13:00",
+		"nombre": "Sobre Hombros de Gigantes",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/04/SobreHombros.jpg",
+		"link": "https://www.construirtv.com/programa/sobre-hombros-de-gigantes/",
+		"activo": 1
+	},
+	{
+		"id": 202,
+		"dia": 6,
+		"hora": "14:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 203,
+		"dia": 6,
+		"hora": "16:30",
+		"nombre": "Catadores",
+		"episodio": "02. Té",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/catadores.jpg",
+		"link": "https://www.construirtv.com/programa/catadores/",
+		"activo": 1
+	},
+	{
+		"id": 204,
+		"dia": 6,
+		"hora": "17:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "10. Huerta Niño",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 205,
+		"dia": 6,
+		"hora": "17:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "11. Fundación Al Reparo",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 206,
+		"dia": 6,
+		"hora": "18:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "12. FARN",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 207,
+		"dia": 6,
+		"hora": "18:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 208,
+		"dia": 6,
+		"hora": "19:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 209,
+		"dia": 6,
+		"hora": "20:00",
+		"nombre": "Futuro Posible",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Futuro-Posible.jpg",
+		"link": "https://www.construirtv.com/programa/futuro-posible/",
+		"activo": 1
+	},
+	{
+		"id": 210,
+		"dia": 6,
+		"hora": "20:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 211,
+		"dia": 6,
+		"hora": "21:00",
+		"nombre": "Sobre Hombros de Gigantes",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/04/SobreHombros.jpg",
+		"link": "https://www.construirtv.com/programa/sobre-hombros-de-gigantes/",
+		"activo": 1
+	},
+	{
+		"id": 212,
+		"dia": 6,
+		"hora": "22:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 213,
+		"dia": 6,
+		"hora": "22:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 214,
+		"dia": 6,
+		"hora": "23:30",
+		"nombre": "Construir Derechos: La defensoría en tu casa",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/03/construir-derechos.png",
+		"link": "https://www.construirtv.com/programa/construir-derechos-la-defensoria-en-tu-casa/",
+		"activo": 1
+	},
+	{
+		"id": 215,
+		"dia": 0,
+		"hora": "00:00",
+		"nombre": "Mujeres en la Ciencia",
+		"episodio": "07. María Laura Matos",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Mujeres-en-la-Ciencia.jpg",
+		"link": "https://www.construirtv.com/programa/mujeres-en-la-ciencia/",
+		"activo": 1
+	},
+	{
+		"id": 216,
+		"dia": 0,
+		"hora": "00:30",
+		"nombre": "Catadores",
+		"episodio": "02. Té",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/07/catadores.jpg",
+		"link": "https://www.construirtv.com/programa/catadores/",
+		"activo": 1
+	},
+	{
+		"id": 217,
+		"dia": 0,
+		"hora": "01:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "10. Huerta Niño",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 218,
+		"dia": 0,
+		"hora": "01:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "11. Fundación Al Reparo",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 219,
+		"dia": 0,
+		"hora": "02:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "12. FARN",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 220,
+		"dia": 0,
+		"hora": "02:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 221,
+		"dia": 0,
+		"hora": "03:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 222,
+		"dia": 0,
+		"hora": "04:00",
+		"nombre": "Futuro Posible",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/Futuro-Posible.jpg",
+		"link": "https://www.construirtv.com/programa/futuro-posible/",
+		"activo": 1
+	},
+	{
+		"id": 223,
+		"dia": 0,
+		"hora": "04:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 224,
+		"dia": 0,
+		"hora": "05:00",
+		"nombre": "Sobre Hombros de Gigantes",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/04/SobreHombros.jpg",
+		"link": "https://www.construirtv.com/programa/sobre-hombros-de-gigantes/",
+		"activo": 1
+	},
+	{
+		"id": 225,
+		"dia": 0,
+		"hora": "06:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 226,
+		"dia": 0,
+		"hora": "06:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 227,
+		"dia": 0,
+		"hora": "07:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 228,
+		"dia": 0,
+		"hora": "08:00",
+		"nombre": "Sobre Hombros de Gigantes",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/04/SobreHombros.jpg",
+		"link": "https://www.construirtv.com/programa/sobre-hombros-de-gigantes/",
+		"activo": 1
+	},
+	{
+		"id": 229,
+		"dia": 0,
+		"hora": "09:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "13. Plan de Calificación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 230,
+		"dia": 0,
+		"hora": "09:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "01. Cruz Roja",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 231,
+		"dia": 0,
+		"hora": "10:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "02. Grupo Puentes",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 232,
+		"dia": 0,
+		"hora": "10:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 233,
+		"dia": 0,
+		"hora": "11:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 234,
+		"dia": 0,
+		"hora": "12:00",
+		"nombre": "Demoliciones",
+		"episodio": "02. La Plata",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Demoliciones.jpg",
+		"link": "https://www.construirtv.com/programa/demoliciones/",
+		"activo": 1
+	},
+	{
+		"id": 235,
+		"dia": 0,
+		"hora": "12:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 236,
+		"dia": 0,
+		"hora": "13:00",
+		"nombre": "Oficios del fin del mundo",
+		"episodio": "11. Escuela de Aviación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2017/04/Oficios-de-Fin-Del-Mundo-II-1.jpg",
+		"link": "https://www.construirtv.com/programa/oficios-del-fin-del-mundo/",
+		"activo": 1
+	},
+	{
+		"id": 237,
+		"dia": 0,
+		"hora": "13:30",
+		"nombre": "El Futuro Ya Llegó",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/01/El-Futuro-Ya-Llego.jpg",
+		"link": "https://www.construirtv.com/programa/el-futuro-ya-llego/",
+		"activo": 1
+	},
+	{
+		"id": 238,
+		"dia": 0,
+		"hora": "14:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 239,
+		"dia": 0,
+		"hora": "14:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 240,
+		"dia": 0,
+		"hora": "15:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 241,
+		"dia": 0,
+		"hora": "16:00",
+		"nombre": "Sobre Hombros de Gigantes",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/04/SobreHombros.jpg",
+		"link": "https://www.construirtv.com/programa/sobre-hombros-de-gigantes/",
+		"activo": 1
+	},
+	{
+		"id": 242,
+		"dia": 0,
+		"hora": "17:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "13. Plan de Calificación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 243,
+		"dia": 0,
+		"hora": "17:30",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "01. Cruz Roja",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 244,
+		"dia": 0,
+		"hora": "18:00",
+		"nombre": "Trabajos para Un Mundo Mejor",
+		"episodio": "02. Grupo Puentes",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/TrabajoMundoMejor.jpg",
+		"link": "https://www.construirtv.com/programa/trabajos-para-un-mundo-mejor-2/",
+		"activo": 1
+	},
+	{
+		"id": 245,
+		"dia": 0,
+		"hora": "18:30",
+		"nombre": "Construir TV Micros",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2020/12/MicroProgramas.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-micros/",
+		"activo": 1
+	},
+	{
+		"id": 246,
+		"dia": 0,
+		"hora": "19:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
+	},
+	{
+		"id": 247,
+		"dia": 0,
+		"hora": "20:00",
+		"nombre": "Demoliciones",
+		"episodio": "02. La Plata",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/09/Demoliciones.jpg",
+		"link": "https://www.construirtv.com/programa/demoliciones/",
+		"activo": 1
+	},
+	{
+		"id": 248,
+		"dia": 0,
+		"hora": "20:30",
+		"nombre": "Industria Agentina",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/IndustriaARG.jpg",
+		"link": "https://www.construirtv.com/programa/industria-argentina/",
+		"activo": 1
+	},
+	{
+		"id": 249,
+		"dia": 0,
+		"hora": "21:00",
+		"nombre": "Oficios del fin del mundo",
+		"episodio": "11. Escuela de Aviación",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2017/04/Oficios-de-Fin-Del-Mundo-II-1.jpg",
+		"link": "https://www.construirtv.com/programa/oficios-del-fin-del-mundo/",
+		"activo": 1
+	},
+	{
+		"id": 250,
+		"dia": 0,
+		"hora": "21:30",
+		"nombre": "El Futuro Ya Llegó",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/01/El-Futuro-Ya-Llego.jpg",
+		"link": "https://www.construirtv.com/programa/el-futuro-ya-llego/",
+		"activo": 1
+	},
+	{
+		"id": 251,
+		"dia": 0,
+		"hora": "22:00",
+		"nombre": "Construir TV EuroNews",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/01/EuroNews.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-euronews/",
+		"activo": 1
+	},
+	{
+		"id": 252,
+		"dia": 0,
+		"hora": "22:30",
+		"nombre": "Construir TV Cortos Documentales",
+		"episodio": "",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2021/02/Cortos-Documentales.jpg",
+		"link": "https://www.construirtv.com/programa/construir-tv-cortos-documentales/",
+		"activo": 1
+	},
+	{
+		"id": 253,
+		"dia": 0,
+		"hora": "23:30",
+		"nombre": "Con + Info",
+		"episodio": "200. Expectativas Favorables para la Construcción",
+		"imagen": "https://www.construirtv.com/wp-content/uploads/2019/08/ConMasINFO.jpg",
+		"link": "https://www.construirtv.com/programa/con-info/",
+		"activo": 1
 	}
 ]

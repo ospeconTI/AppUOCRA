@@ -111,6 +111,12 @@ export class fundacionCursosScreen extends connect(store, FUNDACIONCURSOS_ERRORT
 				font-size: var(--font-bajada-size) !important;
 				grid-gap: 0 !important;
 			}
+			#comentario {
+				font-size: var(--font-label-size);
+				width: 90%;
+				justify-self: center;
+				padding-top: 0.2rem;
+			}
 		`;
 	}
 	render() {
@@ -118,6 +124,7 @@ export class fundacionCursosScreen extends connect(store, FUNDACIONCURSOS_ERRORT
 			return html`
 				<div id="cuerpo" class="grid row">
 					<div id="titulo" class="grid column"></div>
+					<div id="comentario">Los cursos de formación son gratuitos y abiertos a toda la comunidad.</div>
 					<div id="selectEspecialidades" class="grid row miselect">
 						<select id="txtEspecialidad" class="elselect" @change="${this.cambioEspecialidad}">
 							<option value="-1">Especialidades</option>

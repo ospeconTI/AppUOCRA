@@ -127,7 +127,7 @@ export class gremioJuventudScreen extends connect(store, BANNERS_TIMESTAMP, BANN
 						<div id="bullet">${SVGS["BULLET"]}</div>
 						<div id="solicitud">Juventud UOCRA</div>
 					</div>
-					<div id="subTituloTexto">(la JU) es una iniciativa que promueve la participación activa de las y los jóvenes constructores en la vida interna del sindicato. Además, este espacio busca fortalecer los lazos de pertenencia sindical, potenciar el compromiso militante y afianzar los valores de la cultura del trabajo y la justicia social.</div>
+					<div id="subTituloTexto">La Juventud UOCRA (LA JU) es una iniciativa que promueve la participación activa de las y los jóvenes constructores en la vida interna del sindicato. Además, este espacio busca fortalecer los lazos de pertenencia sindical, potenciar el compromiso militante y afianzar los valores de la cultura del trabajo y la justicia social.</div>
 					<div id="tituloTexto" class="grid">
 						<div id="bullet">${SVGS["BULLET"]}</div>
 						<div id="solicitud">Programa Nacional de Formación Sindical a Distancia</div>

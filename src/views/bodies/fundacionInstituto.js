@@ -131,12 +131,19 @@ export class fundacionInstitutoScreen extends connect(store, CEMAPS_DATOS, PROVI
 				font-size: var(--font-bajada-size) !important;
 				grid-gap: 0 !important;
 			}
+			#comentario {
+				font-size: var(--font-label-size);
+				width: 90%;
+				justify-self: center;
+				padding-top: 0.2rem;
+			}
 		`;
 	}
 	render() {
 		return html`
 			<div id="cuerpo" class="grid row">
 				<div id="titulo" class="grid column"></div>
+				<div id="comentario">Contactate con los Institutos para consultar sobre los aranceles de las carreras.</div>
 				<div id="panel" class="grid row">
 					<div style="height:.5rem"></div>
 					<div>El <b>Instituto UOCRA</b> fue creado en el año 2007 y desde entonces desarrolla un estilo de formación personalizado, que concibe a los estudiantes como protagonistas.</div>

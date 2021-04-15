@@ -155,6 +155,11 @@ export class registroUpdateScreen extends connect(store, PROFILE_DATO, PROFILE_E
 								<input id="documento" class="txt" type="number" autocomplete="off" />
 								<div>Debe cargar documento</div>
 							</div>
+							<div class="input myImput">
+								<label class="texto" style="color:var(--color-blanco)">${this.registroUpdate[this.idioma].telefono}</label>
+								<input id="telefono" class="txt" type="number" autocomplete="off" placeholder="${this.registroUpdate[this.idioma].telefono_ph}" />
+								<div>Debe cargar telefono</div>
+							</div>
 						</div>
 						<div class="grid row" style="align-self: stretch;">
 							<button btn1 class="miBoton" @click="${this.grabar}">${this.registroUpdate[this.idioma].enviar}</button>
@@ -177,10 +182,12 @@ export class registroUpdateScreen extends connect(store, PROFILE_DATO, PROFILE_E
 				let apellido = this.shadowRoot.querySelector("#apellido");
 				let documento = this.shadowRoot.querySelector("#documento");
 				let tipoDocumento = this.shadowRoot.querySelector("#txtTipoDocumento");
+				let telefono = this.shadowRoot.querySelector("#telefono");
 				nombre.value = state.autorizacion.usuario.nombre;
 				apellido.value = state.autorizacion.usuario.apellido;
 				documento.value = state.autorizacion.usuario.documento;
 				tipoDocumento.value = state.autorizacion.usuario.tipoDocumento;
+				telefono.value = state.autorizacion.usuario.telefono;
 			}
 			this.update();
 		}
@@ -204,6 +211,7 @@ export class registroUpdateScreen extends connect(store, PROFILE_DATO, PROFILE_E
 		let apellido = this.shadowRoot.querySelector("#apellido");
 		let documento = this.shadowRoot.querySelector("#documento");
 		let tipoDocumento = this.shadowRoot.querySelector("#txtTipoDocumento");
+		let telefono = this.shadowRoot.querySelector("#telefono");
 		var ok = true;
 		if (nombre.value == "") {
 			ok = false;
@@ -217,8 +225,12 @@ export class registroUpdateScreen extends connect(store, PROFILE_DATO, PROFILE_E
 			ok = false;
 			documento.setAttribute("error", "");
 		}
+		if (telefono.value == "" || !typeof telefono.value == "number" || parseInt(telefono.value) < 99999999) {
+			ok = false;
+			documento.setAttribute("error", "");
+		}
 		if (ok) {
-			store.dispatch(updateProfile(nombre.value, apellido.value, documento.value, tipoDocumento.value, null, null, null, null, store.getState().autorizacion.usuario.token));
+			store.dispatch(updateProfile(nombre.value, apellido.value, documento.value, tipoDocumento.value, telefono.value, null, null, null, null, store.getState().autorizacion.usuario.token));
 		} else {
 			store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
 		}

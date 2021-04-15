@@ -149,6 +149,9 @@ export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, TVESTRENO
 			}
 		}
 	}
+	ver(e) {
+		window.open(e.currentTarget.item, "_blank");
+	}
 	atras() {
 		store.dispatch(goHistoryPrev());
 	}

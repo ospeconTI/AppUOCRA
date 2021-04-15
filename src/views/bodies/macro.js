@@ -140,7 +140,7 @@ export class macroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement
 						<div id="bullet">${SVGS["BULLET"]}</div>
 						<div id="solicitud">Tu Tarjeta de Crédito</div>
 					</div>
-					<div id="subTituloTexto">Tu sindicato pone a tu alcance la nueva Tarjeta de Crédito, UOCRA - Visa - Macro.</div>
+					<div id="subTituloTexto">Tu sindicato pone a tu alcance la nueva Tarjeta de Credito UOCRA - Visa - Macro para todos los trabajadores y las trabajadoras vinculados/as a la industria de la construcción y la Red Social UOCRA</div>
 					<div id="subsubTituloTexto">
 						<div class="grid column" style="padding:0; grid-template-columns:auto 1fr">
 							<div id="bullet1">${SVGS["BULLET"]}</div>

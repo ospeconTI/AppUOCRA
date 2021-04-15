@@ -14,8 +14,9 @@ const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const LEFTMENU_TIMESTAMP = "screen.timeStamp";
 const MENU_ACTIVAR = "ui.menuActivar";
+const PROFILE_DATO = "autorizacion.updateProfileTimeStamp";
 
-export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class menuPrincipal extends connect(store, PROFILE_DATO, MENU_ACTIVAR, LEFTMENU_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.area = "header";
@@ -182,7 +183,7 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
 						<div class="menu-button" @click=${this.toggleMenu}>${SVGS["MENU"]}</div>
 						<div class="grid row gridGapPunto2vh" ?hidden="${this.current == "compras"}">
 							<div class="hola" @click="${this.modificar}">Hola,</div>
-							<div class="hola">${store.getState().autorizacion.usuario ? store.getState().autorizacion.usuario.nombre + "!" : ""}</div>
+							<div id="hola" class="hola">${store.getState().autorizacion.usuario ? store.getState().autorizacion.usuario.nombre + "!" : ""}</div>
 						</div>
 					</div>
 					<div id="tituloGeneral" ?hidden="${this.current == "compras"}"></div>
@@ -255,6 +256,13 @@ export class menuPrincipal extends connect(store, MENU_ACTIVAR, LEFTMENU_TIMESTA
 		}
 		if (name == MENU_ACTIVAR) {
 			this.toggleMenu();
+		}
+		if (name == PROFILE_DATO) {
+			let hola = this.shadowRoot.querySelector("#hola");
+			if (hola) {
+				hola.innerHTML = state.autorizacion.usuario.nombre;
+			}
+			this.update();
 		}
 	}
 

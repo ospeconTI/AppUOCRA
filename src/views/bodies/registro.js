@@ -162,7 +162,11 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 							<input id="documento" class="txt" type="number" autocomplete="off" />
 							<div>Debe cargar documento</div>
 						</div>
-
+						<div class="input myImput">
+							<label class="texto" style="color:var(--color-blanco)">${this.registro[this.idioma].telefono}</label>
+							<input id="telefono" class="txt" type="number" autocomplete="off" placeholder="${this.registro[this.idioma].telefono_ph}" />
+							<div>Debe cargar telefono</div>
+						</div>
 						<div class="grid row" style="align-self: stretch;">
 							<button btn1 class="miBoton" @click="${this.grabar}">${this.registro[this.idioma].enviar}</button>
 							<button btn2 @click="${this.volver}">${this.registro[this.idioma].volver}</button>
@@ -198,6 +202,7 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 		let apellido = this.shadowRoot.querySelector("#apellido");
 		let documento = this.shadowRoot.querySelector("#documento");
 		let tipoDocumento = this.shadowRoot.querySelector("#txtTipoDocumento");
+		let telefono = this.shadowRoot.querySelector("#telefono");
 		var ok = true;
 		if (mail.value == "" || !validaMail(mail.value)) {
 			ok = false;
@@ -215,8 +220,12 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 			ok = false;
 			documento.setAttribute("error", "");
 		}
+		if (telefono.value == "" || !typeof telefono.value == "number" || parseInt(telefono.value) < 99999999) {
+			ok = false;
+			documento.setAttribute("error", "");
+		}
 		if (ok) {
-			store.dispatch(logon(nombre.value, apellido.value, mail.value, documento.value, tipoDocumento.value));
+			store.dispatch(logon(nombre.value, apellido.value, mail.value, documento.value, tipoDocumento.value, telefono.value));
 		} else {
 			store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
 		}

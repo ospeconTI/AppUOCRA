@@ -38,7 +38,7 @@
 	{
 		"id": 6,
 		"tipo": "ivt",
-		"leyenda": "<div>El <b>Instituto de Vivienda de los Trabajadores</b> (IVT) se creó el 1 de mayo de 1993 con el objetivo de promover y facilitar el acceso a la vivienda por parte de los trabajadores, mediante el adecuado empleo de aportes, ahorros y otros recursos provenientes del sector público y privado, Nacional y extranjero.</div>",
+		"leyenda": "<div>El <b>Instituto de Vivienda de los Trabajadores<\/b> (IVT) se creó el 1 de mayo de 1993 con el objetivo de promover y facilitar el acceso a la vivienda por parte de los trabajadores, mediante el adecuado empleo de aportes, ahorros y otros recursos provenientes del sector público y privado, Nacional y extranjero.<\/div>",
 		"activo": true
 	},
 	{
@@ -80,7 +80,7 @@
 	{
 		"id": 13,
 		"tipo": "deportes",
-		"leyenda": "<div style='text-align:center'><b>*Disponibilidad esta sujeta a las disposiciones<br>oficiales de circulación vinculadas a <br>la pandemia de Covid19.<b><div>",
+		"leyenda": "<div style='text-align:center'><b>*Disponibilidad sujeta a las disposiciones<br>oficiales de circulación vinculadas a <br>la pandemia de Covid19.<b><div>",
 		"activo": true
 	},
 	{
@@ -92,7 +92,7 @@
 	{
 		"id": 15,
 		"tipo": "turismo",
-		"leyenda": "<div style='text-align:center'><b>*Disponibilidad esta sujeta a las disposiciones<br>oficiales de circulación vinculadas a <br>la pandemia de Covid19.<b><div>",
+		"leyenda": "<div style='text-align:center'><b>Este es un beneficio al que pueden acceder las personas afiliadas a UOCRA.<br>*Disponibilidad sujeta a las disposiciones<br>oficiales de circulación vinculadas a <br>la pandemia de Covid19.<b><div>",
 		"activo": true
 	},
 	{

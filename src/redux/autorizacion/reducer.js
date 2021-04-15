@@ -45,6 +45,7 @@ export const reducer = (state = initialState, action) => {
 			newState.usuario.apellido = action.payload.receive.apellido;
 			newState.usuario.documento = action.payload.receive.documento;
 			newState.usuario.tipoDocumento = action.payload.receive.tipoDocumento;
+			newState.usuario.telefono = action.payload.receive.telefono;
 			newState.updateProfileTimeStamp = new Date().getTime();
 			break;
 		case UPDATE_PROFILE_ERROR:
