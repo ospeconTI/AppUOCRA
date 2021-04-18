@@ -36,6 +36,11 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				position: relative;
 				background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
 				overflow: hidden;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				width: 100vw;
+				padding: 0 !important;
 			}
 			:host([hidden]) {
 				display: none;
@@ -43,12 +48,15 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 			#cuerpo {
 				display: grid;
 				height: 100%;
-				width: 100%;
+				width: 90vw;
 				grid-gap: 0rem;
 				grid-template-rows: 25% 2% 56% 2% 15%;
 				border-radius: 2rem;
 				background-color: transparent;
 				align-self: center;
+			}
+			:host([media-size="large"]) #cuerpo {
+				width: 80vw;
 			}
 			#titulo {
 				height: 100%;

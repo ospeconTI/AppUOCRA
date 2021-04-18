@@ -35,9 +35,12 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 
 			:host {
 				display: grid;
+				justify-content: center;
+				align-items: center;
 				position: relative;
+				height: 100vh;
+				width: 100vw;
 				background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
-				overflow: hidden;
 				padding: 0 !important;
 			}
 			:host([hidden]) {
@@ -45,13 +48,17 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 			}
 			#cuerpo {
 				display: grid;
-				height: 100%;
-				width: 100%;
+				height: 100vh;
+				width: 100vw;
 				grid-gap: 0rem;
 				grid-template-rows: 16% 2% 8% 2% 72%;
 				background-color: transparent;
 				align-self: center;
 			}
+			:host([media-size="large"]) #cuerpo {
+				width: 80vw;
+			}
+
 			#titulo {
 				height: 100%;
 				width: 100%;
@@ -87,12 +94,16 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 			#datos {
 				padding: 0 2vh 0 2vh;
 				width: 90%;
+				height: 75vh;
 				overflow-y: auto;
 				overflow-x: hidden;
 				justify-self: center;
 			}
 			:host(:not([media-size="small"])) #datos {
-				width: 50%;
+				width: 80%;
+			}
+			#datos::-webkit-scrollbar {
+				display: none;
 			}
 			.leyenda {
 				justify-self: center;
@@ -171,6 +182,7 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 							<button btn1 class="miBoton" @click="${this.grabar}">${this.registro[this.idioma].enviar}</button>
 							<button btn2 @click="${this.volver}">${this.registro[this.idioma].volver}</button>
 						</div>
+						<div style="height:2rem"></div>
 					</div>
 				</div>
 			</div>

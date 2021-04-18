@@ -24,6 +24,7 @@ export const largeRoute = [
 	"4.1.4 -cultura",
 	"4.1.4.1 -teatroProgramacion",
 	"4.1.4.1.1 -teatroProgramacionDetalle",
+	"4.1.4.1.1.1 -teatroReserva",
 	"4.1.4.3 -teatroBoleteria",
 	"4.1.4.4 -teatroObras",
 	"4.1.5 -tv",

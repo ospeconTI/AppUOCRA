@@ -89,6 +89,7 @@ import { fundacionMapaScreen } from "./bodies/fundacionMapa";
 import { fundacionCursosListaScreen } from "./bodies/fundacionCursosLista";
 import { adolescenciaCuadernillosScreen } from "./bodies/adolescenciaCuadernillos";
 import { compartirScreen } from "./bodies/compartir";
+import { teatroReservaScreen } from "./bodies/teatroReserva";
 
 emergenciasScreen;
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -203,13 +204,14 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
 			<fundacioncursoslista-screen id="fundacionCursosLista" class="body"></fundacioncursoslista-screen>
 			<adolescenciacuadernillos-screen id="adolescenciaCuadernillos" class="body"></adolescenciacuadernillos-screen>
 			<compartir-screen id="compartir" class="body"></compartir-screen>
+			<teatroreserva-screen id="teatroReserva" class="body"></teatroreserva-screen>
 
 			<pie-componente class="foot"></pie-componente>
 
 			<alerta-errores></alerta-errores>
 			<pantalla-warning id="warning"></pantalla-warning>
 			<menu-principal id="menu" class="header"></menu-principal>
-			<spinner-loading type="spinner3"></spinner-loading>
+			<spinner-loading type="spinner2"></spinner-loading>
 		`;
 	}
 

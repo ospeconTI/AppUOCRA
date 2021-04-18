@@ -57,8 +57,6 @@ export class teatroProgramacionScreen extends connect(store, PROGRAMACION_ERROR,
 				height: 100%;
 				grid-auto-flow: row;
 				background-color: var(--color-blanco);
-				overflow-x: hidden;
-				overflow-y: auto;
 			}
 			#titulo {
 				padding: 0.8vh 0 0.8vh 0;
@@ -75,10 +73,12 @@ export class teatroProgramacionScreen extends connect(store, PROGRAMACION_ERROR,
 			}
 			.panel {
 				display: grid;
-				height: 89vh;
+				height: 75vh;
 				grid-auto-flow: row;
 				grid-gap: 0.2rem;
 				align-content: start;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 			.notas {
 				width: 95vw;
@@ -148,7 +148,7 @@ export class teatroProgramacionScreen extends connect(store, PROGRAMACION_ERROR,
 								</div>
 							`;
 						})}
-						<div style="padding:1rem"></div>
+						<div style="padding:5vh"></div>
 					</div>
 				</div>
 			`;

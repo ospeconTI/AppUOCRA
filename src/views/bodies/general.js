@@ -444,8 +444,8 @@ export class generalScreen extends connect(store, ITEMS_BOTONITEM, MENUES_ERRORT
 	}
 	ir(e) {
 		if (e.currentTarget.item.toUpperCase().indexOf("HTTPS:") !== -1) {
-			//window.open(e.currentTarget.item,'_blank');
-			location.href = e.currentTarget.item;
+			window.open(e.currentTarget.item, "_blank");
+			//location.href = e.currentTarget.item;
 		} else {
 			store.dispatch(goTo(e.currentTarget.item));
 		}

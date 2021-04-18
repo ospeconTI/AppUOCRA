@@ -19,7 +19,7 @@ module.exports = merge(common, {
 		new WorkboxPlugin.GenerateSW({
 			// these options encourage the ServiceWorkers to get in there fast
 			// and not allow any straggling "old" SWs to hang around
-			clientsClaim: true,
+			clientsClaim: true, ///DANIEL LO CAMBIO DE TRUE A FALSE
 			//Valor por default
 			skipWaiting: false,
 			//Valor para forzar

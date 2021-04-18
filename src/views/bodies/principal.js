@@ -112,6 +112,9 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
 				background-color: var(--color-blanco);
 				justify-self: center;
 			}
+			#datos::-webkit-scrollbar {
+				display: none;
+			}
 			.notaCabImg {
 				width: 100%;
 				height: 42vw;

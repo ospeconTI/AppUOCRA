@@ -32,9 +32,13 @@ export class claveCambioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 
 			:host {
 				display: grid;
+				justify-content: center;
+				align-items: center;
 				position: relative;
+				height: 100vh;
+				width: 100vw;
 				background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
-				overflow: hidden;
+				padding: 0 !important;
 			}
 			:host([hidden]) {
 				display: none;
@@ -42,12 +46,15 @@ export class claveCambioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 			#cuerpo {
 				display: grid;
 				height: 95%;
-				width: 100%;
+				width: 90vw;
 				grid-gap: 0rem;
 				grid-template-rows: 35% 2% 63%;
 				border-radius: 2rem;
 				background-color: transparent;
 				align-self: center;
+			}
+			:host([media-size="large"]) #cuerpo {
+				width: 60vw;
 			}
 			#titulo {
 				height: 100%;

@@ -7,14 +7,17 @@ import { goHistoryPrev, goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { showWarning } from "../../redux/ui/actions";
 import { button } from "../css/button";
-import { select } from "../css/select";
+import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
 import { SVGS } from "../../../assets/icons/svgs";
+import { send as sendMail } from "../../redux/mail/actions";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const RESERVA_TIMESTAMP = "programacion.reservaTimeStamp";
-export class teatroProgramacionDetalleScreen extends connect(store, RESERVA_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
+const MAIL_OK = "mail.sendTimeStamp";
+const MAIL_ERROR = "mail.sendErrorTimeStamp";
+export class teatroReservaScreen extends connect(store, MAIL_OK, MAIL_ERROR, RESERVA_TIMESTAMP, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -30,7 +33,7 @@ export class teatroProgramacionDetalleScreen extends connect(store, RESERVA_TIME
 		return css`
 			${gridLayout}
 			${button}
-			${select}
+			${input}
 
 			:host {
 				display: grid;
@@ -66,6 +69,15 @@ export class teatroProgramacionDetalleScreen extends connect(store, RESERVA_TIME
 				font-weight: 900;
 				grid-template-columns: auto 1fr;
 				padding-bottom: 0.6rem;
+			}
+			#reserva {
+				align-self: self-start;
+				font-size: var(--font-header-h1-size);
+				font-weight: 900;
+				padding: 0.6rem;
+				text-align: center;
+				background-color: var(--color-gris);
+				color: var(--color-negro);
 			}
 			#subNombreTexto {
 				width: 80%;
@@ -131,6 +143,7 @@ export class teatroProgramacionDetalleScreen extends connect(store, RESERVA_TIME
 			return html`
 				<div id="cuerpo" class="grid row" style="grid-gap:0rem">
 					<div id="titulo" class="grid column" style="background-image:url('${this.reserva.imagenFolleto}')"></div>
+					<div id="reserva">Reservas</div>
 					<div id="tituloTexto" class="grid">
 						<div id="bullet">${SVGS["BULLET"]}</div>
 						<div id="solicitud" style="color:var(--primary-color)">${this.idiomaGenerico[this.idioma].diasLargo[new Date(this.reserva.fecha).getDay()] + " " + new Date(this.reserva.fecha).getDate() + " de " + this.idiomaGenerico[this.idioma].mesLargo[new Date(this.reserva.fecha).getMonth()] + " - " + new Date(this.reserva.fecha).getHours() + ":" + new Date(this.reserva.fecha).getMinutes() + "hs."}</div>
@@ -140,13 +153,17 @@ export class teatroProgramacionDetalleScreen extends connect(store, RESERVA_TIME
 					</div>
 					<div id="subTituloTexto">Presenta: "${this.reserva.nombre}"</div>
 					<div id="subTituloTexto" style="font-style:italic">${this.reserva.genero}</div>
-					<div id="subTituloTexto">${this.reserva.valor == 0 ? this.gremioLista[this.idioma].entradaLibre : this.gremioLista[this.idioma].entradaPaga + this.reserva.valor}</div>
 					<div id="subTituloTexto" class="grid" style="padding:0; grid-template-columns:auto 1fr; grid-gap:.2rem;">
 						<div id="bullet1">${SVGS["BULLET"]}</div>
-						<div id="textoFolleto" style="font-weight:900">"${this.reserva.nombre}"</div>
+						<div id="textoFolleto" style="font-weight:900">Cantidad de entradas</div>
 						<div></div>
-						<div id="textoFolleto">${this.reserva.textoFolleto}</div>
+						<div class="input">
+							<label></label>
+							<input id="txtCantidad" type="number" value="0" />
+							<div>Debe cargar cantidad de entradas</div>
+						</div>
 					</div>
+
 					<div style="padding:1rem"></div>
 					<button btn1 @click=${this.reservacion} style="width:10rem;justify-self: center;background-color:var(--color-amarillo);">RESERVAR</button>
 					<div style="padding-top:2rem"></div>
@@ -159,7 +176,35 @@ export class teatroProgramacionDetalleScreen extends connect(store, RESERVA_TIME
 		}
 	}
 	reservacion() {
-		store.dispatch(goTo("teatroReserva"));
+		[].forEach.call(this.shadowRoot.querySelectorAll("[error]"), (element) => {
+			element.removeAttribute("error");
+		});
+		let cantidad = this.shadowRoot.querySelector("#txtCantidad");
+		var ok = true;
+		if (cantidad.value == "" || !typeof cantidad.value == "number" || parseInt(cantidad.value) < 1 || parseInt(cantidad.value) > 10) {
+			ok = false;
+			cantidad.setAttribute("error", "");
+		} else {
+			let item = this.reserva;
+			var usu = store.getState().autorizacion.usuario;
+			var body = "<b>¡Muchas gracias " + usu.nombre + " por reservar tu entrada!</b><br>";
+			body = body + "<br>Para utilizar esta reserva, presentate en la boletería del Teatro Gastón Barral (Rawson 42 - C.A.B.A) hasta 30 minutos antes del comienzo de la función. Pasado ese horario, la reserva perderá su vigencia y quedará sujeta a la disponibilidad de la sala, sin posibilidad de reclamo alguno. Una vez iniciada la función, no se permitirá el ingreso a la sala.";
+			body = body + "<br>Si no podés asistir y querés cancelar tu reserva, avisanos mandando un mail a: reservasuocracultura@gmail.com";
+			body = body + "<br><br><b>DATOS DE LA RESERVA</b>";
+			body = body + "<br>Fecha: " + this.idiomaGenerico[this.idioma].diasLargo[new Date(item.fecha).getDay()] + " " + new Date(item.fecha).getDate() + " de " + this.idiomaGenerico[this.idioma].mesLargo[new Date(item.fecha).getMonth()] + ".";
+			body = body + "<br>Hora: " + new Date(item.fecha).getHours() + ":" + new Date(item.fecha).getMinutes() + "hs.";
+			body = body + "<br>Función: " + item.protagonistas + ", " + item.nombre;
+			body = body + "<br>Género: " + item.genero;
+			body = body + "<br><b>Cantidad: " + cantidad.value + "</b>";
+			body = body + "<br>Nombre: " + usu.nombre + "<br>Apellido: " + usu.apellido + "<br>Documento: " + usu.documento + "<br>E-Mail: " + usu.email + "<br>Teléfono: " + usu.telefono;
+			body = body + "<br><br>" + usu.nombre + " ¡Te esperamos!";
+			body = body + "<br>UOCRA Cultura";
+			body = body + "<br><br>Facebook: https://www.facebook.com/uocracultura";
+			body = body + "<br>Instagram: https://www.instagram.com/uocracultura/";
+			body = body + "<br>Twitter: https://twitter.com/UOCRACultura/";
+			body = body + "<br>Youtube: https://www.youtube.com/UOCRACultura";
+			store.dispatch(sendMail("Teatro Gastón Barral. Reservas", body, ["appuocra@gmail.com", usu.email]));
+		}
 	}
 	atras() {
 		store.dispatch(goHistoryPrev());
@@ -170,18 +215,24 @@ export class teatroProgramacionDetalleScreen extends connect(store, RESERVA_TIME
 			this.hidden = true;
 			this.current = state.screen.name;
 			const haveBodyArea = isInLayout(state, this.area);
-			const SeMuestraEnUnasDeEstasPantallas = "-teatroProgramacionDetalle-".indexOf("-" + state.screen.name + "-") != -1;
+			const SeMuestraEnUnasDeEstasPantallas = "-teatroReserva-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
-				this.update();
-				if (this.reserva && this.shadowRoot.querySelector("#textoFolleto")) {
-					//this.shadowRoot.querySelector("#textoFolleto").outerHTML = this.reserva.textoFolleto;
-				}
 				this.hidden = false;
+				if (this.shadowRoot.querySelector("#txtCantidad")) {
+					this.shadowRoot.querySelector("#txtCantidad").value = 0;
+				}
 			}
 			this.update();
 		}
 		if (name == RESERVA_TIMESTAMP) {
 			this.reserva = state.programacion.reserva;
+		}
+		if (name == MAIL_OK && state.screen.name == "teatroReserva") {
+			store.dispatch(showWarning("Reserva enviada", "Recibirá su confirmación en el correo " + store.getState().autorizacion.usuario.email, "fondoAmarillo", 0));
+			store.dispatch(goHistoryPrev());
+		}
+		if (name == MAIL_ERROR && state.screen.name == "teatroReserva") {
+			store.dispatch(showWarning("ERROR, mail no enviado", "Verifique su conección de datos", "fondoError", 3000));
 		}
 	}
 
@@ -210,4 +261,4 @@ export class teatroProgramacionDetalleScreen extends connect(store, RESERVA_TIME
 		};
 	}
 }
-window.customElements.define("teatroprogramaciondetalle-screen", teatroProgramacionDetalleScreen);
+window.customElements.define("teatroreserva-screen", teatroReservaScreen);

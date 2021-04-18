@@ -193,6 +193,11 @@ export const screenLayuts = {
 		medium: HEADER_BODY_FOOT,
 		large: HEADER_BODY_FOOT,
 	},
+	teatroReserva: {
+		small: HEADER_BODY_FOOT,
+		medium: HEADER_BODY_FOOT,
+		large: HEADER_BODY_FOOT,
+	},
 	saludSeguridadConsultas: {
 		small: HEADER_BODY_FOOT,
 		medium: HEADER_BODY_FOOT,

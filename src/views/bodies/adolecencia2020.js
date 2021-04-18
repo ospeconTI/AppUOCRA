@@ -56,8 +56,6 @@ export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DA
 				height: 100%;
 				grid-auto-flow: row;
 				background-color: var(--color-blanco);
-				overflow-x: hidden;
-				overflow-y: auto;
 			}
 			#titulo {
 				height: 4vh;
@@ -73,10 +71,12 @@ export class adolecencia2020Screen extends connect(store, ADOLECENCIAJORNADAS_DA
 			}
 			.panel {
 				display: grid;
-				height: auto;
+				height: 75vh;
 				grid-auto-flow: row;
 				grid-gap: 0.2rem;
 				align-content: start;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 			.notas {
 				width: 85vw;

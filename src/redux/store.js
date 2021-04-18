@@ -41,6 +41,7 @@ import { middleware as fundacionCentros } from "./fundacionCentros/middleware";
 import { middleware as fundacionEspecialidades } from "./fundacionEspecialidades/middleware";
 import { middleware as adolescenciaCuadernillos } from "./adolescenciaCuadernillos/middleware";
 import { middleware as coberturas } from "./coberturas/middleware";
+import { middleware as mail } from "./mail/middleware";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -83,6 +84,7 @@ let mdw = [
 	...fundacionEspecialidades,
 	...adolescenciaCuadernillos,
 	...coberturas,
+	...mail,
 ];
 
 if (process.env.NODE_ENV !== "production") {

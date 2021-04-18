@@ -59,8 +59,6 @@ export class fundacionCursosListaScreen extends connect(store, CURSOS_DATOS, CUR
 				height: 100%;
 				grid-auto-flow: row;
 				background-color: var(--color-blanco);
-				overflow-x: hidden;
-				overflow-y: auto;
 				align-content: flex-start;
 			}
 			#titulo {
@@ -81,12 +79,14 @@ export class fundacionCursosListaScreen extends connect(store, CURSOS_DATOS, CUR
 			}
 			.panel {
 				display: grid;
-				height: auto;
+				height: 75vh;
 				width: 95vw;
 				grid-auto-flow: row;
 				justify-self: center;
 				padding: 0 !important;
 				grid-gap: 1rem !important;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 			.notas {
 				width: 85vw;

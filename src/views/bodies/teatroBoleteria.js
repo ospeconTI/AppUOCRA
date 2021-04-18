@@ -56,8 +56,6 @@ export class teatroBoleteriaScreen extends connect(store, PROGRAMACION_ERROR, PR
 				height: 100%;
 				grid-auto-flow: row;
 				background-color: var(--color-blanco);
-				overflow-x: hidden;
-				overflow-y: auto;
 			}
 			#titulo {
 				padding: 0.8vh 0 0.8vh 0;
@@ -74,10 +72,12 @@ export class teatroBoleteriaScreen extends connect(store, PROGRAMACION_ERROR, PR
 			}
 			.panel {
 				display: grid;
-				height: 89vh;
+				height: 75vh;
 				grid-auto-flow: row;
 				grid-gap: 0.2rem;
 				align-content: start;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 			.notas {
 				width: 95vw;
@@ -115,6 +115,9 @@ export class teatroBoleteriaScreen extends connect(store, PROGRAMACION_ERROR, PR
 			:host([media-size="small"]) .notaDetTxt {
 				font-size: var(--font-label-size);
 			}
+			*[hidden] {
+				display: none;
+			}
 		`;
 	}
 	render() {
@@ -123,9 +126,10 @@ export class teatroBoleteriaScreen extends connect(store, PROGRAMACION_ERROR, PR
 				<div id="cuerpo">
 					<div id="titulo">${this.gremioBoleteria[this.idioma].titulo}</div>
 					<div class="panel">
+						<div style="padding:0.5rem"></div>
 						${this.programacion.map((item, index) => {
 							return html`
-								<div>
+								<div ?hidden="${index == 0}">
 									<hr id="linea" />
 								</div>
 								<div class="grid notas" style="align-items: stretch;">
@@ -142,7 +146,7 @@ export class teatroBoleteriaScreen extends connect(store, PROGRAMACION_ERROR, PR
 									</div>
 								</div>
 								<div style="padding:.5rem"></div>
-								<button btn1 @click=${this.reserva} style="width:10rem;justify-self: center;background-color:var(--color-amarillo);">RESERVAR</button>
+								<button btn1 @click=${this.reserva} .item="${item}" style="width:10rem;justify-self: center;background-color:var(--color-amarillo);">RESERVAR</button>
 							`;
 						})}
 						<div style="padding-top:2rem"></div>
@@ -154,6 +158,21 @@ export class teatroBoleteriaScreen extends connect(store, PROGRAMACION_ERROR, PR
 				return html`<msgnoconeccion-component @click="${this.atras}" texto="Haga click volver" style="cursor:pointer"></msgnoconeccion-component>; `;
 			}
 		}
+	}
+	reserva(e) {
+		store.dispatch(reserva(e.currentTarget.item));
+		store.dispatch(goTo("teatroReserva"));
+
+		// let item = e.currentTarget.item;
+		// var usu = store.getState().autorizacion.usuario;
+		// var body = "<br><b>DATOS DE LA RESERVA</b>";
+		// body = body + "<br>Fecha: " + this.idiomaGenerico[this.idioma].diasLargo[new Date(item.fecha).getDay()] + " " + new Date(item.fecha).getDate() + " de " + this.idiomaGenerico[this.idioma].mesLargo[new Date(item.fecha).getMonth()] + ".";
+		// body = body + "<br>Hora: " + new Date(item.fecha).getHours() + ":" + new Date(item.fecha).getMinutes() + "hs.";
+		// body = body + "<br>Función: " + item.protagonistas + ", " + item.nombre;
+		// body = body + "<br>Género: " + item.genero;
+		// body = body + "<br><hr><b>DATOS DE REGISTRO DE LA APP</b>";
+		// body = body + "<br>Nombre: " + usu.nombre + "<br>Apellido: " + usu.apellido + "<br>Documento: " + usu.documento + "<br>E-Mail: " + usu.email + "<br>Teléfono: " + usu.telefono;
+		// store.dispatch(sendMail("Reserva teatro", body, "appuocra@gmail.com"));
 	}
 	atras() {
 		store.dispatch(goHistoryPrev());

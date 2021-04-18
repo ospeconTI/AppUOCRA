@@ -3,7 +3,7 @@
 import { html, LitElement, css } from "lit-element";
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
-import { goTo } from "../../redux/routing/actions";
+import { goHistoryPrev, goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { showWarning } from "../../redux/ui/actions";
 import { button } from "../css/button";
@@ -11,11 +11,15 @@ import { select } from "../css/select";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
 import { SVGS } from "../../../assets/icons/svgs";
+import { send as sendMail } from "../../redux/mail/actions";
+import { validaMail } from "../../libs/funciones";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
+const MAIL_OK = "mail.sendTimeStamp";
+const MAIL_ERROR = "mail.sendErrorTimeStamp";
 
-export class denunciasFormularioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
+export class denunciasFormularioScreen extends connect(store, MAIL_OK, MAIL_ERROR, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -174,6 +178,13 @@ export class denunciasFormularioScreen extends connect(store, MEDIA_CHANGE, SCRE
 			}
 			this.update();
 		}
+		if (name == MAIL_OK && state.screen.name == "denunciasFormulario") {
+			store.dispatch(showWarning("Mensaje enviado", "El mail se envio con exito", "fondoAmarillo", 3000));
+			store.dispatch(goHistoryPrev());
+		}
+		if (name == MAIL_ERROR && state.screen.name == "denunciasFormulario") {
+			store.dispatch(showWarning("ERROR, mail no enviado", "Verifique su conección de datos", "fondoError", 3000));
+		}
 	}
 	enviar() {
 		[].forEach.call(this.shadowRoot.querySelectorAll("[error]"), (element) => {
@@ -192,7 +203,7 @@ export class denunciasFormularioScreen extends connect(store, MEDIA_CHANGE, SCRE
 			ok = false;
 			telefono.setAttribute("error", "");
 		}
-		if (mail.value == "") {
+		if (mail.value == "" || !validaMail(mail.value)) {
 			ok = false;
 			mail.setAttribute("error", "");
 		}
@@ -201,8 +212,13 @@ export class denunciasFormularioScreen extends connect(store, MEDIA_CHANGE, SCRE
 			mensaje.setAttribute("error", "");
 		}
 		if (ok) {
-			let msg = "Nombre: " + nombre.value + ", Telefono: " + telefono.value + ", Mail: " + mail.value + ", Mensaje: " + mensaje.value;
-			location.href = "mailto:appuocra@gmail.com?cc=&subject=Denuncia%20condiciones%20de%20trabajo%20en%20obra&body=" + msg;
+			//			let msg = "Nombre: " + nombre.value + ", Telefono: " + telefono.value + ", Mail: " + mail.value + ", Mensaje: " + mensaje.value;
+			var usu = store.getState().autorizacion.usuario;
+			var body = "<br><b>DATOS DEL FORMULARIO</b>";
+			body = body + "<br>Nombre y Apellido: " + nombre.value + "<br>Telefono: " + telefono.value + "<br>E-Mail: " + mail.value + "<br>Mensaje: " + mensaje.value.replaceAll('"', "");
+			body = body + "<br><hr><b>DATOS DE REGISTRO DE LA APP</b>";
+			body = body + "<br>Nombre: " + usu.nombre + "<br>Apellido: " + usu.apellido + "<br>Documento: " + usu.documento + "<br>E-Mail: " + usu.email + "<br>Teléfono: " + usu.telefono;
+			store.dispatch(sendMail("Formulario de denuncias", body, "appuocra@gmail.com"));
 		} else {
 			store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
 		}

@@ -57,8 +57,6 @@ export class turismoHotelesListaScreen extends connect(store, HOTELES_DATOS, HOT
 				height: 100%;
 				grid-auto-flow: row;
 				background-color: var(--color-blanco);
-				overflow-x: hidden;
-				overflow-y: auto;
 			}
 			#titulo {
 				padding: 0.8vh 0 0.8vh 0;
@@ -75,10 +73,12 @@ export class turismoHotelesListaScreen extends connect(store, HOTELES_DATOS, HOT
 			}
 			.panel {
 				display: grid;
-				height: 89vh;
+				height: 75vh;
 				grid-auto-flow: row;
 				grid-gap: 0.2rem;
 				align-content: start;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 			.notas {
 				width: 95vw;

@@ -34,8 +34,6 @@ export class onBoardingScreen extends connect(store, ONBOARDING_ERROR, ONBOARDIN
 				justify-content: center;
 				align-items: center;
 				position: relative;
-				top: 0rem;
-				left: 0rem;
 				height: 100vh;
 				width: 100vw;
 				background-image: linear-gradient(var(--color-azul-oscuro), var(--primary-color));
@@ -54,9 +52,12 @@ export class onBoardingScreen extends connect(store, ONBOARDING_ERROR, ONBOARDIN
 				align-self: normal;
 				grid-gap: 0.5rem;
 			}
+			:host([media-size="large"]) #cuerpo {
+				width: 60vw;
+			}
 			#bandera {
 				position: absolute;
-				width: 100vw;
+				width: 100%;
 				height: 86vw;
 				background-image: url("https://app.uocra.org/images/bandera.gif");
 				background-repeat: no-repeat;
@@ -70,7 +71,7 @@ export class onBoardingScreen extends connect(store, ONBOARDING_ERROR, ONBOARDIN
 			#titulo {
 				color: white;
 				font-size: calc(var(--font-header-h1-size) * 1.8);
-				width: 90vw;
+				width: 90%;
 				text-align: center;
 				align-self: self-end;
 			}
@@ -80,7 +81,7 @@ export class onBoardingScreen extends connect(store, ONBOARDING_ERROR, ONBOARDIN
 				font-size: calc(var(--font-header-h1-menos-size) * 1.4);
 				font-weight: 300;
 				color: white;
-				width: 80vw;
+				width: 80%;
 				text-align: center;
 			}
 			#botonera {

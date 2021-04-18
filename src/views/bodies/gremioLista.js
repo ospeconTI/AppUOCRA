@@ -55,8 +55,6 @@ export class gremioListaScreen extends connect(store, SECCIONALES_DATOS, MAPA_CL
 				height: 100%;
 				grid-auto-flow: row;
 				background-color: var(--color-blanco);
-				overflow-x: hidden;
-				overflow-y: auto;
 			}
 			#titulo {
 				padding: 0.8vh 0 0.8vh 0;
@@ -71,10 +69,12 @@ export class gremioListaScreen extends connect(store, SECCIONALES_DATOS, MAPA_CL
 			}
 			.panel {
 				display: grid;
-				height: 89vh;
+				height: 75vh;
 				grid-auto-flow: row;
 				grid-gap: 0.2rem;
 				align-content: start;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 			.notas {
 				width: 95vw;

@@ -38,6 +38,7 @@ import { reducer as fundacionEspecialidadesReducer } from "./fundacionEspecialid
 import { reducer as fundacionCentrosReducer } from "./fundacionCentros/reducer";
 import { reducer as adolescenciaCuadernillosReducer } from "./adolescenciaCuadernillos/reducer";
 import { reducer as coberturasReducer } from "./coberturas/reducer";
+import { reducer as mailReducer } from "./mail/reducer";
 
 export const rootReducer = (state = {}, action) => {
 	return {
@@ -79,5 +80,6 @@ export const rootReducer = (state = {}, action) => {
 		fundacionCentros: fundacionCentrosReducer(state.fundacionCentros, action),
 		adolescenciaCuadernillos: adolescenciaCuadernillosReducer(state.adolescenciaCuadernillos, action),
 		coberturas: coberturasReducer(state.coberturas, action),
+		mail: mailReducer(state.mail, action),
 	};
 };

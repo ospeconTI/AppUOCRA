@@ -55,8 +55,6 @@ export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, TVESTRENO
 				height: 100%;
 				grid-auto-flow: row;
 				background-color: var(--color-blanco);
-				overflow-x: hidden;
-				overflow-y: auto;
 			}
 			#titulo {
 				height: 8vh;
@@ -72,10 +70,12 @@ export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, TVESTRENO
 			}
 			.panel {
 				display: grid;
-				height: auto;
+				height: 72vh;
 				grid-auto-flow: row;
 				grid-gap: 0.2rem;
 				align-content: start;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 			.notas {
 				width: 85vw;
@@ -139,7 +139,7 @@ export class tvEstrenosScreen extends connect(store, TVESTRENOS_DATOS, TVESTRENO
 								</div>
 							`;
 						})}
-						<div style="padding:.5rem"></div>
+						<div style="padding:1rem"></div>
 					</div>
 				</div>
 			`;
