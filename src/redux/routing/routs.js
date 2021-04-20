@@ -88,4 +88,5 @@ export const largeRoute = [
 	"5 -notificaciones",
 	"6 -compartir",
 	"7 -registroUpdate",
+	"8 -pantallaHorizontal",
 ];

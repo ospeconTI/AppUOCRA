@@ -448,6 +448,11 @@ export const screenLayuts = {
 		medium: HEADER_BODY_FOOT,
 		large: HEADER_BODY_FOOT,
 	},
+	pantallaHorizontal: {
+		small: ALL_BODY,
+		medium: ALL_BODY,
+		large: ALL_BODY,
+	},
 };
 
 export const getLayout = (state) => {

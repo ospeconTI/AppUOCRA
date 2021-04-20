@@ -76,7 +76,7 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				this.hidden = false;
 
 				this.timeOut = setTimeout(() => {
-					store.dispatch(goNext());
+					store.dispatch(goTo("onBoarding"));
 				}, 4000);
 			}
 			this.update();
@@ -85,7 +85,7 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 
 	proximo() {
 		clearTimeout(this.timeOut);
-		store.dispatch(goNext());
+		store.dispatch(goTo("onBoarding"));
 		//store.dispatch(goTo("claveCambio"));
 	}
 

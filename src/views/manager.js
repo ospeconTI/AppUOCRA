@@ -90,6 +90,7 @@ import { fundacionCursosListaScreen } from "./bodies/fundacionCursosLista";
 import { adolescenciaCuadernillosScreen } from "./bodies/adolescenciaCuadernillos";
 import { compartirScreen } from "./bodies/compartir";
 import { teatroReservaScreen } from "./bodies/teatroReserva";
+import { pantallaHorizontalScreen } from "./bodies/pantallaHorizontal";
 
 emergenciasScreen;
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -205,6 +206,7 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
 			<adolescenciacuadernillos-screen id="adolescenciaCuadernillos" class="body"></adolescenciacuadernillos-screen>
 			<compartir-screen id="compartir" class="body"></compartir-screen>
 			<teatroreserva-screen id="teatroReserva" class="body"></teatroreserva-screen>
+			<pantallahorizontal-screen id="pantallaHorizontal" class="body"></pantallahorizontal-screen>
 
 			<pie-componente class="foot"></pie-componente>
 

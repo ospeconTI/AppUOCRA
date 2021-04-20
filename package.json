@@ -1,6 +1,6 @@
 {
     "name": "uocra",
-    "version": "1.1.237",
+    "version": "1.1.247",
     "description": "UOCRA",
     "main": "./src/sandbox.js",
     "scripts": {
@@ -41,9 +41,9 @@
     },
     "devDependencies": {
         "clean-webpack-plugin": "^3.0.0",
-        "copy-webpack-plugin": "^6.2.1",
-        "html-webpack-tags-plugin": "^3.0.0",
-        "webpack-pwa-manifest": "^4.2.0",
+        "copy-webpack-plugin": "^6.4.1",
+        "html-webpack-tags-plugin": "^3.0.1",
+        "webpack-pwa-manifest": "^4.3.0",
         "workbox-webpack-plugin": "^5.1.4"
     }
 }

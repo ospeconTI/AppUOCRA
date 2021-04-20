@@ -161,11 +161,11 @@ export class hogarDescripcionScreen extends connect(store, BANNERS_TIMESTAMP, BA
 			const SeMuestraEnUnasDeEstasPantallas = "-hogarDescripcion-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
-			}
-			if (state.banners.entities) {
-				this.update();
-			} else {
-				store.dispatch(getBanners());
+				if (state.banners.entities) {
+					this.update();
+				} else {
+					store.dispatch(getBanners());
+				}
 			}
 		}
 		if (name == BANNERS_TIMESTAMP) {

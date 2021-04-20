@@ -60,6 +60,12 @@ module.exports = {
 					sizes: "512x512",
 					type: "image/png",
 				},
+				{
+					src: path.resolve("assets/icons/maskable_icon.png"),
+					sizes: "512x512",
+					type: "image/png",
+					purpose: "any maskable",
+				},
 			],
 		}),
 
