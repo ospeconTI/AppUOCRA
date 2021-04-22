@@ -49,10 +49,12 @@ export class claveRecuperarScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 				height: 95%;
 				width: 90vw;
 				grid-gap: 0rem;
-				grid-template-rows: 25% 2% 56% 2% 15%;
+				grid-template-rows: 20% 2% 51% 2% 10% 15%;
 				border-radius: 2rem;
 				background-color: transparent;
 				align-self: center;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 			:host([media-size="large"]) #cuerpo {
 				width: 60vw;
@@ -115,6 +117,7 @@ export class claveRecuperarScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 				<div class="grid fit">
 					<button btn2 class="miBoton" @click="${this.volver}">${this.claveRecuperar[this.idioma].volver}</button>
 				</div>
+				<div></div>
 			</div>
 		`;
 	}

@@ -228,13 +228,13 @@ export class registroScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElem
 			ok = false;
 			apellido.setAttribute("error", "");
 		}
-		if (documento.value == "" || !typeof documento.value == "number" || parseInt(documento.value) < 99999 || parseInt(documento.value) > 99999999) {
+		if (documento.value == "" || parseInt(documento.value, 10) == null || parseInt(documento.value) < 99999 || parseInt(documento.value) > 99999999) {
 			ok = false;
 			documento.setAttribute("error", "");
 		}
-		if (telefono.value == "" || !typeof telefono.value == "number" || parseInt(telefono.value) < 99999999) {
+		if (telefono.value == "" || parseInt(telefono.value, 10) == null || parseInt(telefono.value) < 99999999) {
 			ok = false;
-			documento.setAttribute("error", "");
+			telefono.setAttribute("error", "");
 		}
 		if (ok) {
 			store.dispatch(logon(nombre.value, apellido.value, mail.value, documento.value, tipoDocumento.value, telefono.value));

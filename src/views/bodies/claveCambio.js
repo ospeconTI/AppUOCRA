@@ -48,10 +48,12 @@ export class claveCambioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 				height: 95%;
 				width: 90vw;
 				grid-gap: 0rem;
-				grid-template-rows: 35% 2% 63%;
+				grid-template-rows: 30% 2% 68%;
 				border-radius: 2rem;
 				background-color: transparent;
 				align-self: center;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 			:host([media-size="large"]) #cuerpo {
 				width: 60vw;
@@ -108,6 +110,7 @@ export class claveCambioScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 							<input type="password" id="password1" autocomplete="off" " />
 						</div>
 						<button btn3 class="miBoton" @click="${this.enviar}">${this.claveCambio[this.idioma].enviar}</button>
+						<div style="height:12vh"></div>
 					</div>
 				</div>
 			</div>
