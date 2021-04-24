@@ -453,6 +453,11 @@ export const screenLayuts = {
 		medium: ALL_BODY,
 		large: ALL_BODY,
 	},
+	verVideo: {
+		small: ALL_BODY,
+		medium: ALL_BODY,
+		large: ALL_BODY,
+	},
 };
 
 export const getLayout = (state) => {

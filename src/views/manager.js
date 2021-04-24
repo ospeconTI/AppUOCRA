@@ -15,6 +15,7 @@ import { menuPrincipal } from "../views/headers/menu";
 import { alertaErrores } from "./bodies/alert";
 
 import { SpinnerLoading } from "./componentes/spinner";
+import { verVideoScreen } from "./componentes/verVideo";
 
 import { pieComponente } from "./foots/pie";
 import { splashScreen } from "./bodies/splash";
@@ -214,6 +215,7 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
 			<pantalla-warning id="warning"></pantalla-warning>
 			<menu-principal id="menu" class="header"></menu-principal>
 			<spinner-loading type="spinner2"></spinner-loading>
+			<vervideo-screen type="verVideo"></vervideo-screen>
 		`;
 	}
 

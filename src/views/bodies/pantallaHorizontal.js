@@ -11,17 +11,18 @@ export class pantallaHorizontalScreen extends connect(store, MEDIA_CHANGE, SCREE
 	constructor() {
 		super();
 		this.hidden = true;
+		this.area = "body";
 	}
 
 	static get styles() {
 		return css`
 			:host {
+				position: fixed;
 				display: grid;
-				position: relative;
 				top: 0;
 				left: 0;
-				height: 100vh;
-				width: 100vw;
+				right: 0;
+				bottom: 0;
 				background-color: var(--color-negro) !important;
 				z-index: 10000;
 			}
@@ -68,7 +69,7 @@ export class pantallaHorizontalScreen extends connect(store, MEDIA_CHANGE, SCREE
 			this.mediaSize = state.ui.media.size;
 			this.orientation = state.ui.media.orientation;
 			this.hidden = true;
-			if (this.orientation == "landscape" && (navigator.userAgent.search("iPad") != -1 || navigator.userAgent.search("iPhone") != -1) && (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf("IEMobile") !== -1)) {
+			if (this.orientation == "landscape" && (navigator.userAgent.search("iPad") != -1 || navigator.userAgent.search("iPhone") != -1 || navigator.userAgent.search("Android") != -1) && (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf("IEMobile") !== -1)) {
 				this.hidden = false;
 			}
 			this.update();

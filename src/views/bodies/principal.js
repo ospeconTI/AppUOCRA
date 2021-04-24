@@ -7,7 +7,7 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo, goHistoryPrev } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
-import { menuActivar, showWarning } from "../../redux/ui/actions";
+import { menuActivar, showWarning, video } from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
@@ -116,8 +116,10 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
 				display: none;
 			}
 			.notaCabImg {
-				width: 100%;
-				height: 42vw;
+				width: 95%;
+				height: 45vw;
+				display: grid;
+				position: relative;
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: cover;
@@ -176,6 +178,26 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
 				overflow: hidden;
 				text-overflow: ellipsis;
 			}
+			*[hidden] {
+				display: none !important;
+			}
+			.play {
+				display: inline-block;
+				position: absolute;
+				top: calc(50% - 27px);
+				left: calc(50% - 27px);
+				width: 55px;
+				height: 55px;
+				border-radius: 50%;
+				background-color: rgba(255, 255, 255, 0.8);
+				cursor: pointer;
+				z-index: 100;
+			}
+			.play svg {
+				width: 56px;
+				height: 56px;
+				fill: black;
+			}
 		`;
 	}
 	render() {
@@ -210,8 +232,10 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
 							if (index == 0) {
 								return html`
 									<div class="grid row">
-										<div class="notaCabImg" style="background-image: url('${item.imagen}')"></div>
-										<div class="notaCabTxt">${unsafeHTML("<b style='font-size:.8rem;'>" + item.copete + "</b> " + item.detalle)}</div>
+										<div class="notaCabImg" style="background-image: url('${item.imagen}')">
+											<div ?hidden="${item.link == ""}" class="play" .item=${item} @click=${this.verLink}>${SVGS["PLAY"]}</div>
+										</div>
+										<div class="notaCabTxt">${unsafeHTML("<b style='font-size:.8rem;'>" + item.copete + "</b> " + item.detalle.substring(0, 180) + "...")}</div>
 										<div class="verMas" .item=${item} @click="${this.verMas}">${this.principal[this.idioma].verMas}</div>
 									</div>
 								`;
@@ -247,6 +271,15 @@ export class principalScreen extends connect(store, NOTICIAS_TIMESTAMP, NOTICIAS
 		var rex = /(<([^>]+)>)/gi;
 		txt = txt.replace(rex, "");
 		return txt;
+	}
+	verLink(e) {
+		//window.open("https://www.youtube.com/watch?v=" + e.currentTarget.item.link, "_blank");
+		//<a href="intent://<URL>#Intent;scheme=http;package=com.android.chrome;end"></a>
+		//window.open("intent://www.youtube.com/watch?v=" + e.currentTarget.item.link + "#Intent;scheme=https;package=com.android.chrome;end", "_blank");
+		//location.href = "intent://www.youtube.com/watch?v=" + e.currentTarget.item.link + "#Intent;scheme=https;package=com.android.chrome;end";
+		//window.location = "googlechrome://navigate?url=" + "https://www.youtube.com/watch?v=" + e.currentTarget.item.link;
+		store.dispatch(video(e.currentTarget.item.link));
+		store.dispatch(goTo("verVideo"));
 	}
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {

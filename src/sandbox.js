@@ -24,8 +24,11 @@ import { get as getServicios } from "./redux/servicios/actions";
 import { get as getTitulos } from "./redux/titulos/actions";
 import { get as getUsuarios } from "./redux/usuarios/actions";
 import { get as getZonas } from "./redux/zonas/actions";
-
 import { get as getOnBoarding } from "./redux/onBoarding/actions";
+
+localStorage.removeItem("menu");
+localStorage.removeItem("noticia");
+localStorage.removeItem("version");
 
 if (process.env.NODE_ENV === "production") {
 	registerSW();

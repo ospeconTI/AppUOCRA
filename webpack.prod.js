@@ -5,11 +5,12 @@ const common = require("./webpack.common.js");
 const path = require("path");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 const webpack = require("webpack");
-
+//const nombre = "[name].bundle." + JSON.stringify(process.env.npm_package_version).replace('"', "").replace('"', "") + ".js";
+const nombre = "[name].bundle.js";
 module.exports = merge(common, {
 	mode: "production",
 	output: {
-		filename: "[name].bundle.js",
+		filename: nombre,
 		path: path.resolve(__dirname, "dist"),
 		libraryTarget: "var",
 		library: "EntryPoint",

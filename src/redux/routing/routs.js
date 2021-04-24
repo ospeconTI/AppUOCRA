@@ -89,4 +89,5 @@ export const largeRoute = [
 	"6 -compartir",
 	"7 -registroUpdate",
 	"8 -pantallaHorizontal",
+	"9 -verVideo",
 ];
