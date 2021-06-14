@@ -141,15 +141,12 @@ export class cineEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
                         <div class="grid column" style="padding:0; grid-template-columns:auto 1fr" >
                             <div id="bullet">${SVGS["BULLET"]}</div>
                             <div>
-                            En esta <b>8va Edición</b>, abrimos la convocatoria a las siguientes categorías de nuestras competencias oficiales:
-                                <p><li><b>Competencia Internacional de Largometrajes de Ficción:</b> largometrajes de ficción de duración igual o mayor a 45 minutos cualquiera sea el país de origen.</li></p>
-                                <p><li><b>Competencia Internacional de Largometrajes Documentales:</b> largometrajes documentales de duración igual o mayor a 45 minutos cualquiera sea el país de origen.</li></p>
-                                <p><li><b>Competencia Nacional de Largometrajes:</b> largometrajes documentales o de ficción cuyo director sea de nacionalidad argentina y los mismos hayan sido rodados íntegramente en la Argentina, de duración igual o mayor a 45 minutos.</li></p>                            
-                                <p><li><b>Competencia Internacional de Cortometrajes de Ficción:</b></li>cortos de ficción de hasta 26 minutos de duración cualquiera sea el país de origen.</p>                            
-                                <p><li><b>Competencia Internacional de Cortometrajes Documentales:</b></li>cortos documentales de hasta 26 minutos de duración cualquiera sea el país de origen. Temas como solidaridad, conciencia ecológica, sustentabilidad y cuidado del planeta en que vivimos, derechos fundamentales en el lugar de trabajo, igualdad de género, inclusión, trabajo infantil, trabajo forzoso, trabajo migrante, discapacidad y trabajo, protección social, avances tecnológicos entre otros temas, son temáticas válidas para postularse.</p>                            
-                                <p><li><b>INSCRIPCIÓN LIBRE Y GRATUITA</b></li>para los largos y cortometrajes realizados por directores argentinos y la misma estará abierta hasta el 28 de febrero de 2021.</p>                            
-                                <button btn1 @click=${this.inscripcion}>INSCRIBITE</button>                           
-                            </div>                       
+                            <p>La <b>8va Edición</b> de Construir Cine finalizó luego de más de dos semanas de Festival.</p> 
+                            <p>Las casi 70 películas que ofrecimos gratis para todo el país, lograron encontrar su público online y así lo demuestran los más de 15.000 accesos a las 5 plataformas online que tuvimos este año: Octubre TV, Lumiton Audiovisual, Vivamos Cultura, Cont.ar y Construir Cine.</p>                      
+                            <p>Después de ser el primer Festival en la región que en el 2020 hizo su versión totalmente digital, este año reconvertimos la virtualidad para llegar a más personas en todo el país. </p>
+                            <p>Además de la programación, ofrecimos más de 20 Actividades Especiales en línea que nos permitieron recrear la experiencia del Festival presencial, reuniendo a más de 12.000 personas en entrevistas a cineastas, workshops, keynotes, debates y reflexiones con especialistas de todo el mundo.</p>  
+                            </div>     
+                            
                         </div> 
                     </div>              
                     <div style="padding-top:2rem"></div>
