@@ -39,8 +39,9 @@ export const logout = () => ({
     type: LOGOUT,
 });
 
-export const recupero = (email) => ({
+export const recupero = (email, password) => ({
     type: RECUPERO,
+    password: password,
     email: email,
 });
 

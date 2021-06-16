@@ -164,7 +164,7 @@
         "id": 23,
         "nombre": "NUEVA CLAVE",
         "imagen": "NUEVACLAVE",
-        "accion": "nuevaLcave",
+        "accion": "claveCambio",
         "activo": true
     },
     {

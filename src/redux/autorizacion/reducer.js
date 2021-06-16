@@ -7,6 +7,7 @@ const initialState = {
     loginTimeStamp: null,
     logoutTimeStamp: null,
     recuperoTimeStamp: null,
+    recuperoErrorTimeStamp: null,
     renovacionTimeStamp: null,
     logonTimeStamp: null,
     updateProfileTimeStamp: null,
@@ -35,8 +36,12 @@ export const reducer = (state = initialState, action) => {
             newState.renovacionTimeStamp = new Date().getTime();
             break;
         case RECUPERO_SUCCESS:
-            newState.recuperoTimeStamp = new Date().getTime();
-            newState.recuperoMessage = action.payload.receive;
+            if (action.payload.receive.status) {
+                newState.recuperoErrorTimeStamp = new Date().getTime();
+            } else {
+                newState.recuperoTimeStamp = new Date().getTime();
+                newState.recuperoMessage = action.payload.receive;
+            }
             break;
         case LOGON_SUCCESS:
             newState.logonTimeStamp = new Date().getTime();

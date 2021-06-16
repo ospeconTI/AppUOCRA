@@ -1,10 +1,10 @@
 {
-    "ES" :{
+    "ES": {
         "password": "Contraseña",
         "passwordRepetir": "Ingreselo nuevamente",
-        "enviar": "Enviar"
+        "enviar": "Enviar",
+        "email": "Ingrese su E-mail",
+        "volver": "VOLVER"
     },
-    "EN" :{
-
-    }
+    "EN": {}
 }
