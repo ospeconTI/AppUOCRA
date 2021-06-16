@@ -1,12 +1,11 @@
 {
-    "ES" :{
+    "ES": {
         "correo": "Correo Electronico",
         "password": "Contaseña",
         "inicio": "INICIAR SESION",
         "crear": "CREAR CUENTA",
-        "recupero": "¿OLVIDASTE TU CONTRASEÑA?"
+        "recupero": "¿OLVIDASTE TU CONTRASEÑA?",
+        "volver": "VOLVER"
     },
-    "EN" :{
-
-    }
+    "EN": {}
 }

@@ -1,18 +1,20 @@
 {
-	"ES": {
-		"titulo": "PARA PODER REGISTRARTE, CARGUE LOS DATOS SOLICITADOS",
-		"correo": "Correo electrónico",
-		"correo_ph": "juan@gmail.com",
-		"nombre": "Nombre",
-		"nombre_ph": "Juan Jose",
-		"apellido": "Apellido",
-		"apellido_ph": "Rodriguez",
-		"documento": "Documento",
-		"tipoDocumento": "Tipo de documento",
-		"telefono": "Telefono",
-		"telefono_ph": "01143233221",
-		"enviar": "REGISTRARSE",
-		"volver": "VOLVER"
-	},
-	"EN": {}
+    "ES": {
+        "titulo": "PARA PODER REGISTRARTE, CARGUE LOS DATOS SOLICITADOS",
+        "correo": "Correo electrónico",
+        "correo_ph": "juan@gmail.com",
+        "nombre": "Nombre",
+        "nombre_ph": "Juan Jose",
+        "apellido": "Apellido",
+        "apellido_ph": "Rodriguez",
+        "documento": "Documento",
+        "tipoDocumento": "Tipo de documento",
+        "telefono": "Telefono",
+        "telefono_ph": "01143233221",
+        "enviar": "REGISTRARSE",
+        "volver": "VOLVER",
+        "cargaPassword": "Ingrese la password",
+        "repitePassword": "Ingrese la password nuevamente"
+    },
+    "EN": {}
 }

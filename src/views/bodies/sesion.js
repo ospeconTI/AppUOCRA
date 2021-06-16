@@ -3,7 +3,7 @@
 import { html, LitElement, css } from "lit-element";
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
-import { goTo } from "../../redux/routing/actions";
+import { goHistoryPrev, goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { showWarning } from "../../redux/ui/actions";
 import { button } from "../css/button";
@@ -119,6 +119,7 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				</div>
 				<div class="grid fit">
 					<button btn2 class="btnOlvido" @click="${this.claveRecuperar}">${this.sesion[this.idioma].recupero}</button>
+					<button btn2 @click="${this.volver}">${this.sesion[this.idioma].volver}</button>
 				</div>
 			</div>
 		`;
@@ -171,6 +172,9 @@ export class sesionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 		} else {
 			store.dispatch(showWarning("Datos erroneos", "Usuario o Password inexistente, intente nuevamente", "fondoAmarillo", 4000));
 		}
+	}
+	volver(e){
+		store.dispatch(goHistoryPrev())
 	}
 	static get properties() {
 		return {

@@ -169,13 +169,13 @@ export class onBoardingScreen extends connect(store, ONBOARDING_ERROR, ONBOARDIN
 			this.update();
 		} else {
 			this.numero = 0;
-			store.dispatch(goNext());
+			store.dispatch(goTo("main"));
 		}
 		//store.dispatch(goTo("salud"));
 	}
 
 	cuenta() {
-		store.dispatch(goNext());
+		store.dispatch(goTo("main"));
 	}
 
 	static get properties() {
