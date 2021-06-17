@@ -1,6 +1,22 @@
 /** @format */
 
-import { LOGIN_SUCCESS, LOGIN_ERROR, RECUPERO_SUCCESS, RECUPERO_ERROR, RENOVACION_SUCCESS, RENOVACION_ERROR, LOGON_ERROR, LOGON_SUCCESS, UPDATE_PROFILE_ERROR, UPDATE_PROFILE_SUCCESS, LOGOUT, LOGIN_SUCCESS_AUTO, ACTIVAR, ACTIVAR_SUCCESS, ACTIVAR_ERROR } from "./actions";
+import {
+    LOGIN_SUCCESS,
+    LOGIN_ERROR,
+    RECUPERO_SUCCESS,
+    RECUPERO_ERROR,
+    RENOVACION_SUCCESS,
+    RENOVACION_ERROR,
+    LOGON_ERROR,
+    LOGON_SUCCESS,
+    UPDATE_PROFILE_ERROR,
+    UPDATE_PROFILE_SUCCESS,
+    LOGOUT,
+    LOGIN_SUCCESS_AUTO,
+    ACTIVAR,
+    ACTIVAR_SUCCESS,
+    ACTIVAR_ERROR,
+} from "./actions";
 import { store } from "../store";
 const initialState = {
     usuario: null,
@@ -31,6 +47,7 @@ export const reducer = (state = initialState, action) => {
             break;
         case LOGOUT:
             newState.logoutTimeStamp = new Date().getTime();
+            newState.usuario = null;
             break;
         case RENOVACION_SUCCESS:
             newState.renovacionTimeStamp = new Date().getTime();

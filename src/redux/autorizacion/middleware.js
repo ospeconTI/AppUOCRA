@@ -1,5 +1,27 @@
 /** @format */
-import { LOGIN, RECUPERO, RENOVACION, LOGON, UPDATE_PROFILE, LOGIN_SUCCESS, RECUPERO_SUCCESS, RENOVACION_SUCCESS, LOGON_SUCCESS, UPDATE_PROFILE_SUCCESS, LOGIN_ERROR, RECUPERO_ERROR, RENOVACION_ERROR, LOGON_ERROR, UPDATE_PROFILE_ERROR, LOGIN_SUCCESS_AUTO, LOGOUT, DATOS_PERSONALES, ACTIVAR, ACTIVAR_ERROR, ACTIVAR_SUCCESS } from "./actions";
+import {
+    LOGIN,
+    RECUPERO,
+    RENOVACION,
+    LOGON,
+    UPDATE_PROFILE,
+    LOGIN_SUCCESS,
+    RECUPERO_SUCCESS,
+    RENOVACION_SUCCESS,
+    LOGON_SUCCESS,
+    UPDATE_PROFILE_SUCCESS,
+    LOGIN_ERROR,
+    RECUPERO_ERROR,
+    RENOVACION_ERROR,
+    LOGON_ERROR,
+    UPDATE_PROFILE_ERROR,
+    LOGIN_SUCCESS_AUTO,
+    LOGOUT,
+    DATOS_PERSONALES,
+    ACTIVAR,
+    ACTIVAR_ERROR,
+    ACTIVAR_SUCCESS,
+} from "./actions";
 
 import { RESTAdd, RESTPatch, REST_ADD } from "../rest/actions";
 import { goTo, goHistoryPrev } from "../routing/actions";
@@ -25,7 +47,7 @@ export const logout =
     (action) => {
         next(action);
         if (action.type === LOGOUT) {
-            dispatch(goTo("sesion"));
+            dispatch(goTo("main"));
         }
     };
 
@@ -100,7 +122,7 @@ export const processLogin =
                 dispatch(showWarning("Erroneos", "Usuario o Password incorrecta, intente nuevamente", "fondoAmarillo", 4000));
             } else {
                 //viewMode("main");
-                dispatch(goTo("main"));
+                dispatch(goHistoryPrev());
             }
         }
     };

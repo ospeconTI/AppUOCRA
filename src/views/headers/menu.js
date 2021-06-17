@@ -185,7 +185,7 @@ export class menuPrincipal extends connect(store, PROFILE_DATO, MENU_ACTIVAR, LE
                     <div class="grid column" style="justify-content: flex-start;">
                         <div class="menu-button" @click=${this.toggleMenu}>${SVGS["MENU"]}</div>
                         <div class="grid row gridGapPunto2vh" ?hidden="${this.current == "compras"}">
-                            <div class="hola" @click="${this.modificar}">Hola,</div>
+                            <div class="hola" @click="${this.modificar}">${store.getState().autorizacion.usuario ? "Hola, " : ""}</div>
                             <div id="hola" class="hola">${store.getState().autorizacion.usuario ? store.getState().autorizacion.usuario.nombre + "!" : ""}</div>
                         </div>
                     </div>

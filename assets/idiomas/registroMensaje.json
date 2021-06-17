@@ -1,10 +1,8 @@
 {
-    "ES" :{
+    "ES": {
         "titulo1": "¡Genial!",
         "titulo2": "Su registro se completo correctamente.",
-        "titulo3": "Ingresa a tu mail (verifica tu spam) para continuar con tu registracion."
+        "titulo3": "Ya puede ingresar al sistema con su usuario y password"
     },
-    "EN" :{
-
-    }
+    "EN": {}
 }
