@@ -7,7 +7,7 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo, goHistoryPrev } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
-import { showWarning } from "../../redux/ui/actions";
+import { showConfirmacion, showWarning } from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { input } from "../css/input";
 import { gridLayout } from "../css/gridLayout";
@@ -304,6 +304,22 @@ export class generalScreen extends connect(
     }
     botonItem(que) {
         let usu = store.getState().autorizacion.usuario;
+        if (!usu) {
+            store.dispatch(
+                showConfirmacion(
+                    "Debe estar logueado para realizar esta operacion, ¿ quiere loguearse ahora ?",
+                    () => {
+                        store.dispatch(goTo("sesion"));
+                    },
+                    null
+                )
+            );
+        } else {
+            this.redireccionar(usu, que);
+        }
+    }
+
+    redireccionar(usu, que) {
         let msg = "Nombre: " + usu.nombre + ".%0D%0A" + "Apellido: " + usu.apellido + ". %0D%0ADocumento: " + usu.documento;
         switch (que) {
             case "mujeres":

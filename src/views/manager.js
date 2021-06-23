@@ -93,6 +93,7 @@ import { compartirScreen } from "./bodies/compartir";
 import { teatroReservaScreen } from "./bodies/teatroReserva";
 import { pantallaHorizontalScreen } from "./bodies/pantallaHorizontal";
 import { activacionScreen } from "./bodies/activacion";
+import { confirmacionComponent } from "./componentes/confirmacion";
 
 emergenciasScreen;
 const MEDIA_CHANGE = "ui.media.timeStamp";
@@ -218,6 +219,7 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
             <spinner-loading type="spinner2"></spinner-loading>
             <vervideo-screen type="verVideo"></vervideo-screen>
             <activacion-screen id="activacion" class="body"></activacion-screen>
+            <confirmacion-component></confirmacion-component>
         `;
     }
 

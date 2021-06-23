@@ -26,6 +26,11 @@ export const VER_PANTALLA_USUARIO_ASIGNAR = "[ui] ver pantalla usuario asignar";
 export const SHOW_WARNING = "[ui] show warning";
 export const HIDE_WARNING = "[ui] hide warning";
 
+export const SHOW_CONFIRMACION = "[ui] show confirmacion";
+export const HIDE_CONFIRMACION = "[ui] hide confirmacion";
+export const CONFIRMACION_OK = "[ui] confirmacion ok";
+export const CONFIRMACION_CANCEL = "[ui] confirmacion cancel";
+
 export const MAPA_CLICK = "[ui] mapa click";
 
 export const IDIOMA = "[ui] IDIOMA";
@@ -37,123 +42,139 @@ export const MENU_ACTIVAR = "[ui] menu activar";
 export const VIDEO = "[ui] video";
 
 export const showSpinner = () => ({
-	type: SHOW_SPINNER,
+    type: SHOW_SPINNER,
 });
 export const hideSpinner = () => ({
-	type: HIDE_SPINNER,
+    type: HIDE_SPINNER,
 });
 
 export const showError = (message) => ({
-	type: SHOW_ERROR,
-	message: message,
+    type: SHOW_ERROR,
+    message: message,
 });
 export const hideError = () => ({
-	type: HIDE_ERROR,
+    type: HIDE_ERROR,
+});
+
+export const showConfirmacion = (message, okCallBack, cancelCallback) => ({
+    type: SHOW_CONFIRMACION,
+    message: message,
+    okCallBack: okCallBack,
+    cancelCallback: cancelCallback,
+});
+export const hideConfirmacion = () => ({
+    type: HIDE_CONFIRMACION,
+});
+export const confirmacionOK = () => ({
+    type: CONFIRMACION_OK,
+});
+export const confirmacionCancel = () => ({
+    type: CONFIRMACION_CANCEL,
 });
 
 export const showWarning = (titulo = "", subTitulo = "", backgroundColor = "fondoInformacion", timeOut = 1500) => ({
-	type: SHOW_WARNING,
-	titulo: titulo,
-	subTitulo: subTitulo,
-	backgroundColor: backgroundColor,
-	timeOut: timeOut,
+    type: SHOW_WARNING,
+    titulo: titulo,
+    subTitulo: subTitulo,
+    backgroundColor: backgroundColor,
+    timeOut: timeOut,
 });
 export const hideWarning = () => ({
-	type: HIDE_WARNING,
+    type: HIDE_WARNING,
 });
 
 export const captureMedia = () => ({
-	type: CAPTURE_MEDIA,
+    type: CAPTURE_MEDIA,
 });
 export const setMedia = (size) => ({
-	type: SET_MEDIA,
-	size: size,
+    type: SET_MEDIA,
+    size: size,
 });
 
 export const setMediaOrientation = (orientation) => ({
-	type: SET_MEDIA_ORIENTATION,
-	orientation: orientation,
+    type: SET_MEDIA_ORIENTATION,
+    orientation: orientation,
 });
 
 export const selection = (option) => ({
-	type: SELECTION,
-	option: option,
+    type: SELECTION,
+    option: option,
 });
 
 export const velo = (option) => ({
-	type: VELO,
-	option: option,
+    type: VELO,
+    option: option,
 });
 
 export const verPantallaLogin = (option) => ({
-	type: VER_PANTALLA_LOGIN,
-	option: option,
+    type: VER_PANTALLA_LOGIN,
+    option: option,
 });
 
 export const verPantallaMiembro = (option) => ({
-	type: VER_PANTALLA_MIEMBRO,
-	option: option,
+    type: VER_PANTALLA_MIEMBRO,
+    option: option,
 });
 
 export const verPantallaCambioClave = (option) => ({
-	type: VER_PANTALLA_CAMBIO_CLAVE,
-	option: option,
+    type: VER_PANTALLA_CAMBIO_CLAVE,
+    option: option,
 });
 
 export const verPantallaPases = (option) => ({
-	type: VER_PANTALLA_PASES,
-	option: option,
+    type: VER_PANTALLA_PASES,
+    option: option,
 });
 
 export const verPantallaCambioAdministrador = (option, cuentaId, cuentaNombre, cuentaMail, administradorNombre) => ({
-	type: VER_PANTALLA_CAMBIO_ADMINISTRADOR,
-	option: option,
-	cuentaId: cuentaId,
-	cuentaNombre: cuentaNombre,
-	cuentaMail: cuentaMail,
-	administradorNombre: administradorNombre,
+    type: VER_PANTALLA_CAMBIO_ADMINISTRADOR,
+    option: option,
+    cuentaId: cuentaId,
+    cuentaNombre: cuentaNombre,
+    cuentaMail: cuentaMail,
+    administradorNombre: administradorNombre,
 });
 
 export const verPantallaCambioNombreCuenta = (option, cuentaId, cuentaNombre, cuentaMail, administradorNombre) => ({
-	type: VER_PANTALLA_CAMBIO_NOMBRE_CUENTA,
-	option: option,
-	cuentaId: cuentaId,
-	cuentaNombre: cuentaNombre,
-	cuentaMail: cuentaMail,
-	administradorNombre: administradorNombre,
+    type: VER_PANTALLA_CAMBIO_NOMBRE_CUENTA,
+    option: option,
+    cuentaId: cuentaId,
+    cuentaNombre: cuentaNombre,
+    cuentaMail: cuentaMail,
+    administradorNombre: administradorNombre,
 });
 
 export const verPantallaUsuarioAsignar = (option, cuentaId, cuentaNombre, cuentaMail, administradorNombre, creditos) => ({
-	type: VER_PANTALLA_USUARIO_ASIGNAR,
-	option: option,
-	cuentaId: cuentaId,
-	cuentaNombre: cuentaNombre,
-	cuentaMail: cuentaMail,
-	administradorNombre: administradorNombre,
-	creditos: creditos,
+    type: VER_PANTALLA_USUARIO_ASIGNAR,
+    option: option,
+    cuentaId: cuentaId,
+    cuentaNombre: cuentaNombre,
+    cuentaMail: cuentaMail,
+    administradorNombre: administradorNombre,
+    creditos: creditos,
 });
 
 export const mapaClick = (feature, event) => ({
-	type: MAPA_CLICK,
-	feature: feature,
-	event: event,
+    type: MAPA_CLICK,
+    feature: feature,
+    event: event,
 });
 
 export const idioma = () => ({
-	type: IDIOMA,
+    type: IDIOMA,
 });
 
 export const urls = (servidor, imagenes) => ({
-	type: URLS,
-	servidor: servidor,
-	imagenes: imagenes,
+    type: URLS,
+    servidor: servidor,
+    imagenes: imagenes,
 });
 
 export const menuActivar = () => ({
-	type: MENU_ACTIVAR,
+    type: MENU_ACTIVAR,
 });
 
 export const video = (link) => ({
-	type: VIDEO,
-	link: link,
+    type: VIDEO,
+    link: link,
 });
