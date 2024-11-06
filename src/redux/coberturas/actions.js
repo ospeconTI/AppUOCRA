@@ -5,6 +5,7 @@ export const UPDATE = "[coberturas] UPDATE";
 export const REMOVE = "[coberturas] REMOVE";
 export const EDIT = "[coberturas] EDIT";
 export const TIENE_COBERTURA = "[coberturas] TIENE_COBERTURA";
+export const ACEPTA_CONDICIONES_COBERTURA = "[coberturas] ACEPTA_CONDICIONES_COBERTURA";
 
 export const GET_SUCCESS = "[coberturas] GET success";
 export const ADD_SUCCESS = "[coberturas] ADD success";
@@ -61,4 +62,9 @@ export const edit = (modo, item) => ({
 export const tieneCobertura = (cobertura) => ({
 	type: TIENE_COBERTURA,
 	cobertura: cobertura,
+});
+
+export const aceptaCondicionesCobertura = (acepta) => ({
+	type: ACEPTA_CONDICIONES_COBERTURA,
+	acepta: acepta,
 });

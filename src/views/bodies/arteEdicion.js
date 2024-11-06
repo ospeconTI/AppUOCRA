@@ -1,6 +1,8 @@
 /** @format */
 
 import { html, LitElement, css } from "lit-element";
+import { unsafeHTML } from "lit-html/directives/unsafe-html";
+
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo } from "../../redux/routing/actions";
@@ -10,11 +12,13 @@ import { button } from "../css/button";
 import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
 import { SVGS } from "../../../assets/icons/svgs";
+import { get as getEdiciones } from "../../redux/arteEdicionesActuales/action";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
-
-export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
+const ARTEEDICIONES_DATOS = "arteEdicionesActuales.timeStamp";
+const ARTEEDICIONES_ERROR = "arteEdicionesActuales.errorTimeStamp";
+export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN, ARTEEDICIONES_DATOS, ARTEEDICIONES_ERROR)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -24,6 +28,7 @@ export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 		this.provincia = null;
 		this.localidad = null;
 		this.servicio = null;
+		this.registros = null;
 	}
 
 	static get styles() {
@@ -55,7 +60,9 @@ export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 			#titulo {
 				width: 100%;
 				height: 52vw;
-				background-image: url("https://app.uocra.org/images/arte2021.gif");
+				/*
+				background-image: url("https://app.uocra.org/images/arte2021_1.gif");
+				*/
 				background-repeat: no-repeat;
 				background-position: center center;
 				background-size: cover;
@@ -132,12 +139,13 @@ export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 		`;
 	}
 	render() {
-		if (true) {
+		if (this.registros) {
 			return html`
 				<div id="cuerpo" class="grid row">
-					<div id="titulo" class="grid column"></div>
-					<div id="subTituloTexto">Creemos que la fotografía es una forma de expresión al alcance de todos y todas. Por eso, premiamos a las mejores imágenes que expresen los desafíos en el nuevo mundo del trabajo. ¡Compartinos tu mirada sobre los desafíos en el nuevo mundo del trabajo!</div>
-					<div id="tituloTexto" class="grid">
+					<div id="titulo" class="grid column" style="background-image:url('${this.registros[0].imagen}')"></div>
+					<div id="subTituloTexto">${this.registros[0].titulo}</div>
+					<div id="subTituloTexto">${unsafeHTML(this.registros[0].descripcion)}</div>
+					<!--<div id="tituloTexto" class="grid">
 						<div id="bullet">${SVGS["BULLET"]}</div>
 						<div id="solicitud">ABIERTA LA INSCRIPCIÓN</div>
 					</div>
@@ -169,10 +177,11 @@ export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 						<div id="bullet">${SVGS["BULLET"]}</div>
 						<div id="solicitud">Conocé las bases del concurso en <a target="_blank" href="https://www.construyendoarte.com.ar" rel="noopener">www.construyendoarte.com.ar</a></div>
 					</div>
-
+					-->
 					<div style="padding-top:2rem"></div>
 				</div>
 			`;
+		} else {
 		}
 	}
 	stateChanged(state, name) {
@@ -184,7 +193,15 @@ export class arteEdicionScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitE
 			const SeMuestraEnUnasDeEstasPantallas = "-arteEdicion-".indexOf("-" + state.screen.name + "-") != -1;
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
+				store.dispatch(getEdiciones());
 			}
+		}
+		if (name == ARTEEDICIONES_DATOS) {
+			this.registros = state.arteEdicionesActuales.entities;
+			this.update();
+		}
+		if (name == ARTEEDICIONES_ERROR) {
+			this.registros = null;
 			this.update();
 		}
 	}

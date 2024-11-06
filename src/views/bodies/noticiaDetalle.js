@@ -7,7 +7,7 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goHistoryPrev, goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
-import { showWarning } from "../../redux/ui/actions";
+import { showWarning, video } from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
@@ -55,9 +55,11 @@ export class noticiaDetalleScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 			#titulo {
 				width: 100%;
 				height: 52vw;
+				display: grid;
+				position: relative;
 				background-repeat: no-repeat;
 				background-position: center center;
-				background-size: cover;
+				background-size: contain;
 				align-self: self-start;
 			}
 			#tituloTexto {
@@ -110,6 +112,26 @@ export class noticiaDetalleScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 				fill: var(--color-blanco);
 				stroke: var(--color-verde-claro);
 			}
+			*[hidden] {
+				display: none !important;
+			}
+			.play {
+				display: inline-block;
+				position: absolute;
+				top: calc(50% - 27px);
+				left: calc(50% - 27px);
+				width: 55px;
+				height: 55px;
+				border-radius: 50%;
+				background-color: rgba(255, 255, 255, 0.8);
+				cursor: pointer;
+				z-index: 99;
+			}
+			.play svg {
+				width: 56px;
+				height: 56px;
+				fill: black;
+			}
 		`;
 	}
 	render() {
@@ -117,7 +139,8 @@ export class noticiaDetalleScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 			return html`
                 <div id="cuerpo" class="grid row">
                     <div id="titulo" style="background-image: url('${this.noticia.imagen}');">
-                    </div>
+						<div ?hidden="${this.noticia.link == ""}" class="play" .item=${this.noticia} @click=${this.verLink}>${SVGS["PLAY"]}</div>
+					</div>
                     <div id="tituloTexto" class="grid">
                     ${unsafeHTML(this.noticia.copete)}
                     </div>
@@ -155,6 +178,15 @@ export class noticiaDetalleScreen extends connect(store, MEDIA_CHANGE, SCREEN)(L
 	laJu() {
 		window.open("https://www.88552d2b491975945.temporary.link/moodle/login/index.php", "_blank");
 		//location.href = "https://www.88552d2b491975945.temporary.link/moodle/login/index.php"
+	}
+	verLink(e) {
+		//window.open("https://www.youtube.com/watch?v=" + e.currentTarget.item.link, "_blank");
+		//<a href="intent://<URL>#Intent;scheme=http;package=com.android.chrome;end"></a>
+		//window.open("intent://www.youtube.com/watch?v=" + e.currentTarget.item.link + "#Intent;scheme=https;package=com.android.chrome;end", "_blank");
+		//location.href = "intent://www.youtube.com/watch?v=" + e.currentTarget.item.link + "#Intent;scheme=https;package=com.android.chrome;end";
+		//window.location = "googlechrome://navigate?url=" + "https://www.youtube.com/watch?v=" + e.currentTarget.item.link;
+		store.dispatch(video(e.currentTarget.item.link));
+		store.dispatch(goTo("verVideo"));
 	}
 	static get properties() {
 		return {

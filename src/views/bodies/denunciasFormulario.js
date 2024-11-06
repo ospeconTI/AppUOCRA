@@ -5,7 +5,7 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goHistoryPrev, goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
-import { showWarning } from "../../redux/ui/actions";
+import { showWarning, showConfirmacion } from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { select } from "../css/select";
 import { input } from "../css/input";
@@ -116,7 +116,7 @@ export class denunciasFormularioScreen extends connect(store, MAIL_OK, MAIL_ERRO
 					<div class="tituloImg">
 						<div id="bullet">${SVGS["BULLET"]}</div>
 					</div>
-					<div class="tituloTexto">Para realizar denuncias sobre condiciones de trabajo en una obra, llená el formulario:</div>
+					<div class="tituloTexto">DENUNCIE AQUÍ A REPRESENTANTES GREMIALES, EMPRESARIOS O INSPECTORES</div>
 					<div class="tituloImg">
 						<div id="bullet2">${SVGS["BULLET"]}</div>
 					</div>
@@ -137,7 +137,7 @@ export class denunciasFormularioScreen extends connect(store, MAIL_OK, MAIL_ERRO
 						<div id="bullet2">${SVGS["BULLET"]}</div>
 					</div>
 					<div class="input">
-						<label id="lblMail">E-mail</label>
+						<label id="lblMail">Dirección de correo electrónico</label>
 						<input id="txtMail" type="email" placeholder="joseperez@gmail.com" />
 						<div>Debe cargar mail</div>
 					</div>
@@ -145,10 +145,11 @@ export class denunciasFormularioScreen extends connect(store, MAIL_OK, MAIL_ERRO
 						<div id="bullet2">${SVGS["BULLET"]}</div>
 					</div>
 					<div class="input">
-						<label id="lblMensaje">Mensaje y obra en la que trabaja</label>
+						<label id="lblMensaje">Mensaje y referencia de obra</label>
 						<textarea id="txtMensaje" type="text" rows="8"></textarea>
 						<div>Debe cargar mensaje</div>
 					</div>
+
 					<div id="botones" class="grid">
 						<button btn1 class="btnVerMapa" @click=${this.enviar}>
 							<div class="grid column" style="justify-content:center;grid-gap:1rem">
@@ -187,42 +188,53 @@ export class denunciasFormularioScreen extends connect(store, MAIL_OK, MAIL_ERRO
 		}
 	}
 	enviar() {
-		[].forEach.call(this.shadowRoot.querySelectorAll("[error]"), (element) => {
-			element.removeAttribute("error");
-		});
-		let nombre = this.shadowRoot.querySelector("#txtNombre");
-		let telefono = this.shadowRoot.querySelector("#txtTelefono");
-		let mail = this.shadowRoot.querySelector("#txtMail");
-		let mensaje = this.shadowRoot.querySelector("#txtMensaje");
-		var ok = true;
-		if (nombre.value == "") {
-			ok = false;
-			nombre.setAttribute("error", "");
-		}
-		if (telefono.value == "") {
-			ok = false;
-			telefono.setAttribute("error", "");
-		}
-		if (mail.value == "" || !validaMail(mail.value)) {
-			ok = false;
-			mail.setAttribute("error", "");
-		}
-		if (mensaje.value == "") {
-			ok = false;
-			mensaje.setAttribute("error", "");
-		}
-		if (ok) {
-			//			let msg = "Nombre: " + nombre.value + ", Telefono: " + telefono.value + ", Mail: " + mail.value + ", Mensaje: " + mensaje.value;
-			var usu = store.getState().autorizacion.usuario;
-			var body = "<br><b>DATOS DEL FORMULARIO</b>";
-			body = body + "<br>Nombre y Apellido: " + nombre.value + "<br>Telefono: " + telefono.value + "<br>E-Mail: " + mail.value + "<br>Mensaje: " + mensaje.value.replaceAll('"', "");
-			body = body + "<br><hr><b>DATOS DE REGISTRO DE LA APP</b>";
-			body = body + "<br>Nombre: " + usu.nombre + "<br>Apellido: " + usu.apellido + "<br>Documento: " + usu.documento + "<br>E-Mail: " + usu.email + "<br>Teléfono: " + usu.telefono;
-			store.dispatch(sendMail("Formulario de denuncias", body, "appuocra@gmail.com"));
+		var usu = store.getState().autorizacion.usuario;
+		if (usu || true) {
+			[].forEach.call(this.shadowRoot.querySelectorAll("[error]"), (element) => {
+				element.removeAttribute("error");
+			});
+			let nombre = this.shadowRoot.querySelector("#txtNombre");
+			let telefono = this.shadowRoot.querySelector("#txtTelefono");
+			let mail = this.shadowRoot.querySelector("#txtMail");
+			let mensaje = this.shadowRoot.querySelector("#txtMensaje");
+			var ok = true;
+			if (nombre.value == "" || (nombre.value != "" && nombre.value.length < 3)) {
+				ok = false;
+				nombre.setAttribute("error", "");
+			}
+			if (telefono.value == "" || (telefono.value != "" && telefono.value.length < 6)) {
+				ok = false;
+				telefono.setAttribute("error", "");
+			}
+			if (mail.value == "" || !validaMail(mail.value)) {
+				ok = false;
+				mail.setAttribute("error", "");
+			}
+			if (mensaje.value == "" || (mensaje.value != "" && mensaje.value.length < 3)) {
+				ok = false;
+				mensaje.setAttribute("error", "");
+			}
+			if (ok) {
+				//			let msg = "Nombre: " + nombre.value + ", Telefono: " + telefono.value + ", Mail: " + mail.value + ", Mensaje: " + mensaje.value;
+				var body = "<br><b>DATOS DEL FORMULARIO</b>";
+				body = body + "<br>Nombre y Apellido: " + nombre.value + "<br>Telefono: " + telefono.value + "<br>E-Mail: " + mail.value + "<br>Mensaje: " + mensaje.value.replaceAll('"', "");
+				//body = body + "<br><hr><b>DATOS DE REGISTRO DE LA APP</b>";
+				//body = body + "<br>Nombre: " + usu.nombre + "<br>Apellido: " + usu.apellido + "<br>Documento: " + usu.documento + "<br>E-Mail: " + usu.email + "<br>Teléfono: " + usu.telefono;
+				store.dispatch(sendMail("Formulario de denuncias gremial", body, ["uocraconsultas@uocra.org", "app.uocra.org@gmail.com"]));
+			} else {
+				store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
+			}
 		} else {
-			store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
+			store.dispatch(
+				showConfirmacion(
+					"Debe estar logueado para realizar esta operacion, ¿ quiere loguearse ahora ?",
+					() => {
+						store.dispatch(goTo("sesion"));
+					},
+					null
+				)
+			);
 		}
-
 		//document.location.href = 'tel:0800-222-3871';
 	}
 	static get properties() {

@@ -2920,7 +2920,7 @@
 		"nombre": "Bachiller con Orientación en Salud",
 		"fundacionEspecialidadesId": 30,
 		"duracion": "Anual",
-		"fundacionCentrosId": 1,
+		"fundacionCentrosId": 28,
 		"activo": true,
 		"tipo": 2
 	},
@@ -2929,7 +2929,7 @@
 		"nombre": "Perito Auxiliar en Informática",
 		"fundacionEspecialidadesId": 30,
 		"duracion": "Anual",
-		"fundacionCentrosId": 1,
+		"fundacionCentrosId": 28,
 		"activo": true,
 		"tipo": 2
 	},
@@ -2938,7 +2938,7 @@
 		"nombre": "Perito Auxiliar en Construcciones e Instalaciones Domiciliarias",
 		"fundacionEspecialidadesId": 30,
 		"duracion": "Anual",
-		"fundacionCentrosId": 1,
+		"fundacionCentrosId": 28,
 		"activo": true,
 		"tipo": 2
 	},
@@ -2947,7 +2947,7 @@
 		"nombre": "Perito Comercial Especializado en Administración de Empresas",
 		"fundacionEspecialidadesId": 30,
 		"duracion": "Anual",
-		"fundacionCentrosId": 1,
+		"fundacionCentrosId": 28,
 		"activo": true,
 		"tipo": 2
 	},
@@ -2956,7 +2956,7 @@
 		"nombre": "Perito Auxiliar en Informática",
 		"fundacionEspecialidadesId": 30,
 		"duracion": "Anual",
-		"fundacionCentrosId": 1,
+		"fundacionCentrosId": 28,
 		"activo": true,
 		"tipo": 2
 	},
@@ -2965,7 +2965,7 @@
 		"nombre": "Perito Auxiliar en Construcciones e Instalaciones Domiciliarias",
 		"fundacionEspecialidadesId": 30,
 		"duracion": "Anual",
-		"fundacionCentrosId": 1,
+		"fundacionCentrosId": 28,
 		"activo": true,
 		"tipo": 2
 	},
@@ -3019,7 +3019,7 @@
 		"nombre": "Certificado Nivel Primario",
 		"fundacionEspecialidadesId": 31,
 		"duracion": "Anual",
-		"fundacionCentrosId": 1,
+		"fundacionCentrosId": 28,
 		"activo": true,
 		"tipo": 2
 	},
@@ -3046,7 +3046,7 @@
 		"nombre": "Tecnicatura Superior en Enfermería",
 		"fundacionEspecialidadesId": 32,
 		"duracion": "3 Años",
-		"fundacionCentrosId": 0,
+		"fundacionCentrosId": 27,
 		"activo": true,
 		"tipo": 3
 	},
@@ -3055,7 +3055,7 @@
 		"nombre": "Tecnicatura Superior en Higiene y Seguridad en el Trabajo",
 		"fundacionEspecialidadesId": 32,
 		"duracion": "3 Años",
-		"fundacionCentrosId": 0,
+		"fundacionCentrosId": 27,
 		"activo": true,
 		"tipo": 3
 	},
@@ -3064,7 +3064,7 @@
 		"nombre": "Tecnicatura Superior en Construcción Sustentable",
 		"fundacionEspecialidadesId": 32,
 		"duracion": "3 Cuatrimestres",
-		"fundacionCentrosId": 0,
+		"fundacionCentrosId": 27,
 		"activo": true,
 		"tipo": 3
 	},
@@ -3073,7 +3073,7 @@
 		"nombre": "Tecnicatura Superior en Coordinación y Gestión de Procesos Constructivos",
 		"fundacionEspecialidadesId": 32,
 		"duracion": "3 Cuatrimestres",
-		"fundacionCentrosId": 0,
+		"fundacionCentrosId": 27,
 		"activo": true,
 		"tipo": 3
 	},
@@ -3082,7 +3082,7 @@
 		"nombre": "Tecnicatura Superior en Relaciones Laborales",
 		"fundacionEspecialidadesId": 32,
 		"duracion": "3 Años",
-		"fundacionCentrosId": 0,
+		"fundacionCentrosId": 27,
 		"activo": true,
 		"tipo": 3
 	},

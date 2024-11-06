@@ -10,7 +10,7 @@
         "id": 169,
         "tipo": "cultura",
         "titulo": "UBICACIÓN Y CONTACTO",
-        "cuerpo": "<p><b>TEATRO GASTÓN BARRAL</b><br>Rawson 42 , CABA</p><p>Tel.: 011-4981-0139</p><p>Las entradas para todas las funciones del Teatro son gratuitas para afiliados de UOCRA</p>",
+        "cuerpo": "<p><b>TEATRO GASTÓN BARRAL</b><br>Rawson 42 , CABA</p><p>Tel.: 011-4981-0139</p><p>WhatsApp: 011-7365-7509. Horario de atencion: Lunes a viernes de 11 a 18hs.</p><p>Las entradas para todas las funciones del Teatro son gratuitas para afiliados de UOCRA</p><p>Se podrán reservar hasta un máximo de seis (6) entradas por afiliado por función.</p><c-boton style='justify-self:center;' texto='COMUNICATE' svg='WHATSAPP' accion='TeatroComunicate' parametro='Comunicate'></c-boton>",
         "activo": true
     },
     {
@@ -31,14 +31,28 @@
         "id": 172,
         "tipo": "moecra",
         "titulo": "QUIENES SOMOS?",
-        "cuerpo": "<p>Las contingencias sociales a las que nos enfrentamos requieren hoy más que nunca del tendido de la acción solidaria como forma de ayuda recíproca entre compañeras y compañeros.</p>\r\n<p>Los trabajadores y trabajadoras nucleados en la UOCRA sabemos de los beneficios de unirnos para lograr nuestro bienestar y el de nuestras familias a través de nuestra RED SOCIAL. </p>\r\n<p>Renovamos nuestra MOECRA - Mutual de Obreros y Empleados de la Construcción de la República Argentina - para sumar otro brazo al colectivo de respuestas que nuestra Organización tiene disponible para satisfacer las necesidades de nuestras compañeras y compañeros. </p>\r\n<p>Basados en la solidaridad y el bien común, buscamos complementar las acciones sindicales y de la acción social con iniciativas solidarias que permitan el acceso a bienes y servicios por parte de sus asociados. </p>\r\n<p>Estamos trabajando para próximamente poner a disposición la mejor propuesta de beneficios sociales para todas y para todos.</p>\r\n",
+        "cuerpo": "<p>A través de una visión política-estrategica de nuestro Secretario General Gerardo Martínez, se ha relanzado la Mutual para los trabajadores y trabajadoras constructores. Bajo los principios del asociativismo, mutualismo y la solidaridad nos proponemos desplegar la acción y el compromiso militante, sumando mas respuestas a nuestra red social para reafirmar nuestra vocación institucional con la justicia social para las trabajadoras y trabajadores constructores y sus familias</p> <p>¡Descuentos y beneficios todos los meses!.</p> <p>Con nuestra red de asociados, te garantizamos oportunidades de ahorro que harán una gran diferencia en tu día a día.</p><p>Accedé a descuentos increíbles desde indumentaria y herramientas hasta tecnología y servicios. También te ofrecemos la posibilidad de aprovechar capacitaciones gratuitas, diseñadas para potenciar tus habilidades y abrirte nuevas puertas en el mundo laboral.</p>",
         "activo": true
     },
     {
         "id": 173,
         "tipo": "moecra",
-        "titulo": "COMO COMPRAR?",
-        "cuerpo": "<p>Construir Salud, a lo largo de más de 25 años, desarrolló una política de salud basada en la Atención Primaria de la Salud y en la Medicina Familiar como modelo.</p><p>Nuestra Obra Social a través de sus médicos de familia, no sólo trabaja en laatención de las enfermedades sino también, fundamentalmente, en laprevención de las mismas y en la promoción de la salud, mediante las más actualizadas modalidades científicas.</p><p><b>MEDICO DE FAMILIA REFERENTE</b></p><p> El médico de familia es un profesional especialista en personas, que trabaja en equipo, capaz de resolver la mayor parte de los problemas por los que consultan sus pacientes y de realizar interconsultas con los médicos especialistas cuando es necesario</p>",
+        "titulo": "ASOCIATE",
+        "cuerpo": "<p>¡Asociate hoy y accedé a increíbles descuentos en indumentaria, herramientas, tecnología y mucho más!.</p><p>Además, impulsá tu carrera con nuestras capacitaciones gratuitas, creadas para que sigas creciendo como profesional.</p><p>¡Ponemos nuestro compromiso en acción todos los días, para vos ytu familia!.</p><p>Escribinos por WhatsApp y sumate a la Mutual UOCRA. ¡Te esperamos!.</p><p>+5491128943837</p><p>consultasmoecra@uocra.org</p>",
+        "activo": true
+    },
+    {
+        "id": 1731,
+        "tipo": "moecra",
+        "titulo": "CONVENIOS",
+        "cuerpo": "<p>INAES.</p><p>FUNDACION UOCRA.</p><p>UOCRA.</p>",
+        "activo": true
+    },
+    {
+        "id": 1732,
+        "tipo": "moecra",
+        "titulo": "CONTACTO",
+        "cuerpo": "<p><b>+5491128943837</b></p><p><b>MAIL consultasmoecra@uocra.org</b></p>",
         "activo": true
     },
     {
@@ -70,10 +84,10 @@
         "activo": true
     },
     {
-        "id": 178,
+        "id": 179,
         "tipo": "salud",
         "titulo": "AFILIACIONES",
-        "cuerpo": "<p><b>Trámite de Afiliación</b><br>El trámite de afiliación lo debe realizar el titular. De acuerdo al tipo de beneficiario los requisitos de afiliación son:</p><p><li><b>Titular en Relación de Dependencia</b>DNI + CUIL + Último recibo de Sueldo.</li></p><p><li><b>Titular Monotributista</b><br>DNI + CUIL + Último Pago de Monotributo + Formulario AFIP 184 + Formulario AFIP 152.</li></p><p><li><b>Titular Servicio Doméstico</b>DNI + CUIL + Pago Mes Vencido + Formulario AFIP 102/RT.</li></p><p><li><b>Titular Monotributo Social</b>DNI + Certificado de Elección de Obra Social + Ticket de Pago del Mes en Curso + Formulario AFIP 152.</li></p><p><b>Atención Telefónica</b><br>Lunes a Viernes de 9 a 18 hs<br>Teléfono 0800-222-0123</p><p><b>INICIÁ tu afiliación por Whatsapp</b></p><c-boton style='justify-self:center;' texto='AFILIATE' svg='WHATSAPP' accion='salud' parametro='Afiliacion'></c-boton>",
+        "cuerpo": "<p><b>Trámite de Afiliación</b><br>El trámite de afiliación lo debe realizar el titular. De acuerdo al tipo de beneficiario los requisitos de afiliación son:</p><p><li><b>Titular en Relación de Dependencia</b><br>DNI + CUIL + Último recibo de Sueldo.</li></p></p><p><b>Atención Telefónica</b><br>Lunes a Viernes de 9 a 18 hs<br>Teléfono 0800-222-0123</p><p></p><c-boton style='justify-self:center;' texto='AFILIATE' svg='TELEFONO' accion='salud' parametro='Afiliacion'></c-boton>",
         "activo": true
     },
     {
@@ -101,7 +115,7 @@
         "id": 182,
         "tipo": "saludSeguridad",
         "titulo": "PROTOCOLOS COVID-19",
-        "cuerpo": "<p>En el marco de un trabajo en conjunto con las cámaras empresarias representativas de la industria de la construcción, la UOCRA elaboró una serie de protocolos con recomendaciones prácticas de protección y prevención para favorecer la protección de la Salud y Seguridad de las trabajadoras y los trabajadores para hacer frente al COVID-19. <p><li><b>Nuevo Protocolo Covid-19 | Industria del Hormigón Elaborado versión 2.0<\\/b><\\/li><\\/p><p><li><b>Protocolo de Recomendaciones Prácticas Covid-19 | Obras de redes de acceso, distribución y transporte bajo CCT 577\\/10 Versión 2.0<\\/b><\\/li><\\/p><p><li><b>Protocolo de Recomendaciones Prácticas para la Industria de la Construcción Versión 3.0<\\/b><\\/li><\\/p><p><li><b>Nuevo protocolo Covid-19 | Industria del Hormigón Elaborado<\\/b><\\/li><\\/p><p><li><b>Protocolo de recomendaciones prácticas Covid-19 \\/ Industria de la construcción - Traslado de los trabajadores<\\/li><\\/p><p><li><b>Protocolo de Recomendaciones prácticas Covid-19 | Obras de redes de acceso, distribución y trasporte bajo CCT 557\\/10<\\/b><\\/li><\\/p><p><li><b>Protocolo de RecomendacionesPrácticas para la Industria de la Construcción Versión 2.0<\\/b><\\/li><\\/p><p><li><b>Protocolo de Recomendaciones Prácticas para la Industria de la Construcción Versión 1.0<\\/b><\\/li><\\/p><\\/p><c-boton style='justify-self:center;' texto='PROTOCOLOS COVID' svg='MASUOCRA' accion='saludSeguridad' parametro=''><\\/c-boton>",
+        "cuerpo": "<p>En el marco de un trabajo en conjunto con las cámaras empresarias representativas de la industria de la construcción, la UOCRA elaboró una serie de protocolos con recomendaciones prácticas de protección y prevención para favorecer la protección de la Salud y Seguridad de las trabajadoras y los trabajadores para hacer frente al COVID-19.</p><c-boton style='justify-self:center;' texto='PROTOCOLOS COVID' svg='MASUOCRA' accion='saludSeguridad' parametro=''></c-boton>",
         "activo": true
     },
     {
@@ -157,28 +171,28 @@
         "id": 190,
         "tipo": "adicciones",
         "titulo": "¿QUIENES SOMOS?",
-        "cuerpo": "<p>El <b>Equipo de Prevención de Adicciones</b> se propone luchar contra las adicciones que enferman y estigmatizan al sujeto tanto en el ámbito del trabajo, así como en el resto de los ámbitos que conforman su vida cotidiana.</P>",
+        "cuerpo": "<p>El <b>Equipo de Prevención de consumos problemáticos</b> propone implementar respuestas tempranas a los problemas relacionados con los consumos a través de la capacitación, la sensibilización y la contención.</P>",
         "activo": true
     },
     {
         "id": 191,
         "tipo": "adicciones",
         "titulo": "VOS PODES AYUDAR",
-        "cuerpo": "<p>Si conoces a un compañero o compañera en tu lugar de trabajo que necesite ayuda, el Equipo de Prevención de Adicciones recomienda:</p><p><li>Contené al compañero/a con una actitud solidaria, sin juzgar, ni discriminar.</li></p><p><li>Acércate a tu seccional de UOCRA.</li></p><p><li>Apoyate en tu sindicato para acompañar y defender la fuente de trabajo.</li></p><p><li>Comentalo con tu delegado o delegada de obra para ayudarlo.</li></p><p><li>Consultá a un médico del centro de atención primaria de Construir Salud más cercano.</li></p><p><li>Promové una actitud solidaria.</li></p>",
+        "cuerpo": "<p>Si conoces a un compañero o compañera en tu lugar de trabajo que necesite ayuda, el Equipo de Prevención de Consumos Problemáticos recomienda:</p><p><li>Contené al compañero/a con una actitud solidaria, sin juzgar, ni discriminar.</li></p><p><li>Comentalo con tu delegado o delegada de obra para ayudarlo.</li></p><p><li>Apoyate en tu sindicato para acompañar y defender la fuente de trabajo.</li></p><p><li>Acércate a tu seccional de UOCRA.</li></p><p><li>Consultá a un médico del centro de atención primaria de Construir Salud más cercano.</li></p><p><li>Promové una actitud solidaria.</li></p>",
         "activo": true
     },
     {
         "id": 192,
         "tipo": "adicciones",
         "titulo": "LINEAS DE CONTENCIÓN",
-        "cuerpo": "<p>Para Casos de Consutmo Problemático:</p><p><li><b>Construir Salud</b> 0800 – 222- 0123.</li></p><p><li><b>Secretaría de Políticas Integrales sobre Drogas (SEDRONAR)</b> 141 para hablar con profesionales de forma gratuita, anónima y en todo el país.</li><p>",
+        "cuerpo": "<p>Para Casos de Consumo Problemático:</p><p><li><b>Construir Salud</b> 0800 – 222- 0123.</li></p><p><li><b>Secretaría de Políticas Integrales sobre Drogas (SEDRONAR)</b> 141 para hablar con profesionales de forma gratuita, anónima y en todo el país.</li><p>",
         "activo": true
     },
     {
         "id": 193,
         "tipo": "adicciones",
-        "titulo": "JORNADAS DE ADICCIONES",
-        "cuerpo": "<p>Las <b>Jornadas en Adicciones</b> buscan generar espacios de Sensibilización y Capacitación sobre la Problemática de Adicciones en el Mundo Laboral.<p>",
+        "titulo": "JORNADAS INTERNACIONALES",
+        "cuerpo": "<p>Las Jornadas sobre la Problemática de los Consumos en el Mundo Laboral buscan generar espacios de Sensibilización y Capacitación sobre la Problemática de Adicciones en el Mundo Laboral.<p>",
         "activo": true
     },
     {
@@ -283,7 +297,7 @@
         "id": 208,
         "tipo": "fundacion",
         "titulo": "LA FUNDACIÓN EN NÚMEROS",
-        "cuerpo": "<p>En los últimos años se consolidó como una institución que, además de gestionar proyectos y programas educativos, impulsa iniciativas para que sean discutidas en las agendas públicas que atienden problemáticas inherentes a la tríada educación, trabajo y desarrollo productivo.</p><p>El trabajo de la Fundadión se ve reflejado en las siguientes cifras:</p><p><li>542.570 trabajadores formados a través de la Red de Instituciones y cursos desarrollados en 415 municipios.</li></p><p><li>30 Centros de Formación Profesional</li></p><p><li>43 Servicios Educativos</li></p><p><li>2 Institutos Superiores de Enseñanza</li></p><p><li>1 Centro de Formación, Investigación y Promoción de Energías Renovables (CEFIPER).</li></p><p><li>2 Unidades móviles para la formación en Salud y Seguridad</li></p><p><li>1 Unidad móvil equipada con simuladores para la formación en manejo de máquinas viales.</li></p><p><li>3 Unidades móviles para la formación en Salud, Seguridad y Ambiente 1 Unidad móvil de asistencia técnica de Formación para el Trabajo 380 mil asistentes a espectáculos de UOCRA Cultura</li></p><p><li>80 Libros editados.</li></p><p><li>20 investigaciones sociolaborales realizadas y 7 en curso.</li></p></p>",
+        "cuerpo": "<p>En los últimos años se consolidó como una institución que, además de gestionar proyectos y programas educativos, impulsa iniciativas para que sean discutidas en las agendas públicas que atienden problemáticas inherentes a la tríada educación, trabajo y desarrollo productivo.</p><p>El trabajo de la Fundadión se ve reflejado en las siguientes cifras:</p><p><li>542.570 trabajadores formados a través de la Red de Instituciones y cursos desarrollados en 415 municipios.</li></p><p><li>30 Centros de Formación Profesional</li></p><p><li>43 Servicios Educativos</li></p><p><li>3 Institutos Superiores de Enseñanza</li></p><p><li>1 Centro de Formación, Investigación y Promoción de Energías Renovables (CEFIPER).</li></p><p><li>2 Unidades móviles para la formación en Salud y Seguridad</li></p><p><li>1 Unidad móvil equipada con simuladores para la formación en manejo de máquinas viales.</li></p><p><li>3 Unidades móviles para la formación en Salud, Seguridad y Ambiente 1 Unidad móvil de asistencia técnica de Formación para el Trabajo 380 mil asistentes a espectáculos de UOCRA Cultura</li></p><p><li>80 Libros editados.</li></p><p><li>20 investigaciones sociolaborales realizadas y 7 en curso.</li></p></p>",
         "activo": true
     },
     {

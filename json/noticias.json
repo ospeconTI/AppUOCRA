@@ -1,5 +1,4 @@
 [
-
 	{
 		"id": 13,
 		"titulo": "NUESTRO TEATRO",
@@ -9,7 +8,9 @@
 		"orden": 6,
 		"activo": true,
 		"detalle": "En Abril, vuelven los viernes de música en coproducción con SADAIC. Luego de muchos meses de inactividad causados por la pandemia provocada por el coronavirus, el primer viernes de abril UOCRA Cultura abre nuevamente el Teatro Gastón Barral. En línea con los protocolos sanitarios, tendremos un aforo del 50% y espacio entre las butacas para respetar la distancia social. El viernes de 2 abril a las 20:30 hs., cuando suba al escenario La Charo con su espectáculo “Un canto a Latinoamérica”, se dará por inaugurada la nueva temporada 2021 de nuestro teatro. El teatro es seguro, lxs esperamos.",
-		"link": ""
+		"link": "",
+		"extralink": "",
+		"extraBoton": ""
 	},
 	{
 		"id": 14,
@@ -20,7 +21,9 @@
 		"orden": 4,
 		"activo": true,
 		"detalle": "Centro de Formación Laboral en La Plata. En el año 2018 la Fundación UOCRA se hizo cargo de la gestión del Centro de Formación a través del convenio firmado con el Director de la Comunidad Salesiana de la Ciudad de La Plata, padre Francisco de Rito. A partir de la participación de la Fundación UOCRA se amplió la matricula, triplicándola y del mismo modo la oferta educativa, para lo cual se realizaron mejoras edilicias e inversiones en insumos y equipamientos. Hoy el Centro cuenta con un taller-aula de 150 m2m, un aula teórica con capacidad para 30 alumnos y alumnas, secretaria, dirección y baños propios. También se avanzó en la reparación del techo, la compra de ventiladores para el taller, insumos para los cursos y el repintado de paredes. Los cursos que se ofrecen son: Montador Electricista, Soldador por Arco, Colocación de Placas de Roca de Yeso, Electricista Instalador, Carpintería Metálica, Ayudante en Seguridad e Higiene Industrial",
-		"link": ""
+		"link": "",
+		"extralink": "",
+		"extraBoton": ""
 	},
 	{
 		"id": 15,
@@ -31,7 +34,9 @@
 		"orden": 3,
 		"activo": true,
 		"detalle": "<div>Compartí tu mirada sobre los desafíos del nuevo mundo del trabajo y participa por importantes premios, en la 7ma edición de Construyendo Arte. Podes inscribirte en cualquiera de las dos CATEGORÍAS del concurso:<li>Fotografía con Cámara o Celular</li><li>Composición Fotográfica Digital Tenés tiempo hasta el 12 de Mayo. La inscripción es libre y gratuita. Hay más de $120 mil en premios! Además, las fotografías que resulten ganadoras formarán parte de un 'Libro Testimonial'.Conocé las bases del concurso en nuestro sitio web http://construyendoarte.com.ar/ </li><div>",
-		"link": ""
+		"link": "",
+		"extralink": "",
+		"extraBoton": ""
 	},
 	{
 		"id": 5,
@@ -42,7 +47,9 @@
 		"orden": 5,
 		"activo": true,
 		"detalle": "Del 13 al 29 de mayo volvé a disfrutar del mejor cine sobre la realidad social y laboral de la Argentina y el mundo, en la 8va edición del Festival Construir Cine.En esta nueva edición se incluyen historias y temáticas de las más variadas, con el foco puesto en la centralidad del trabajo y su importancia para las personas. Este año, la programación y las actividades del Festival serán en modalidad mixta (presencial y online). Por internet vas a poder seguir el Festival a través de la página web de Construir Cine, las redes sociales del Festival y otras plataformas, de forma gratuita y desde todo el país. La sede presencial de esta nueva edición será nuestro Teatro “Gastón Barral” de UOCRA. Para seguir de cerca todas las novedades de la nueva edición, seguí a Construir Cine en redes sociales y visitá la página web del Festival:<li>Web: www.construircine.com</li><li>Facebook: ConstruirCINE</li><li>Twitter: @ConstruirCine</li><li>Instagram: /construircine</li>",
-		"link": ""
+		"link": "",
+		"extralink": "",
+		"extraBoton": ""
 	},
 	{
 		"id": 17,
@@ -53,7 +60,9 @@
 		"orden": 1,
 		"activo": true,
 		"detalle": "Con el objetivo de seguir estando cerca, lanzamos la Aplicación Móvil (APP) UOCRA que te permitirá acceder, de forma rápida y sencilla, a todos los beneficios que la Red Social UOCRA pone a disposición de la familia constructora.<p>Con la APP UOCRA, vas a poder consultar la ubicación de tu centro de atención médica más cercano, tramitar afiliaciones a la obra social de manera online y otros beneficios que se irán incorporando.</p><p>También podrás acceder a información sobre tus derechos y recibir novedades sobre el colectivo de respuestas integral que la Red Social UOCRA ofrece en materia de vivienda, salud, educación, recreación, género, cuidado del medio ambiente, y más.</p><p>La APP UOCRA es una nueva forma de estar conectados, con el compromiso de siempre de estar a tu lado, en todos lados.</p>",
-		"link": ""
+		"link": "https://app.uocra.org/videos/noticias/diaDeLaConstruccion.mp4",
+		"extralink": "",
+		"extraBoton": ""
 	},
 	{
 		"id": 18,
@@ -64,6 +73,8 @@
 		"orden": 2,
 		"activo": true,
 		"detalle": "Con la presencia de nuestro Secretario General, Gerardo Martinez; del Ministro de Obras Públicas de la Nación, Gabriel Katopodis y el Presidente de la CAMARCO, Ivan Szczech se realizó un acto de celebración del Día del Trabajador Constructor. Las autoridades presentes reivindicaron la importancia de nuestra industria como motor del desarrollo económico y la generación de empleo genuino. Además de subrayar la labor de los trabajadores constructores y su vocación,  identificación con la cultura del trabajo y el verdadero arte de construir que nuestros trabajadores atesoran en nuestras manos. Trabajo Digno y Decente es la consigna que los trabajadores constructores levantan como bandera de pertenencia e identificación con la UOCRA.",
-		"link": "https://app.uocra.org/videos/noticias/diaDeLaConstruccion.mp4"
+		"link": "https://app.uocra.org/videos/noticias/diaDeLaConstruccion.mp4",
+		"extralink": "",
+		"extraBoton": ""
 	}
 ]

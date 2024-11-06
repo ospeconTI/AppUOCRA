@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "imagen": "https://app.uocra.org/mujeresFormacionImg/riesgosPsicoSociales.jpg",
+        "nombre": "Riesgos Psicosociales en el Trabajo",
+        "descripcion": "En este nuevo podcast abordaermos el tema de la identificación temprana y la prevención de los riesgos psicosociales en el mundo del trabajo, como condición esencial para lograr un trabajo seguro y saludable.",
+        "archivo": "https://app.uocra.org/podcast/riesgosPsicoSociales.mp3",
+        "orden": 1,
+        "activo": true
+    },
+    {
+        "id": 2,
+        "imagen": "https://app.uocra.org/mujeresFormacionImg/mujeresVidaSindical.jpg",
+        "nombre": "Las Mujeres En La Política Sindical",
+        "descripcion": "A partir de la conmemoración del Día Nacional de los Derechos Políticos de las Mujeres, en el PodCast de hoy vamos a hablar sobre el liderazgo de mujeres en la política sindical.",
+        "archivo": "https://app.uocra.org/podcast/lasMujeresEnLaPoliticaSindical.mp3",
+        "orden": 2,
+        "activo": true
+    },
+    {
+        "id": 3,
+        "imagen": "https://app.uocra.org/mujeresFormacionImg/tareasDeCuidado.jpg",
+        "nombre": "Tareas de Cuidado: ¿Trabajo o Ayuda?",
+        "descripcion": "En este podcast vamos a hablar sobre las tareas de cuidado y lactancia materna. Contaremos con la participación de Lucía Cirmi, Directora Nacional de Políticas de Cuidado del Ministerio de las Mujeres, Géneros y Diversidad, y también de compañeros y compañeras trabajadores.",
+        "archivo": "https://app.uocra.org/podcast/tareasDelCuidado.mp3",
+        "orden": 3,
+        "activo": true
+    },
+    {
+        "id": 4,
+        "imagen": "https://app.uocra.org/mujeresFormacionImg/convenio190oit.jpg",
+        "nombre": "Convenio 190 de la OIT",
+        "descripcion": "En el podcast de hoy te contamos de qué se trata la primera normativa internacional que define las nociones de violencia y acoso en el mundo del trabajo con un enfoque inclusivo e integrado y que tiene en cuenta las consideraciones de género.",
+        "archivo": "https://app.uocra.org/podcast/convenio190DeLaOitUocraMujeres.mp3",
+        "orden": 4,
+        "activo": true
+    },
+    {
+        "id": 5,
+        "imagen": "https://app.uocra.org/mujeresFormacionImg/niUnaMenos.jpg",
+        "nombre": "Ni Una Menos",
+        "descripcion": "El 3 de junio de 2015 se produjo un hecho que marcó la historia de las organizaciones de mujeres, que conmovió al país entero, y luego al mundo, y en este episodio te lo contamos.",
+        "archivo": "https://app.uocra.org/podcast/niUnaMenos.mp3",
+        "orden": 5,
+        "activo": true
+    }
+]

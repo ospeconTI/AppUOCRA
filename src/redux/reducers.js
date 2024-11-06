@@ -39,6 +39,11 @@ import { reducer as fundacionCentrosReducer } from "./fundacionCentros/reducer";
 import { reducer as adolescenciaCuadernillosReducer } from "./adolescenciaCuadernillos/reducer";
 import { reducer as coberturasReducer } from "./coberturas/reducer";
 import { reducer as mailReducer } from "./mail/reducer";
+import { reducer as arteEdicionesActualesReducer } from "./arteEdicionesActuales/reducer";
+import { reducer as cineEdicionesActualesReducer } from "./cineEdicionesActuales/reducer";
+import { reducer as podcastReducer } from "./podcast/reducer";
+import { reducer as credencialSindicalReducer } from "./credencialSindical/reducer";
+import { reducer as afiliacionSindicalReducer } from "./afiliacionSindical/reducer";
 
 export const rootReducer = (state = {}, action) => {
 	return {
@@ -81,5 +86,10 @@ export const rootReducer = (state = {}, action) => {
 		adolescenciaCuadernillos: adolescenciaCuadernillosReducer(state.adolescenciaCuadernillos, action),
 		coberturas: coberturasReducer(state.coberturas, action),
 		mail: mailReducer(state.mail, action),
+		arteEdicionesActuales: arteEdicionesActualesReducer(state.arteEdicionesActuales, action),
+		cineEdicionesActuales: cineEdicionesActualesReducer(state.cineEdicionesActuales, action),
+		podcast: podcastReducer(state.podcast, action),
+		credencialSindical: credencialSindicalReducer(state.credencialSindical, action),
+		afiliacionSindical: afiliacionSindicalReducer(state.afiliacionSindical, action),
 	};
 };

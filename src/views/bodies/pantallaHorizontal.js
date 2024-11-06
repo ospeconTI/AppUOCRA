@@ -69,7 +69,7 @@ export class pantallaHorizontalScreen extends connect(store, MEDIA_CHANGE, SCREE
 			this.mediaSize = state.ui.media.size;
 			this.orientation = state.ui.media.orientation;
 			this.hidden = true;
-			if (this.orientation == "landscape" && (navigator.userAgent.search("iPad") != -1 || navigator.userAgent.search("iPhone") != -1 || navigator.userAgent.search("Android") != -1) && (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf("IEMobile") !== -1)) {
+			if (false && this.orientation == "landscape" && (navigator.userAgent.search("iPad") != -1 || navigator.userAgent.search("iPhone") != -1 || navigator.userAgent.search("Android") != -1) && (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf("IEMobile") !== -1)) {
 				this.hidden = false;
 			}
 			this.update();

@@ -42,6 +42,11 @@ import { middleware as fundacionEspecialidades } from "./fundacionEspecialidades
 import { middleware as adolescenciaCuadernillos } from "./adolescenciaCuadernillos/middleware";
 import { middleware as coberturas } from "./coberturas/middleware";
 import { middleware as mail } from "./mail/middleware";
+import { middleware as arteEdicionesActuales } from "./arteEdicionesActuales/middleware";
+import { middleware as cineEdicionesActuales } from "./cineEdicionesActuales/middleware";
+import { middleware as podcast } from "./podcast/middleware";
+import { middleware as credencialSindical } from "./credencialSindical/middleware";
+import { middleware as afiliacionSindical } from "./afiliacionSindical/middleware";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -85,6 +90,11 @@ let mdw = [
 	...adolescenciaCuadernillos,
 	...coberturas,
 	...mail,
+	...arteEdicionesActuales,
+	...cineEdicionesActuales,
+	...podcast,
+	...credencialSindical,
+	...afiliacionSindical,
 ];
 
 if (process.env.NODE_ENV !== "production") {

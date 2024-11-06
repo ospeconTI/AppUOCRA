@@ -29,6 +29,8 @@ module.exports = merge(common, {
 		}),
 		new webpack.DefinePlugin({
 			SERVICE_URL_LOGIN: JSON.stringify("https://apis.usuarios.uocra.org"),
+			SERVICE_URL_SERIVICIOS_APP: JSON.stringify("https://apis.service.uocra.org"),
+			SERVICE_URL_OSPECON_SERVICIOS: JSON.stringify("https://www.uocra.net/OspeconServiciosTest"),
 		}),
 	],
 });

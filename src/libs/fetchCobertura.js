@@ -7,12 +7,15 @@ export const fetchCobertura = (dispatch, url, successAction, errorAction) => {
 			return response.json();
 		})
 		.then((json) => {
+			var xUrl = new URL(url);
+			var c = xUrl.searchParams.get("docu_nro");
 			dispatch(hideSpinner());
 			dispatch({
 				type: successAction,
 				payload: {
 					send: 1,
-					receive: json.value,
+					documento: c,
+					receive: json,
 				},
 			});
 		})

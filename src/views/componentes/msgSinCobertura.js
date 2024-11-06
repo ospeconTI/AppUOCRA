@@ -38,6 +38,7 @@ export class msgSinCoberturaComponent extends connect(store, CURRENT_TIMESTAMP, 
 				text-align: center;
 				border: 1px solid white;
 				border-radius: 0.5rem;
+				width: 80vw;
 			}
 			*[hidden] {
 				display: none;
@@ -83,13 +84,15 @@ export class msgSinCoberturaComponent extends connect(store, CURRENT_TIMESTAMP, 
 		return html`
 			<div class="grid row" id="cuerpo">
 				<div style="font-size:6vw;font-weight: 900;">Datos de Cobertura</div>
+				<div style="font-size:4vw;">${"VERIFIQUE SU CONEXIÓN DE DATOS"}</div>
+				<div style="font-size:4vw;">${"O"}</div>
 				<div style="font-size:4vw;">${"Su documento " + store.getState().autorizacion.usuario.documento + ", no registra cobertura"}</div>
-				<div style="font-size:3vw;">Por favor comunicarse al</div>
+				<div style="font-size:3vw;">Por favor escribir al</div>
 				<div id="botones" class="grid">
 					<button btn1 class="btnTelefono" @click=${this.telefono}>
 						<div class="grid column">
 							<div>${SVGS["TELEFONO"]}</div>
-							<div style="font-size: var(--font-bajada-size)">0800-345-7700</div>
+							<div style="font-size: var(--font-bajada-size)">0800-222-0123</div>
 						</div>
 					</button>
 				</div>
@@ -109,7 +112,9 @@ export class msgSinCoberturaComponent extends connect(store, CURRENT_TIMESTAMP, 
 		`;
 	}
 	telefono() {
-		document.location.href = "tel:0800-345-7700";
+		//document.location.href = "tel:0800-345-7700";
+		document.location.href = "tel:0800-222-0123";
+		//window.open("https://api.whatsapp.com/send?phone=+5491136623055&text=Cobertura");
 	}
 	atras() {
 		store.dispatch(goHistoryPrev());

@@ -140,6 +140,7 @@ export class gremioJuventudScreen extends connect(store, BANNERS_TIMESTAMP, BANN
 						<p>Si estás inscripto en el curso de LA JU ingresá a la plataforma ahora</p>
 					</div>
 					<button btn1 @click=${this.laJu} style="width:10rem;justify-self: center;background-color:var(--color-amarillo);">PLATAFORMA</button>
+					<button btn1 @click=${this.podCast} style="width:10rem;justify-self: center;background-color:var(--color-amarillo);">PODCAST</button>
 					<div style="padding-top:2rem"></div>
 				</div>
 			`;
@@ -151,6 +152,9 @@ export class gremioJuventudScreen extends connect(store, BANNERS_TIMESTAMP, BANN
 	}
 	atras() {
 		store.dispatch(goHistoryPrev());
+	}
+	podCast() {
+		window.open("https://open.spotify.com/show/5h7lMpOu8NskdnfvP7JroM?si=a2ba12d94f0c4da3", "_blank");
 	}
 	stateChanged(state, name) {
 		if (name == SCREEN || name == MEDIA_CHANGE) {
@@ -178,7 +182,8 @@ export class gremioJuventudScreen extends connect(store, BANNERS_TIMESTAMP, BANN
 		}
 	}
 	laJu() {
-		window.open("https://www.88552d2b491975945.temporary.link/moodle/login/index.php", "_blank");
+		window.open("https://campuscfvuocra.com/sign-in?redirectURL=%2Fp", "_blank");
+		//window.open("https://www.88552d2b491975945.temporary.link/moodle/login/index.php", "_blank");
 		//location.href = "https://www.88552d2b491975945.temporary.link/moodle/login/index.php"
 	}
 	static get properties() {

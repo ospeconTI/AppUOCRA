@@ -80,7 +80,7 @@
 	{
 		"id": 13,
 		"tipo": "deportes",
-		"leyenda": "<div style='text-align:center'><b>*Disponibilidad sujeta a las disposiciones<br>oficiales de circulación vinculadas a <br>la pandemia de Covid19.<b><div>",
+		"leyenda": "",
 		"activo": true
 	},
 	{
@@ -92,7 +92,7 @@
 	{
 		"id": 15,
 		"tipo": "turismo",
-		"leyenda": "<div style='text-align:center'><b>Este es un beneficio al que pueden acceder las personas afiliadas a UOCRA.<br>*Disponibilidad sujeta a las disposiciones<br>oficiales de circulación vinculadas a <br>la pandemia de Covid19.<b><div>",
+		"leyenda": "<div style='text-align:left'><b>Este es un beneficio al que pueden acceder las personas afiliadas a UOCRA.<div>",
 		"activo": true
 	},
 	{

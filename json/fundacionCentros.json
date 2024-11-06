@@ -322,5 +322,29 @@
 		"telefono": "",
 		"mail": "",
 		"activo": true
+	},
+	{
+		"id": 27,
+		"nombre": "Instituto UOCRA",
+		"direccion": "Humberto Primo 2260",
+		"localidad": "CABA",
+		"provincia": "CABA",
+		"latitud": -34.621709,
+		"longitud": -58.39752,
+		"telefono": "4308-2257",
+		"mail": "cific3caba@uocra.org ",
+		"activo": true
+	},
+	{
+		"id": 28,
+		"nombre": "CENS CABA",
+		"direccion": "Rawson 42",
+		"localidad": "CABA",
+		"provincia": "CABA",
+		"latitud": -34.612196,
+		"longitud": -58.425386,
+		"telefono": "4981-0139",
+		"mail": "cific17caba@uocra.org ",
+		"activo": true
 	}
 ]

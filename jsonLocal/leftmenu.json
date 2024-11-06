@@ -92,8 +92,8 @@
     },
     {
         "id": 13,
-        "nombre": "ADICCIONES",
-        "imagen": "ADICCIONES",
+        "nombre": "CONSUMOS",
+        "imagen": "ADICCIONES01",
         "accion": "adicciones",
         "activo": true
     },
@@ -141,44 +141,44 @@
     },
     {
         "id": 20,
-        "nombre": "MUTUAL",
+        "nombre": "MOECRA",
         "imagen": "COMPRA",
         "accion": "moecra",
         "activo": true
     },
     {
-        "id": 20,
-        "nombre": "COMPARTIR",
-        "imagen": "COMPARTIR",
-        "accion": "compartir",
-        "activo": true
-    },
-    {
-        "id": 22,
+        "id": 21,
         "nombre": "LOGIN",
         "imagen": "LOGIN",
         "accion": "sesion",
         "activo": true
     },
     {
-        "id": 23,
+        "id": 22,
         "nombre": "NUEVA CLAVE",
         "imagen": "NUEVACLAVE",
         "accion": "claveCambio",
         "activo": true
     },
     {
-        "id": 24,
+        "id": 23,
         "nombre": "ACTIVAR",
         "imagen": "ACTIVAR",
         "accion": "activacion",
         "activo": true
     },
     {
-        "id": 20,
+        "id": 24,
         "nombre": "LOGOUT",
         "imagen": "LOGOUT",
         "accion": "logout",
+        "activo": true
+    },
+    {
+        "id": 25,
+        "nombre": "C.SINDICAL",
+        "imagen": "CREDENCIAL",
+        "accion": "gremioCredencial",
         "activo": true
     }
 ]

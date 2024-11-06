@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "imagen": "https://app.uocra.org/mujeresFormacionImg/niUnaMenos.jpg",
+        "nombre": "Episodio 1: Ni Una Menos",
+        "descripcion": "El 3 de junio de 2015 se produjo un hecho que marcó la historia de las organizaciones de mujeres, que conmovió al país entero, y luego al mundo, y en este episodio te lo contamos.",
+        "archivo": "https://app.uocra.org/podcast/niUnaMenos.mp3",
+        "orden": 1,
+        "activo": true
+    },
+    {
+        "id": 2,
+        "imagen": "https://app.uocra.org/mujeresFormacionImg/mujeresVidaSindical.jpg",
+        "nombre": "Las Mujeres En La Política Sindiccal.",
+        "descripcion": "A partir de la conmemoración del Día Nacional de los Derechos Políticos de las Mujeres, en el PodCast de hoy vamos a hablar sobre el liderazgo de mujeres en la política sindical.",
+        "archivo": "https://app.uocra.org/podcast/lasMujeresEnLaPoliticaSindical.mp3",
+        "orden": 2,
+        "activo": true
+    }
+]

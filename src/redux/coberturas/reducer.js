@@ -1,4 +1,5 @@
-import { GET_SUCCESS, GET_ERROR, PATCH_SUCCESS, PATCH_ERROR, UPDATE_SUCCESS, UPDATE_ERROR, ADD_SUCCESS, ADD_ERROR, REMOVE_SUCCESS, REMOVE_ERROR, EDIT, TIENE_COBERTURA } from "../coberturas/actions";
+import { GET_SUCCESS, GET_ERROR, PATCH_SUCCESS, PATCH_ERROR, UPDATE_SUCCESS, UPDATE_ERROR, ADD_SUCCESS, ADD_ERROR, REMOVE_SUCCESS, REMOVE_ERROR, EDIT, TIENE_COBERTURA, ACEPTA_CONDICIONES_COBERTURA } from "../coberturas/actions";
+import { store } from "../store";
 
 const initialState = {
 	entities: null,
@@ -10,6 +11,7 @@ const initialState = {
 	commandErrorTimeStamp: null,
 	editTimeStamp: null,
 	tieneCobertura: null,
+	aceptaCondicionesCobertura: false,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -19,13 +21,21 @@ export const reducer = (state = initialState, action) => {
 
 	switch (action.type) {
 		case GET_SUCCESS:
-			newState.entities = action.payload.receive;
+			newState.entities = null;
 			newState.timeStamp = new Date().getTime();
-			if (action.payload.receive.length > 0) {
-				if (action.payload.receive[0].Autorizado) {
-					newState.tieneCobertura = "S";
-				} else {
-					newState.tieneCobertura = "N";
+			if (action.payload.receive && action.payload.receive.length > 0) {
+				newState.tieneCobertura = "N";
+				var arr = [];
+				for (var x = 0; x < action.payload.receive.length; x++) {
+					if (action.payload.receive[x].baja_fecha == null) {
+						arr.push(action.payload.receive[x]);
+						if (action.payload.receive[x].docu_nro == action.payload.documento && action.payload.receive[x].Autorizado) {
+							newState.tieneCobertura = "S";
+						}
+					}
+				}
+				if (arr.length > 0) {
+					newState.entities = arr;
 				}
 			} else {
 				newState.tieneCobertura = "N";
@@ -60,6 +70,9 @@ export const reducer = (state = initialState, action) => {
 			break;
 		case TIENE_COBERTURA:
 			newState.tieneCobertura = action.tieneCobertura;
+			break;
+		case ACEPTA_CONDICIONES_COBERTURA:
+			newState.aceptaCondicionesCobertura = action.acepta;
 			break;
 	}
 	return newState;

@@ -51,8 +51,29 @@
 	{
 		"id": 25,
 		"tipo": "moecra",
-		"banner": "https://app.uocra.org/banners/bannerMoecra.gif",
+		"banner": "https://app.uocra.org/banners/bannerMoecra01.png",
 		"orden": 1,
+		"activo": true
+	},
+	{
+		"id": 25,
+		"tipo": "moecra",
+		"banner": "https://app.uocra.org/banners/bannerMoecra02.png",
+		"orden": 2,
+		"activo": true
+	},
+	{
+		"id": 25,
+		"tipo": "moecra",
+		"banner": "https://app.uocra.org/banners/bannerMoecra03.png",
+		"orden": 3,
+		"activo": true
+	},
+	{
+		"id": 25,
+		"tipo": "moecra",
+		"banner": "https://app.uocra.org/banners/bannerMoecra04.png",
+		"orden": 4,
 		"activo": true
 	},
 	{

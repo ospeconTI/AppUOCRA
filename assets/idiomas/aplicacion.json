@@ -1,8 +1,8 @@
 {
-    "ES" :{
+    "ES": {
         "sindicato": "Mi sindicato",
         "salud": "salud",
-        "capacitcion": "Capacitcion",
+        "capacitcion": "Capacitacion",
         "teatro": "Teatro",
         "television": "Television",
         "cine": "Cine",
@@ -15,7 +15,5 @@
         "denuncia": "Denuncias",
         "masuocra": "Más UOCRA"
     },
-    "EN" :{
-
-    }    
+    "EN": {}
 }

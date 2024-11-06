@@ -138,7 +138,7 @@ export class teatroProgramacionScreen extends connect(store, PROGRAMACION_ERROR,
 									<div class="grid row" style="grid-gap:0">
 										<div class="grid column" style="padding:0; grid-template-columns:auto 1fr">
 											<div id="bullet">${SVGS["BULLET"]}</div>
-											<div class="notaTitTxt">${this.idiomaGenerico[this.idioma].diasLargo[new Date(item.fecha).getDay()] + " " + new Date(item.fecha).getDate()}</div>
+											<div class="notaTitTxt">${this.idiomaGenerico[this.idioma].diasLargo[new Date(item.fecha).getDay()] + " " + new Date(item.fecha).getDate() + "/" + (new Date(item.fecha).getMonth() + 1)}</div>
 										</div>
 										<div class="notaNomTxt" style="font-weight:900">${item.protagonistas}</div>
 										<div class="notaDetTxt">"${item.nombre}"</div>
@@ -187,6 +187,16 @@ export class teatroProgramacionScreen extends connect(store, PROGRAMACION_ERROR,
 
 		if (name == PROGRAMACION_DATOS) {
 			this.programacion = state.programacion.entities;
+
+			let hoy1 = new Date();
+			hoy1.setHours(hoy1.getHours() - 3);
+			let hoy = hoy1.toJSON().substring(0, 17);
+			hoy = hoy + "00";
+
+			let progNuevo = this.programacion.filter((a) => a.fecha >= hoy && a.activo == 1);
+			this.programacion = progNuevo.sort(function (a, b) {
+				return a["fecha"] > b["fecha"] ? 1 : -1;
+			});
 			this.update();
 		}
 		if (name == PROGRAMACION_ERROR) {

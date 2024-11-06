@@ -5,7 +5,7 @@ import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
 import { goTo, goHistoryPrev } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
-import { showWarning } from "../../redux/ui/actions";
+import { showWarning, showConfirmacion } from "../../redux/ui/actions";
 import { button } from "../css/button";
 import { select } from "../css/select";
 import { input } from "../css/input";
@@ -187,42 +187,54 @@ export class saludSeguridadDenunciaScreen extends connect(store, MAIL_OK, MAIL_E
 		}
 	}
 	enviar() {
-		[].forEach.call(this.shadowRoot.querySelectorAll("[error]"), (element) => {
-			element.removeAttribute("error");
-		});
-		let nombre = this.shadowRoot.querySelector("#txtNombre");
-		let telefono = this.shadowRoot.querySelector("#txtTelefono");
-		let mail = this.shadowRoot.querySelector("#txtMail");
-		let mensaje = this.shadowRoot.querySelector("#txtMensaje");
-		var ok = true;
-		if (nombre.value == "") {
-			ok = false;
-			nombre.setAttribute("error", "");
-		}
-		if (telefono.value == "") {
-			ok = false;
-			telefono.setAttribute("error", "");
-		}
-		if (mail.value == "" || !validaMail(mail.value)) {
-			ok = false;
-			mail.setAttribute("error", "");
-		}
-		if (mensaje.value == "") {
-			ok = false;
-			mensaje.setAttribute("error", "");
-		}
-		if (ok) {
-			//			let msg = "Nombre: " + nombre.value + ", Telefono: " + telefono.value + ", Mail: " + mail.value + ", Mensaje: " + mensaje.value;
-			var usu = store.getState().autorizacion.usuario;
-			var body = "<br><b>DATOS DEL FORMULARIO</b>";
-			body = body + "<br>Nombre y Apellido: " + nombre.value + "<br>Telefono: " + telefono.value + "<br>E-Mail: " + mail.value + "<br>Mensaje: " + mensaje.value.replaceAll('"', "");
-			body = body + "<br><hr><b>DATOS DE REGISTRO DE LA APP</b>";
-			body = body + "<br>Nombre: " + usu.nombre + "<br>Apellido: " + usu.apellido + "<br>Documento: " + usu.documento + "<br>E-Mail: " + usu.email + "<br>Teléfono: " + usu.telefono;
-			store.dispatch(sendMail("Formulario SST", body, "appuocra@gmail.com"));
+		var usu = store.getState().autorizacion.usuario;
+		if (usu) {
+			[].forEach.call(this.shadowRoot.querySelectorAll("[error]"), (element) => {
+				element.removeAttribute("error");
+			});
+			let nombre = this.shadowRoot.querySelector("#txtNombre");
+			let telefono = this.shadowRoot.querySelector("#txtTelefono");
+			let mail = this.shadowRoot.querySelector("#txtMail");
+			let mensaje = this.shadowRoot.querySelector("#txtMensaje");
+			var ok = true;
+			if (nombre.value == "") {
+				ok = false;
+				nombre.setAttribute("error", "");
+			}
+			if (telefono.value == "") {
+				ok = false;
+				telefono.setAttribute("error", "");
+			}
+			if (mail.value == "" || !validaMail(mail.value)) {
+				ok = false;
+				mail.setAttribute("error", "");
+			}
+			if (mensaje.value == "") {
+				ok = false;
+				mensaje.setAttribute("error", "");
+			}
+			if (ok) {
+				//			let msg = "Nombre: " + nombre.value + ", Telefono: " + telefono.value + ", Mail: " + mail.value + ", Mensaje: " + mensaje.value;
+				var body = "<br><b>DATOS DEL FORMULARIO</b>";
+				body = body + "<br>Nombre y Apellido: " + nombre.value + "<br>Telefono: " + telefono.value + "<br>E-Mail: " + mail.value + "<br>Mensaje: " + mensaje.value.replaceAll('"', "");
+				body = body + "<br><hr><b>DATOS DE REGISTRO DE LA APP</b>";
+				body = body + "<br>Nombre: " + usu.nombre + "<br>Apellido: " + usu.apellido + "<br>Documento: " + usu.documento + "<br>E-Mail: " + usu.email + "<br>Teléfono: " + usu.telefono;
+				//app.uocra.org@gmail.com
+				store.dispatch(sendMail("Formulario SST", body, ["app.uocra.org@gmail.com"]));
+			} else {
+				store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
+			}
 		} else {
-			store.dispatch(showWarning("Atencion!", "Falta cargar campos.", "fondoError", 3000));
+			store.dispatch(
+				showConfirmacion(
+					"Debe estar logueado para realizar esta operacion, ¿ quiere loguearse ahora ?",
+					() => {
+						store.dispatch(goTo("sesion"));
+					},
+					null
+				)
+			);
 		}
-
 		//document.location.href = 'tel:0800-222-3871';
 	}
 

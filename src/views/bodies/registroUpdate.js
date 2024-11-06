@@ -3,7 +3,7 @@
 import { html, LitElement, css } from "lit-element";
 import { store } from "../../redux/store";
 import { connect } from "@brunomon/helpers";
-import { goTo } from "../../redux/routing/actions";
+import { goTo, goHistoryPrev } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { showWarning } from "../../redux/ui/actions";
 import { button } from "../css/button";
@@ -12,13 +12,17 @@ import { select } from "../css/select";
 import { gridLayout } from "../css/gridLayout";
 import { updateProfile } from "../../redux/autorizacion/actions";
 import { tieneCobertura } from "../../redux/coberturas/actions";
+import { get_por_dni } from "../../redux/credencialSindical/actions";
 
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 const PROFILE_DATO = "autorizacion.updateProfileTimeStamp";
 const PROFILE_ERROR = "autorizacion.commandErrorTimeStamp";
 
-export class registroUpdateScreen extends connect(store, PROFILE_DATO, PROFILE_ERROR, MEDIA_CHANGE, SCREEN)(LitElement) {
+const CON_CREDENCIAL_SINDICAL_OK = "credencialSindical.porDNI.timeStamp";
+const CON_CREDENCIAL_SINDICAL_ERROR = "credencialSindical.porDNI.errorTimeStamp";
+
+export class registroUpdateScreen extends connect(store, CON_CREDENCIAL_SINDICAL_OK, CON_CREDENCIAL_SINDICAL_ERROR, PROFILE_DATO, PROFILE_ERROR, MEDIA_CHANGE, SCREEN)(LitElement) {
 	constructor() {
 		super();
 		this.hidden = true;
@@ -193,10 +197,14 @@ export class registroUpdateScreen extends connect(store, PROFILE_DATO, PROFILE_E
 		}
 		if (name == PROFILE_DATO) {
 			store.dispatch(tieneCobertura(null));
+			store.dispatch(get_por_dni(state.autorizacion.usuario.documento));
 			store.dispatch(showWarning("Atencion!", "Sus datos se actualizarion", "fondoOk", 3000));
 		}
 		if (name == PROFILE_ERROR) {
 			store.dispatch(showWarning("Error!", "No se realizo la actualización.", "fondoError", 3000));
+		}
+		if ((name == CON_CREDENCIAL_SINDICAL_OK || name == CON_CREDENCIAL_SINDICAL_ERROR) && state.screen.name == "registroUpdate") {
+			store.dispatch(goHistoryPrev());
 		}
 	}
 

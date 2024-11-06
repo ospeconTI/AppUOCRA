@@ -140,6 +140,7 @@ export class teatroReservaScreen extends connect(store, MAIL_OK, MAIL_ERROR, RES
 	}
 	render() {
 		if (this.reserva) {
+			//if (new Date(this.reserva.fecha).getTime() > Date.now()) {
 			return html`
 				<div id="cuerpo" class="grid row" style="grid-gap:0rem">
 					<div id="titulo" class="grid column" style="background-image:url('${this.reserva.imagenFolleto}')"></div>
@@ -155,7 +156,7 @@ export class teatroReservaScreen extends connect(store, MAIL_OK, MAIL_ERROR, RES
 					<div id="subTituloTexto" style="font-style:italic">${this.reserva.genero}</div>
 					<div id="subTituloTexto" class="grid" style="padding:0; grid-template-columns:auto 1fr; grid-gap:.2rem;">
 						<div id="bullet1">${SVGS["BULLET"]}</div>
-						<div id="textoFolleto" style="font-weight:900">Cantidad de entradas</div>
+						<div id="textoFolleto" style="font-weight:900">Cantidad de entradas (Máximo 6)</div>
 						<div></div>
 						<div class="input">
 							<label></label>
@@ -169,6 +170,7 @@ export class teatroReservaScreen extends connect(store, MAIL_OK, MAIL_ERROR, RES
 					<div style="padding-top:2rem"></div>
 				</div>
 			`;
+			//}
 		} else {
 			if (this.current == "teatroProgramacionDetalle") {
 				return html`<msgnoconeccion-component @click="${this.atras}" texto="Haga click volver" style="cursor:pointer"></msgnoconeccion-component>; `;
@@ -181,14 +183,18 @@ export class teatroReservaScreen extends connect(store, MAIL_OK, MAIL_ERROR, RES
 		});
 		let cantidad = this.shadowRoot.querySelector("#txtCantidad");
 		var ok = true;
-		if (cantidad.value == "" || !typeof cantidad.value == "number" || parseInt(cantidad.value) < 1 || parseInt(cantidad.value) > 10) {
+		if (cantidad.value == "" || !typeof cantidad.value == "number" || parseInt(cantidad.value) < 1 || parseInt(cantidad.value) > 6) {
 			ok = false;
 			cantidad.setAttribute("error", "");
 		} else {
 			let item = this.reserva;
 			var usu = store.getState().autorizacion.usuario;
 			var body = "<b>¡Muchas gracias " + usu.nombre + " por reservar tu entrada!</b><br>";
-			body = body + "<br>Para utilizar esta reserva, presentate en la boletería del Teatro Gastón Barral (Rawson 42 - C.A.B.A) hasta 30 minutos antes del comienzo de la función. Pasado ese horario, la reserva perderá su vigencia y quedará sujeta a la disponibilidad de la sala, sin posibilidad de reclamo alguno. Una vez iniciada la función, no se permitirá el ingreso a la sala.";
+			//body = body + "<br>Para utilizar esta reserva, presentate en la boletería del Teatro Gastón Barral (Rawson 42 - C.A.B.A) hasta 30 minutos antes del comienzo de la función. Pasado ese horario, la reserva perderá su vigencia y quedará sujeta a la disponibilidad de la sala, sin posibilidad de reclamo alguno. Una vez iniciada la función, no se permitirá el ingreso a la sala.";
+			body =
+				body +
+				"<br>Para utilizar esta reserva, deberás presentar tu CREDENCIAL DIGITAL o RECIBO DE SUELDO del afiliado en la boletería del Teatro Gastón Barral (Rawson 42 - C.A.B.A) 30 minutos antes del comienzo de la función. Pasado ese horario, la reserva perderá su vigencia y quedará sujeta a la disponibilidad de la sala, sin posibilidad de reclamo alguno. Una vez iniciada la función, no se permitirá el ingreso a la sala. No se permitirá el uso de esta reserva sin la debida presentación del documento que acreedite la afiliación al sindicato del solicitante.</b>";
+			body = body + "<br>Se podrán reservar hasta un máximo de seis (6) entradas por afiliado por función.</b>";
 			body = body + "<br>Si no podés asistir y querés cancelar tu reserva, avisanos mandando un mail a: reservasuocracultura@gmail.com";
 			body = body + "<br><br><b>DATOS DE LA RESERVA</b>";
 			body = body + "<br>Fecha: " + this.idiomaGenerico[this.idioma].diasLargo[new Date(item.fecha).getDay()] + " " + new Date(item.fecha).getDate() + " de " + this.idiomaGenerico[this.idioma].mesLargo[new Date(item.fecha).getMonth()] + ".";
@@ -203,7 +209,8 @@ export class teatroReservaScreen extends connect(store, MAIL_OK, MAIL_ERROR, RES
 			body = body + "<br>Instagram: https://www.instagram.com/uocracultura/";
 			body = body + "<br>Twitter: https://twitter.com/UOCRACultura/";
 			body = body + "<br>Youtube: https://www.youtube.com/UOCRACultura";
-			store.dispatch(sendMail("Teatro Gastón Barral. Reservas", body, ["appuocra@gmail.com", usu.email]));
+			//app.uocra.org@gmail.com
+			store.dispatch(sendMail("Teatro Gastón Barral. Reservas", body, ["reservasuocracultura@gmail.com", usu.email, "app.uocra.org@gmail.com"]));
 		}
 	}
 	atras() {

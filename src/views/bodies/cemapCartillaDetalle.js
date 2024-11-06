@@ -119,7 +119,7 @@ export class cemapCartillaDetalleScreen extends connect(store, LOCALIDAD_SELECCI
 					<div id="contenido" class="grid column">
 						<img id="imagen" src="${this.imagenContenido}" />
 					</div>
-					<div id="telefono" class="botonFlotante" ?hidden="${this.tipo != 1}" @click=${this.llamar}>${SVGS["TELEFONO"]}</div>
+					<div id="telefono" class="botonFlotante" ?hidden="${this.tipo != 1}" @click=${this.llamar}>${SVGS["SALUD"]}</div>
 					<div id="posicion" class="botonFlotante" ?hidden="${this.tipo != 1}" @click=${this.posicion}>${SVGS["POSICION"]}</div>
 				</div>
 			`;
@@ -133,7 +133,9 @@ export class cemapCartillaDetalleScreen extends connect(store, LOCALIDAD_SELECCI
 		store.dispatch(goHistoryPrev());
 	}
 	llamar() {
-		window.open("tel:" + this.telefono, "_blank");
+		//window.open("tel:" + this.telefono, "_blank");
+		//window.open("https://api.whatsapp.com/send?phone=+5491136623055&text=Centro%20Medico");
+		window.open("https://construirsalud.com.ar/", "_blank");
 	}
 	posicion() {
 		store.dispatch(getMapaLocalidad(store.getState().localidades.seleccion[0].id));

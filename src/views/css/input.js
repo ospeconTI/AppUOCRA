@@ -6,7 +6,7 @@ export const input = css`
 	input:-webkit-autofill {
 		border: 1px solid var(--color-ok);
 		-webkit-text-fill-color: var(--color-gris-oscuro);
-		-webkit-box-shadow: 0 0 0px 1000px var(--color-gris-oscuro) inset;
+		-webkit-box-shadow: 0 0 0px 1000px var(--color-celeste-claro) inset;
 		transition: background-color 5000s ease-in-out 0s;
 	}
 	input:-webkit-autofill::first-line {
@@ -19,7 +19,7 @@ export const input = css`
 		grid-gap: 0.1rem;
 	}
 	.input input {
-		padding: .8rem;
+		padding: 0.8rem;
 		background-color: var(--color-blanco);
 		border: 1px solid var(--color-verde-claro);
 		color: var(--color-gris-oscuro);

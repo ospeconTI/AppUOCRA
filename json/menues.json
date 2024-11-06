@@ -242,7 +242,7 @@
 	{
 		"id": 24,
 		"tipo": "cine",
-		"nombre": "EDICION 2021",
+		"nombre": "ULTIMA EDICION",
 		"imagen": "CINECARTON",
 		"div": "datos",
 		"clase": "opc2 blanco fondoGris",
@@ -292,21 +292,21 @@
 	{
 		"id": 29,
 		"tipo": "adicciones",
-		"nombre": "JORNADA 2020",
+		"nombre": "JORNADAS",
 		"imagen": "",
 		"div": "datos2",
 		"clase": "opc21 blanco fondoPrimario",
-		"goto": "adicciones2020",
+		"goto": "adiccionesOtras",
 		"activo": true
 	},
 	{
 		"id": 30,
 		"tipo": "adicciones",
-		"nombre": "OTRAS JORNADAS",
+		"nombre": "TE ESCUCHAMOS",
 		"imagen": "",
 		"div": "datos2",
 		"clase": "opc22 blanco fondoVerde",
-		"goto": "adiccionesOtras",
+		"goto": "https://api.whatsapp.com/send?phone=+5491128871623&text=Espacio de escucha",
 		"activo": true
 	},
 	{
@@ -382,7 +382,7 @@
 	{
 		"id": 38,
 		"tipo": "arte",
-		"nombre": "EDICIÓN 2021",
+		"nombre": "ULTIMA EDICIÓN",
 		"imagen": "CUADRO",
 		"div": "datos",
 		"clase": "opc2 blanco fondoGris",

@@ -7,6 +7,8 @@ import { goNext, goTo } from "../../redux/routing/actions";
 import { isInLayout } from "../../redux/screens/screenLayouts";
 import { SVGS } from "../../../assets/icons/svgs";
 
+import { get_por_dni } from "../../redux/credencialSindical/actions";
+
 const MEDIA_CHANGE = "ui.media.timeStamp";
 const SCREEN = "screen.timeStamp";
 export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElement) {
@@ -63,6 +65,7 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 				<div id="imagen">${SVGS["LOGO"]}</div>
 				<div id="version">v.:${__VERSION__}</div>
 			</div>
+			<!-- <msgaceptacobertura-component texto="Volver"></msgaceptacobertura-component> -->
 		`;
 	}
 	stateChanged(state, name) {
@@ -75,7 +78,10 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 			if (haveBodyArea && SeMuestraEnUnasDeEstasPantallas) {
 				this.hidden = false;
 
+				//store.dispatch(get_por_dni(28491226));
+
 				this.timeOut = setTimeout(() => {
+					//store.dispatch(goTo("gremioCredencial"));
 					store.dispatch(goTo("onBoarding"));
 				}, 4000);
 			}
@@ -85,8 +91,8 @@ export class splashScreen extends connect(store, MEDIA_CHANGE, SCREEN)(LitElemen
 
 	proximo() {
 		clearTimeout(this.timeOut);
+		//store.dispatch(goTo("gremioCredencial"));
 		store.dispatch(goTo("onBoarding"));
-		//store.dispatch(goTo("claveRecuperar"));
 	}
 
 	static get properties() {
