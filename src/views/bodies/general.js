@@ -254,7 +254,7 @@ export class generalScreen extends connect(store, ITEMS_BOTONITEM, MENUES_ERRORT
 											`;
 										})}
 								</div>
-						  `
+							`
 						: ""}
 					${this.leyenda[0].leyenda != "" ? html` <div id="leyenda">${unsafeHTML(this.leyenda[0].leyenda)}</div>` : ""}
 					<div id="opciones">
@@ -300,8 +300,8 @@ export class generalScreen extends connect(store, ITEMS_BOTONITEM, MENUES_ERRORT
 					() => {
 						store.dispatch(goTo("sesion"));
 					},
-					null
-				)
+					null,
+				),
 			);
 		} else {
 			this.redireccionar(usu, que);
@@ -336,24 +336,39 @@ export class generalScreen extends connect(store, ITEMS_BOTONITEM, MENUES_ERRORT
 				break;
 			case "beneficiosJubilacion":
 				//app.uocra.org@gmail.com
-				location.href = "mailto:agarcia@uocra.org?cc=app.uocra.org@gmail.com&subject=UOCRA%20Beneficios%20jubilatorios&body=" + msg;
+				location.href = "mailto:emercuri@uocra.org?cc=app.uocra.org@gmail.com&subject=UOCRA%20Beneficios%20jubilatorios&body=" + msg;
 				break;
 			case "beneficiosSeguros":
 				//app.uocra.org@gmail.com
-				location.href = "mailto:agarcia@uocra.org?cc=app.uocra.org@gmail.com&subject=UOCRA%20Seguro%20de%20vida&body=" + msg;
+				location.href = "mailto:emercuri@uocra.org?cc=app.uocra.org@gmail.com&subject=UOCRA%20Seguro%20de%20vida&body=" + msg;
 				break;
 			case "beneficiosSepelios":
 				//app.uocra.org@gmail.com
-				location.href = "mailto:agarcia@uocra.org?cc=app.uocra.org@gmail.com&subject=UOCRA%20Sepelios&body=" + msg;
+				location.href = "mailto:emercuri@uocra.org?cc=app.uocra.org@gmail.com&subject=UOCRA%20Sepelios&body=" + msg;
 				break;
 			case "beneficiosSubsidios":
 				//app.uocra.org@gmail.com
-				location.href = "mailto:agarcia@uocra.org?cc=app.uocra.org@gmail.com&subject=UOCRA%20Subsidios&body=" + msg;
+				location.href = "mailto:emercuri@uocra.org?cc=app.uocra.org@gmail.com&subject=UOCRA%20Subsidios&body=" + msg;
 				break;
 			case "salud":
 				document.location.href = "tel:0800-222-0123";
 				//location.href = "https://api.whatsapp.com/send?phone=+5491136623055&text=Afiliacion";
 				//window.open("https://api.whatsapp.com/send?phone=+5491136623055&text=Afiliacion");
+				break;
+			case "moecraTelefono":
+				document.location.href = "tel:11-2894-3837";
+				break;
+			case "moecraMail":
+				location.href = "mailto:consultasmoecra@uocra.org?cc=app.uocra.org@gmail.com&subject=MOECRA&body=" + "";
+				break;
+			case "gremioTelefono01":
+				document.location.href = "tel:11-4379-0546";
+				break;
+			case "gremioTelefono02":
+				document.location.href = "tel:11-4384-7168";
+				break;
+			case "gremioMail":
+				location.href = "mailto:consultasyreclamosgremiales@uocra.org?cc=app.uocra.org@gmail.com&subject=CONSULTA%20GREMIAL&body=" + "";
 				break;
 			case "saludCovid":
 				//location.href = "https://api.whatsapp.com/send?phone=+5491136623055&text=Afiliacion";
@@ -379,7 +394,9 @@ export class generalScreen extends connect(store, ITEMS_BOTONITEM, MENUES_ERRORT
 				//location.href = "https://api.whatsapp.com/send?phone=+5491136623055&text=Afiliacion";
 				window.open("https://api.whatsapp.com/send?phone=+5491173657509&text=Teatro");
 				break;
-
+			case "mujeresGuia":
+				window.open("https://app.uocra.org/pdfs/GUIA-UOCRA-Mujeres-V3-Links.pdf", "_blank");
+				break;
 			default:
 				store.dispatch(goTo(que));
 				break;

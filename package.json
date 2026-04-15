@@ -1,6 +1,6 @@
 {
     "name": "uocra",
-    "version": "1.8.4",
+    "version": "1.8.11",
     "description": "UOCRA",
     "main": "./src/sandbox.js",
     "scripts": {

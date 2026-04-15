@@ -1,7 +1,7 @@
 {
     "ES": {
-        "password": "Contraseña",
-        "passwordRepetir": "Ingreselo nuevamente",
+        "password": "Nueva Contraseña",
+        "passwordRepetir": "Ingresela nuevamente",
         "enviar": "Enviar",
         "email": "Ingrese su E-mail",
         "volver": "VOLVER"

@@ -37,6 +37,8 @@ export class afiliacionSindicalScreen extends connect(store, ADD_AF_SIND_OK, ADD
 		this.j = null;
 		this.cuerpoMail = "";
 		this.queMail = 0;
+
+		this.accion = "A";
 	}
 
 	static get styles() {
@@ -63,8 +65,6 @@ export class afiliacionSindicalScreen extends connect(store, ADD_AF_SIND_OK, ADD
 				background-color: var(--color-blanco);
 				padding: 2rem 0 0 0 !important;
 				place-self: flex-start;
-				overflow-x: hidden;
-				overflow-y: auto;
 				display: grid;
 				grid-template-columns: auto 1fr;
 				justify-self: center;
@@ -95,8 +95,17 @@ export class afiliacionSindicalScreen extends connect(store, ADD_AF_SIND_OK, ADD
 				width: 1.5rem;
 				height: 1.5rem;
 			}
-			.btnVerMapa {
-				background-color: var(--primary-color) !important;
+			.btnAfiliacion {
+				background-color: var(--color-amarillo) !important;
+				border-radius: 1rem !important;
+				fill: var(--color-negro) !important;
+				stroke: var(--color-negro) !important;
+				color: var(--color-negro) !important;
+				font-size: var(--font-bajada-size) !important;
+				grid-gap: 0 !important;
+			}
+			.btnDesafiliacion {
+				background-color: var(--color-gris) !important;
 				border-radius: 1rem !important;
 				fill: var(--color-blanco) !important;
 				stroke: var(--color-blanco) !important;
@@ -306,15 +315,21 @@ export class afiliacionSindicalScreen extends connect(store, ADD_AF_SIND_OK, ADD
 					<div></div>
 					<div></div>
 					<div class="textoSolo">Compañero: Los datos proporcionados seran procesados. El estado de tu solicitud será informado al correo electrónico o teléfono celular indicado en el presente formulario.</div>
-					<div id="botones" class="grid">
-						<button btn1 class="btnVerMapa" @click=${this.enviar}>
+					<div id="botones" class="grid row">
+						<button btn1 class="btnAfiliacion" @click=${this.b_afiliacion}>
 							<div class="grid column" style="justify-content:center;grid-gap:1rem">
 								<div id="botonesImg">${SVGS["MAILENVIO"]}</div>
-								<div>ENVIAR</div>
+								<div>AFILIACION</div>
+							</div>
+						</button>
+						<button btn1 class="btnDesafiliacion" @click=${this.b_desafiliacion}>
+							<div class="grid column" style="justify-content:center;grid-gap:1rem">
+								<div id="botonesImg">${SVGS["MAILENVIO"]}</div>
+								<div>DESAFILIACION</div>
 							</div>
 						</button>
 					</div>
-					<div style="padding-top:2rem"></div>
+					<div style="height:18rem"></div>
 				</div>
 			`;
 		}
@@ -334,10 +349,14 @@ export class afiliacionSindicalScreen extends connect(store, ADD_AF_SIND_OK, ADD
 			this.update();
 		}
 		if (name == ADD_AF_SIND_OK && state.screen.name == "afiliacionSindical") {
-			store.dispatch(sendMail("Formulario de Afiliacion Sindical", this.cuerpoMail, ["formulariosindicalapp@uocra.org"]));
+			if (this.accion == "A") {
+				store.dispatch(sendMail("Formulario de Afiliacion Sindical", this.cuerpoMail, ["formulariosindicalapp@uocra.org"]));
+			} else {
+				store.dispatch(sendMail("Formulario de Desafiliacion Sindical", this.cuerpoMail, ["formulariosindicaldesafiliacionapp@uocra.org"]));
+			}
 		}
 		if (name == ADD_AF_SIND_ERROR && state.screen.name == "afiliacionSindical") {
-			store.dispatch(showWarning("ERROR, no se registro la afiliacion", "Verifique su conección de datos", "fondoError", 3000));
+			store.dispatch(showWarning("ERROR, no se registro la accion", "Verifique su conección de datos", "fondoError", 3000));
 		}
 
 		if (name == MAIL_OK && state.screen.name == "afiliacionSindical") {
@@ -349,7 +368,7 @@ export class afiliacionSindicalScreen extends connect(store, ADD_AF_SIND_OK, ADD
 				mensa = mensa + "<br>El estado de tu solicitud sera informado al correo electrónico o teléfono celular indicado en el presente formulario.";
 				mensa = mensa + "<br>" + this.cuerpoMail;
 				mensa = mensa + "<br><br><b>UOCRAAPP</b>";
-				store.dispatch(sendMail("Afiliacion Sindical", mensa, [this.j.Mail]));
+				store.dispatch(sendMail(this.accion == "A" ? "Afiliacion" : "Desafiliacion" + " Sindical", mensa, [this.j.Mail]));
 			} else {
 				this.shadowRoot.querySelector("#txtNombre").value = "";
 				this.shadowRoot.querySelector("#txtApellido").value = "";
@@ -368,13 +387,21 @@ export class afiliacionSindicalScreen extends connect(store, ADD_AF_SIND_OK, ADD
 				this.shadowRoot.querySelector("#txtCPObra").value = "";
 				this.shadowRoot.querySelector("#chkAceptacion").checked = false;
 
-				store.dispatch(showWarning("Mensaje enviado", "La afiliación se registro correctamente", "fondoAmarillo", 3000));
+				store.dispatch(showWarning("Mensaje enviado", "Se registro correctamente", "fondoAmarillo", 3000));
 				store.dispatch(goHistoryPrev());
 			}
 		}
 		if (name == MAIL_ERROR && state.screen.name == "afiliacionSindical") {
 			store.dispatch(showWarning("ERROR, mail no enviado", "Verifique su conección de datos", "fondoError", 3000));
 		}
+	}
+	b_afiliacion() {
+		this.accion = "A";
+		this.enviar();
+	}
+	b_desafiliacion() {
+		this.accion = "D";
+		this.enviar();
 	}
 	enviar() {
 		var usu = store.getState().autorizacion.usuario;
@@ -461,7 +488,12 @@ export class afiliacionSindicalScreen extends connect(store, ADD_AF_SIND_OK, ADD
 			}
 			if (ok) {
 				//let msg = "Nombre: " + nombre.value + ", Telefono: " + telefono.value + ", Mail: " + mail.value + ", Mensaje: " + mensaje.value;
-				this.cuerpoMail = "<br><b>DATOS DE LA AFILIACION</b>";
+				this.cuerpoMail = "<br><b>DATOS DE LA ";
+				if (this.accion == "D") {
+					this.cuerpoMail = this.cuerpoMail + "DESAFILIACION</b>";
+				} else {
+					this.cuerpoMail = this.cuerpoMail + "AFILIACION</b>";
+				}
 				this.cuerpoMail = this.cuerpoMail + "<br>Apellido y Nombre: " + Apellido.value + ", " + Nombre.value;
 				this.cuerpoMail = this.cuerpoMail + "<br>Tipo de documento: " + TipoDocumento.value;
 				this.cuerpoMail = this.cuerpoMail + "<br>Numero de documento: " + NumeroDocumento.value;
@@ -494,6 +526,7 @@ export class afiliacionSindicalScreen extends connect(store, ADD_AF_SIND_OK, ADD
 					Provincia: Provincias.value,
 					CodigoPostal: CPObra.value,
 				};
+				if (this.accion == "D") this.j.Apellido = this.j.Apellido + " DESAFILIACION";
 				this.queMail = 0;
 				store.dispatch(addAfSindical(this.j));
 			} else {
@@ -506,8 +539,8 @@ export class afiliacionSindicalScreen extends connect(store, ADD_AF_SIND_OK, ADD
 					() => {
 						store.dispatch(goTo("sesion"));
 					},
-					null
-				)
+					null,
+				),
 			);
 		}
 		//document.location.href = 'tel:0800-222-3871';
